@@ -8,8 +8,17 @@ const productAvailibilityChecker = require("../commonHelpers/productAvailibility
 const subtractProductsFromCart = require("../commonHelpers/subtractProductsFromCart");
 const _ = require("lodash");
 
-const uniqueRandom = require("unique-random");
-const rand = uniqueRandom(1000000, 9999999);
+let rand;
+
+import("unique-random").then((module) => {
+    rand = module.default(10000000, 99999999);
+});
+
+// import('unique-random').then(uniqueRandom => {
+//   rand = uniqueRandom(10000000, 99999999);
+// });
+// const uniqueRandom = require("unique-random");
+// const rand = uniqueRandom(1000000, 9999999);
 
 exports.placeOrder = async (req, res, next) => {
   try {
