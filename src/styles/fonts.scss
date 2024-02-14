@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'Pragmatica';
+    src: url('./fonts/Pragmatica-Book.woff2') format('woff2'),
+         url('./fonts/Pragmatica-Book.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pragmatica';
+    src: url('./fonts/Pragmatica-Medium.woff2') format('woff2'),
+         url('./fonts/Pragmatica-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pragmatica';
+    src: url('./fonts/Pragmatica-Bold.woff2') format('woff2'),
+         url('./fonts/Pragmatica-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pragmatica';
+    src: url('./fonts/Pragmatica-ExtraBoldOblique.woff2') format('woff2'),
+         url('./fonts/Pragmatica-ExtraBoldOblique.woff') format('woff');
+    font-weight: 800;
+    font-style: oblique;
+}
+
+@font-face {
+    font-family: 'Golos Text';
+    src: url('./fonts/GolosText-Regular.woff2') format('woff2'),
+         url('./fonts/GolosText-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
