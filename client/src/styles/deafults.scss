@@ -11,19 +11,16 @@ a {
 }
 
 
-.content-wrapper {
-    /* margin: 0 auto;
+.container {
+    margin: 0 auto;
     max-width: 1920px;
-    padding: 30px 20px;
-
-
+    padding: 0px 15px;
 
     @media (min-width: $bp-md) {
-        padding: 30px 30px;
+        padding: 0px 25px;
     }
 
-
     @media (min-width: $bp-lg) {
-        padding: 70px;
-    } */
+        padding: 0px 280px;
+    }
 }
