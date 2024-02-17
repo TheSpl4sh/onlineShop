@@ -1,0 +1,24 @@
+ @import url('../../styles/variables.scss');
+ @import "../../styles/variables";
+// $header-border-color: #EAEAEA;
+
+.header-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-top:  solid 1px $header-border-color;
+	border-bottom:  solid 1px $header-border-color;
+    // border-top: $header-border-color;
+}
+
+.header-logo {
+	border-right: 1px solid $header-border-color;
+}
+
+// .header-line {
+// 	width: 100%;
+// 	// height: 1px;
+// 	// color: rgb(253, 2, 2);
+// 	background-color: $header-border-color;
+// }
+
