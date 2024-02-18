@@ -1,0 +1,44 @@
+@import '../../styles/variables.scss';
+@import '../../styles/deafults.scss';
+@import '../../styles/fonts.scss';
+@import '../../styles/mixins.scss';
+
+.link-button {
+    @include flex (space-between, center, row);
+    @include font (16px, 500, 10px, #fff);
+    font-family: 'Pragmatica';
+    width: 273px;
+    margin: 20px auto 0;
+    background-color: $light-orange;
+    cursor: pointer;
+    transition: 0.3s;
+
+    @media (min-width: $bp-md) {
+        margin: 30px auto 0;
+    }
+
+    &:hover {
+        background-color: #FF9315;
+
+        .icon-svg {
+            rect {
+                opacity: 0.5;
+            }
+        }
+    }
+
+    .link-text {
+        @include flex (center, center, row);
+        width: 100%;
+    }
+
+    .link-icon {
+        .icon-svg {
+
+            rect,
+            path {
+                transition: fill 0.3s, opacity 0.5s;
+            }
+        }
+    }
+}
