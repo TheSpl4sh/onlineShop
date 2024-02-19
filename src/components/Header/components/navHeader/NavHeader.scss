@@ -1,0 +1,31 @@
+.navheader {
+
+font-size: 15px;
+font-weight: 500;
+line-height: 11px;
+letter-spacing: 0em;
+text-align: left;
+
+
+  &-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+
+    &__item {
+      margin-right: 25px;
+    }
+  }
+}
+
+.gray-line1 {
+  width: 25px;
+  border: solid 2px #FB5A00;
+  margin-left: 11px;
+}
+.gray-line2 {
+  width: 36px;
+  border: solid 2px #000000;
+  margin-top: 5px;
+}

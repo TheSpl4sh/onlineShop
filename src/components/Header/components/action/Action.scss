@@ -1,0 +1,19 @@
+// @import url('../../styles/variables.scss');
+//@import url('../../../../styles/variables.scss');
+//  @import "../../styles/variables";
+ $header-border-color: #EAEAEA;
+
+.header-icon {
+	display: flex;
+
+	&__item {
+		padding: 27px;
+		// border-left: solid 1px red;
+		border-left:  solid 1px $header-border-color;
+		
+	}
+	&__item:last-child {
+		// border-left: solid 1px red;
+		border-right:  solid 1px $header-border-color;
+	}
+}
