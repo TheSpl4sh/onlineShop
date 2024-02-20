@@ -12,17 +12,17 @@ import "./Header.scss";
 
 const Header = () => {
   return (
-    <header className="header">              
-      <div className="container">
+    <header className="header container">              
+      {/* <div className="container"> */}
             <TopHeader />      
-        <div className="header-wrapper container">
+        <div className="header-wrapper">
             <div className="header-logo">
               <Logo /> 
             </div>                             
               <NavHeader />         
               <Action />
         </div>
-      </div>
+      {/* </div> */}
     </header>
   );
 };

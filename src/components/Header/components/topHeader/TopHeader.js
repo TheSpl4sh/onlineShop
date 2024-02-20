@@ -9,7 +9,7 @@ import "./topHeader.scss";
 const TopHeader = () => {
   return (
     <>
-      <div className="topheader container">
+      <div className="topheader">
         <Breadcrumbs/>
         <form className="topheader-form" >
          {/* <Link to="/AuthorizationFormPage" className="topheader-form__item"> */} 
