@@ -1,5 +1,7 @@
 // import { Link } from "react-router-dom";
 
+import "./Breadcrumbs.scss"
+
 
 function handleClick(event) {
   event.preventDefault();

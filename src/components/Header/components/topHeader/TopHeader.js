@@ -12,9 +12,9 @@ const TopHeader = () => {
       <div className="topheader container">
         <Breadcrumbs/>
         <form className="topheader-form" >
-        <FaRegUser />
-        {/* <Link to="/AuthorizationFormPage" className="topheader-form__item"> */}
-        Логін/Регістрація
+         {/* <Link to="/AuthorizationFormPage" className="topheader-form__item"> */} 
+        <FaRegUser className="topheader-form__icon" color="curent-color" />        
+        <p className="topheader-form__text" >Логін/Регістрація</p>       
         {/* </Link> */}
         </form>
 

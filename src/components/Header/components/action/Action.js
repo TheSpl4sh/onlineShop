@@ -1,18 +1,17 @@
-// import { CiSearch, CiHeart, CiShoppingBasket } from "react-icons/ci";
+
 import { BsSearch, BsHeart, BsBasket3 } from "react-icons/bs";
-
-
-
-
+import { FaRegUser } from "react-icons/fa";
 
 import "./Action.scss"
 
 const Action = () => {
 	return ( 
 		<div className="header-icon">
+			<div className="header-icon__item">
+			<FaRegUser className="header-form__icon" color="curent-color" />
+			</div>
             <div className="header-icon__item">				
-				<BsSearch />
-								
+				<BsSearch />								
 			</div>
             <div className="header-icon__item">
 			{/* <Link to="/FavoritePage">
