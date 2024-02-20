@@ -1,0 +1,185 @@
+@import '../../styles/variables.scss';
+@import '../../styles/deafults.scss';
+@import '../../styles/fonts.scss';
+@import '../../styles/mixins.scss';
+
+.footer {
+    background-color: $light-black;
+    padding-top: 20px;
+
+    @media (min-width: $bp-md) {
+        padding-top: 20px;
+    }
+
+        @media (min-width: $bp-lg) {
+            padding-top: 35px;
+        }
+}
+
+.footer-websites {
+    @include flex (space-between);
+    padding-bottom: 60px;
+
+    @media (min-width: $bp-md) {
+        @include flex (space-between, flex-start, column);
+        padding-bottom: 40px;
+        height: 183px;
+    }
+}
+
+.footer-logo {
+    max-width: 147px;
+    @include flex (flex-start, flex-start, row);
+
+    @media (min-width: $bp-md) {
+        padding-top: 15px;
+    }
+}
+
+.footer-logo-text {
+    position: relative;
+    height: 32px;
+}
+
+.footer-logo-store {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.footer-socials {
+    @include flex (space-between);
+    gap: 3px;
+}
+
+.footer-socials-frame {
+    @include flex (center, center);
+    width: 39px;
+    height: 39px;
+    background-color: $footer-links-background;
+}
+
+.footer-shops-features {
+    padding-bottom: 20px;
+
+    p{
+        @include font (14px, 700, 2, $grey);
+        border-bottom: 1px solid $footer-border-color;
+
+        @media (min-width: $bp-md) {
+            border: none;
+        }
+    }
+}
+
+.footer-shops-list {
+    list-style: none;
+}
+
+.footer-shops-list li a {
+    @include font (14px, 400, 3, $background-primary-color);
+
+    @media (min-width: $bp-md) {
+        @include font (15px, 400, 2, $background-primary-color);
+    }
+
+}
+
+.footer-subscribe {
+    @include flex (space-between, center, column);
+
+    @media (min-width: $bp-md) {
+        padding: 40px 0 40px 0;
+        @include flex (space-between, flex-start, row);
+    }
+
+        @media (min-width: $bp-lg) {
+            @include flex (space-between, flex-start, column);
+            padding: 0;
+        }
+}
+
+.footer-subscribe-text {
+    @include font (14px, 700, 1, $grey);
+    padding-top: 5px;
+
+    @media (min-width: $bp-md) {
+            @include flex (flex-start, flex-start, column);
+        }
+    
+
+    :last-child {
+        @include font (15px, 400, 3, $background-primary-color);
+        @media (min-width: $bp-md) {
+            @include font (15px, 400, 2, $background-primary-color);
+            text-align: start;
+        }
+        @media (min-width: $bp-lg) {
+            padding: 5px 0 10px 0;
+        }
+    }
+}      
+
+.footer-agree-policy {
+    @include font (13px, 400, 2, $light-grey);
+    padding: 10px 0 15px 0;
+
+    @media (min-width: $bp-md) {
+        padding: 0;
+        width: 138px;
+        line-height: 1.2;
+    }
+
+    @media (min-width: $bp-lg) {
+        width: 100%;
+        padding-top: 15px;
+    }
+
+    a {
+        @include font (13px, 400, 2, $light-grey);
+        text-decoration: underline;
+        padding-left: 2px;
+
+        @media (min-width: $bp-md) {
+            line-height: 1.2;
+        }
+    }
+}
+
+.footer-about-shop {
+    padding: 15px 0 15px 0;
+    border-top: 1px solid $footer-border-color;
+
+    @media (min-width: $bp-md) {
+        @include flex (space-around, center, row);
+    }
+
+    p {
+        @include font (13px, 400, 1.5, $beige);
+        padding-bottom: 10px;
+    }
+
+    a {
+        @include font (13px, 400, 1.5, $beige);
+        text-decoration: underline;
+    }
+}
+
+.footer-flexbox {
+    @media (min-width: $bp-md) {
+        @include flex (space-between, flex-start, row);
+        height: 183px;
+    }
+
+        @media (min-width: $bp-lg) {
+            gap: 150px;
+        }
+}
+
+.footer-large-flexbox {
+    @media (min-width: $bp-lg) {
+        @include flex (space-between, flex-start, row);
+    }
+}
+
+
