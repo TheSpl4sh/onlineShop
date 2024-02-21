@@ -1,0 +1,14 @@
+.SliderCircle {
+  width: 98px;
+  height: 98px;
+  background-color: #ffffff;
+  align-items: center;
+  border: 1px solid #e2e2e2;
+  border-radius: 100%;
+  padding: 0px 40px;
+  cursor: pointer;
+}
+
+.SliderCircle:hover {
+  background-color: #e2e2e2;
+}

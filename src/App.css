@@ -1,3 +1,9 @@
+@import "./components/Button/ButtonOrang/ButtonOrang.scss";
+@import "./components/Button/ButtonBlackArrow/ButtonBlackArrow.scss";
+@import "./components/Button/ButtonBlackBasket/ButtonBlackBasket.scss";
+@import "./components/Button/ButtonResponse/White/ButtonResponseWhite.scss";
+@import "./components/Button/SliderCircle/SliderCircle.scss";
+
 * {
   margin: 0;
   padding: 0;
@@ -5,5 +11,7 @@
   box-sizing: border-box;
 }
 
-
+ul{
+  list-style: none;
+}
 
