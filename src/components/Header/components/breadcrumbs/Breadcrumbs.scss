@@ -1,0 +1,23 @@
+// @import '../../../../styles/fonts.scss';
+// @import '../../../../styles/mixins.scss';
+@import '../../../../styles/variables.scss';
+// @import '../../../../styles/deafults.scss';
+
+.menu {
+  &-list {
+    display: flex;
+    list-style: none;
+    padding: 15px 0 5px 0;
+
+    &__item {
+      margin-right: 40px;
+      padding-bottom: 10px;
+      cursor: pointer;
+    }
+
+    &__item:hover {
+      color: $dark-orange;
+      border-bottom: solid 1px $dark-orange;
+    }
+  }
+}
