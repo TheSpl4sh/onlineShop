@@ -8,6 +8,7 @@ import colorRed from './images/color-red.png'
 import colorGrey from './images/color-grey.png'
 import colorDgrey from './images/color-Dgrey.png'
 import cart from './images/cart.png'
+import '../../reset.scss'
 
 
 function DiscountCard() {
@@ -47,10 +48,10 @@ function DiscountCard() {
                 <h2 className="dicsount-card__price-original">
                     4805₴
                 </h2>
-                <img src={cart} />
+                <img src={cart} alt="cart" />
             </div>
         </div>
-        <img className="dicsount-card__favorite" src={favorite}/>
+        <img className="dicsount-card__favorite" src={favorite} alt="favorite"/>
         </div>
     )
 }
