@@ -1,3 +1,29 @@
+.dicsount-card {
+    position: relative;
+    .discount-card-chips {
+        position: absolute;
+        display: flex;
+        gap: 10px;
+        top: 20px;
+        left: 20px;
+    }
+    .dicsount-card-heart-icon {
+        width: 23px;
+        height: 20px;
+    }
+    .chips-discount-card {
+        background-color: #FF6915;
+        width: 49px;
+        height: 32px;
+        color: #fff;
+        font-size: 11px;
+        font-weight: 500;
+        line-height: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
 @media screen  and (min-width: 1920px) {
     .dicsount-card {
         margin: 0 auto;
@@ -50,15 +76,16 @@
                 text-decoration: line-through;
                 color: #999999;
             }
-           img {
+            .dicsount-card__cart {
+                margin-left: 172px;
+           }
+           
+           .dicsount-card__cart-icon {
             width: 22px;
             height: 24px;
-            margin-left: 172px;
            }
         }
         .dicsount-card__favorite {
-            width: 23px;
-            height: 20px;
             margin-top: 20px;
             margin-right: 20px;
            }
@@ -121,15 +148,15 @@
                 text-decoration: line-through;
                 color: #999999;
             }
-           img {
+            .dicsount-card__cart {
+            margin-left: 165px;
+           }
+           .dicsount-card__cart-icon {
             width: 22px;
             height: 24px;
-            margin-left: 165px;
            }
         }
         .dicsount-card__favorite {
-            width: 23px;
-            height: 20px;
             margin-top: 20px;
             margin-right: 20px;
            }
@@ -192,21 +219,22 @@
                 text-decoration: line-through;
                 color: #999999;
             }
-           img {
-            width: 22px;
-            height: 24px;
+            .dicsount-card__cart {
             margin-left: 81px;
            }
+           .dicsount-card__cart-icon {
+            width: 22px;
+            height: 24px;
+           }
+           
         }
         .dicsount-card__favorite {
             display: none;
            }
            .dicsount-card__favorite-md {
-            width: 23px;
-            height: 20px;
            position: relative;
-           left: 140px;
-           top: -245px;
+           left: 200px;
+           top: -267px;
            }
     }
 }

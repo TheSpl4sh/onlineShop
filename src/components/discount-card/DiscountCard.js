@@ -1,13 +1,12 @@
 import React from "react";
+import {BsHeart, BsBasket3 } from "react-icons/bs";
 import './discount-card.scss'
 import cardImg from './images/card-img.png'
 import  cardImgLg from './images/card-ing-bp-lg.png'
 import cardImgMd from './images/card-img-bp-md.png'
-import favorite from './images/favorite.png'
 import colorRed from './images/color-red.png'
 import colorGrey from './images/color-grey.png'
 import colorDgrey from './images/color-Dgrey.png'
-import cart from './images/cart.png'
 import '../../reset.scss'
 
 
@@ -15,17 +14,22 @@ function DiscountCard() {
     return (
         <div className="dicsount-card">
        <picture>
-            <source srcSet={ cardImgLg } media="(min-width: 768px) and (max-width: 1919px)" />
-            <source srcSet={ cardImgMd} media="(max-width: 767px)" />
-            <img src={cardImg} alt="img" />
+            <source srcSet={ cardImgLg } media="(min-width: 768px) and (max-width: 1919px)"  draggable="false" />
+            <source srcSet={ cardImgMd} media="(max-width: 767px)" draggable="false"  />
+            <img src={cardImg} alt="img" draggable="false" />
         </picture>
+        <div className="discount-card-chips">
+            <div className="chips-discount-card">20%</div>
+        </div>
         <div className="dicsount-card__description">
             <span className="dicsount-card__gender">
                 Жіночі
             </span>
             <h1  className="dicsount-card__name">
                  Nike Air VaporMax 2023 Flyknit
-                 <img className="dicsount-card__favorite-md" src={favorite} alt="favorite"/>
+                 <div className="dicsount-card__favorite-md">
+				<BsHeart className="dicsount-card-heart-icon" />
+                </div>
             </h1>
             <ul>
                 <li>
@@ -48,10 +52,14 @@ function DiscountCard() {
                 <h2 className="dicsount-card__price-original">
                     4805₴
                 </h2>
-                <img src={cart} alt="cart" />
+                <div className="dicsount-card__cart">		
+				    <BsBasket3 className="dicsount-card__cart-icon"/>
+				</div>
             </div>
         </div>
-        <img className="dicsount-card__favorite" src={favorite} alt="favorite"/>
+        <div className="dicsount-card__favorite">
+				<BsHeart className="dicsount-card-heart-icon"/>
+        </div>
         </div>
     )
 }
