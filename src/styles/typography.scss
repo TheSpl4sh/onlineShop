@@ -1,7 +1,21 @@
+@import "./mixins.scss";
+@import "./variables.scss";
+@import "./fonts.scss";
+
+
 /* h1 {
-    font-size: 57px;
-    font-weight: 400;
-    text-transform: uppercase;
-    text-align: center;
-    color: $text-color-primary;
+    застолбил под заголовки типо "последнее поступление"
 } */
+
+/* h2 {
+    тут еще какая-то шелуха 
+} */
+
+h3 {
+    font-family: 'Pragmatica', sans-serif;
+    @include font(15px, 500, 26px, $dark-black);
+
+    @media (min-width: $bp-lg) {
+        @include font(18px, 500, 26px, $dark-black);
+    }
+}
