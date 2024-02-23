@@ -3,6 +3,7 @@ import './App.css';
 import './reset.scss'
 import DiscountCard from './components/discount-card/DiscountCard'
 import Footer from './components/Footer/Footer';
+import MainPage from "./Pages/MainPage/MainPage";
 
 
 
@@ -11,7 +12,7 @@ function App() {
     <div className="App">
       <DiscountCard/>
       <Header />
-      <h1>TEST TEXT</h1>
+      <MainPage />
       <Footer />
     </div>
   );
