@@ -1,6 +1,7 @@
 import React from "react";
 import "./EmptyCart.scss";
 import LinkButton from "../LinkButton/LinkButton";
+import { ReactComponent as OrangeSvg } from "../LinkButton/icons/orange_btn_svg.svg";
 
 const EmptyCart = () => {
     return (
@@ -37,7 +38,12 @@ const EmptyCart = () => {
                     <strong>"Каталог"</strong> ви знайдете багато цікавих
                     варіантів.
                 </p>
-                <LinkButton />
+
+                <LinkButton
+                    text="Перейти до каталогу"
+                    SvgIcon={OrangeSvg}
+                    className="orange"
+                />
             </div>
         </div>
     );

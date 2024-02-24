@@ -5,11 +5,11 @@
 
 .empty-cart {
     @include flex (center, center, column);
-    margin: 57px auto 80px;
+    margin: 66px auto 80px;
     max-width: 474px;
 
     @media (min-width: $bp-md) {
-        margin: 118px auto;
+        margin: 120px auto;
         max-width: 786px;
     }
 

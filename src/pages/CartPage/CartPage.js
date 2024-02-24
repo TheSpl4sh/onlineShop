@@ -14,6 +14,7 @@ const CartPage = () => {
                 ]}
             />
             <h1 className="cart-page-heading">Кошик</h1>
+            {/*В залежності від наявності товарів в кошику,буде відображатись відповідний компонент*/}
             <CartWithProducts />
             <EmptyCart />
         </div>
