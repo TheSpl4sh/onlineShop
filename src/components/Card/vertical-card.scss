@@ -133,6 +133,7 @@
 
 .vertical-card__price-block {
     position: relative;
+    height: fit-content;
     margin-top: 8px;
     @include flex(flex-start, flex-start, column);
 
@@ -168,7 +169,6 @@
 
     &::after {
         content: url("./images/cart-logo.svg");
-        display: inline-block;
         position: absolute;
         width: 22px;
         height: 24px;
