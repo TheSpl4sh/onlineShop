@@ -19,3 +19,12 @@ h3 {
         @include font(18px, 500, 26px, $dark-black);
     }
 }
+
+h4 {
+    font-family: 'Pragmatica', sans-serif;
+    @include font(16px, 400, 22px, $dark-black);
+
+    @media (min-width: $bp-lg) {
+        @include font(19px, 500, 26px, $dark-black);
+    }
+}
