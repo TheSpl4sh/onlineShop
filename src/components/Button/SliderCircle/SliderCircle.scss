@@ -1,4 +1,4 @@
-.SliderCircle {
+.SliderCircleLeft {
   width: 98px;
   height: 98px;
   background-color: #ffffff;
@@ -9,6 +9,22 @@
   cursor: pointer;
 }
 
-.SliderCircle:hover {
+.SliderCircleLeft:hover {
+  background-color: #e2e2e2;
+}
+
+.SliderCircleRight {
+  width: 98px;
+  height: 98px;
+  background-color: #ffffff;
+  align-items: center;
+  border: 1px solid #e2e2e2;
+  border-radius: 100%;
+  padding: 0px 40px;
+  margin-left: 14px;
+  cursor: pointer;
+}
+
+.SliderCircleRight:hover {
   background-color: #e2e2e2;
 }

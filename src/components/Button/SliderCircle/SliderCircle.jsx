@@ -4,15 +4,15 @@ import ArrowRight from "../SliderCircle/img/ArrowRight.svg";
 
 function SliderCircle() {
   return (
-    <div>
-      <button className="SliderCircle">
+    <div className="SliderCircle">
+      <button className="SliderCircleLeft">
         <ul className="buttonComponents">
           <li className="SliderCircle-icons">
             <img src={ArrowLeft} alt="ArrowLeft" />
           </li>
         </ul>
       </button>
-      <button className="SliderCircle">
+      <button className="SliderCircleRight">
         <ul className="buttonComponents">
           <li className="SliderCircle-icons">
             <img src={ArrowRight} alt="ArrowRight" />
