@@ -3,9 +3,14 @@
 @import "./fonts.scss";
 
 
-/* h1 {
-    застолбил под заголовки типо "последнее поступление"
-} */
+h1 {
+    font-family: 'Pragmatica', sans-serif;
+    @include font(24px, 500, 32px, $c: $dark-black);
+
+    @media (min-width: $bp-lg) {
+        @include font(39px, 500, 50px, $dark-black);
+    }
+}
 
 /* h2 {
     тут еще какая-то шелуха 

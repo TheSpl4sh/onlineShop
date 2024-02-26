@@ -14,14 +14,15 @@ a {
 
 .container {
     margin: 0 auto;
-    max-width: 1920px;
     padding: 0px 15px;
 
     @media (min-width: $bp-md) {
         padding: 0px 25px;
+        max-width: 768px;
     }
 
     @media (min-width: $bp-lg) {
         padding: 0px 280px;
+        max-width: 1920px;
     }
 }
