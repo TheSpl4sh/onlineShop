@@ -4,7 +4,7 @@ import { BsArrowRight } from "react-icons/bs";
 function ButtonBlackArrow(props) {
   const { text } = props
   return (
-    <div>
+    <div className="wrapper-ButtonBlackArrow">
       <button className="ButtonBlackArrow">
         <ul className="buttonComponents">
           <li className="buttonBlackArrow-text">{text}</li>
