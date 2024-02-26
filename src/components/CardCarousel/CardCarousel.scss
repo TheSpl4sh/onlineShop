@@ -1,0 +1,10 @@
+@import '../../styles/variables.scss';
+@import '../../styles/deafults.scss';
+@import '../../styles/fonts.scss';
+@import '../../styles/mixins.scss';
+
+.divider {
+  border-top: 1px solid #ECECEC;
+  width: 100vw;
+  padding: 60px 0;
+}
