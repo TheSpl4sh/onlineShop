@@ -71,6 +71,8 @@
     }
 }
 
+/* ARRIVALS-SECTION-------------------------------- */
+
 .arrivals-section {
     padding: 40px 0px 70px 0px;
 
@@ -162,7 +164,44 @@
             display: none;
           }
     }
+
     @media (min-width: $bp-lg) {
         margin-top: 60px;
     }
+}
+
+/* HIT SECTION -----------------------------------*/
+
+.hit-section {
+    background-color: $light-black;
+    padding: 35px 35px 38px 35px;
+
+    @media (min-width: $bp-lg) {
+        padding: 110px 70px;
+    }
+    
+}
+
+.hit-section__top-container {
+    max-width: 221px;
+
+    @media (min-width: $bp-lg) {
+        max-width: 478px;
+    }
+}
+
+.hr {
+    display: inline-block;
+    width: 48px; 
+    height: 2px; 
+    background-color: $background-primary-color; 
+    vertical-align: middle;
+
+    @media (min-width: $bp-lg) {
+        width: 90px;
+    }
+}
+
+.hit-section__product-name {
+    
 }

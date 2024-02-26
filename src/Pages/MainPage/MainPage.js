@@ -1,5 +1,6 @@
 import React from 'react'
 import Card from "../../components/Card/Card"
+import ButtonOrangArrow from '../../components/Button/ButtonOrang/ButtonOrang'
 import "./MainPage.scss"
 import ShieldImg from "./img/benfits_section/shield.svg"
 import StarsImg from "./img/benfits_section/stars.svg"
@@ -74,13 +75,20 @@ const MainPage = () => {
 
           <section className='hit-section'>
             <article className='hit-section__top-container'>
-              <h1>ХІТ СЕЗОНУ ВІД NIKE</h1>
-
-              <span>Nike Air Max Alpha Trainer 5</span>
-              <span></span>
+              <h2>ХІТ СЕЗОНУ ВІД NIKE <span className="hr"></span></h2>
+              
+              <span className='hit-section__product-name'>Nike Air Max Alpha Trainer 5</span>
+              
+              <div className='hit-section__span-box'>
+                <span className="span-box__from-text">від</span>
+                <span className="span-box__price">7 899 ₴</span>
+              </div>
+              <ButtonOrangArrow text={"Детальніше"}/>
             </article>
 
             <article className='hit-section__bottom-container'>
+              <img className='hit-section__plus-img'></img>
+              
             </article>
             
           </section>

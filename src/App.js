@@ -11,6 +11,7 @@ import MainPage from './Pages/MainPage/MainPage'
 function App() {
   return (
     <div className="App">
+      
       <Header />
       <MainPage />
       <Footer />   
