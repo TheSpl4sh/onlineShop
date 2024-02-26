@@ -9,7 +9,7 @@
 * {
   margin: 0;
   padding: 0;
-  text-align: center;
+  /* text-align: center; */
   box-sizing: border-box;
 }
 
@@ -39,6 +39,8 @@ a {
       padding: 0px 280px;
   }
 }
+
+
 
 
 ul{

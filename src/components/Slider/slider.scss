@@ -1,0 +1,28 @@
+@import "../../styles/deafults.scss";
+@import "../../styles/typography.scss";
+@import "../../styles/mixins.scss";
+
+
+.slider-component {
+    display: none;
+
+    @media (min-width: $bp-lg) {
+        position: relative;
+
+        @include flex(center, flex-start, row);
+        gap: 9px;
+        bottom: 20px;
+    }
+    
+}
+
+.slider-component__button {
+    width: 39px;
+    height: 3px;
+    background-color: $slider-not-selected;
+    border: none;
+
+    &--active {
+        background-color: $slider-selected;
+    }
+}
