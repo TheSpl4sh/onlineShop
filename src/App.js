@@ -14,7 +14,11 @@ import Banner from "../src/components/Banner/Banner";
 function App() {
   return (
     <div className="App">
+      
       <Header />
+      <ButtonBlackArrow text="MORE DETAIL" />
+      <ButtonBlackBasket text="ADD TO BASKET" />
+      <ButtonOrangArrow text="MORE DETAIL" />
       <Banner />
       <Card />
       <Footer />
