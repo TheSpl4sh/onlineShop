@@ -70,7 +70,19 @@ const MainPage = () => {
               <Card />
               <Card />
             </article>
+          </section>
 
+          <section className='hit-section'>
+            <article className='hit-section__top-container'>
+              <h1>ХІТ СЕЗОНУ ВІД NIKE</h1>
+
+              <span>Nike Air Max Alpha Trainer 5</span>
+              <span></span>
+            </article>
+
+            <article className='hit-section__bottom-container'>
+            </article>
+            
           </section>
       </div>
 

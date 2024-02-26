@@ -12,9 +12,14 @@ h1 {
     }
 }
 
-/* h2 {
-    тут еще какая-то шелуха 
-} */
+h2 {
+    font-family: 'Pragmatica', sans-serif;
+    @include font(34px, 500, 41px, $text-color-white);
+
+    @media (min-width: $bp-lg) {
+        @include font(62px, 500, 74px, $text-color-white);
+    }
+}
 
 h3 {
     font-family: 'Pragmatica', sans-serif;
