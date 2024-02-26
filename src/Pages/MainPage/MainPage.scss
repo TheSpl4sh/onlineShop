@@ -86,14 +86,28 @@
 .arrivals-section__title-container {
     @include flex (space-between, center, row);
 
-    
+    &--margin-top {
+        margin-top: 84px;
+    }
+
+    @media (min-width: $bp-md) {
+        &--margin-top {
+            margin-top: 70px;
+        }
+    }
 
     @media (min-width: $bp-lg) {
+        &--margin-top {
+            margin-top: 115px;
+        }
+
         &__title {
             max-width: 305px;
         }
     }
 }
+
+
 
 .arrivals-section__title {
     max-width: 188px;

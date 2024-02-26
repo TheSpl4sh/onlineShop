@@ -55,7 +55,21 @@ const MainPage = () => {
               <Card />
             </article>
 
+            <article className='arrivals-section__title-container arrivals-section__title-container--margin-top'>
+              <h1 className='arrivals-section__title'>НАЙПОПУЛЯРНІШІ</h1>
+              
+              <div className='arrivals-section__arrow-container'>
+                <button className='arrivals-section__arrow-button arrivals-section__arrow-button--active'></button>
+                <button className='arrivals-section__arrow-button arrivals-section__arrow-button--nonactive'></button>
+              </div>
+            </article >
 
+            <article className='arrivals-section__products-container'>
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+            </article>
 
           </section>
       </div>
