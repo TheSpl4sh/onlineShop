@@ -1,35 +1,16 @@
+@import "../../../../styles/variables.scss";
+
 .topheader {
-	display: flex;
-	justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 
-	
-} 
-.menu 
+  &-form {
+    display: flex;
+    cursor: pointer;
+    padding: 15px 0 15px 0;
 
-.menu-list {
-	display: flex;
-	list-style: none;
-	padding: 15px 0 5px 0;
-	// gap: 40px
-
-	&__item {
-		margin-right: 40px;
-		padding-bottom: 10px;
-	cursor: pointer;		
-	}
-	&__item:hover{
-		color: #FB5A00;
-		border-bottom: solid 1px #FB5A00;
-	}
+    &__text:hover {
+      color: $dark-orange;
+    }
+  }
 }
-
-.topheader-form {
-	// display: flex;
-	cursor: pointer;
-	padding: 15px 0 15px 0;
-}
-
-.topheader-form:hover{
-	color: #FB5A00;
-}
-

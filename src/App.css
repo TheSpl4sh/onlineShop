@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  text-align: center;
+  /* text-align: center; */
   box-sizing: border-box;
 }
 
@@ -29,11 +29,5 @@ a {
   @media (min-width: $bp-lg) {
       padding: 0px 280px;
   }
-  /* @media (min-width: 768px) {
-    padding: 0px 25px;
-  }
-
-  @media (min-width: 1420px) {
-    padding: 0px 280px;
-  } */
+  
 }

@@ -8,19 +8,21 @@ const NavHeader = () => {
 
   return (
     <>
-    <div>      
-    </div>
     <nav className="navheader">
       <ul className="navheader-list">
         <li className="navheader-list__item">
-        <hr className="gray-line1"></hr>
+        <hr className="gray-line1 "></hr>
         <hr className="gray-line2"></hr>
         </li>
-        
+        <li className="navheader-list__item">
+          {/* <Link to="AllProductPage" className="navheader-list__item"> */}
+          <i>Меню</i>		     
+          {/* </Link> */}
+        </li>
         
 
         <li className="navheader-list__item">
-          {/* <Link to="Catalog" className="navheader-list__item"> */}
+          {/* <Link to="AllProductPage" className="navheader-list__item"> */}
 		  Каталог   
           {/* </Link> */}
         </li>
@@ -112,3 +114,7 @@ export default NavHeader;
 //     </div>
 //   );
 // }
+
+
+// =================================================
+

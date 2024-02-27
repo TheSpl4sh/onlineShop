@@ -1,0 +1,66 @@
+@import "../../styles/deafults.scss";
+@import "../../styles/typography.scss";
+@import "../../styles/mixins.scss";
+
+
+.benefits-section {
+    @include flex(flex-start, flex-start, column);
+    gap: 25px;
+    padding: 30px 0px;
+    border-top: 1 solid $header-border-color;
+    border-bottom: 1 solid $header-border-color;
+
+    &__img-shield {
+        width: 36px;
+        margin: 2px 27px 0px 0px;
+
+    }
+
+    &__img-stars {
+        width: 40px;
+        height: 36px;
+        margin: 2px 23px 0px 0px;
+    }
+
+    &__img-cart {
+        width: 34px;
+        height: 36;
+        margin: 2px 29px 0px 0px;
+    }
+
+    @media (min-width: $bp-md) {
+        @include flex(center, flex-start, row);
+        gap: 7px;
+        padding: 50px 0px;
+    }
+
+    @media (min-width: $bp-lg) {
+        @include flex(center, flex-start, row);
+        gap: 62px;
+        padding: 50px 0px;
+    }
+}
+
+.benefits-section__original{
+    @include flex(flex-start, flex-start, row);
+}
+
+.benefits-section__original-title {
+    width: fit-content;
+    max-width: 267px;
+    text-align: left;
+}
+
+.benefits-section__original-paragraph {
+    font-family: 'Pragmatica', sans-serif;
+    @include font(14px, 400, 21px, #4B4B4B);
+
+    margin-top: 8px;
+    width: fit-content;
+    max-width: 267px;
+    text-align: left;
+
+    @media (min-width: $bp-lg) {
+        @include font(15px, 400, 25px, #4B4B4B);
+    }
+}
