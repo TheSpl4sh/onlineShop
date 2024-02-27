@@ -1,0 +1,48 @@
+@import '../../styles/variables.scss';
+@import '../../styles/deafults.scss';
+@import '../../styles/fonts.scss';
+@import '../../styles/mixins.scss';
+
+
+.subscribe-form {
+    position: relative;
+    width: 307px;
+    height: 47px;
+    @include flex (center, center, row);
+    border: 1px solid $footer-border-color;
+
+    &::after {
+            content: "";
+            display: block;
+            width: 1px;
+            height: 28px;
+            background-color: $footer-border-color;
+            right: 100px;
+            position: absolute;
+        }
+}
+
+.subscribe-input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    text-align: start;
+    padding-left: 15px;
+
+    &::placeholder {
+        @include font(15px, 400, 1, $background-primary-color);
+    }
+
+}
+
+.subscribe-button {
+    position: relative;
+    height: 100%;
+    width: 150px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    @include font (13px, 500, 1, $light-orange);
+}
+
+
