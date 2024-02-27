@@ -1,0 +1,40 @@
+.ButtonBlackArrow {
+  border: none;
+}
+
+.buttonComponents {
+  display: flex;
+}
+
+.buttonBlackArrow-text {
+  min-width: 128px;
+  height: 65px;
+  font-family: Pragmatica;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding: 23px 45px;
+  color: #ffffff;
+  background-color: #1e1e1e;
+
+  cursor: pointer;
+}
+
+.buttonBlackArrow-icons {
+  width: 65px;
+  height: 65px;
+  padding: 23px 0px;
+  color: #ffffff;
+  background-color: #000000;
+  cursor: pointer;
+}
+
+.buttonBlackArrow-text:hover {
+  background-color: #000000;
+}
+
+.buttonBlackArrow-icons:hover {
+  background-color: #1e1e1e;
+}
