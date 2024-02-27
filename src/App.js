@@ -1,4 +1,3 @@
-import Card from './components/Card/Card';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
@@ -11,9 +10,9 @@ import './reset.scss';
 function App() {
   return (
     <div className="App">
-      <Header />
+      <Header/>
       <CardPage/>
-      <Footer />   
+       <Footer/>
     </div>
   );
 }

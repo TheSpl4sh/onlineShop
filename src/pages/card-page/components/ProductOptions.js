@@ -13,8 +13,8 @@ const ProductOptions = () => {
         <h1 className={activeTab === 'reviews' ? 'active' : ''} onClick={() => setActiveTab('reviews')}>Відгуки</h1>
       </div>
       {activeTab === 'description' && (
-        <div Style='margin-top: 35px'>
-            <p Style='font-size: 17px; line-height: 28px;  color: #4B4B4B;' >
+        <div style={{marginTop: '35px'}}>
+            <p style={{fontSize: '17px', lineHeight: '28px', color: '#4B4B4B'}}>
                 Кросівки Nike Air VaporMax 2023 Flyknit з підтримуючою амортизацією, створеною для плавного бігу, є абсолютно новим поглядом на знайому колекцію.
                 <br/>
                 Модель VaporMax названа на честь команди "Portland Trail Blazers". Вперше модель з'явилася на майданчиках 1972 року. Зараз це вже класика lifestyle від Nike. 
@@ -32,15 +32,15 @@ const ProductOptions = () => {
         </div>
       )}
       {activeTab === 'characteristics' && (
-        <div Style='margin-top: 35px'>
-          <p Style='font-size: 17px; line-height: 28px; color: #4B4B4B;' >
+        <div style={{marginTop: '35px'}}>
+          <p style={{fontSize: '17px', lineHeight: '28px', color: '#4B4B4B'}}>
                 Кольори ............................................................... Червоний, Сірий, Чорний <br/>
                 Матеріал .................................................................................. Дерматин, Замш
           </p>
         </div>
       )}
       {activeTab === 'reviews' && (
-        <div Style='margin-top: 35px'>
+        <div style={{marginTop: '35px'}}>
             <p>
                 Поки що відгуків нема
             </p> 

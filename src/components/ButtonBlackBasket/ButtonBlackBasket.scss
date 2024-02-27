@@ -16,6 +16,17 @@
       cursor: pointer;
     }
   }  
+  @media screen and (max-width: 767px) {
+    .buttonBlackBasket-text {
+      width: 266px;
+      height: 65px;
+      padding: 23px 25px;
+      color: #ffffff;
+      background-color: #1e1e1e;
+      
+      cursor: pointer;
+    }
+  }  
 @media screen and (min-width: 1421px) {
   .buttonBlackBasket-text {
     width: 210px;
