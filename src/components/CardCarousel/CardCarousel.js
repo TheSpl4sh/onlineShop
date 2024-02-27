@@ -3,22 +3,19 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../CardCarousel/CardCarousel.scss";
-import { ReactComponent as ArrowRight } from "../CardCarousel/icons/Arrow_right.svg";
-import { ReactComponent as ArrowLeft } from "../CardCarousel/icons/Arrow_left.svg";
-import image1 from "./images/Rectangle3.jpg";
-import image2 from "./images/Rectangle4.jpg";
-import image3 from "./images/Rectangle5.jpg";
+import Card from "../Card/Card";
+import { ReactComponent as Arrow } from "../CardCarousel/icons/Arrow_left.svg";
 
 const CatalogSlider = ({ heading }) => {
     const NextArrow = ({ onClick }) => (
         <div className="arrow-next" onClick={onClick}>
-            <ArrowRight />
+            <Arrow />
         </div>
     );
 
     const PrevArrow = ({ onClick }) => (
         <div className="arrow-prev" onClick={onClick}>
-            <ArrowLeft />
+            <Arrow />
         </div>
     );
 
@@ -33,30 +30,39 @@ const CatalogSlider = ({ heading }) => {
     };
 
     return (
-        <div>
-            <div className="divider"></div>
-            <h2>{heading}</h2>
-            <Slider {...settings}>
-                <div className="card-item-img">
-                    <img src={image1} alt="Card 1" />
+        <section className="slider-section">
+            <div className="slider-section__divider"></div>
+            <h2 className="slider-section__heading">{heading}</h2>
+            <Slider {...settings} className="slider-section__wrap">
+                <div className="slider-section__wrap-item">
+                    <Card />
                 </div>
-                <div>
-                    <img src={image2} alt="Card 2" />
+                <div className="slider-section__wrap-item">
+                    <Card />
                 </div>
-                <div>
-                    <img src={image3} alt="Card 3" />
+                <div className="slider-section__wrap-item">
+                    <Card />
                 </div>
-                <div>
-                    <img src={image2} alt="Card 1" />
+                <div className="slider-section__wrap-item">
+                    <Card />
                 </div>
-                <div>
-                    <img src={image1} alt="Card 2" />
+                <div className="slider-section__wrap-item">
+                    <Card />
                 </div>
-                <div>
-                    <img src={image3} alt="Card 3" />
+                <div className="slider-section__wrap-item">
+                    <Card />
+                </div>
+                <div className="slider-section__wrap-item">
+                    <Card />
+                </div>
+                <div className="slider-section__wrap-item">
+                    <Card />
+                </div>
+                <div className="slider-section__wrap-item">
+                    <Card />
                 </div>
             </Slider>
-        </div>
+        </section>
     );
 };
 

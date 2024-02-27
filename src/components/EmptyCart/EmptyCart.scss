@@ -7,6 +7,7 @@
     @include flex (center, center, column);
     margin: 66px auto 80px;
     max-width: 474px;
+    text-align: center;
 
     @media (min-width: $bp-md) {
         margin: 120px auto;

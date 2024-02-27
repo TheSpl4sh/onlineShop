@@ -7,7 +7,7 @@ import sneakerLarge from './images/sneaker-large-img.png';
 
 function Card() {
     return (
-        <div className="container">
+        <div> {/* Прибрав className="container" - ЮРА */}
             <section className="vertical-card">
                 <article className="vertical-card__img-container">
                     <a href="#top">
