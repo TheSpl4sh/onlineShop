@@ -8,15 +8,15 @@
 @import "./Pages/PlacingOrder/PlacingOrder.scss";
 
 
-* {
+/* * {
   margin: 0;
   padding: 0;
-  /* text-align: center; */
+  text-align: center;
   box-sizing: border-box;
 }
 
 * {
-  /* text-align: center; */
+  text-align: center;
   box-sizing: border-box;
 }
 
@@ -49,13 +49,12 @@ a {
 
 
 body {
-  font-family: 'Gilroy', sans-serif;
+  font-family: "Gilroy", sans-serif;
 }
 
 a {
   text-decoration: none;
 }
-
 
 .container {
   margin: 0 auto;
@@ -69,13 +68,6 @@ a {
   @media (min-width: $bp-lg) {
       padding: 0px 280px;
   }
-}
-
-
-
-
-
-ul{
-  list-style: none;
-}
+  
+} */
 
