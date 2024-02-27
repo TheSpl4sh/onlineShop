@@ -10,13 +10,12 @@
 }
 
 body {
-  font-family: 'Gilroy', sans-serif;
+  font-family: "Gilroy", sans-serif;
 }
 
 a {
   text-decoration: none;
 }
-
 
 .container {
   margin: 0 auto;
@@ -30,8 +29,5 @@ a {
   @media (min-width: $bp-lg) {
       padding: 0px 280px;
   }
+  
 }
-
-
-
-
