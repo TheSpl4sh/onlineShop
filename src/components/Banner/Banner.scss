@@ -5,6 +5,7 @@
   background-blend-mode: multiply;
   display: grid;
   grid-template-columns: 1fr 1fr 0.1fr;
+  padding-bottom: 120px;
 }
 
 .bannerTitle {
@@ -33,7 +34,6 @@
 .bannerText {
   position: relative;
   top: 126px;
-  font-family: Pragmatica;
   font-weight: 300;
   font-size: 22px;
   color: #000000;
@@ -42,43 +42,42 @@
 
 .BannerPrice {
   position: relative;
-  top: 196px;
+  top: 146px;
   font-family: Pragmatica;
+  font-weight: 400;
   color: #000000;
   display: block;
   text-align: left;
 }
 
 .banner-from {
-  font-family: Pragmatica;
-  font-weight: 500;
   font-size: 16px;
 }
 
 .banner-price {
-  font-family: Pragmatica;
-  font-weight: 500;
   font-size: 22px;
 }
 
 .uah {
-  font-family: Pragmatica;
-  font-weight: 500;
   width: 18px;
 }
 
 .buttonBanner {
   position: relative;
-  top: 35%;
-  width: 100%;
+  top: 166px;
+  display: flex;
   text-align: left;
 }
 
 .sliderCircle {
   position: relative;
-  top: -100px;
+  top: 186px;
   display: flex;
   text-align: left;
+}
+
+.sneakerBanner {
+  width: 100%;
 }
 
 .banner-sliderTimer {
@@ -91,43 +90,37 @@
   display: none;
 }
 
-.banner-sliderTimer {
-  display: none;
+.circleTimer-box {
+  width: 100%;
+  height: 100%;
+  display: block;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1640px) {
-  .bannerTitle {
-    width: 400px;
-    font-size: 48px;
+  .banner {
+    padding-bottom: 100px;
   }
 
   .bannerText {
+    width: 545px;
     font-size: 15px;
   }
 
-  .sneakerBanner {
-    display: block;
-    width: 100%;
-  }
 
-  .banner-sliderTimer {
-    display: none;
-  }
-}
-
-.sliderCircle {
-  position: relative;
-  top: -100px;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1200px) {
   .banner {
     width: 100%;
+    padding-bottom: 150px;
   }
 
   .bannerTitle {
-    width: 300px;
-    top: 76px;
+    width: 350px;
+    top: 86px;
     font-size: 34px;
   }
 
@@ -142,12 +135,12 @@
   }
 
   .bannerText {
-    top: 96px;
+    top: 106px;
     font-size: 15px;
   }
 
   .BannerPrice {
-    top: 116px;
+    top: 126px;
   }
 
   .banner-from {
@@ -159,7 +152,14 @@
   }
 
   .buttonBanner {
-    top: 36%;
+    position: relative;
+    top: 136px;
+    display: flex;
+    text-align: left;
+  }
+
+  .sliderCircle {
+    top: 150px;
   }
 
   .sneakerBanner {
@@ -170,31 +170,12 @@
   .sneakerBanners {
     display: none;
   }
-
-  .banner-sliderTimers {
-    display: none;
-  }
-
-  .banner-sliderTimer {
-    display: flex;
-    width: 100%;
-    height: 100px;
-    justify-content: center;
-  }
-
-  .circleTimer-box {
-    display: flex;
-    align-items: center;
-  }
-
-  .sliderCircle {
-    display: none;
-  }
 }
 
-@media screen and (min-width: 480px) and (max-width: 768px) {
+@media screen and (min-width: 481px) and (max-width: 768px) {
   .banner {
     display: block;
+    padding-bottom: 120px;
   }
 
   .bannerTitle {
@@ -218,12 +199,13 @@
     margin-top: 18px;
   }
 
-  .BannerPrice {
+  .BannerPrice{
     position: relative;
     top: 0;
     display: flex;
     justify-content: center;
     align-items: baseline;
+    
   }
 
   .banner-from {
@@ -266,21 +248,12 @@
     display: flex;
     justify-content: center;
   }
-
-  .banner-sliderTimers {
-    width: 100%;
-    height: 100px;
-    align-items: center;
-  }
-
-  .banner-sliderTimer {
-    display: none;
-  }
 }
 
 @media screen and (min-width: 360px) and (max-width: 480px) {
   .banner {
     display: block;
+   padding-bottom: 80px;
   }
 
   .bannerTitle {
@@ -331,12 +304,7 @@
     display: flex;
     justify-content: center;
     align-items: baseline;
-  }
-
-  .wrapper-ButtonBlackArrow {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+    
   }
 
   .buttonBanner {
@@ -355,23 +323,12 @@
     display: flex;
     justify-content: center;
   }
-
-  .banner-sliderTimers {
-    width: 100%;
-    height: 100px;
-    align-items: center;
-  }
-
-  .banner-sliderTimer {
-    display: none;
-  }
 }
 
-@media screen and (max-width: 359px) {
+@media screen and (max-width: 360px) {
   .banner {
     display: block;
   }
-
   .bannerTitle {
     width: 300px;
     top: 38px;
@@ -387,6 +344,7 @@
     display: flex;
     justify-content: center;
     align-items: baseline;
+    
   }
 
   .sneakerBanners {
@@ -415,15 +373,5 @@
     top: 50px;
     display: flex;
     justify-content: center;
-  }
-
-  .banner-sliderTimers {
-    width: 100%;
-    height: 100px;
-    align-items: center;
-  }
-
-  .banner-sliderTimer {
-    display: none;
   }
 }
