@@ -15,6 +15,8 @@ function App() {
       <Header />
       <MainPage />
       <Footer />   
+
+
     </div>
   );
 }
