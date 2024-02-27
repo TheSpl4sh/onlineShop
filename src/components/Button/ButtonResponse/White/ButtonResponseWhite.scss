@@ -1,0 +1,16 @@
+.buttonResponseWhite {
+  border: 1px solid #1E1E1E ; 
+}
+
+.buttonResponseWhite-text {
+  min-width: 152px;
+  height: 48px;
+  background-color: #FFFFFF;
+  padding: 15px 20px;
+  cursor: pointer;
+}
+
+.buttonResponseWhite-text:hover {
+  background-color: #1E1E1E;
+  color: #FFFFFF;
+}
