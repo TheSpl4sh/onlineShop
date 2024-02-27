@@ -1,0 +1,13 @@
+@mixin flex ($jc: flex-start, $ai: flex-start, $fd: row) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-direction: $fd;
+}
+
+@mixin font ($fs: 36px, $fw: 700, $lh: 32px, $c: $text-color-black) {
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;
+    color: $c;
+}

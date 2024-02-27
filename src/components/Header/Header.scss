@@ -1,0 +1,102 @@
+@import "../../styles/variables.scss";
+@import "../../styles/deafults.scss";
+@import "../../styles/fonts.scss";
+@import "../../styles/mixins.scss";
+
+.header {
+  font-family: "Pragmatica", serif;
+  .header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: solid 1px $header-border-color;
+    border-bottom: solid 1px $header-border-color;
+  }
+  .topheader {
+    display: none;
+  }
+  .navheader {
+    border-right: 1px solid $header-border-color;
+  }
+  .navheader-list__item:nth-last-child(-n + 6) {
+    display: none;
+  }
+  .header-icon {
+    order: 5;
+  }
+  .header-icon__item:nth-last-child(-n + 2) {
+    display: inline-block;
+  }
+  .header-icon__item {
+    display: none;
+  }
+  .header-logo {
+    order: 1;
+  }
+
+  @media (min-width: $bp-md) {
+    padding: 0px 25px;
+    .header-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: solid 1px $header-border-color;
+      border-bottom: solid 1px $header-border-color;
+    }
+    .header-logo {
+      border-right: 1px solid $header-border-color;
+      order: 0;
+    }
+    .header-form__icon {
+      display: inline-block;
+    }
+    .header-icon__item {
+      display: inline-block;
+    }
+    .navheader {
+      border-right: none;
+    }
+    .navheader-list__item:nth-child(2) {
+      display: inline-block;
+    }
+    .navheader-list__item:nth-last-child(-n + 5) {
+      display: none;
+    }
+    .topheader {
+      display: none;
+    }
+  }
+
+  @media (min-width: $bp-lg) {
+    padding: 0px 280px;
+    .header-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: solid 1px $header-border-color;
+      border-bottom: solid 1px $header-border-color;
+    }
+    .topheader {
+      display: flex;
+    }
+    .header-logo {
+      border-right: 1px solid $header-border-color;
+      padding: 25px, 30px, 25px, 0px;
+    }
+    .header-form__icon {
+      display: none;
+    }
+    .navheader-list__item:nth-child(2) {
+      display: none;
+    }
+    .navheader-list__item:nth-last-child(-n + 5) {
+      display: flex;
+    }
+    .header-icon__item:first-child {
+      display: none;
+    }
+    .topheader {
+      display: flex;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@import "../../../../styles/variables.scss";
+
+.header-icon {
+  display: flex;
+
+  &__item {
+    padding: 27px;
+    border-left: solid 1px $header-border-color;
+  }
+  &__item:last-child {
+    border-right: solid 1px $header-border-color;
+  }
+}

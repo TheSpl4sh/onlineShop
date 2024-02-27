@@ -1,0 +1,240 @@
+.dicsount-card {
+    position: relative;
+    .discount-card-chips {
+        position: absolute;
+        display: flex;
+        gap: 10px;
+        top: 20px;
+        left: 20px;
+    }
+    .dicsount-card-heart-icon {
+        width: 23px;
+        height: 20px;
+    }
+    .chips-discount-card {
+        background-color: #FF6915;
+        width: 49px;
+        height: 32px;
+        color: #fff;
+        font-size: 11px;
+        font-weight: 500;
+        line-height: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media screen  and (min-width: 1920px) {
+    .dicsount-card {
+        margin: 0 auto;
+        background: #F6F6F6;
+        width: 900px;
+        height: 450px;
+        display: flex;
+        h1 {
+            font-size: 28px;
+            text-align: start;
+            margin-block: 18px;
+        }
+        li {
+            font-size: 15px;
+        }
+        span {
+            color: #747474;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 4%;
+            line-height: 11px;
+            text-transform: uppercase;
+        }
+        .dicsount-card__description {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 386px;
+            align-items: flex-start;
+        }
+        ul {
+            display: flex;
+        }
+        .dicsount-card__color-img {
+            width: 15px;
+            height: 15px;
+            margin-inline: 10px;
+        }
+        .dicsount-card__price {
+            display: flex;
+            margin-top: 18px;
+            align-items: center;
+        
+            .dicsount-card__price-discount {
+                font-size: 19px;
+                margin-right: 10px;
+            }
+            .dicsount-card__price-original {
+                font-size: 15px;
+                text-decoration: line-through;
+                color: #999999;
+            }
+            .dicsount-card__cart {
+                margin-left: 172px;
+           }
+           
+           .dicsount-card__cart-icon {
+            width: 22px;
+            height: 24px;
+           }
+        }
+        .dicsount-card__favorite {
+            margin-top: 20px;
+            margin-right: 20px;
+           }
+    }
+    .dicsount-card__favorite-md {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1919px) {
+    .dicsount-card {
+        margin: 0 auto;
+        background: #F6F6F6;
+        width: 560px;
+        height: 241px;
+        display: flex;
+        h1 {
+            font-size: 18px;
+            text-align: start;
+            margin-block: 18px;
+        }
+        li {
+            font-size: 15px;
+        }
+        span {
+            color: #747474;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 4%;
+            line-height: 11px;
+            text-transform: uppercase;
+        }
+        .dicsount-card__description {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 283px;
+            align-items: flex-start;
+        }
+        ul {
+            display: flex;
+        }
+        .dicsount-card__color-img {
+            width: 15px;
+            height: 15px;
+            margin-inline: 10px;
+        }
+        .dicsount-card__price {
+            display: flex;
+            margin-top: 18px;
+            align-items: center;
+        
+            .dicsount-card__price-discount {
+                font-size: 19px;
+                margin-right: 10px;
+                width: 60px;
+            }
+            .dicsount-card__price-original {
+                font-size: 15px;
+                text-decoration: line-through;
+                color: #999999;
+            }
+            .dicsount-card__cart {
+            margin-left: 165px;
+           }
+           .dicsount-card__cart-icon {
+            width: 22px;
+            height: 24px;
+           }
+        }
+        .dicsount-card__favorite {
+            margin-top: 20px;
+            margin-right: 20px;
+           }
+    }
+    .dicsount-card__favorite-md {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .dicsount-card {
+        margin: 0 auto;
+        background: #F6F6F6;
+        width: 258px;
+        height: 416px;
+        h1 {
+            font-size: 18px;
+            text-align: start;
+            margin-block: 18px;
+        }
+        li {
+            font-size: 15px;
+        }
+        span {
+            color: #747474;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 4%;
+            line-height: 11px;
+            text-transform: uppercase;
+        }
+        .dicsount-card__description {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 218px;
+            margin-inline: 20px;
+            align-items: flex-start;
+        }
+        ul {
+            display: flex;
+        }
+        .dicsount-card__color-img {
+            width: 15px;
+            height: 15px;
+            margin-inline: 10px;
+        }
+        .dicsount-card__price {
+            display: flex;
+            margin-top: 18px;
+            align-items: center;
+        
+            .dicsount-card__price-discount {
+                font-size: 19px;
+                margin-right: 10px;
+                width: 60px;
+            }
+            .dicsount-card__price-original {
+                font-size: 15px;
+                text-decoration: line-through;
+                color: #999999;
+            }
+            .dicsount-card__cart {
+            margin-left: 81px;
+           }
+           .dicsount-card__cart-icon {
+            width: 22px;
+            height: 24px;
+           }
+           
+        }
+        .dicsount-card__favorite {
+            display: none;
+           }
+           .dicsount-card__favorite-md {
+           position: relative;
+           left: 200px;
+           top: -267px;
+           }
+    }
+}

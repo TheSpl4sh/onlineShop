@@ -1,0 +1,16 @@
+@import "../../../../styles/variables.scss";
+
+.topheader {
+  display: flex;
+  justify-content: space-between;
+
+  &-form {
+    display: flex;
+    cursor: pointer;
+    padding: 15px 0 15px 0;
+
+    &__text:hover {
+      color: $dark-orange;
+    }
+  }
+}

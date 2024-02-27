@@ -1,0 +1,38 @@
+@import "../../../../styles/variables.scss";
+
+.navheader {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 11px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  &-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    padding: 27px;
+
+    &__item {
+      margin-right: 25px;
+      padding-bottom: 10px;
+    }
+    &__item:nth-last-child(-n + 6):hover {
+      cursor: pointer;
+      color: $dark-orange;
+      border-bottom: solid 1px $dark-orange;
+    }
+  }
+}
+
+.gray-line1 {
+  width: 25px;
+  border: solid 2px $dark-orange;
+  margin-left: 11px;
+}
+.gray-line2 {
+  width: 36px;
+  border: solid 2px $dark-black;
+  margin-top: 5px;
+}

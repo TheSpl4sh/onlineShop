@@ -1,0 +1,195 @@
+@import "../../styles/deafults.scss";
+@import "../../styles/typography.scss";
+@import "../../styles/mixins.scss";
+
+.vertical-card {
+    display: inline-block;
+    max-width: 158px;
+
+    &__img-container {
+        display: inline-block;
+        position: relative;
+    }
+
+    @media (min-width: $bp-md) {
+        max-width: 226px;
+    }
+
+    @media (min-width: $bp-lg) {
+        max-width: 440px;
+    }
+}
+
+.vertical-card__chips {
+    padding: 5px 6px;
+    display: inline-block;
+    position: absolute;
+
+    top: 10px;
+    left: 10px;
+
+    &--new {
+        font-family: 'Pragmatica', sans-serif;
+        @include font(9px, 500, 12px, $background-primary-color);
+        background-color: $dark-black;
+    }
+
+    @media (min-width: $bp-md) {
+        &--new {
+            padding: 5px 19px;
+        }
+    }
+
+    @media (min-width: $bp-lg) {
+        &--new {
+            padding: 10px;
+            @include font(11px, 500, 12px, $background-primary-color);
+        }
+    }
+}
+
+.favorite-button {
+    background: none;
+    border: none;
+    border-radius: 50%;
+    height: fit-content;
+    width: fit-content;
+
+    &::after {
+        content: url("./images/favorite_logo.svg");
+        display: inline-block;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+
+    @media (min-width: $bp-md) {
+        &::after {
+            right: 20px;
+        }
+    }
+
+    @media (min-width: $bp-lg) {
+        
+        &::after {
+            content: url("./images/favorite_logo_desctop.svg");
+            width: 23px;
+            height: 20px;
+            top: 20px;
+        }
+    }
+}
+
+.vertical-card__description {
+    margin-top: 15px;
+
+    @media (min-width: $bp-lg) {
+        margin-top: 15px;
+    }
+}
+
+.vertical-card__gender {
+    font-family: 'Pragmatica', sans-serif;
+    @include font(11px, 500, 11px, $card-gender-text);
+    letter-spacing: 0.04em;
+
+    @media (min-width: $bp-lg) {
+        @include font(12px, 500, 11px, $card-gender-text);
+    }
+}
+
+.vertical-card__name {
+    margin-top: 8px;
+    max-width: 158px;
+
+    @media (min-width: $bp-md) {
+        max-width: 226px;
+    }
+
+    @media (min-width: $bp-lg) {
+        margin-top: 9px;
+    }
+}
+
+.vertical-card__colors-block {
+    margin-top: 8px;
+    @include flex(flex-start, flex-start, row);
+    gap: 10px;
+}
+
+.vertical-card__colors-span {
+    @include font(13px, 400, 26px, $card-gender-text);
+
+    @media (min-width: $bp-lg) {
+        @include font(15px, 400, 26px, $card-gender-text);
+    }
+}
+
+.vertical-card__sneaker-color {
+    border: none;
+    background-color: $sneakers-light-gray;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+
+    &--red {
+        background-color: $sneakers-red;
+    }
+
+    &---black {
+        background-color: $sneakers-dark-gray;
+    }
+}
+
+.vertical-card__price-block {
+    position: relative;
+    height: fit-content;
+    margin-top: 8px;
+    @include flex(flex-start, flex-start, column);
+
+    @media (min-width: $bp-lg) {
+        @include flex(flex-start, flex-start, row);
+        gap: 10px;
+    }
+}
+
+.vertical-card__price-number {
+    @include font(18px, 400, 26px, $dark-black);
+
+    &--discount {
+        text-decoration: line-through;
+        @include font(14px, 400, 26px, $card-price-discount);
+    }
+
+    @media (min-width: $bp-lg) {
+        @include font(19px, 400, 26px, $dark-black);
+
+        &--discount {
+            @include font(15px, 400, 26px, $card-price-discount);
+        }
+    }
+}
+
+.cart-button {
+    background: none;
+    border: none;
+    border-radius: 50%;
+    height: fit-content;
+    width: fit-content;
+
+    &::after {
+        content: url("./images/cart-logo.svg");
+        position: absolute;
+        width: 22px;
+        height: 24px;
+        bottom: 0px;
+        right: 10px;
+    }
+
+
+    @media (min-width: $bp-lg) {
+        &::after {
+            right: 20px;
+        }
+    }
+}

@@ -1,0 +1,33 @@
+.ButtonOrangArrow {
+  border: none;
+}
+
+.buttonComponents {
+  display: flex;
+}
+
+.buttonOrangArrow-text {
+  min-width: 128px;
+  height: 65px;
+  padding: 23px 45px;
+  color: #ffffff;
+  background-color: #ff6915;
+  cursor: pointer;
+}
+
+.buttonOrangArrow-icons {
+  width: 65px;
+  height: 65px;
+  padding: 23px 0px;
+  color: #ffffff;
+  background-color: #fb5a00;
+  cursor: pointer;
+}
+
+.buttonOrangArrow-text:hover {
+  background-color: #fb5a00;
+}
+
+.buttonOrangArrow-icons:hover {
+  background-color: #ff6915;
+}
