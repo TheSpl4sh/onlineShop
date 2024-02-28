@@ -1,6 +1,5 @@
 import React from "react";
 import { BsBasket3 } from "react-icons/bs";
-import "../../components/Button/ButtonBlackBasket/ButtonBlackBasket.scss";
 
 function ButtonBlackBasket() {
   return (
