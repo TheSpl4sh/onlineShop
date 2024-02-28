@@ -1,6 +1,5 @@
 import React from "react";
 import { BsArrowRight } from "react-icons/bs";
-import "../../Button/ButtonBlackArrow/ButtonBlackArrow.scss";
 
 function ButtonBlackArrow(props) {
   const { text } = props

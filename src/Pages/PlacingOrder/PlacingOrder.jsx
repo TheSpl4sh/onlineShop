@@ -4,7 +4,6 @@ import * as Yup from 'yup';
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import ButtonBlackArrow from "../../components/Button/ButtonBlackArrow/ButtonBlackArrow";
-import "../../Pages/PlacingOrder/PlacingOrder.scss";
 
 function PlacingOrder() {
 
@@ -109,7 +108,7 @@ function PlacingOrder() {
       </div>
       <Footer />
     </div>
-  );
+  )
 }
 
 export default PlacingOrder;
