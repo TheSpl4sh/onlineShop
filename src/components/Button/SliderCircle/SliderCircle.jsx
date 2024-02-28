@@ -1,7 +1,6 @@
 import React from "react";
 import ArrowLeft from "../SliderCircle/img/ArrowLeft.svg";
 import ArrowRight from "../SliderCircle/img/ArrowRight.svg";
-import "../..//Button/SliderCircle/SliderCircle.scss";
 
 function SliderCircle() {
   return (

@@ -1,5 +1,4 @@
 import React from "react";
-import "../../Button/ButtonResponse/White/ButtonResponseWhite.scss";
 
 function ButtonResponseWhite() {
   return (
