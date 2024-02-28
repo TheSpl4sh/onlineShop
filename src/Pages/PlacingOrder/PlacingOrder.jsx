@@ -50,15 +50,15 @@ function PlacingOrder() {
       >
         {() => (
           <Form >
-            <label htmlFor="firstName"> name *</label>
+            <label htmlFor="firstName"> FirstName *</label>
             <Field type="text" id="firstName" name="firstName" />
             <ErrorMessage name="firstName" component="div" />
 
-            <label htmlFor="lastName">Прізвище:</label>
+            <label htmlFor="lastName"> LastName *</label>
             <Field type="text" id="lastName" name="lastName" />
             <ErrorMessage name="lastName" component="div" />
 
-            <label htmlFor="companyName">Назва компанії:</label>
+            <label htmlFor="companyName">CompanyName</label>
             <Field type="text" id="companyName" name="companyName" />
             <ErrorMessage name="companyName" component="div" />
 
