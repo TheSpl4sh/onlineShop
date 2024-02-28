@@ -34,7 +34,6 @@ function Banner() {
               technology opens through perforated insole.
             </li>
             <img className="sneakerBanners" src={Group} alt="Group" />
-
             <li className="BannerPrice">
               <span className="banner-from">from</span>
               <span className="banner-price">
@@ -45,18 +44,14 @@ function Banner() {
           <div className="buttonBanner">
             <ButtonBlackArrow text="MORE DETAIL" />
           </div>
+
+          <div className="sliderCircle">
+            <SliderCircle />
+          </div>
         </div>
         <img className="sneakerBanner" src={Group} alt="Group" />
-        <div className="banner-sliderTimers">
-          <SliderTimer />
-        </div>
-      </div>
-      <div className="sliderCircle">
-        <SliderCircle />
-      </div>
-
-      <div className="banner-sliderTimer">
-        <SliderTimer />
+          <SliderTimer className="banner-sliderTimer"/>
+          
       </div>
       
       </div>
