@@ -1,14 +1,3 @@
-
 .wrapper-placingOrder{
-    
-    width: 100%;
-    height: 500px;
-    display: grid;
-    
-    grid-template-columns: 1fr 1fr;
-}
-
-.PlacingOrder-formik{
-    border: 1px solid #EAEAEA;
-    
+    display: flex;
 }
