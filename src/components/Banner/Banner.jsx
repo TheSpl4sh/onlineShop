@@ -5,6 +5,7 @@ import SliderCircle from "../Button/SliderCircle/SliderCircle";
 import SliderTimer from "../Button/SliderTimer/SliderTimer";
 import Group from "../Banner/img/group-1-1.webp";
 import UAH from "../Banner/img/UAH.png";
+import "../Banner/Banner.scss"
 
 function Banner() {
   return (

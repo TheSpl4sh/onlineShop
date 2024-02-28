@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import ButtonBlackArrow from "../../components/Button/ButtonBlackArrow/ButtonBlackArrow";
+import "../PlacingOrder/PlacingOrder.scss"
 
 function PlacingOrder() {
 

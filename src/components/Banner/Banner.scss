@@ -84,7 +84,8 @@
 .banner-sliderTimers {
   position: relative;
   width: 100%;
-  display: block;
+  display: flex;
+  justify-content:space-between;
   align-items: center;
 }
 
@@ -267,6 +268,17 @@
     display: flex;
     justify-content: center;
   }
+
+  .banner-sliderTimers {
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .banner-sliderTimer {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 360px) and (max-width: 480px) {
@@ -346,9 +358,20 @@
     display: flex;
     justify-content: center;
   }
+
+  .banner-sliderTimers {
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .banner-sliderTimer {
+    display: none;
+  }
 }
 
-@media screen and (max-width: 359px) {
+@media screen and (max-width: 360px) {
   .banner {
     display: block;
   }
@@ -408,3 +431,4 @@
     display: none;
   }
 }
+
