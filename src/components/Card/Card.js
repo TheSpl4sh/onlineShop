@@ -7,9 +7,8 @@ import sneakerLarge from './images/sneaker-large-img.png';
 
 function Card() {
     return (
-        <div className="container">
-            <section className="vertical-card">
-                <article className="vertical-card__img-container">
+            <div className="vertical-card">
+                <div className="vertical-card__img-container">
                     <a href="#top">
                         <picture className="vertical-card__logo">
                             <source srcSet={ sneakerLarge } media="(min-width: 1920px)" />
@@ -22,10 +21,10 @@ function Card() {
                     <button className="favorite-button"></button>
 
                     <Slider />
-                </article>
+                </div>
 
 
-                <article className="vertical-card__description">
+                <div className="vertical-card__description">
                         <span className="vertical-card__gender">
                             ЖІНОЧІ
                         </span>
@@ -52,9 +51,8 @@ function Card() {
                             </span>
                             <button className="cart-button"></button>
                         </div>
-                </article>
-            </section>
-        </div>
+                </div>
+            </div>
     )
 }
 

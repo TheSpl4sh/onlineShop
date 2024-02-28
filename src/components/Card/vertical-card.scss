@@ -4,9 +4,19 @@
 
 .vertical-card {
     display: inline-block;
+    max-width: 158px;
+
     &__img-container {
         display: inline-block;
         position: relative;
+    }
+
+    @media (min-width: $bp-md) {
+        max-width: 226px;
+    }
+
+    @media (min-width: $bp-lg) {
+        max-width: 440px;
     }
 }
 
@@ -179,7 +189,7 @@
 
     @media (min-width: $bp-lg) {
         &::after {
-            top: 20px;
+            right: 20px;
         }
     }
 }
