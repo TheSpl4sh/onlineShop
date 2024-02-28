@@ -181,14 +181,22 @@
     background-repeat: no-repeat;
     background-position: top 333px center;
 
+    @include flex (flex-start, flex-start, column);
+    gap: 310px;
+
     @media (min-width: $bp-md) {
         background-image: url('./img/hit-section/sneaker_tablet.png');
-        background-repeat: no-repeat;
         background-position: top 0px right 0px;
     }
 
     @media (min-width: $bp-lg) {
         padding: 110px 70px;
+
+        background-image: url('./img/hit-section/sneaker_desktop.png');
+        background-position: center center;
+
+        @include flex (flex-start, flex-end, row);
+        gap: 490px;
     }
     
 }
@@ -249,21 +257,34 @@
 }
 
 .hit-section__bottom-container {
-    margin-top: 310px;
+    // margin-top: 310px;
     @include flex (flex-start, flex-start, row);
     gap: 14px;
 
     @media (min-width: $bp-md) {
         display: none;
     }
+
+    @media (min-width: $bp-lg) {
+        @include flex (flex-start, flex-start, row);
+        gap: 14px;
+    }
 }
 
 .hit-section__plus-img {
     width: 18px;
     height: 18px;
+    margin-top: 2px;
+
+    @media (min-width: $bp-lg) {
+        margin-top: 6px;
+    }
 }
 
 .hit-section__paragraph {
     @include font (15px, 400, 23px, $text-color-white);
 
+    @media (min-width: $bp-lg) {
+        @include font (18px, 400, 29px, $text-color-white);
+    }
 }
