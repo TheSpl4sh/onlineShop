@@ -1,11 +1,3 @@
-@import "./components/Button/ButtonOrang/ButtonOrang.scss";
-@import "./components/Button/ButtonBlackArrow/ButtonBlackArrow.scss";
-@import "./components/Button/ButtonBlackBasket/ButtonBlackBasket.scss";
-@import "./components/Button/ButtonResponse/White/ButtonResponseWhite.scss";
-@import "./components/Button/SliderCircle/SliderCircle.scss";
-@import "./components/Banner/Banner.scss";
-@import "./components/Button/SliderTimer/SliderTimer.scss";
-
 /* * {
 @import "./components/Button/ButtonOrang/ButtonOrang.scss";
 @import "./components/Button/ButtonBlackArrow/ButtonBlackArrow.scss";
@@ -15,6 +7,7 @@
 @import "./components/Banner/Banner.scss";
 @import "./components/Button/SliderTimer/SliderTimer.scss";
 @import "./Pages/PlacingOrder/PlacingOrder.scss";
+
 
 
 /* * {

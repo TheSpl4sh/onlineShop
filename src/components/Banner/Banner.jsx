@@ -5,10 +5,16 @@ import SliderCircle from "../Button/SliderCircle/SliderCircle";
 import SliderTimer from "../Button/SliderTimer/SliderTimer";
 import Group from "../Banner/img/group-1-1.webp";
 import UAH from "../Banner/img/UAH.png";
+import "../../components/Banner/Banner.scss";
+
+
 
 function Banner() {
   return (
     <div className="container">
+
+      <div className="banner-wrapper">
+
       <div className="banner">
         <div>
           <ul>
@@ -47,7 +53,11 @@ function Banner() {
           <SliderTimer className="banner-sliderTimer"/>
           
       </div>
+      
+      </div>
+
     </div>
+
   );
 }
 
