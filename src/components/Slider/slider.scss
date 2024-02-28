@@ -6,12 +6,11 @@
     display: none;
 
     @media (min-width: $bp-lg) {
-        position: absolute;
+        position: relative;
 
         @include flex(center, flex-start, row);
         gap: 9px;
         bottom: 20px;
-        left: 153px
     }
     
 }

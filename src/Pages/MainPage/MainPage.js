@@ -3,7 +3,6 @@ import "./MainPage.scss"
 import ShieldImg from "./img/benfits_section/shield.svg"
 import StarsImg from "./img/benfits_section/stars.svg"
 import CartImg from "./img/benfits_section/cart.svg"
-import PlusImg from './img/hit-section/plus.svg'
 
 const MainPage = () => {
   return (
@@ -36,16 +35,11 @@ const MainPage = () => {
               </div>
             </article>
 
-
-            <article className='hit-section__bottom-container'>
-              <img src={PlusImg} alt='plus' className='hit-section__plus-img'/>
-
-              <p className='hit-section__paragraph'>Унікальна технологія структури стельки дозволяє забути про взуття на нозі.</p>
-            </article>
-          </section>
-      </div>
-
-
+            
+              
+              
+        </section>
+    </div>
   )
 }
 
