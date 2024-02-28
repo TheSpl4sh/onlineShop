@@ -173,8 +173,19 @@
 /* HIT SECTION -----------------------------------*/
 
 .hit-section {
+    // min-height: 714px;
     background-color: $light-black;
     padding: 35px 35px 38px 35px;
+
+    background-image: url('./img/hit-section/sneaker_mobile.png');
+    background-repeat: no-repeat;
+    background-position: top 333px center;
+
+    @media (min-width: $bp-md) {
+        background-image: url('./img/hit-section/sneaker_tablet.png');
+        background-repeat: no-repeat;
+        background-position: top 0px right 0px;
+    }
 
     @media (min-width: $bp-lg) {
         padding: 110px 70px;
@@ -203,5 +214,56 @@
 }
 
 .hit-section__product-name {
+    font-family: 'Pragmatica', sans-serif;
+    @include font (22px, 400, 26px, $text-color-white);
+
+    display: inline-block;
+    max-width: 227px;
+    margin-top: 17px;
+
+    @media (min-width: $bp-lg) {
+        @include font (36px, 400, 43px, $text-color-white);
+
+        max-width: 362px;
+        margin-top: 28px;
+    }
+}
+
+.hit-section__span-box {
+    margin-top: 20px;
+    gap: 5px;
     
+    @include flex (flex-start, flex-end, row);
+
+    @media (min-width: $bp-lg) {
+        margin-top: 22px;
+    }
+}
+
+.span-box__from-text {
+    @include font (16px, 400, 20px, $text-color-white);
+}
+
+.span-box__price {
+    @include font (22px, 500, 26px, $text-color-white);
+}
+
+.hit-section__bottom-container {
+    margin-top: 310px;
+    @include flex (flex-start, flex-start, row);
+    gap: 14px;
+
+    @media (min-width: $bp-md) {
+        display: none;
+    }
+}
+
+.hit-section__plus-img {
+    width: 18px;
+    height: 18px;
+}
+
+.hit-section__paragraph {
+    @include font (15px, 400, 23px, $text-color-white);
+
 }

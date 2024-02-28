@@ -13,10 +13,18 @@
 
     @media (min-width: $bp-md) {
         max-width: 226px;
+        
+        &__img-container {
+            max-height: 160px;
+        }
     }
 
     @media (min-width: $bp-lg) {
         max-width: 440px;
+
+        &__img-container {
+            max-height: 445px;
+        }
     }
 }
 
