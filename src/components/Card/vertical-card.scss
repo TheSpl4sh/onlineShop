@@ -4,12 +4,11 @@
 
 .vertical-card {
     display: inline-block;
-    max-width: 158px;
-
     &__img-container {
         display: inline-block;
         position: relative;
     }
+
 
     @media (min-width: $bp-md) {
         max-width: 226px;
@@ -26,6 +25,7 @@
             max-height: 445px;
         }
     }
+
 }
 
 .vertical-card__chips {
@@ -197,7 +197,7 @@
 
     @media (min-width: $bp-lg) {
         &::after {
-            right: 20px;
+            top: 20px;
         }
     }
 }
