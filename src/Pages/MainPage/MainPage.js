@@ -93,6 +93,26 @@ const MainPage = () => {
               <p className='hit-section__paragraph'>Унікальна технологія структури стельки дозволяє забути про взуття на нозі.</p>
             </article>
           </section>
+
+          <section className='arrivals-section'>
+            <article className='arrivals-section__title-container'>
+              <h1 className='arrivals-section__title'>ТОВАРИ ЗІ ЗНИЖКОЮ</h1>
+              
+              <div className='arrivals-section__arrow-container'>
+                <button className='arrivals-section__arrow-button arrivals-section__arrow-button--active'></button>
+                <button className='arrivals-section__arrow-button arrivals-section__arrow-button--nonactive'></button>
+              </div>
+            </article >
+
+            <article className='arrivals-section__products-container'>
+              
+            </article>
+          </section>
+
+          <section className='about-section'>
+
+          </section>
+
       </div>
 
     </div>
