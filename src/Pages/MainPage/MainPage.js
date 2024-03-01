@@ -6,6 +6,7 @@ import ShieldImg from "./img/benfits_section/shield.svg"
 import StarsImg from "./img/benfits_section/stars.svg"
 import CartImg from "./img/benfits_section/cart.svg"
 import PlusImg from './img/hit-section/plus.svg'
+import DiscountCard from '../../components'
 
 const MainPage = () => {
   return (
