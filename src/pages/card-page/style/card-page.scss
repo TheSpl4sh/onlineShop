@@ -8,6 +8,16 @@
 .card-page__options-md {
     display: none;
 }
+.color-img {
+    border: none;
+    border-radius: 0;
+  }
+  
+  .color-img.selected {
+    border: 1px solid black;
+    border-radius: 50%;
+  }
+  
 @media screen and (max-width: 1920px) and (min-width: 1421px) {
     .links {
         display: flex;
