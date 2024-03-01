@@ -1,0 +1,377 @@
+.banner {
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+  background-blend-mode: multiply;
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.1fr;
+  padding-bottom: 120px;
+}
+
+.bannerTitle {
+  position: relative;
+  width: 545px;
+  top: 106px;
+  font-family: Pragmatica;
+  font-weight: 500;
+  font-size: 69px;
+  color: #000000;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.bannerRectangle {
+  height: 40px;
+  text-align: center;
+  align-items: center;
+}
+
+.bannerRectangle-img {
+  margin-bottom: 22px;
+}
+
+.bannerText {
+  position: relative;
+  top: 126px;
+  font-weight: 300;
+  font-size: 22px;
+  color: #000000;
+  text-align: left;
+}
+
+.BannerPrice {
+  position: relative;
+  top: 146px;
+  font-family: Pragmatica;
+  font-weight: 400;
+  color: #000000;
+  display: block;
+  text-align: left;
+}
+
+.banner-from {
+  font-size: 16px;
+}
+
+.banner-price {
+  font-size: 22px;
+}
+
+.uah {
+  width: 18px;
+}
+
+.buttonBanner {
+  position: relative;
+  top: 166px;
+  display: flex;
+  text-align: left;
+}
+
+.sliderCircle {
+  position: relative;
+  top: 186px;
+  display: flex;
+  text-align: left;
+}
+
+.sneakerBanner {
+  width: 100%;
+}
+
+.banner-sliderTimer {
+  width: 100%;
+  display: block;
+  align-items: center;
+}
+
+.sneakerBanners {
+  display: none;
+}
+
+.circleTimer-box {
+  width: 100%;
+  height: 100%;
+  display: block;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1640px) {
+  .banner {
+    padding-bottom: 100px;
+  }
+
+  .bannerText {
+    width: 545px;
+    font-size: 15px;
+  }
+
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .banner {
+    width: 100%;
+    padding-bottom: 150px;
+  }
+
+  .bannerTitle {
+    width: 350px;
+    top: 86px;
+    font-size: 34px;
+  }
+
+  .bannerRectangle {
+    height: 40px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .bannerRectangle-img {
+    margin-top: 18px;
+  }
+
+  .bannerText {
+    top: 106px;
+    font-size: 15px;
+  }
+
+  .BannerPrice {
+    top: 126px;
+  }
+
+  .banner-from {
+    font-size: 16px;
+  }
+
+  .banner-price {
+    font-size: 22px;
+  }
+
+  .buttonBanner {
+    position: relative;
+    top: 136px;
+    display: flex;
+    text-align: left;
+  }
+
+  .sliderCircle {
+    top: 150px;
+  }
+
+  .sneakerBanner {
+    display: block;
+    width: 100%;
+  }
+
+  .sneakerBanners {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .banner {
+    display: block;
+    padding-bottom: 120px;
+  }
+
+  .bannerTitle {
+    top: 86px;
+    width: 300px;
+    font-size: 34px;
+  }
+
+  .bannerText {
+    width: 95%;
+    top: 146px;
+  }
+
+  .bannerRectangle {
+    height: 40px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .bannerRectangle-img {
+    margin-top: 18px;
+  }
+
+  .BannerPrice{
+    position: relative;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    
+  }
+
+  .banner-from {
+    font-size: 16px;
+  }
+
+  .banner-price {
+    font-size: 22px;
+  }
+
+  .uah {
+    width: 18px;
+  }
+
+  .sneakerBanners {
+    position: relative;
+    width: 100%;
+    top: 150px;
+    display: block;
+    margin-bottom: 100px;
+  }
+
+  .buttonBanner {
+    position: relative;
+    display: flex;
+    top: 10px;
+    justify-content: center;
+  }
+
+  .sliderCircle {
+    display: none;
+  }
+
+  .sneakerBanner {
+    display: none;
+  }
+
+  .circleTimer-box {
+    top: 60px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 360px) and (max-width: 480px) {
+  .banner {
+    display: block;
+   padding-bottom: 80px;
+  }
+
+  .bannerTitle {
+    top: 38px;
+    width: 100%;
+    font-size: 34px;
+  }
+
+  .bannerRectangle-img {
+    margin-top: 18px;
+  }
+
+  .bannerText {
+    width: 95%;
+    top: 58px;
+    font-size: 15px;
+  }
+
+  .sneakerBanners {
+    position: relative;
+    top: 18px;
+    display: block;
+    width: 100%;
+  }
+
+  .banner-from {
+    font-size: 16px;
+  }
+
+  .banner-price {
+    font-size: 22px;
+  }
+
+  .uah {
+    width: 18px;
+  }
+
+  .sliderCircle {
+    display: none;
+  }
+
+  .sneakerBanner {
+    display: none;
+  }
+
+  .BannerPrice {
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    
+  }
+
+  .buttonBanner {
+    position: relative;
+    top: 10px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .sliderCircle {
+    display: none;
+  }
+
+  .circleTimer-box {
+    top: 50px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .banner {
+    display: block;
+  }
+  .bannerTitle {
+    width: 300px;
+    top: 38px;
+    font-size: 34px;
+  }
+
+  .bannerText {
+    top: 48px;
+  }
+
+  .BannerPrice {
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    
+  }
+
+  .sneakerBanners {
+    position: relative;
+    top: 40px;
+    display: block;
+    width: 100%;
+  }
+
+  .sliderCircle {
+    display: none;
+  }
+
+  .sneakerBanner {
+    display: none;
+  }
+
+  .buttonBanner {
+    position: relative;
+    top: 10px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .circleTimer-box {
+    top: 50px;
+    display: flex;
+    justify-content: center;
+  }
+}

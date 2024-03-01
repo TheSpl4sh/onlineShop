@@ -10,12 +10,12 @@ import './reset.scss';
 function App() {
   return (
     <div className="App">
-      <Header/>
-      <CardPage/>
-       <Footer/>
+      
+      <Header />
+      <MainPage />
+      <Footer />   
     </div>
   );
 }
 
 export default App;
-

@@ -1,0 +1,40 @@
+@import '../../styles/variables.scss';
+@import '../../styles/deafults.scss';
+@import '../../styles/fonts.scss';
+@import '../../styles/mixins.scss';
+
+.empty-cart {
+    @include flex (center, center, column);
+    margin: 66px auto 80px;
+    max-width: 474px;
+    text-align: center;
+
+    @media (min-width: $bp-md) {
+        margin: 120px auto;
+        max-width: 786px;
+    }
+
+    .empty-cart-content {
+        font-family: 'Pragmatica';
+
+        .empty-cart-heading {
+            @include font (19px, 500, 137%, $light-black);
+            margin-top: 20px;
+
+            @media (min-width: $bp-md) {
+                @include font (35px, 500, 126%, $light-black);
+                margin-top: 40px;
+            }
+        }
+
+        .empty-cart-text {
+            @include font (14px, 400, 157%, #383838);
+            max-width: 650px;
+            margin: 20px auto 0;
+
+            @media (min-width: $bp-md) {
+                @include font (15px, 400, 160%, #383838);
+            }
+        }
+    }
+}
