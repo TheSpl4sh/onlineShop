@@ -1,6 +1,5 @@
-import './App.css';
 import './reset.scss'
-// import Card from './components/Card/Card';
+import './App.css';
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import MainPage from './Pages/MainPage/MainPage'
@@ -11,12 +10,9 @@ import MainPage from './Pages/MainPage/MainPage'
 function App() {
   return (
     <div className="App">
-      
       <Header />
       <MainPage />
       <Footer />   
-
-
     </div>
   );
 }
