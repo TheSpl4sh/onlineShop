@@ -6,13 +6,13 @@ import ShieldImg from "./img/benfits_section/shield.svg"
 import StarsImg from "./img/benfits_section/stars.svg"
 import CartImg from "./img/benfits_section/cart.svg"
 import PlusImg from './img/hit-section/plus.svg'
-import DiscountCard from '../../components'
+// import DiscountCard from '../../components/discount-card/DiscountCard'
 
 const MainPage = () => {
   return (
     <div className='main-page'>
       <div className='container'>
-          <section className='benefits-section'>
+        <section className='benefits-section'>
               <article className='benefits-section__original'>
                 <img src={ShieldImg} alt='shield'className='benefits-section__img-shield'/>
 
@@ -106,16 +106,27 @@ const MainPage = () => {
             </article >
 
             <article className='arrivals-section__products-container'>
-              
+              {/* <DiscountCard /> */}
             </article>
           </section>
-
-          <section className='about-section'>
-
-          </section>
-
       </div>
+          <section className='about-section'>
+            <div className='container'>
+              <article className='about-section__container'>
+                <h1 className='about-section__title'>іНТЕРНЕТ-МАГАЗИН SWOOSH STORE <span className="hr hr--black"></span></h1>
 
+                <p className='about-section__paragraph about-section__paragraph--max-width'>Ласкаво просимо до 
+                  <span className='about-section__paragraph-span'> Swoosh Store</span> 
+                  – ваш джерело оригінальних кросівок Nike та неперевершеного стилю! Ми раді представити вам унікальну онлайн-платформу, де ви зможете зануритися в світ інновацій та моди від легендарного бренду спортивного взуття.
+                </p>
+
+                <span className='about-section__paragraph-span about-section__paragraph-span--marginTop'>Легендарна спадщина Nike:</span>
+                <p className='about-section__paragraph about-section__paragraph'>Swoosh Store - це місце, де історія та стиль зливаються в одне ціле. Ми пишаємося тим, що пропонуємо вам лише оригінальні кросівки Nike, продукцію, яка втілює понад півстолітнє спадщину інновацій, комфорту та якості. Кожна пара кросівок - це не просто спортивне взуття, це творче діло, яке втілює дух перемоги та палку відданість активному способу життя.</p>
+
+                <ButtonOrangArrow text={"Детальніше"}/>
+              </article>
+            </div>
+          </section>
     </div>
   )
 }
