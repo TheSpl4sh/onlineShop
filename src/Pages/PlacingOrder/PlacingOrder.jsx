@@ -41,7 +41,7 @@ function PlacingOrder() {
   };
 
   return (
-    <div>
+    <div className="container">
       <Header />
       <div className="container">
         <div className="wrapper-placingOrder">
