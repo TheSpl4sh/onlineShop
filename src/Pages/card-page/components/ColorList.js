@@ -1,4 +1,5 @@
-import colorBlack from '../iamges/color-black.png'; // Підставте шлях до ваших зображень
+import React, { useState } from 'react';
+import colorBlack from '../iamges/color-black.png'; 
 import colorBlue from '../iamges/color-blue.png';
 import colorRed from '../iamges/color-red.png';
 import colorWhite from '../iamges/color-white.png';

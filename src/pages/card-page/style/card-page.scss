@@ -11,11 +11,13 @@
 .color-img {
     border: none;
     border-radius: 0;
+    
   }
   
   .color-img.selected {
-    border: 1px solid black;
+    border: 1px solid #A1A1A1;
     border-radius: 50%;
+    padding: 1px;
   }
   
 @media screen and (max-width: 1920px) and (min-width: 1421px) {

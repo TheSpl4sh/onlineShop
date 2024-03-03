@@ -3,7 +3,7 @@ import Footer from './components/Footer/Footer';
 
 import './App.css';
 import './reset.scss'
-import CardPage from './pages/card-page/CardPage'
+import CardPage from './Pages/card-page/CardPage'
 
 import './reset.scss';
 

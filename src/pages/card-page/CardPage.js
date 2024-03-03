@@ -1,15 +1,11 @@
 import React from "react";
 import Links from "./components/Links";
 import './style/card-page.scss'
-import colorWhite from './iamges/color-white.png'
-import colorBlack from './iamges/color-black.png'
-import colorBlue from './iamges/color-blue.png'
-import colorRed from './iamges/color-red.png'
 import Size from './components/Size'
 import ButtonBlackBasket from '../../components/ButtonBlackBasket/ButtonBlackBasket'
 import ProductOptions from './components/ProductOptions.js'
 import ImgContainer from "./components/ImgContainer.js";
-import ColorList from "./components/ColorList";
+import ColorList from "./components/ColorList.js";
 
 
 function CardPage() {
@@ -29,7 +25,7 @@ function CardPage() {
                     <a href="/link" className="all-description">
                         Повний опис
                     </a>
-                   {/* <ColorList/> */}
+                   <ColorList/>
                    <Size/>
                    <div className="card-page__price">
                        <div className="card-page__price-md">
