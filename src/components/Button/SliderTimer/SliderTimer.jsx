@@ -1,5 +1,4 @@
 import React from 'react'
-import "../SliderTimer/SliderTimer.scss"
 
 function SliderTimer() {
   return (
@@ -14,4 +13,4 @@ function SliderTimer() {
   )
 }
 
-export default SliderTimer;
+export default SliderTimer
