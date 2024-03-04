@@ -1,34 +1,33 @@
 @import "./variables.scss";
 
 * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Gilroy', sans-serif;
+  font-family: "Gilroy", sans-serif;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
-ul{
-    list-style: none;
-  }  
+ul {
+  list-style: none;
+}
 
 .container {
-    margin: 0 auto;
-    padding: 0px 15px;
+  margin: 0 auto;
+  padding: 0px 15px;
+  max-width: 1920px;
 
-    @media (min-width: $bp-md) {
-        padding: 0px 25px;
-        max-width: 768px;
-    }
+  @media (min-width: $bp-md) {
+    padding: 0px 25px;
+  }
 
-    @media (min-width: $bp-lg) {
-        padding: 0px 280px;
-        max-width: 1920px;
-    }
+  @media (min-width: $bp-lg) {
+    padding: 0px 280px;
+  }
 }

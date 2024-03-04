@@ -5,6 +5,7 @@ import SliderCircle from "../Button/SliderCircle/SliderCircle";
 import SliderTimer from "../Button/SliderTimer/SliderTimer";
 import Group from "../Banner/img/group-1-1.webp";
 import UAH from "../Banner/img/UAH.png";
+import "../Banner/Banner.scss"
 
 function Banner() {
   return (
@@ -28,6 +29,7 @@ function Banner() {
               technology opens through perforated insole.
             </li>
             <img className="sneakerBanners" src={Group} alt="Group" />
+
             <li className="BannerPrice">
               <span className="banner-from">from</span>
               <span className="banner-price">
@@ -38,14 +40,18 @@ function Banner() {
           <div className="buttonBanner">
             <ButtonBlackArrow text="MORE DETAIL" />
           </div>
-
-          <div className="sliderCircle">
-            <SliderCircle />
-          </div>
         </div>
         <img className="sneakerBanner" src={Group} alt="Group" />
-          <SliderTimer className="banner-sliderTimer"/>
-          
+        <div className="banner-sliderTimers">
+          <SliderTimer />
+        </div>
+      </div>
+      <div className="sliderCircle">
+        <SliderCircle />
+      </div>
+
+      <div className="banner-sliderTimer">
+        <SliderTimer />
       </div>
     </div>
   );
