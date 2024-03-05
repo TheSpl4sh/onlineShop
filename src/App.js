@@ -9,10 +9,13 @@ import AllProductsPage from "./Pages/AllProductsPage/AllProductsPage"
 function App() {
   return (
     <div className="App">
+      
       <Header />
       <AllProductsPage />
       <MainPage />
-      <Footer />
+      <Footer />   
+
+
     </div>
   );
 }

@@ -1,0 +1,57 @@
+.ButtonBlackBasket {
+  border: none;
+}
+
+.buttonComponents {
+  display: flex;
+}
+@media screen and (max-width: 1420px) {
+    .buttonBlackBasket-text {
+      width: 304px;
+      height: 65px;
+      padding: 23px 25px;
+      color: #ffffff;
+      background-color: #1e1e1e;
+      
+      cursor: pointer;
+    }
+  }  
+  @media screen and (max-width: 767px) {
+    .buttonBlackBasket-text {
+      width: 266px;
+      height: 65px;
+      padding: 23px 25px;
+      color: #ffffff;
+      background-color: #1e1e1e;
+      
+      cursor: pointer;
+    }
+  }  
+@media screen and (min-width: 1421px) {
+  .buttonBlackBasket-text {
+    width: 210px;
+    height: 65px;
+    padding: 23px 25px;
+    color: #ffffff;
+    background-color: #1e1e1e;
+    
+    cursor: pointer;
+  }
+}
+
+.buttonBlackBasket-icons {
+  width: 65px;
+  height: 65px;
+  padding: 23px 0px;
+  color: #ffffff;
+  background-color: #000000;
+  cursor: pointer;
+}
+
+.buttonBlackBasket-text:hover {
+  background-color: #000000;
+}
+
+.buttonBlackBasket-icons:hover {
+  background-color: #1e1e1e;
+}
