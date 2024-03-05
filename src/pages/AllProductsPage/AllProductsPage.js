@@ -3,7 +3,7 @@ import CustomSlider from "./components/customSlider/CustomSlider";
 import DisplayParameter from "./components/displayParameter/DisplayParameter";
 import MenuToggle from "./components/menuToggle/MenuToggle";
 import Pagination from "./components/pagination/Pagination";
-import { Select } from "../../components/Select/Select";
+import { Select } from "../../components/select/Select";
 import { FaTimes } from "react-icons/fa";
 
 import "./AllProductsPage.scss";
