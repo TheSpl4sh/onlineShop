@@ -70,6 +70,7 @@
             .dicsount-card__price-discount {
                 font-size: 19px;
                 margin-right: 10px;
+                color: black;
             }
             .dicsount-card__price-original {
                 font-size: 15px;
@@ -141,7 +142,8 @@
             .dicsount-card__price-discount {
                 font-size: 19px;
                 margin-right: 10px;
-                width: 60px;
+                width: 61px;
+                color: black;
             }
             .dicsount-card__price-original {
                 font-size: 15px;
@@ -171,7 +173,7 @@
         margin: 0 auto;
         background: #F6F6F6;
         width: 258px;
-        height: 416px;
+        height: 449px;
         h1 {
             font-size: 18px;
             text-align: start;
@@ -212,7 +214,8 @@
             .dicsount-card__price-discount {
                 font-size: 19px;
                 margin-right: 10px;
-                width: 60px;
+                width: 61px;
+                color: black;
             }
             .dicsount-card__price-original {
                 font-size: 15px;
@@ -235,6 +238,8 @@
            position: relative;
            left: 200px;
            top: -267px;
+           width: 23px;
+           height: 20px;
            }
     }
 }

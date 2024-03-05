@@ -14,7 +14,7 @@ function DiscountCard() {
     return (
         <div className="dicsount-card">
        <picture>
-            <source srcSet={ cardImgLg } media="(min-width: 768px) and (max-width: 1920px)"  draggable="false" />
+            <source srcSet={ cardImgLg } media="(min-width: 768px) and (max-width: 1919px)"  draggable="false" />
             <source srcSet={ cardImgMd} media="(max-width: 767px)" draggable="false"  />
             <img src={cardImg} alt="img" draggable="false" />
         </picture>
