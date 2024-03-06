@@ -28,39 +28,48 @@
 // 	},
 //   }));
 
-.AirbnbSlider {
-	display: flex;
-	align-items: center;
-	color: #3a8589;
-	height: 3px;
-	padding: 13px 0;
+// .AirbnbSlider {
+// 	display: flex;
+// 	align-items: center;
+// 	color: #3a8589;
+// 	height: 3px;
+// 	padding: 13px 0;
 
-	& .MuiSlider-thumb {
-		height: 27px;
-		width: 27px;
-		background-color: #fff;
-		border: 1px solid currentColor;
+// 	& .MuiSlider-thumb {
+// 		height: 27px;
+// 		width: 27px;
+// 		background-color: #fff;
+// 		border: 1px solid currentColor;
 
-		&:hover {
-			box-shadow: 0 0 0 8px rgba(58, 133, 137, 0.16);
-		}
+// 		&:hover {
+// 			box-shadow: 0 0 0 8px rgba(58, 133, 137, 0.16);
+// 		}
 
-		& .airbnb-bar {
-			height: 9px;
-			width: 1px;
-			background-color: currentColor;
-			margin-left: 1px;
-			margin-right: 1px;
-		}
-	}
+// 		& .airbnb-bar {
+// 			height: 9px;
+// 			width: 1px;
+// 			background-color: currentColor;
+// 			margin-left: 1px;
+// 			margin-right: 1px;
+// 		}
+// 	}
 
-	& .MuiSlider-track {
-		height: 3px;
-	}
+	// & .MuiSlider-track {
+	// 	width: 100%;
+	// 	max-width: 175px;
+	// 	height: 3px;
+		
+	// }
 
-	& .MuiSlider-rail {
-		color: #bfbfbf;
-		opacity: 1;
-		height: 3px;
-	}
-}
+// 	& .MuiSlider-rail {
+// 		width: 100%;
+// 		max-width: 175px;
+// 		color: #bfbfbf;
+// 		opacity: 1;
+// 		height: 3px;
+// 	}
+// 	// & .MuiSlider-root{
+// 	// 	width: 100%;
+// 	// 	max-width: 175px;
+// 	// }
+// }

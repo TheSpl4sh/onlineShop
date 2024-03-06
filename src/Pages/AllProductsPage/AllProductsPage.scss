@@ -165,7 +165,7 @@
       }
     }
 
-    @media (min-width: 1350px) {
+    @media (min-width: $bp-lg) {
       padding: 0px 280px;
       max-width: 1920px;
 
@@ -180,11 +180,15 @@
       .select-wrapper {
         display: flex;
         justify-content: space-around;
+        align-items: center;
         
         &__item {
           // width: 20%;
           padding: 30px;
           border-right: solid 2px $main-filter-border-color;
+        }
+        &__item:nth-child(2) {          
+          padding: 0;          
         }
         &__item:last-child {          
           border-right: none;          

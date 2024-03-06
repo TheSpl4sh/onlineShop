@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-// import CustomSlider from "./components/customSlider/CustomSlider";
+import { FaTimes } from "react-icons/fa";
+
+import CustomSlider from "./components/customSlider/CustomSlider";
 import DisplayParameter from "./components/displayParameter/DisplayParameter";
 import MenuToggle from "./components/menuToggle/MenuToggle";
 import Pagination from "./components/pagination/Pagination";
 import { Select } from "../../components/select/Select";
-import { FaTimes } from "react-icons/fa";
+
 
 import "./AllProductsPage.scss";
 
@@ -58,14 +60,14 @@ const AllProductsPage = () => {
         </div>
         <div className="select-wrapper__item">
           
-          {/* <CustomSlider
+          <CustomSlider
           //  title="Ціна:"
             // min={0}
             // max={1000}
             // onChange={({ min, max }) =>
             //   console.log(`min = ${min}, max = ${max}`)
             // }
-          /> */}
+          />
         </div>
         <div className="select-wrapper__item">
           <Select
