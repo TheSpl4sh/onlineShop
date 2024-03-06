@@ -1,0 +1,272 @@
+@import "../../styles/variables.scss";
+@import "../../styles/deafults.scss";
+@import "../../styles/fonts.scss";
+@import "../../styles/mixins.scss";
+
+.catalog {
+  font-family: "Pragmatica", serif;
+
+  h1 {
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 15px;
+    text-align: left;
+    margin: 30px 0 30px 0;
+  }
+
+  hr {
+    border: solid 1px $main-filter-border-color;
+    width: 100%;
+    // margin-top: 30px;
+  }
+  .select-mobile {
+    // display: inline-block;
+    // margin: 0 auto;
+
+    &__button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: none;
+      background-color: transparent;
+      padding: 22px 0;
+      font-size: 16px;
+      line-height: 10px;
+    }
+  }
+  .select-wrapper {
+    display: none;
+  }
+  .sorting-wrapper {
+    padding: 18px 0;
+    width: 100%;
+    font-size: 14px;
+    line-height: 10px;
+
+    &__show {
+      display: none;
+    }
+    &__price {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    &__price select {
+      padding: 18px 30px 18px 20px;
+      border: solid 1px $main-filter-border-color;
+      font-size: 15px;
+    }
+  }
+
+  //  pagination ===============================
+
+  .product-pagination {
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      list-style: none;
+      margin: 34px 0 60px 0;
+    }
+    &-list li {
+      width: 158px;
+      height: 325px;
+      margin: 10px;
+      background-color: $main-filter-border-color;
+    }
+  }
+
+  .pagination {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 80px;
+  }
+
+  .active {
+    background-color: $dark-black;
+    color: $background-primary-color;
+  }
+
+  .page-item {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2px;
+    border: solid 1px $main-filter-border-color;
+    padding: 19px 24px;
+    row-gap: 10px;
+  }
+
+  @media (min-width: $bp-md) {
+    padding: 0px 25px;
+    max-width: 768px;
+  
+    .sorting-wrapper {
+      display: flex;
+      justify-content: flex-end;
+      padding: 20px 0;
+
+      &__show {
+        display: none;
+      }
+      &__price {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      &__price label {
+        padding-right: 30px;
+      }
+
+      &__price select {
+        padding: 18px 30px 18px 20px;
+        border: solid 1px $main-filter-border-color;
+        font-size: 15px;
+      }
+
+      .product-pagination {
+        &-list {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-evenly;
+          list-style: none;
+          margin: 34px 0 60px 0;
+        }
+        &-list li {
+          width: 226px;
+          height: 303px;      
+          margin: 10px;
+        }
+      }
+
+      .pagination {
+        list-style: none;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        cursor: pointer;
+        margin-bottom: 80px;
+      }
+
+      .page-item {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2px;
+        border: solid 1px $main-filter-border-color;
+        padding: 19px 24px;
+        row-gap: 10px;
+      }
+    }
+
+    @media (min-width: $bp-lg) {
+      padding: 0px 280px;
+      max-width: 1920px;
+
+      h1 {
+        font-size: 45px;
+        font-weight: 500;
+        line-height: 48px;
+      }
+      .select-mobile {
+        display: none;
+      }
+      .select-wrapper {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        
+        &__item {
+          // width: 20%;
+          padding: 30px;
+          border-right: solid 2px $main-filter-border-color;
+        }
+        &__item:nth-child(2) {          
+          padding: 0;          
+        }
+        &__item:last-child {          
+          border-right: none;          
+        }
+        &__item button {
+          border: none;
+          background-color: transparent;
+        }
+      }
+      .custom-select {
+        border: none;
+      }
+        
+      .sorting-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        padding: 20px 0;
+        font-size: 15px;
+
+        &__show {
+          display: flex;
+          align-items: center;
+          padding-right: 70px;
+        }
+        &__show button {
+          padding: 17px 20px;
+          margin: 10px;
+          border: 1px solid $number-border-color;
+          color: #414141;
+          background-color: transparent;
+          cursor: pointer;
+        }
+        &__price {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+        }
+        &__price select {
+          padding: 18px 30px 18px 20px;
+          border: solid 1px $main-filter-border-color;
+          font-size: 15px;
+        }
+
+        .product-pagination {
+          &-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            list-style: none;
+            margin: 34px 0 60px 0;
+          }
+          &-list li {
+            width: 226px;
+            height: 303px;
+            margin: 10px;
+          }
+        }
+
+        .pagination {
+          list-style: none;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          cursor: pointer;
+          margin-bottom: 80px;
+        }
+
+        .page-item {
+          list-style: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 2px;
+          border: solid 1px $main-filter-border-color;
+          padding: 19px 24px;
+          row-gap: 10px;
+        }
+      }
+    }
+  }
+}
