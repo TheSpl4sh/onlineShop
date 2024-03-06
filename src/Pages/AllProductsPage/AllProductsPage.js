@@ -26,7 +26,7 @@ const AllProductsPage = () => {
     <section className="catalog container">
       {/* <h1>{name}</h1> */}
       <h1>Коллекция Air Max</h1>
-      <hr />
+      <hr className="catalog-line"></hr>
       <div className="select-mobile">
         <div className="select-mobile__button">
           <MenuToggle
