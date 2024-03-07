@@ -261,4 +261,4 @@ function PlacingOrder() {
   );
 }
 
-export default PlacingOrder;
+export { PlacingOrder };
