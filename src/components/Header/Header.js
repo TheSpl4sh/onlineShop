@@ -7,9 +7,6 @@ import Action from "./components/action/Action";
 
 import "./Header.scss";
 
-
-
-
 const Header = () => {
   return (
     <header className="header container">              

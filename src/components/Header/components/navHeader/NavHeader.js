@@ -1,5 +1,6 @@
 // import { Link } from "react-router-dom";
 
+import { NavLink } from "react-router-dom";
 import "./NavHeader.scss"
 
 
@@ -9,23 +10,24 @@ const NavHeader = () => {
   return (
     <>
     <nav className="navheader">
-      <ul className="navheader-list">
+      <div className="navheader-list">
         <li className="navheader-list__item">
-        <hr className="gray-line1 "></hr>
-        <hr className="gray-line2"></hr>
+          <hr className="gray-line1 "></hr>
+          <hr className="gray-line2"></hr>
         </li>
+
         <li className="navheader-list__item">
           {/* <Link to="AllProductPage" className="navheader-list__item"> */}
           <i>Меню</i>		     
           {/* </Link> */}
         </li>
         
-
-        <li className="navheader-list__item">
-          {/* <Link to="AllProductPage" className="navheader-list__item"> */}
-		  Каталог   
-          {/* </Link> */}
-        </li>
+        <NavLink
+        to="/catalog"
+        className="navheader-list__item"
+        >
+          Каталог
+        </NavLink>
 
 
         <li className="navheader-list__item">
@@ -48,7 +50,7 @@ const NavHeader = () => {
 		  Розпродаж             
           {/* </Link> */}
         </li>
-      </ul>
+      </div>
     </nav>
     </>
   );

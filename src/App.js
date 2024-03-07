@@ -6,6 +6,8 @@ import { CartPage } from './Pages/CartPage/CartPage'
 import { Route, Routes } from "react-router-dom";
 import { Layout } from "./Pages/Layout/Layout";
 import { NotFound } from "./Pages/NotFound/NotFound";
+import { AllProductsPage } from "./Pages/AllProductsPage/AllProductsPage";
+import { PlacingOrder } from "./Pages/PlacingOrder/PlacingOrder";
 
 
 function App() {
@@ -15,6 +17,8 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index path="/" element={<MainPage />} />
         <Route path="cart" element={<CartPage />} />
+        <Route path="catalog" element={<AllProductsPage />}/>
+        <Route path="order" element={<PlacingOrder />}/>
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
