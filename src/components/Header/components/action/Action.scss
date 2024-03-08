@@ -6,6 +6,10 @@
   &__item {
     padding: 27px;
     border-left: solid 1px $header-border-color;
+    
+  }
+  &__item a {
+    color: currentColor;
   }
   &__item:hover {
     background-color: $dark-black;

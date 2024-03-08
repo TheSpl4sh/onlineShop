@@ -40,6 +40,7 @@ const EmptyCart = () => {
                 </p>
 
                 <LinkButton
+                    path={"/catalog"}
                     text="Перейти до каталогу"
                     SvgIcon={OrangeSvg}
                     className="orange"
