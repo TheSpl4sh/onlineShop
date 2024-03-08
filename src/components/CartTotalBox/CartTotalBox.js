@@ -26,6 +26,7 @@ const CartTotalBox = () => {
                     </button>
                 </div>
                 <LinkButton
+                    path="/order"
                     text="Замовити"
                     SvgIcon={BlackSvg}
                     className="black"
