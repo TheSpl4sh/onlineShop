@@ -11,19 +11,22 @@
     font-weight: 500;
     line-height: 15px;
     text-align: left;
+    margin: 30px 0 30px 0;
   }
 
   hr {
     border: solid 1px $main-filter-border-color;
     width: 100%;
-    margin-top: 30px;
+    // margin-top: 30px;
   }
   .select-mobile {
-    display: inline-block;
+    // display: inline-block;
+    // margin: 0 auto;
 
     &__button {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 10px;
       border: none;
       background-color: transparent;
@@ -101,6 +104,7 @@
 
   @media (min-width: $bp-md) {
     padding: 0px 25px;
+    max-width: 768px;
   
     .sorting-wrapper {
       display: flex;
@@ -163,6 +167,7 @@
 
     @media (min-width: $bp-lg) {
       padding: 0px 280px;
+      max-width: 1920px;
 
       h1 {
         font-size: 45px;
@@ -174,12 +179,16 @@
       }
       .select-wrapper {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
+        align-items: center;
         
         &__item {
-          width: 20%;
-          padding: 30px 0px 30px 0px;
+          // width: 20%;
+          padding: 30px;
           border-right: solid 2px $main-filter-border-color;
+        }
+        &__item:nth-child(2) {          
+          padding: 0;          
         }
         &__item:last-child {          
           border-right: none;          

@@ -1,18 +1,20 @@
 import React, { useState } from "react";
+import { FaTimes } from "react-icons/fa";
+
 import CustomSlider from "./components/customSlider/CustomSlider";
 import DisplayParameter from "./components/displayParameter/DisplayParameter";
 import MenuToggle from "./components/menuToggle/MenuToggle";
 import Pagination from "./components/pagination/Pagination";
-import { Select } from "../../components/Select/Select";
-import { FaTimes } from "react-icons/fa";
+import { Select } from "../../components/select/Select";
+
 
 import "./AllProductsPage.scss";
 
 const AllProductsPage = () => {
-  const [isFiltersOpen, setIsFiltersOpen] = useState(false); 
+  const [isFiltersOpen, setIsFiltersOpen] = useState(false);
 
   const toggleFilters = () => {
-    setIsFiltersOpen(!isFiltersOpen); 
+    setIsFiltersOpen(!isFiltersOpen);
   };
   const [itemsPerPage, setItemsPerPage] = useState(9);
 
@@ -27,10 +29,11 @@ const AllProductsPage = () => {
       <hr />
       <div className="select-mobile">
         <div className="select-mobile__button">
-          <MenuToggle 
-          toggle={toggleFilters} 
-          open={isFiltersOpen} 
-          onClick={toggleFilters}/>
+          <MenuToggle
+            toggle={toggleFilters}
+            open={isFiltersOpen}
+            onClick={toggleFilters}
+          />
           Показати фільтри
         </div>
       </div>
@@ -56,16 +59,24 @@ const AllProductsPage = () => {
           />
         </div>
         <div className="select-wrapper__item">
-          <CustomSlider />
+          
+          <CustomSlider
+          //  title="Ціна:"
+            // min={0}
+            // max={1000}
+            // onChange={({ min, max }) =>
+            //   console.log(`min = ${min}, max = ${max}`)
+            // }
+          />
         </div>
         <div className="select-wrapper__item">
           <Select
             className=""
             title="Колір:"
             options={[
-              { value: "color", label: "червоний" },
-              { value: "color", label: "білий" },
-              { value: "color", label: "чорний" },
+              { value: "red", label: "червоний" },
+              { value: "white", label: "білий" },
+              { value: "black", label: "чорний" },
             ]}
           />
         </div>
@@ -74,9 +85,9 @@ const AllProductsPage = () => {
             className=""
             title="Матеріал:"
             options={[
-              { value: "color", label: "Дерматин" },
-              { value: "color", label: "Тряпка" },
-              { value: "color", label: "Плюш" },
+              { value: "material", label: "Дерматин" },
+              { value: "material", label: "Тряпка" },
+              { value: "material", label: "Плюш" },
             ]}
           />
         </div>
@@ -112,4 +123,4 @@ const AllProductsPage = () => {
   );
 };
 
-export default AllProductsPage;
+export { AllProductsPage };
