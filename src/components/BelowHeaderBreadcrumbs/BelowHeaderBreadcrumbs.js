@@ -1,5 +1,5 @@
 import React from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./BelowHeaderBreadcrumbs.scss";
 
 function BelowHeaderBreadcrumbs({ paths }) {
@@ -8,8 +8,7 @@ function BelowHeaderBreadcrumbs({ paths }) {
             {paths.map((path, index) => (
                 <li key={index} className="breadcrumb-item">
                     {index < paths.length - 1 ? (
-                        <a href={path.url}>{path.label}</a>
-                        // <Link to={path.url}>{path.label}</Link>
+                        <Link to={path.url}>{path.label}</Link>
                     ) : (
                         path.label
                     )}

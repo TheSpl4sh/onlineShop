@@ -1,15 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./LinkButtonOrange.scss";
-import  "./LinkButtonBlack.scss";
+import "./LinkButtonBlack.scss";
 
-const LinkButton = ({ text, SvgIcon, className }) => {
+const LinkButton = ({ path, text, SvgIcon, className }) => {
     return (
-        <a href="/" className={`link-button__${className}`}>
+        <Link to={path} className={`link-button__${className}`}>
             <span className="link-text">{text}</span>
             <span className="link-icon">
                 <SvgIcon className="icon-svg" />
             </span>
-        </a>
+        </Link>
     );
 };
 
