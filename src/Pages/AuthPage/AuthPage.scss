@@ -1,0 +1,27 @@
+@import '../../styles/variables.scss';
+@import '../../styles/deafults.scss';
+@import '../../styles/fonts.scss';
+@import '../../styles/mixins.scss';
+
+.auth-page-heading {
+    font-family: 'Pragmatica';
+    @include font (25px, 500, 124%, $dark-black);
+    margin-top: 12px;
+    text-align: start;
+
+    @media (min-width: $bp-md) {
+        @include font (45px, 500, 107%, $dark-black);
+        margin-top: 20px;
+    }
+}
+
+.auth-page-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 53px 0 120px;
+    padding: 40px;
+    border: 1px solid $header-border-color;
+
+}
