@@ -8,7 +8,7 @@ import { Layout } from "./Pages/Layout/Layout";
 import { NotFound } from "./Pages/NotFound/NotFound";
 import { AllProductsPage } from "./Pages/AllProductsPage/AllProductsPage";
 import { PlacingOrder } from "./Pages/PlacingOrder/PlacingOrder";
-import { CardPage } from "./Pages/card-page/CardPage";
+// import { CardPage } from "./Pages/card-page/CardPage";
 
 
 function App() {
