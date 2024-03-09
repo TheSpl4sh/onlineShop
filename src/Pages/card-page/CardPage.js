@@ -95,4 +95,4 @@ function CardPage() {
     )
 }
 
-export default CardPage
+export { CardPage }
