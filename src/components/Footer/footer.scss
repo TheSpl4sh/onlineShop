@@ -179,3 +179,39 @@
         @include flex (space-between, flex-start, row);
     }
 }
+
+.footer-socials-frame:hover svg path{
+    fill: $light-orange;
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+}
+
+.footer-shops-features p:hover {
+    color: white;
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+}
+
+.footer-shops-list a:hover {
+    color: $light-orange;
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+}
+
+.footer-subscribe-text p:hover {
+    color: white;
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+}
+
+.footer-agree-policy a:hover{
+    color: $light-orange;
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+}
+
+.footer-about-shop a:hover {
+    color: $light-orange;
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+}
