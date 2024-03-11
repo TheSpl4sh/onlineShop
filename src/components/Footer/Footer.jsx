@@ -6,7 +6,8 @@ import Subscribe from "../Subscribe/Subscribe";
 
 const Footer = () => {
   return (
-    <div className="container footer">
+    <div className="footer">
+    <div className="container">
       <div className="footer-large-flexbox">
         <div className="footer-flexbox">
           <div className="footer-websites">
@@ -221,6 +222,7 @@ const Footer = () => {
         <p>© 2023 - Swoosh Store - Інтернет-магазин оригінальних кросівок</p>
         <Link to="/">Політика конфіденційності</Link>
       </div>
+    </div>
     </div>
   );
 };
