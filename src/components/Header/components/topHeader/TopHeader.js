@@ -1,4 +1,4 @@
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaRegUser } from "react-icons/fa";
 import Breadcrumbs from "../breadcrumbs/Breadcrumbs";
 import "./topHeader.scss";
@@ -12,10 +12,10 @@ const TopHeader = () => {
       <div className="topheader">
         <Breadcrumbs/>
         <form className="topheader-form" >
-         {/* <Link to="/AuthorizationFormPage" className="topheader-form__item"> */} 
+        <Link to="/auth" className="topheader-form__item"> 
         <FaRegUser className="topheader-form__icon" color="curent-color" />        
         <p className="topheader-form__text" >Логін/Регістрація</p>       
-        {/* </Link> */}
+        </Link>
         </form>
 
         {/* <div> */}
