@@ -3,25 +3,119 @@
 @import '../../styles/fonts.scss';
 @import '../../styles/mixins.scss';
 
-.auth-page-heading {
-    font-family: 'Pragmatica';
-    @include font (25px, 500, 124%, $dark-black);
-    margin-top: 12px;
-    text-align: start;
+.auth-page {
+    &__title {
+        font-family: 'Pragmatica';
+        @include font (25px, 500, 124%, $dark-black);
+        margin-top: 12px;
+        text-align: start;
 
-    @media (min-width: $bp-md) {
-        @include font (45px, 500, 107%, $dark-black);
-        margin-top: 20px;
+        @media (min-width: 1025px) {
+            @include font (45px, 500, 107%, $dark-black);
+            margin-top: 20px;
+        }
     }
-}
 
-.auth-page-wrap {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    margin: 53px 0 120px;
-    padding: 40px;
-    border: 1px solid $header-border-color;
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+        margin: 16px 0 80px;
+        padding: 15px;
+        border: 1px solid $header-border-color;
 
+        @media (min-width: $bp-md) {
+            flex-direction: row;
+            align-items: flex-start;
+        }
+
+        @media (min-width: 1025px) {
+            margin: 52px 0 120px;
+            padding: 40px;
+            text-align: start;
+        }
+    }
+
+    &__info {
+        width: 100%;
+        border-left: 0;
+        padding-left: 0;
+        padding-top: 50px;
+        position: relative;
+
+        @media (min-width: $bp-md) {
+            width: 50%;
+            padding-top: 0;
+            position: relative;
+        }
+
+        @media (min-width: 1025px) {
+            width: 53%;
+            margin-top: 32px;
+            padding-left: 118px;
+            border-left: 1px solid $header-border-color;
+        }
+
+        &-icon {
+            @media (min-width: $bp-md) {
+                position: absolute;
+                top: 0;
+                left: 10px;
+            }
+
+            @media (min-width: 1025px) {
+                position: absolute;
+                left: 40px;
+            }
+        }
+
+        &-title {
+            font-family: 'Pragmatica';
+            @include font (28px, 500, 33px, $dark-black);
+            padding: 12px 0;
+
+            @media (min-width: $bp-md) {
+                padding: 7px 0 7px 66px;
+                text-align: start;
+            }
+
+            @media (min-width: 1025px) {
+                @include font (28px, 500, 33px, $dark-black);
+                padding: 7px 0;
+            }
+        }
+
+        &-text {
+            font-family: 'Pragmatica';
+            @include font (15px, 400, 173%, #515151);
+            padding-top: 5px;
+
+            strong {
+                font-weight: 700;
+            }
+
+            @media (min-width: $bp-md) {
+                @include font (15px, 400, 173%, #515151);
+                padding-top: 12px;
+                max-width: 387px;
+            }
+
+            @media (min-width: 1025px) {
+                @include font (16px, 400, 175%, #515151);
+                padding-top: 22px;
+                max-width: 98%;
+            }
+        }
+
+        &-btn {
+            margin: 16px auto 0;
+            width: 293px;
+
+            @media (min-width: 1025px) {
+                margin: 12px 0 0;
+            }
+        }
+    }
 }

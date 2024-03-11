@@ -1,22 +1,25 @@
 import React from "react";
 import "./AuthPage.scss";
+import AuthPageForm from "./components/AuthPageForm";
 import BelowHeaderBreadcrumbs from "../../components/BelowHeaderBreadcrumbs/BelowHeaderBreadcrumbs";
 import LinkButton from "../../components/LinkButton/LinkButton";
+import { ReactComponent as OrangeSvg } from "../../components/LinkButton/icons/orange_btn_svg.svg";
 
 const AuthPage = () => {
     return (
-        <section className="container">
+        <section className="container auth-page">
             <BelowHeaderBreadcrumbs
                 paths={[
                     { label: "Swoosh Store", url: "/" },
                     { label: "Авторизація", url: "/auth" },
                 ]}
             />
-            <h1 className="auth-page-heading">Авторизація</h1>
-            <div className="auth-page-wrap">
-                <div></div>
-                <div>
+            <h1 className="auth-page__title">Авторизація</h1>
+            <div className="auth-page__content">
+                <AuthPageForm />
+                <div className="auth-page__info">
                     <svg
+                        className="auth-page__info-icon"
                         width="40"
                         height="47"
                         viewBox="0 0 40 47"
@@ -31,13 +34,21 @@ const AuthPage = () => {
                             strokeLinejoin="round"
                         />
                     </svg>
-                    <h2>Ще немає акаунту?</h2>
-                    <p></p>
-                    <p></p>
+                    <p className="auth-page__info-title">Ще немає акаунту?</p>
+                    <p className="auth-page__info-text">
+                        <strong>Реєстрація на сайті</strong> дає змогу отримати
+                        доступ до статусу та історії вашого замовлення. Просто
+                        заповніть поля нижче, і ви отримаєте обліковий запис.
+                    </p>
+                    <p className="auth-page__info-text">
+                        Ми запитуємо у вас тільки інформацію, необхідну для
+                        того, щоб зробити процес купівлі більш швидким і легким.
+                    </p>
                     <LinkButton
-                        label="Зареєструватись"
-                        url="/"
-                        color="orange"
+                        path="/"
+                        text="Зареєструватись"
+                        SvgIcon={OrangeSvg}
+                        className="orange auth-page__info-btn"
                     />
                 </div>
             </div>
