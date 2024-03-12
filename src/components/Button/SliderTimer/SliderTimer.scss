@@ -1,14 +1,19 @@
-.circleTimer-box{
-    width: 100%;
-    position: relative;
+.circleTimer-box {
+  width: 100%;
 }
 
-.circleTimer{
-    width: 8px;
-    right: 8px;
-    margin-right: 35px;
-    margin-left: 35px;
-    border-radius: 100%;
-    color: #767676;
-    background-color: #767676;  
+.circleTimer {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+ 
+  background-color: #767676;
+  margin: 15px;
+  transition: background-color 0.3s ease;
+
+  cursor: pointer;
+}
+
+.circleTimer.active {
+  background-color: #000000;
 }

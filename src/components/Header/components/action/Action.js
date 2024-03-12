@@ -1,6 +1,7 @@
 
 import { BsSearch, BsHeart, BsBasket3 } from "react-icons/bs";
 import { FaRegUser } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 
 import "./Action.scss"
 
@@ -8,24 +9,28 @@ const Action = () => {
 	return ( 
 		<div className="header-icon">
 			<div className="header-icon__item">
-			<FaRegUser className="header-form__icon" color="curent-color" />
+			<NavLink
+				to="/auth">
+					<FaRegUser className="header-form__icon" color="curent-color" />
+				</NavLink>
 			</div>
+
             <div className="header-icon__item">				
 				<BsSearch />								
 			</div>
+
             <div className="header-icon__item">
-			{/* <Link to="/FavoritePage">
-			<span className="count"></span>
-			<BsHeart />
-			</Link> */}
-				<BsHeart /></div>
+				<NavLink
+				to="/favorites">
+					<BsHeart />
+				</NavLink>
+			</div>
             <div className="header-icon__item">
-				{/* <Link to="/BasketPage">
-				<span className="count"></span>
-			<BsBasket3 />
-			</Link> */}				
-				<BsBasket3 />
-				</div>
+				<NavLink
+				to="/cart">
+					<BsBasket3 />
+				</NavLink>
+			</div>
 			
           </div>
 	 );
