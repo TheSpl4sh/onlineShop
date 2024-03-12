@@ -72,7 +72,7 @@ function PlacingOrder() {
             {() => (
               <Form className="registration-form">
                 <div className="form-enter">
-                  <p className="form-enter__text">Already have an account?</p>{" "}
+                  <p className="form-enter__text">Already have an account?</p>
                   <button className="form-enter__button">
                     <h3>Enter</h3>
                   </button>
@@ -369,11 +369,11 @@ function PlacingOrder() {
                 <input
                   className="checkbox-order"
                   type="checkbox"
-                  id="checkbox1"
-                  name="checkbox1"
-                  value="checkbox1"
+                  id="checkbox-order"
+                  name="checkbox-order"
+                  value="checkbox-order"
                 />
-                <label htmlFor="checkbox1">
+                <label htmlFor="checkbox-order">
                   I agree to the processing of personal data in accordance with
                   the privacy policy
                 </label>

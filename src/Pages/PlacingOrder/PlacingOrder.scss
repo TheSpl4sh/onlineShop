@@ -184,7 +184,14 @@
 
 .checkbox-order {
   margin-right: 5px;
+  background-color: #0000;
 }
+
+.checkbox-order:checked {
+  border-color: red;
+  background-color: yellow;
+}
+
 
 @media screen and (min-width: 480px) and (max-width: 768px) {
   .line-sum {
