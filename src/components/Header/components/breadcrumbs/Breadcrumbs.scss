@@ -13,10 +13,14 @@
       margin-right: 40px;
       cursor: pointer;
     }
+    &__item a {
+      color: currentColor;
+    }
 
     &__item:hover {
       color: $dark-orange;
-      border-bottom: solid 1px $dark-orange;
+      // border-bottom: solid 1px $dark-orange;
+      border-bottom: 1px solid $favorite-border-color;
     }
   }
 }
