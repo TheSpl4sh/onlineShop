@@ -20,7 +20,7 @@ function App() {
         <Route path="cart" element={<CartPage />} />
         <Route path="catalog" element={<AllProductsPage />}/>
         <Route path="order" element={<PlacingOrder />}/>
-        {/* <Route path="card" element={<CardPage />}/> */}
+        <Route path="card" element={<CardPage />}/>
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

@@ -9,6 +9,7 @@ import Size from './components/Size'
 import ButtonBlackBasket from '../../components/ButtonBlackBasket/ButtonBlackBasket'
 import ProductOptions from './components/ProductOptions.js'
 import ImgContainer from "./components/ImgContainer.js";
+import ColorList from './components/ColorList.js'
 
 
 function CardPage() {
@@ -17,8 +18,8 @@ function CardPage() {
         <div className="container">
             <Links/>
             <div className="content-container">
+            <ImgContainer/>
                 <div className="text-container">
-                    <ImgContainer/>
                     <h1 className="text-container__title">
                         Кросівки Nike Air VaporMax 2023 Flyknit
                     </h1>
@@ -28,23 +29,7 @@ function CardPage() {
                     <a href="/link" className="all-description">
                         Повний опис
                     </a>
-                    <ul className="color-list">
-                        <li>
-                            Кольори:
-                        </li>
-                        <li>
-                            <img className="color-img" src={colorBlack} alt="black" />
-                        </li>
-                        <li>
-                            <img className="color-img" src={colorBlue} alt="blue" />
-                        </li>
-                        <li>
-                            <img className="color-img" src={colorRed}  alt="red" />
-                        </li>
-                        <li>
-                            <img className="color-img" src={colorWhite}  alt="white" />
-                        </li>
-                    </ul>
+                  <ColorList/>
                    <Size/>
                    <div className="card-page__price">
                        <div className="card-page__price-md">
