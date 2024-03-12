@@ -1,10 +1,6 @@
 import React from "react";
 import Links from "./components/Links";
 import './style/card-page.scss'
-import colorWhite from './iamges/color-white.png'
-import colorBlack from './iamges/color-black.png'
-import colorBlue from './iamges/color-blue.png'
-import colorRed from './iamges/color-red.png'
 import Size from './components/Size'
 import ButtonBlackBasket from '../../components/ButtonBlackBasket/ButtonBlackBasket'
 import ProductOptions from './components/ProductOptions.js'
