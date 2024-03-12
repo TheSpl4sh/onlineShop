@@ -29,6 +29,7 @@
     background-color: rgba(255, 255, 255, 0);
     text-align: start;
     padding-left: 15px;
+    color: white;
 
     &::placeholder {
         @include font(15px, 400, 1, $background-primary-color);
@@ -45,4 +46,9 @@
     @include font (13px, 500, 1, $light-orange);
 }
 
+.subscribe-button:hover {
+    color: white;
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+}
 

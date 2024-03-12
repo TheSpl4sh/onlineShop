@@ -1,0 +1,151 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/deafults.scss';
+@import '../../../styles/fonts.scss';
+@import '../../../styles/mixins.scss';
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+
+    @media (min-width: $bp-md) {
+        width: 47%;
+    }
+
+    @media (min-width: 1025px) {
+        width: 38%;
+    }
+
+    &__label {
+        font-family: 'Pragmatica';
+        @include font (15px, 400, 180%, $dark-black);
+        display: block;
+        width: 100%;
+        text-align: start;
+        margin-bottom: 5px;
+
+        span {
+            color: #ff1515;
+        }
+    }
+
+    &__input {
+        font-family: 'Pragmatica';
+        @include font (16px, 400, 169%, $dark-black);
+        border: 1px solid $beige;
+        width: 100%;
+        height: 60px;
+        padding: 10px 35px 10px 20px;
+        margin-bottom: 15px;
+
+        &::placeholder {
+            font-family: 'Pragmatica';
+            @include font (16px, 400, 169%, #C1C1C1);
+        }
+    }
+
+    &__password-toggle {
+        position: absolute;
+        right: 12px;
+        top: 46%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+
+        @media (min-width: $bp-md) {
+            right: 11px;
+        }
+    }
+
+    &__password-toggle.pressed svg g {
+        opacity: 1;
+    }
+
+    &__link {
+        width: 100%;
+        padding: 11px 10px;
+        background-color: #F9F9F9;
+        text-align: center;
+
+        &-text {
+            position: relative;
+            font-family: 'Pragmatica';
+            @include font (15px, 400, 18px, $dark-black);
+
+
+            &::after {
+                content: "";
+                background-color: $dark-black;
+                display: block;
+                width: 0;
+                height: 1px;
+                position: absolute;
+                left: 50%;
+                bottom: -3px;
+                transition: width 1.5s;
+                transform: translateX(-50%);
+            }
+
+            &:hover {
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    &__button {
+        margin-top: 15px;
+    }
+
+    &__label-checkbox {
+        font-family: 'Pragmatica';
+        @include font (15px, 400, 18px, $dark-black);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        margin-top: 15px;
+
+        .auth-form__checkbox {
+            appearance: none;
+            width: 23px;
+            height: 22px;
+            border: 1px solid $beige;
+            position: relative;
+            outline: none;
+            cursor: pointer;
+
+            &:checked {
+                &::before {
+                    background-color: $dark-black;
+                }
+            }
+
+            &::before {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 100%;
+                background-color: transparent;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            &:checked::before {
+                content: '\2714';
+                font-size: 16px;
+                line-height: 1.2;
+                text-align: center;
+                color: $background-primary-color;
+            }
+        }
+    }
+}
