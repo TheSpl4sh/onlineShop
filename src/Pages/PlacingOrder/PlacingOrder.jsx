@@ -1,9 +1,9 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
 import ButtonBlackArrow from "../../components/Button/ButtonBlackArrow/ButtonBlackArrow";
+import UAH from "../../components/Banner/img/UAH.png";
+import lineSum from "../PlacingOrder/img/Line-sum.png";
 import "../PlacingOrder/PlacingOrder.scss";
 
 function PlacingOrder() {
@@ -25,7 +25,7 @@ function PlacingOrder() {
   const initialValues = {
     firstName: "",
     lastName: "",
-    companyName: "",
+    company: "",
     region: "",
     city: "",
     street: "",
@@ -42,221 +42,349 @@ function PlacingOrder() {
 
   return (
     <div className="container">
-      <Header />
-      <div className="container">
-        <div className="wrapper-placingOrder">
-          <div className="PlacingOrder-formik">
-            <h1>Placing an order</h1>
-            <div className="form-enter">
-              <p>Already have an account?</p> <button>ENTER</button>
-            </div>
+      <ul className="breadcrumb">
+        <li className="breadcrumb-item">
+          <a href="/">Swoosh Store</a>
+          <svg
+            className="breadcrumb-separator"
+            width="17"
+            height="9"
+            viewBox="0 0 17 9"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16.3536 4.85355C16.5488 4.65829 16.5488 4.34171 16.3536 4.14645L13.1716 0.964465C12.9763 0.769203 12.6597 0.769203 12.4645 0.964465C12.2692 1.15973 12.2692 1.47631 12.4645 1.67157L15.2929 4.5L12.4645 7.32843C12.2692 7.52369 12.2692 7.84027 12.4645 8.03553C12.6597 8.23079 12.9763 8.23079 13.1716 8.03553L16.3536 4.85355ZM4.37114e-08 5L16 5L16 4L-4.37114e-08 4L4.37114e-08 5Z"
+              fill="#DADADA"
+            ></path>
+          </svg>
+        </li>
+        <li className="breadcrumb-item">Placing an order</li>
+      </ul>
+      <h1 className="placingOrder-header">Placing an order</h1>
+      <div className="wrapper-placingOrder">
+        <div className="PlacingOrder-formik">
+          <Formik
+            initialValues={initialValues}
+            handleSubmit={handleSubmit}
+            validationSchema={validationSchema}
+          >
+            {() => (
+              <Form className="registration-form">
+                <div className="form-enter">
+                  <p className="form-enter__text">Already have an account?</p>
+                  <button className="form-enter__button">
+                    <h3>Enter</h3>
+                  </button>
+                </div>
+                <div>
+                  is there a promo code?
+                  <a className="click-active" href="#">
+                    Click here to activate it
+                  </a>
+                </div>
 
-            <Formik
-              initialValues={initialValues}
-              handleSubmit={handleSubmit}
-              validationSchema={validationSchema}
-            >
-              {() => (
-                <Form>
-                  <ul className="form-element">
-                    <li>
-                      <label htmlFor="firstName">
+                <ul className="form-element">
+                  <li className="form-element--li">
+                    <label htmlFor="firstName">
+                      <p className="form-element__text">
                         FirstName <span className="asterisk-required">*</span>
-                      </label>
-                      <br />
-                      <Field
-                        className="placingOrder-field"
-                        type="text"
-                        id="firstName"
-                        name="firstName"
-                        placeholder="What is your name"
-                      />
-                      <ErrorMessage name="firstName" component="div" />
-                    </li>
-                    <li>
-                      <label htmlFor="lastName">
+                      </p>
+                    </label>
+
+                    <Field
+                      className="placingOrder-field"
+                      type="text"
+                      id="firstName"
+                      name="firstName"
+                      placeholder="What is your name"
+                    />
+                    <ErrorMessage name="firstName" component="div" />
+                  </li>
+                  <li className="form-element--li">
+                    <label htmlFor="lastName">
+                      <p className="form-element__text">
                         LastName <span className="asterisk-required">*</span>
-                      </label>
-                      <br />
-                      <Field
-                        className="placingOrder-field"
-                        type="text"
-                        id="lastName"
-                        name="lastName"
-                        placeholder="Enter your last name"
-                      />
-                      <ErrorMessage name="lastName" component="div" />
-                    </li>
-                  </ul>
+                      </p>
+                    </label>
 
-                  <label htmlFor="companyName">CompanyName</label>
-                  <br />
-                  <Field
-                    className="placingOrder-field"
-                    type="text"
-                    id="companyName"
-                    name="companyName"
-                    placeholder="Enter the name of your company"
-                  />
-                  <ErrorMessage name="companyName" component="div" />
+                    <Field
+                      className="placingOrder-field"
+                      type="text"
+                      id="lastName"
+                      name="lastName"
+                      placeholder="Enter your last name"
+                    />
+                    <ErrorMessage name="lastName" component="div" />
+                  </li>
+                </ul>
 
-                  <ul className="form-element">
-                    <li>
-                      <label htmlFor="region">
+                <label htmlFor="company">
+                  <p className="form-element__text">Company</p>
+                </label>
+
+                <Field
+                  className="placingOrder-field"
+                  type="text"
+                  id="company"
+                  name="company"
+                  placeholder="Enter the name of your company"
+                />
+                <ErrorMessage name="company" component="div" />
+
+                <ul className="form-element">
+                  <li className="form-element--li">
+                    <label htmlFor="region">
+                      <p className="form-element__text">
                         Area/Region
                         <span className="asterisk-required">*</span>
-                      </label>
-                      <br />
-                      <Field
-                        className="placingOrder-field"
-                        type="text"
-                        id="region"
-                        name="region"
-                        placeholder="Region"
-                      />
-                      <ErrorMessage name="region" component="div" />
-                    </li>
+                      </p>
+                    </label>
 
-                    <li>
-                      <label htmlFor="city">
-                        Сity <span className="asterisk-required">*</span>
-                      </label>
-                      <br />
-                      <Field
-                        className="placingOrder-field"
-                        type="text"
-                        id="city"
-                        name="city"
-                        placeholder="Enter the name of your city"
-                      />
-                      <ErrorMessage name="city" component="div" />
-                    </li>
-                  </ul>
+                    <Field
+                      className="placingOrder-field"
+                      type="text"
+                      id="region"
+                      name="region"
+                      placeholder="Region"
+                    />
+                    <ErrorMessage name="region" component="div" />
+                  </li>
 
-                  <label htmlFor="street">
+                  <li className="form-element--li">
+                    <label htmlFor="city">
+                      <p className="form-element__text">
+                        City <span className="asterisk-required">*</span>
+                      </p>
+                    </label>
+
+                    <Field
+                      className="placingOrder-field"
+                      type="text"
+                      id="city"
+                      name="city"
+                      placeholder="Enter the name of your city"
+                    />
+                    <ErrorMessage name="city" component="div" />
+                  </li>
+                </ul>
+
+                <label htmlFor="street">
+                  <p className="form-element__text">
                     Street <span className="asterisk-required">*</span>
-                  </label>
-                  <br />
-                  <Field
-                    className="placingOrder-field"
-                    type="text"
-                    id="street"
-                    name="street"
-                    placeholder="Enter the name of the street"
-                  />
-                  <ErrorMessage name="street" component="div" />
+                  </p>
+                </label>
 
-                  <ul className="form-element">
-                    <li>
-                      <label htmlFor="postalCode">
-                        PostalCode <span className="asterisk-required">*</span>
-                      </label>
-                      <br />
-                      <Field
-                        className="placingOrder-field"
-                        type="text"
-                        id="postalCode"
-                        name="postalCode"
-                        placeholder="Enter the index"
-                      />
-                      <ErrorMessage name="postalCode" component="div" />
-                    </li>
-                    <li>
-                      <label htmlFor="houseNumber">HouseNumber</label>
-                      <label htmlFor="apartment">
-                        /Apartment
+                <Field
+                  className="placingOrder-field"
+                  type="text"
+                  id="street"
+                  name="street"
+                  placeholder="Enter the name of the street"
+                />
+                <ErrorMessage name="street" component="div" />
+
+                <ul className="form-element">
+                  <li className="form-element--li">
+                    <label htmlFor="postalCode">
+                      <p className="form-element__text">
+                        PostalCode
                         <span className="asterisk-required">*</span>
-                      </label>
-                      <br />
-                      <Field
-                        className="placingOrder-field"
-                        type="text"
-                        id="houseNumber"
-                        name="houseNumber"
-                        placeholder="For example, 37/2"
-                      />
-                      <ErrorMessage name="houseNumber" component="div" />
-                      <ErrorMessage name="apartment" component="div" />
-                    </li>
-                  </ul>
+                      </p>
+                    </label>
 
-                  <ul className="form-element">
-                    <li>
-                      <label htmlFor="email">
+                    <Field
+                      className="placingOrder-field"
+                      type="text"
+                      id="postalCode"
+                      name="postalCode"
+                      placeholder="Enter the index"
+                    />
+                    <ErrorMessage name="postalCode" component="div" />
+                  </li>
+                  <li className="form-element--li">
+                    <label htmlFor="houseNumber apartment">
+                      <p className="form-element__text">
+                        House /Apartment
+                        <span className="asterisk-required">*</span>
+                      </p>
+                    </label>
+                    <Field
+                      className="placingOrder-field"
+                      type="text"
+                      id="houseNumber"
+                      name="houseNumber"
+                      placeholder="example, 37/2"
+                    />
+                    <ErrorMessage name="houseNumber" component="div" />
+                    <ErrorMessage name="apartment" component="div" />
+                  </li>
+                </ul>
+
+                <ul className="form-element">
+                  <li className="form-element--li">
+                    <label htmlFor="email">
+                      <p className="form-element__text">
                         Email <span className="asterisk-required">*</span>
-                      </label>
-                      <br />
-                      <Field
-                        className="placingOrder-field"
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="Enter your email address"
-                      />
-                      <ErrorMessage name="email" component="div" />
-                    </li>
-                    <li>
-                      <label htmlFor="phoneNumber">
+                      </p>
+                    </label>
+                    <Field
+                      className="placingOrder-field"
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="Enter your email address"
+                    />
+                    <ErrorMessage name="email" component="div" />
+                  </li>
+                  <li className="form-element--li">
+                    <label htmlFor="phoneNumber">
+                      <p className="form-element__text">
                         PhoneNumber <span className="asterisk-required">*</span>
-                      </label>
-                      <br />
-                      <Field
-                        className="placingOrder-field"
-                        type="text"
-                        id="phoneNumber"
-                        name="phoneNumber"
-                        placeholder="+38(___)___-__-__"
-                      />
-                      <ErrorMessage name="phoneNumber" component="div" />
-                    </li>
-                  </ul>
-                  <button type="button" onClick={() => console.log("Creating account...")}>
-          Створити акаунт
-        </button>
+                      </p>
+                    </label>
+                    <Field
+                      className="placingOrder-field"
+                      type="text"
+                      id="phoneNumber"
+                      name="phoneNumber"
+                      placeholder="+38(___)___-__-__"
+                    />
+                    <ErrorMessage name="phoneNumber" component="div" />
+                  </li>
+                </ul>
+                <div>
+                  <input className="checkbox-order"
+                    type="checkbox"
+                    id="checkbox1"
+                    name="checkbox1"
+                    value="checkbox1"
+                  />
+                  <label htmlFor="checkbox1">Create an account</label>
+                </div>
 
-                  <label htmlFor="preorderСomment">
-                  Preorder comment</label>
-                      <br />
-                      <Field
-                        className="placingOrder-field"
-                        type="text"
-                        id="preorderComment"
-                        name="preorderComment"
-                        placeholder="comment text"
-                      />
-
-                </Form>
-              )}
-            </Formik>
-          </div>
-          <div className="wrapper-yourOrder">
-            <div></div>
-            <h1 companyName="yourOrder">Your order</h1>
-            <div>
-              <h2>Delivery:</h2>
-              <ul>
-                <li><button></button><p>Pickup from the store</p></li>
-                <li><button></button><p>Kyiv</p></li>
-                <li><button></button><p>Lviv</p></li>
-              </ul>
-            </div>
-            <div>
-            <h2>Payment:</h2>
-              <ul>
-                <li><button></button><p>online payment</p></li>
-                <li><button></button><p>card upon receipt</p></li>
-                <li><button></button><p>in cash</p></li>
-              </ul>
-            </div>
-            <div>
-              <button></button>
-              <p>I agree to the processing of personal data in accordance with the privacy policy</p>
-            </div>
-            <ButtonBlackArrow text="MAKE AN ORDER" />
-          </div>
+                <label htmlFor="preorderСomment">
+                  <p className="form-element__text">Preorder comment</p>
+                </label>
+                <Field
+                  className="placingOrder-fields"
+                  type="text"
+                  id="preorderComment"
+                  name="preorderComment"
+                  placeholder="comment text"
+                />
+              </Form>
+            )}
+          </Formik>
         </div>
+
+        <Formik>
+          <Form>
+            <div className="wrapper-yourOrder">
+              <div className="yourOrder">
+                <h1>Your order</h1>
+                <div className="yourOrder-basket"></div>
+                <ul className="yourOrder-sum">
+                  <li className="yourOrder-sum__sum">Sum</li>
+                  <li>
+                    <img className="line-sum" src={lineSum} alt="line-sum" />
+                  </li>
+                  <li className="yourOrder-sum__uah">
+                    <img className="uah" src={UAH} alt="UAH" />
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <div className="delivery-header">
+                  <label htmlFor="delivery">Delivery:</label>
+                </div>
+
+                <ul>
+                  <li className="delivery-options">
+                    <input className="delivery-radio"
+                      type="radio"
+                      id="option1"
+                      name="option"
+                      value="option1"
+                    />
+                    <label htmlFor="option1">Pickup from the store</label>
+                  </li>
+                  <li className="delivery-options">
+                    <input className="delivery-radio"
+                      type="radio"
+                      id="option2"
+                      name="option"
+                      value="option2"
+                    />
+                    <label htmlFor="option2">Kyiv</label>
+                  </li>
+                  <li className="delivery-options">
+                    <input className="delivery-radio"
+                      type="radio"
+                      id="option3"
+                      name="option"
+                      value="option3"
+                    />
+                    <label htmlFor="option3">Lviv</label>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <div className="payment-header">
+                  <label htmlFor="payment">Payment:</label>
+                </div>
+                <ul>
+                  <li className="payment-options">
+                    <input className="payment-radio"
+                      type="radio"
+                      id="online-payment"
+                      name="options"
+                      value="online-payment"
+                    />
+                    <label htmlFor="optionOnline-payment">Online payment</label>
+                  </li>
+                  <li className="payment-options">
+                    <input className="payment-radio"
+                      type="radio"
+                      id="optionCard upon receipt"
+                      name="options"
+                      value="optionCard upon receipt"
+                    />
+                    <label htmlFor="option">Card upon receipt</label>
+                  </li>
+                  <li className="payment-options">
+                    <input className="payment-radio"
+                      type="radio"
+                      id="optionIn cash"
+                      name="options"
+                      value="optionIn cash"
+                    />
+                    <label htmlFor="optionIn cash">In cash</label>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <input
+                  className="checkbox-order"
+                  type="checkbox"
+                  id="checkbox-order"
+                  name="checkbox-order"
+                  value="checkbox-order"
+                />
+                <label htmlFor="checkbox-order">
+                  I agree to the processing of personal data in accordance with
+                  the privacy policy
+                </label>
+              </div>
+              <div className="button-order">
+                <ButtonBlackArrow text="MAKE AN ORDER" />
+              </div>
+            </div>
+          </Form>
+        </Formik>
       </div>
-      <Footer />
     </div>
   );
 }
