@@ -9,7 +9,10 @@ const Action = () => {
 	return ( 
 		<div className="header-icon">
 			<div className="header-icon__item">
-				<FaRegUser className="header-form__icon" color="curent-color" />
+			<NavLink
+				to="/auth">
+					<FaRegUser className="header-form__icon" color="curent-color" />
+				</NavLink>
 			</div>
 
             <div className="header-icon__item">				
