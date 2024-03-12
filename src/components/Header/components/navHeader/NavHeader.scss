@@ -16,6 +16,7 @@
 
     &__item {
       margin-right: 25px;
+      color: currentColor;
     }
     &__item:nth-last-child(-n + 6):hover {
       cursor: pointer;

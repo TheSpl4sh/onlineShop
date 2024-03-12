@@ -3,10 +3,8 @@
 @import '../../styles/fonts.scss';
 @import '../../styles/mixins.scss';
 
-
 .slider-section {
     padding-bottom: 60px;
-    position: relative;
 
     &__divider {
         border-top: 1px solid #ECECEC;
@@ -20,21 +18,11 @@
         padding: 60px 0;
     }
 
-    &__wrap {
-
-
-        &-item {
-            display: flex;
-            margin: 0 5px;
-            flex-wrap: wrap;
-        }
-    }
-
     .arrow-next svg,
     .arrow-prev svg {
         position: absolute;
         width: 39px;
-        top: -75px;
+        top: -80px;
         cursor: pointer;
         transition: opacity 0.3s;
 
@@ -53,4 +41,61 @@
         transform: rotate(180deg);
         right: 0;
     }
+
 }
+
+
+// .slick-slider {
+//     position: relative;
+//     display: block;
+//     box-sizing: border-box;
+//     -webkit-user-select: none;
+//     user-select: none;
+//     -webkit-touch-callout: none;
+//     -khtml-user-select: none;
+//     touch-action: pan-y;
+//     -webkit-tap-highlight-color: transparent;
+// }
+
+// .slick-slider .slick-track, .slick-slider .slick-list {
+//     transform: translate3d(0, 0, 0);
+// }
+
+// .slick-list {
+//     position: relative;
+//     display: block;
+//     overflow: hidden;
+//     margin: 0;
+//     padding: 0;
+// }
+
+// .slick-track {
+//     position: relative;
+//     top: 0;
+//     left: 0;
+//     display: block;
+//     margin-left: auto;
+//     margin-right: auto;
+// }
+
+// .slick-initialized .slick-slide {
+//     display: block;
+// }
+
+// .slick-slide {
+//     display: none;
+//     float: left;
+//     height: 100%;
+//     min-height: 1px;
+// }
+
+// element.style {
+//     width: 5239px;
+//     opacity: 1;
+//     transform: translate3d(-1209px, 0px, 0px);
+// }
+
+// element.style {
+//     width: 405px;
+// }
+
