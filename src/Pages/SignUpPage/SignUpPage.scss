@@ -1,0 +1,115 @@
+@import '../../styles/variables.scss';
+@import '../../styles/deafults.scss';
+@import '../../styles/fonts.scss';
+@import '../../styles/mixins.scss';
+
+.signup-page {
+    &__title {
+        font-family: 'Pragmatica';
+        @include font (25px, 500, 124%, $dark-black);
+        margin-top: 12px;
+        text-align: start;
+
+        @media (min-width: 1025px) {
+            @include font (45px, 500, 107%, $dark-black);
+            margin-top: 20px;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+        margin: 16px 0 80px;
+        padding: 15px;
+        border: 1px solid $header-border-color;
+
+        @media (min-width: $bp-md) {
+            flex-direction: row;
+            align-items: flex-start;
+        }
+
+        @media (min-width: 1025px) {
+            margin: 52px 0 120px;
+            padding: 40px;
+            text-align: start;
+        }
+    }
+
+    &__info {
+        width: 100%;
+        border-left: 0;
+        padding-left: 0;
+        padding-top: 50px;
+        position: relative;
+
+        @media (min-width: $bp-md) {
+            width: 50%;
+            padding-top: 0;
+            position: relative;
+        }
+
+        @media (min-width: 1025px) {
+            width: 53%;
+            padding-left: 118px;
+            border-left: 1px solid $header-border-color;
+        }
+
+        &-icon {
+
+            @media (min-width: 1025px) {
+                position: absolute;
+                left: 40px;
+            }
+        }
+
+        &-title {
+            font-family: 'Pragmatica';
+            @include font (28px, 500, 33px, $dark-black);
+            padding: 12px 0;
+
+            @media (min-width: $bp-md) {
+                padding: 12px 0;
+                text-align: center;
+            }
+
+            @media (min-width: 1025px) {
+                @include font (28px, 500, 33px, $dark-black);
+                padding: 7px 0;
+                text-align: start;
+            }
+        }
+
+        &-text {
+            font-family: 'Pragmatica';
+            @include font (15px, 400, 173%, #515151);
+
+            strong {
+                font-weight: 700;
+            }
+
+            @media (min-width: $bp-md) {
+                @include font (15px, 400, 173%, #515151);
+                padding: 4px 28px 0 28px;
+            }
+
+            @media (min-width: 1025px) {
+                @include font (16px, 400, 175%, #515151);
+                padding: 26px 0 0 0;
+                text-align: start;
+                max-width: 98%;
+            }
+        }
+
+        &-btn {
+            margin: 16px auto 0;
+            width: 293px;
+
+            @media (min-width: 1025px) {
+                margin: 14px 0 0;
+            }
+        }
+    }
+}

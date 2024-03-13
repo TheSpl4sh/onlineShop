@@ -1,25 +1,25 @@
 import React from "react";
-import "./AuthPage.scss";
-import AuthPageForm from "./components/AuthPageForm";
+import "./SignUpPage.scss";
+import SignUpPageForm from "./components/SignUpPageForm";
 import BelowHeaderBreadcrumbs from "../../components/BelowHeaderBreadcrumbs/BelowHeaderBreadcrumbs";
 import LinkButton from "../../components/LinkButton/LinkButton";
 import { ReactComponent as OrangeSvg } from "../../components/LinkButton/icons/orange_btn_svg.svg";
 
-const AuthPage = () => {
+const SignUpPage = () => {
     return (
-        <section className="container auth-page">
+        <section className="container signup-page">
             <BelowHeaderBreadcrumbs
                 paths={[
                     { label: "Swoosh Store", url: "/" },
-                    { label: "Авторизація", url: "/auth" },
+                    { label: "Реєстрація", url: "/signup" },
                 ]}
             />
-            <h1 className="auth-page__title">Авторизація</h1>
-            <div className="auth-page__content">
-                <AuthPageForm />
-                <div className="auth-page__info">
+            <h1 className="signup-page__title">Реєстрація</h1>
+            <div className="signup-page__content">
+                <SignUpPageForm />
+                <div className="signup-page__info">
                     <svg
-                        className="auth-page__info-icon"
+                        className="signup-page__info-icon"
                         width="40"
                         height="47"
                         viewBox="0 0 40 47"
@@ -34,21 +34,16 @@ const AuthPage = () => {
                             strokeLinejoin="round"
                         />
                     </svg>
-                    <p className="auth-page__info-title">Ще немає акаунту?</p>
-                    <p className="auth-page__info-text">
-                        <strong>Реєстрація на сайті</strong> дає змогу отримати
-                        доступ до статусу та історії вашого замовлення. Просто
-                        заповніть поля нижче, і ви отримаєте обліковий запис.
-                    </p>
-                    <p className="auth-page__info-text">
-                        Ми запитуємо у вас тільки інформацію, необхідну для
-                        того, щоб зробити процес купівлі більш швидким і легким.
+                    <p className="signup-page__info-title">Вже є акаунт?</p>
+                    <p className="signup-page__info-text">
+                        Перейдіть до <strong>авторизації</strong> якщо у вас уже
+                        є зареєстрований обліковий запис.
                     </p>
                     <LinkButton
-                        path="/signup"
-                        text="Зареєструватись"
+                        path="/auth"
+                        text="Авторизуватись"
                         SvgIcon={OrangeSvg}
-                        className="orange auth-page__info-btn"
+                        className="orange signup-page__info-btn"
                     />
                 </div>
             </div>
@@ -56,4 +51,4 @@ const AuthPage = () => {
     );
 };
 
-export { AuthPage };
+export { SignUpPage };
