@@ -8,11 +8,17 @@ import CartImg from "./img/benfits_section/cart.svg"
 import PlusImg from './img/hit-section/plus.svg'
 import DiscountCard from '../../components/discount-card/DiscountCard'
 import Banner from "../../components/Banner/Banner";
+import data from '../../data.json'
 
 const MainPage = () => {
+  const products = data.products
   return (
     <div className='main-page'>
       <div className='container'>
+        {products.map((item) => (
+          <img key={item.id} src={item.logo_img} alt='logo'/>
+        )
+        )}
         <Banner />
         <section className='benefits-section'>
               <article className='benefits-section__original'>
