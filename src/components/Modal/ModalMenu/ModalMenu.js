@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useState } from 'react';
+import Select from 'react-select';
 // import { NavLink } from "react-router-dom";
 import { FaSearch, FaTimes, FaRegUser } from "react-icons/fa";
 import { BsHeart, BsBasket3 } from "react-icons/bs";
 import Breadcrumbs from "../../Header/components/breadcrumbs/Breadcrumbs";
-import CustomSelect from "../CustomSelect";
+// import CustomSelect from "../CustomSelect";
+//  import { CustomSelect } from "../../select/Select";
+// import { Select } from "../../select/Select";
 
 import "./ModalMenu.scss";
-// import Action from "../../Header/components/action/Action";
 
-const ModalMenu = ({ handleClose, isOpen }) => {
+
+const ModalMenu = ({ handleClose }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(null);
   return (
     <div className={`modal-wrapper ${isOpen ? "open" : ""}`}>
       <div className="modal">
@@ -43,20 +48,110 @@ const ModalMenu = ({ handleClose, isOpen }) => {
           </div>
         </div>
         <div className="modalNav-container">
-          <div className="modalNav-container">
-            <CustomSelect
+        <label className="modalNav-label" htmlFor="catalogue" onClick={() => setIsOpen(!isOpen)}>Каталог</label>
+          {isOpen && (
+            <Select
+            defaultValue={selectedOption}
+            onChange={setSelectedOption}
+            options={[
+              { value: "Runners", label: "Бігові" },
+          { value: "Summer", label: "Літо" },
+          { value: "Winter", label: "Зима" },
+          { value: "Models", label: "Моделі" },
+            ]}
+          />
+            // <CustomSelect
+              // className="catalogue-select"
+              // title="Демісезон"
+              // options={[
+                // 'Бігові',
+                // 'Літо',
+                // 'Зима',
+                // 'Моделі',
+            //     { value: "Demi-season", label: "Демісезон" },
+            //     { value: "", label: "" },
+            //     { value: 'Runners', label: 'Бігові' },
+            //     { value: 'Summer', label: 'Літо' },
+            //     { value: 'Winter', label: 'Зима' },
+            //     { value: 'Models', label: 'Моделі' },
+            //   ]}
+            // />
+          )}
+
+        {/* < CustomSelect
+        className=""
+         title="Демісезон"
+        options={[
+          // { value: "Demi-season", label: "Демісезон" },
+          { value: "Runners", label: "Бігові" },
+          { value: "Summer", label: "Літо" },
+          { value: "Winter", label: "Зима" },
+          { value: "Models", label: "Моделі" },
+        ]}
+        /> */}
+        {/* <CustomSelect
+            className=""
+            //  title="Демісезон"
+            options={[
+              // {  label: "Демісезон" },
+              { value: "Demi-season", label: "Демісезон" },
+               { value: "Runners", label: "Бігові" },
+              { value: "Summer", label: "Літо" },
+              { value: "Winter", label: "Зима" },
+              { value: "Models", label: "Моделі" },
+            ]}
+          />
+          <CustomSelect
+            className=""
+             title="Літо"
+            options={[
+              // {  label: "Демісезон" },
+              // { value: "demi-season", label: "Демісезон" },
+              // { value: "", label: "" },
+              { value: "Summer", label: "Літо" },
+              { value: "Winter", label: "Зима" },
+              { value: "Models", label: "Моделі" },
+            ]}
+          />
+          <CustomSelect
+            className=""
+             title="Зима"
+            options={[ */}
+              {/* // {  label: "Демісезон" },
+              // { value: "demi-season", label: "Демісезон" },
+              // { value: "", label: "" },
+              { value: "Summer", label: "Літо" },
+              { value: "Winter", label: "Зима" },
+              { value: "Models", label: "Моделі" },
+            ]}
+          />
+          <CustomSelect
+            className=""
+             title="Моделі"
+            options={[
+              // {  label: "Демісезон" },
+              // { value: "demi-season", label: "Демісезон" },
+              // { value: "", label: "" },
+              { value: "Summer", label: "Літо" },
+              { value: "Winter", label: "Зима" },
+              { value: "Models", label: "Моделі" },
+            ]}
+          /> */}
+          {/* <div className="modalNav-container"> */}
+            {/* <CustomSelect
               options={[
                 { value: "demi-season", label: "Демісезон" },
                 { value: "Summer", label: "Літо" },
                 { value: "Winter", label: "Зима" },
                 { value: "Models", label: "Моделі" },
               ]}
-            />
-          </div>
-          <label htmlFor="men">Чоловічі</label>
-          <label htmlFor="Women">Жіночі</label>
-          <label htmlFor="children">Дитячі</label>
-          <label htmlFor="Sale">Розпродаж</label>
+            /> */}
+          {/* </div> */}
+          
+          <label className="modalNav-label" htmlFor="men">Чоловічі</label>
+          <label className="modalNav-label" htmlFor="Women">Жіночі</label>
+          <label className="modalNav-label" htmlFor="children">Дитячі</label>
+          <label className="modalNav-label" htmlFor="Sale">Розпродаж</label>
         </div>
         <Breadcrumbs
           menu="modalNavMenu"

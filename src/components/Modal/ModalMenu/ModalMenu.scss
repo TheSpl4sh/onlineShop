@@ -14,7 +14,7 @@
   left: 0;
   max-width: 358px;
   width: 100%;
-  padding: 0 0 0 15px;
+  padding:  15px;
   //   box-sizing: content-box;
   background-color: #fff;
   border-radius: 4px;
@@ -77,29 +77,63 @@
 }
 // ====================
 
-.modalNav-container label {
+.modalNav-container {
   display: flex;
+  flex-direction: column;
   width: 100%;
   padding: 20px 0;
   // font-size: 14px;
   font-weight: 500;
   line-height: 11px;
 }
-
-.modalNav-container label:hover {
-  display: flex;
+.modalNav-label {
+  width: 100%;
+  padding: 20px 0;
+  // font-size: 14px;
+  font-weight: 500;
+  line-height: 11px;
+  cursor: pointer;
+}
+.modalNav-label:hover {
   width: 100%;
   background-color: black;
   color: #fff;
   padding: 20px 0;
-  // font-size: 14px;
   font-weight: 500;
   line-height: 11px;
 }
 
-.customSelect-option {
-  padding: 10px;
+.customSelect {
+  background-color: red;
 }
+.customSelect-label {
+  display: flex;
+  
+  margin-left: 10px;
+  padding: 5px;
+  background-color: #fff;
+  color: #000;
+}
+
+.customSelect-label::after {
+  // content: "";
+  // display: inline-block;
+  // width: 0;
+  // height: 0;
+  // border-style: solid;
+  // border-width: 0.4em 0.4em 0 0;
+  // border-color: #333 transparent transparent transparent; // Встановіть колір відповідно до вашого дизайну
+  // margin-left: 5px;
+  // content: "▼";
+  // content: "v";
+  content: "→";
+  // margin-left: 5px;
+  // background-color: white;
+}
+
+// .customSelect-option {
+//   padding: 10px;
+// }
 
 // =============
 
@@ -116,14 +150,13 @@
   &-list__item {
     padding-bottom: 10px;
     margin: 10px 0 10px 0;
-    
   }
   // &-list__item a {
   //   padding: 15px;
   //   // border: none;
-  //   // text-decoration: none; 
+  //   // text-decoration: none;
   //   // text-decoration: none !important;
   //   // border: none !important;
-    
+
   // }
 }

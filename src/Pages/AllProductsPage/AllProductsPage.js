@@ -1,17 +1,23 @@
 import React, { useState } from "react";
 import { FaTimes } from "react-icons/fa";
-
+import data from "../../data.json";
 import CustomSlider from "./components/customSlider/CustomSlider";
 import DisplayParameter from "./components/displayParameter/DisplayParameter";
 import MenuToggle from "./components/menuToggle/MenuToggle";
 import Pagination from "./components/pagination/Pagination";
-import { Select } from "../../components/select/Select";
-
+import {
+  SelectSize,
+  SelectSort,
+  SelectColor,
+  SelectMaterial,
+} from "../../components/select/Select";
+import Card from "../../components/Card/Card";
 
 import "./AllProductsPage.scss";
 
 const AllProductsPage = () => {
   const [isFiltersOpen, setIsFiltersOpen] = useState(false);
+  const [productSize, setProductSize] = useState(data.products);
 
   const toggleFilters = () => {
     setIsFiltersOpen(!isFiltersOpen);
@@ -21,7 +27,13 @@ const AllProductsPage = () => {
   const handleItemsPerPageChange = (value) => {
     setItemsPerPage(value);
   };
-
+ 
+  const handleSizeChange = (selectedOption) => {
+    const selectedSize = selectedOption.label;
+    const filteredProducts = data.products.filter(product => product.size.includes(selectedSize));
+    setProductSize(filteredProducts);
+  };
+ 
   return (
     <section className="catalog container">
       {/* <h1>{name}</h1> */}
@@ -39,57 +51,23 @@ const AllProductsPage = () => {
       </div>
       <div className="select-wrapper">
         <div className="select-wrapper__item">
-          <Select
-            className=""
-            title="Розмір:"
-            options={[
-              { value: "size", label: "34(EU)" },
-              { value: "size", label: "35(EU)" },
-              { value: "size", label: "36(EU)" },
-              { value: "size", label: "37(EU)" },
-              { value: "size", label: "38(EU)" },
-              { value: "size", label: "39(EU)" },
-              { value: "size", label: "40(EU)" },
-              { value: "size", label: "41(EU)" },
-              { value: "size", label: "42(EU)" },
-              { value: "size", label: "43(EU)" },
-              { value: "size", label: "44(EU)" },
-              { value: "size", label: "45(EU)" },
-            ]}
-          />
+          <SelectSize onChange={handleSizeChange} />
         </div>
         <div className="select-wrapper__item">
-          
           <CustomSlider
           //  title="Ціна:"
-            // min={0}
-            // max={1000}
-            // onChange={({ min, max }) =>
-            //   console.log(`min = ${min}, max = ${max}`)
-            // }
+          // min={0}
+          // max={1000}
+          // onChange={({ min, max }) =>
+          //   console.log(`min = ${min}, max = ${max}`)
+          // }
           />
         </div>
         <div className="select-wrapper__item">
-          <Select
-            className=""
-            title="Колір:"
-            options={[
-              { value: "red", label: "червоний" },
-              { value: "white", label: "білий" },
-              { value: "black", label: "чорний" },
-            ]}
-          />
+          <SelectColor />
         </div>
         <div className="select-wrapper__item">
-          <Select
-            className=""
-            title="Матеріал:"
-            options={[
-              { value: "material", label: "Дерматин" },
-              { value: "material", label: "Тряпка" },
-              { value: "material", label: "Плюш" },
-            ]}
-          />
+          <SelectMaterial />
         </div>
         <div className="select-wrapper__item">
           <button>
@@ -104,19 +82,16 @@ const AllProductsPage = () => {
           <DisplayParameter onItemsPerPageChange={handleItemsPerPageChange} />
         </div>
         <div className="sorting-wrapper__price">
-          <Select
-            className=""
-            title="Сортування:"
-            options={[
-              { value: "increase", label: "ціна від дешевих" },
-              { value: "decrease", label: "ціна від дорогих" },
-              { value: "ordinary", label: "звичайна" },
-            ]}
-          />
+          <SelectSort />
         </div>
       </div>
       <div className="sort-out">
         <span></span>
+      </div>
+      <div className="all-products-card">
+        {productSize.map((product) => (
+          <Card key={product.id} product={product} />
+        ))}
       </div>
       <Pagination itemsPerPage={itemsPerPage} />
     </section>
