@@ -17,7 +17,7 @@ function Contacts() {
                     { label: "Контакти", url: "/contacts" },
                 ]}
             />
-            <h1>Контакти</h1>
+            <h1 className='contacts-tittle'>Контакти</h1>
 
             <div>
                 <button className='contacts-city-name' onClick={() => setSelectedCity('Львів')}>Львів</button>
