@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import ButtonBlackArrow from "../../components/Button/ButtonBlackArrow/ButtonBlackArrow";
@@ -13,6 +13,12 @@ function PlacingOrder() {
     email: Yup.string()
       .email("Invalid email address")
       .required("This field is required"),
+    password: Yup.string()
+      .required("This field is required")
+      .matches(
+        /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/,
+        "Password must contain at least 8 characters, including one uppercase letter, one lowercase letter, and one number"
+      ),
     phoneNumber: Yup.string().required("This field is required"),
     region: Yup.string().required("This field is required"),
     city: Yup.string().required("This field is required"),
@@ -32,12 +38,21 @@ function PlacingOrder() {
     index: "",
     houseNumber: "",
     email: "",
+    password: "",
     phoneNumber: "",
   };
 
   const handleSubmit = async (values) => {
     await new Promise((resolve) => setTimeout(resolve, 500));
     alert(JSON.stringify(values, null, 2));
+  };
+
+  // useSelector з корзини редакс
+
+  const [showPromoCoupon, setShowPromoCoupon] = useState(false);
+
+  const togglePromoCoupon = () => {
+    setShowPromoCoupon(!showPromoCoupon);
   };
 
   return (
@@ -61,7 +76,7 @@ function PlacingOrder() {
         </li>
         <li className="breadcrumb-item">Placing an order</li>
       </ul>
-      <h1 className="placingOrder-header">Placing an order</h1>
+      <div className="placingOrder-header">Placing an order</div>
       <div className="wrapper-placingOrder">
         <div className="PlacingOrder-formik">
           <Formik
@@ -71,17 +86,51 @@ function PlacingOrder() {
           >
             {() => (
               <Form className="registration-form">
-                <div className="form-enter">
-                  <p className="form-enter__text">Already have an account?</p>
-                  <button className="form-enter__button">
-                    <h3>Enter</h3>
-                  </button>
+                <div className="form-enter_login-message">
+                  <div className="form-enter">
+                    <p className="form-enter__text">Already have an account?</p>
+                    <a className="form-enter__button-a" href="/auth">
+                      <button type="button" className="form-enter__button">
+                        Enter
+                      </button>
+                    </a>
+                  </div>
                 </div>
-                <div>
-                  is there a promo code?
-                  <a className="click-active" href="#">
-                    Click here to activate it
-                  </a>
+                <div className="apply-promoCode">
+                  <div className="promo-code">
+                    Is there a promo code?
+                    <button
+                      type="button"
+                      onClick={togglePromoCoupon}
+                      className="click-active"
+                    >
+                      Click here to activate it
+                    </button>
+                  </div>
+                  {showPromoCoupon && (
+                    <div className="promo-coupon">
+                      <label>
+                        <span className="label-coupon">
+                          Enter the promo code in the field:
+                        </span>
+                      </label>
+                      <div className="form-item">
+                        <Field
+                          name="coupon_code"
+                          id="coupon_code"
+                          type="text"
+                          placeholder="Promo code"
+                        />
+
+                        <button
+                          id="cp_apply"
+                          className="bt-outline apply-coup button"
+                        >
+                          Apply promo code
+                        </button>
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 <ul className="form-element">
@@ -118,11 +167,9 @@ function PlacingOrder() {
                     <ErrorMessage name="lastName" component="div" />
                   </li>
                 </ul>
-
                 <label htmlFor="company">
                   <p className="form-element__text">Company</p>
                 </label>
-
                 <Field
                   className="placingOrder-field"
                   type="text"
@@ -131,7 +178,6 @@ function PlacingOrder() {
                   placeholder="Enter the name of your company"
                 />
                 <ErrorMessage name="company" component="div" />
-
                 <ul className="form-element">
                   <li className="form-element--li">
                     <label htmlFor="region">
@@ -168,13 +214,11 @@ function PlacingOrder() {
                     <ErrorMessage name="city" component="div" />
                   </li>
                 </ul>
-
                 <label htmlFor="street">
                   <p className="form-element__text">
                     Street <span className="asterisk-required">*</span>
                   </p>
                 </label>
-
                 <Field
                   className="placingOrder-field"
                   type="text"
@@ -183,7 +227,6 @@ function PlacingOrder() {
                   placeholder="Enter the name of the street"
                 />
                 <ErrorMessage name="street" component="div" />
-
                 <ul className="form-element">
                   <li className="form-element--li">
                     <label htmlFor="postalCode">
@@ -220,7 +263,6 @@ function PlacingOrder() {
                     <ErrorMessage name="apartment" component="div" />
                   </li>
                 </ul>
-
                 <ul className="form-element">
                   <li className="form-element--li">
                     <label htmlFor="email">
@@ -254,7 +296,8 @@ function PlacingOrder() {
                   </li>
                 </ul>
                 <div>
-                  <input className="checkbox-order"
+                  <input
+                    className="checkbox-order"
                     type="checkbox"
                     id="checkbox1"
                     name="checkbox1"
@@ -262,7 +305,6 @@ function PlacingOrder() {
                   />
                   <label htmlFor="checkbox1">Create an account</label>
                 </div>
-
                 <label htmlFor="preorderСomment">
                   <p className="form-element__text">Preorder comment</p>
                 </label>
@@ -302,7 +344,8 @@ function PlacingOrder() {
 
                 <ul>
                   <li className="delivery-options">
-                    <input className="delivery-radio"
+                    <input
+                      className="delivery-radio"
                       type="radio"
                       id="option1"
                       name="option"
@@ -311,7 +354,8 @@ function PlacingOrder() {
                     <label htmlFor="option1">Pickup from the store</label>
                   </li>
                   <li className="delivery-options">
-                    <input className="delivery-radio"
+                    <input
+                      className="delivery-radio"
                       type="radio"
                       id="option2"
                       name="option"
@@ -320,7 +364,8 @@ function PlacingOrder() {
                     <label htmlFor="option2">Kyiv</label>
                   </li>
                   <li className="delivery-options">
-                    <input className="delivery-radio"
+                    <input
+                      className="delivery-radio"
                       type="radio"
                       id="option3"
                       name="option"
@@ -337,7 +382,8 @@ function PlacingOrder() {
                 </div>
                 <ul>
                   <li className="payment-options">
-                    <input className="payment-radio"
+                    <input
+                      className="payment-radio"
                       type="radio"
                       id="online-payment"
                       name="options"
@@ -346,7 +392,8 @@ function PlacingOrder() {
                     <label htmlFor="optionOnline-payment">Online payment</label>
                   </li>
                   <li className="payment-options">
-                    <input className="payment-radio"
+                    <input
+                      className="payment-radio"
                       type="radio"
                       id="optionCard upon receipt"
                       name="options"
@@ -355,7 +402,8 @@ function PlacingOrder() {
                     <label htmlFor="option">Card upon receipt</label>
                   </li>
                   <li className="payment-options">
-                    <input className="payment-radio"
+                    <input
+                      className="payment-radio"
                       type="radio"
                       id="optionIn cash"
                       name="options"
@@ -366,7 +414,7 @@ function PlacingOrder() {
                 </ul>
               </div>
               <div>
-                <input
+                <Field
                   className="checkbox-order"
                   type="checkbox"
                   id="checkbox-order"
@@ -374,8 +422,10 @@ function PlacingOrder() {
                   value="checkbox-order"
                 />
                 <label htmlFor="checkbox-order">
-                  I agree to the processing of personal data in accordance with
-                  the privacy policy
+                  <span>
+                    I agree to the processing of personal data in accordance
+                    with the privacy policy
+                  </span>
                 </label>
               </div>
               <div className="button-order">
