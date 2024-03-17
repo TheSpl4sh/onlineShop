@@ -11,6 +11,7 @@ import { PlacingOrder } from "./Pages/PlacingOrder/PlacingOrder";
 import { AuthPage } from "./Pages/AuthPage/AuthPage";
 import { SignUpPage } from "./Pages/SignUpPage/SignUpPage";
 import { CardPage } from "./Pages/card-page/CardPage";
+import { Contacts } from "./Pages/Contacts/Contacts";
 
 function App() {
     return (
@@ -24,6 +25,7 @@ function App() {
                     <Route path="auth" element={<AuthPage />} />
                     <Route path="signup" element={<SignUpPage />} />
                     <Route path="card" element={<CardPage />}/>
+                    <Route path="contacts" element={<Contacts />}/>
                     <Route path="*" element={<NotFound />} />
                 </Route>
             </Routes>
