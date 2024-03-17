@@ -3,17 +3,10 @@
 @import '../../styles/fonts.scss';
 @import '../../styles/mixins.scss';
 
+
 .footer {
     background-color: $light-black;
-    padding-top: 20px;
-
-    @media (min-width: $bp-md) {
-        padding-top: 20px;
-    }
-
-        @media (min-width: $bp-lg) {
-            padding-top: 35px;
-        }
+    padding: 20px;
 }
 
 .footer-websites {
@@ -61,8 +54,9 @@
 
 .footer-shops-features {
     padding-bottom: 20px;
+    text-align: center;
 
-    p{
+    p {
         @include font (14px, 700, 2, $grey);
         border-bottom: 1px solid $footer-border-color;
 
@@ -93,32 +87,35 @@
         @include flex (space-between, flex-start, row);
     }
 
-        @media (min-width: $bp-lg) {
-            @include flex (space-between, flex-start, column);
-            padding: 0;
-        }
+    @media (min-width: $bp-lg) {
+        @include flex (space-between, flex-start, column);
+        padding: 0;
+    }
 }
 
 .footer-subscribe-text {
     @include font (14px, 700, 1, $grey);
     padding-top: 5px;
+    text-align: center;
 
     @media (min-width: $bp-md) {
-            @include flex (flex-start, flex-start, column);
-        }
-    
+        @include flex (flex-start, flex-start, column);
+    }
+
 
     :last-child {
         @include font (15px, 400, 3, $background-primary-color);
+
         @media (min-width: $bp-md) {
             @include font (15px, 400, 2, $background-primary-color);
             text-align: start;
         }
+
         @media (min-width: $bp-lg) {
             padding: 5px 0 10px 0;
         }
     }
-}      
+}
 
 .footer-agree-policy {
     @include font (13px, 400, 2, $light-grey);
@@ -147,8 +144,9 @@
 }
 
 .footer-about-shop {
-    padding: 15px 0 15px 0;
+    padding-top: 15px;
     border-top: 1px solid $footer-border-color;
+    text-align: center;
 
     @media (min-width: $bp-md) {
         @include flex (space-around, center, row);
@@ -171,9 +169,9 @@
         height: 183px;
     }
 
-        @media (min-width: $bp-lg) {
-            gap: 150px;
-        }
+    @media (min-width: $bp-lg) {
+        gap: 150px;
+    }
 }
 
 .footer-large-flexbox {
@@ -182,4 +180,38 @@
     }
 }
 
+.footer-socials-frame:hover svg path{
+    fill: $light-orange;
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+}
 
+.footer-shops-features p:hover {
+    color: white;
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+}
+
+.footer-shops-list a:hover {
+    color: $light-orange;
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+}
+
+.footer-subscribe-text p:hover {
+    color: white;
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+}
+
+.footer-agree-policy a:hover{
+    color: $light-orange;
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+}
+
+.footer-about-shop a:hover {
+    color: $light-orange;
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+}

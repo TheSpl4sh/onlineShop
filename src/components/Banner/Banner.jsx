@@ -1,15 +1,16 @@
 import React from "react";
 import Rectangle from "../Banner/img/Rectangle.svg";
 import ButtonBlackArrow from "../Button/ButtonBlackArrow/ButtonBlackArrow";
-// import SliderCircle from "../Button/SliderCircle/SliderCircle";
-// import SliderTimer from "../Button/SliderTimer/SliderTimer";
+import SliderCircle from "../Button/SliderCircle/SliderCircle";
+import SliderTimer from "../Button/SliderTimer/SliderTimer";
 import Group from "../Banner/img/group-1-1.webp";
 import UAH from "../Banner/img/UAH.png";
-import "../Banner/Banner.scss"
+import "../Banner/Banner.scss";
 
 function Banner() {
   return (
-    // <div className="container">
+    <div>
+      <div className="banner-timer">
         <div className="banner">
           <div>
             <ul>
@@ -42,18 +43,15 @@ function Banner() {
             </div>
           </div>
           <img className="sneakerBanner" src={Group} alt="Group" />
-          {/* <div className="banner-sliderTimers">
-            <SliderTimer />
-          </div> */}
-        {/* <div className="sliderCircle">
-          <SliderCircle />
         </div>
-
         <div className="banner-sliderTimer">
           <SliderTimer />
-        </div> */}
         </div>
-    // </div>
+      </div>
+      <div className="sliderCircle">
+        <SliderCircle />
+      </div>
+    </div>
   );
 }
 
