@@ -1,0 +1,13 @@
+{
+    "products": [
+        {
+            "id" : 1,
+            "name" : "Nike Air",
+            "price ": "70$",
+            "gender ": "child",
+            "size ": 34,
+            "color" : "red",
+            "material" : "leather"
+        }
+    ]
+}
