@@ -9,7 +9,9 @@ import { NotFound } from "./Pages/NotFound/NotFound";
 import { AllProductsPage } from "./Pages/AllProductsPage/AllProductsPage";
 import { PlacingOrder } from "./Pages/PlacingOrder/PlacingOrder";
 import { AuthPage } from "./Pages/AuthPage/AuthPage";
-// import { CardPage } from "./Pages/card-page/CardPage";
+import { SignUpPage } from "./Pages/SignUpPage/SignUpPage";
+import { CardPage } from "./Pages/card-page/CardPage";
+import { Contacts } from "./Pages/Contacts/Contacts";
 
 function App() {
     return (
@@ -21,7 +23,9 @@ function App() {
                     <Route path="catalog" element={<AllProductsPage />} />
                     <Route path="order" element={<PlacingOrder />} />
                     <Route path="auth" element={<AuthPage />} />
-                    {/* <Route path="card" element={<CardPage />}/> */}
+                    <Route path="signup" element={<SignUpPage />} />
+                    <Route path="card" element={<CardPage />}/>
+                    <Route path="contacts" element={<Contacts />}/>
                     <Route path="*" element={<NotFound />} />
                 </Route>
             </Routes>

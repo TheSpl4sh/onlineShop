@@ -2,19 +2,15 @@ import React from "react";
 import Slider from "../Slider/Slider";
 import './vertical-card.scss';
 import sneakerSmall from './images/sneaker-small.png';
-import sneakerMedium from './images/sneaker-medium.png';
-import sneakerLarge from './images/sneaker-large-img.png';
+// import sneakerMedium from './images/sneaker-medium.png';
+// import sneakerLarge from './images/sneaker-large-img.png';
 
 function Card() {
     return (
             <div className="vertical-card">
                 <div className="vertical-card__img-container">
                     <a href="#top">
-                        <picture className="vertical-card__logo">
-                            <source srcSet={ sneakerLarge } media="(min-width: 1920px)" />
-                            <source srcSet={ sneakerMedium } media="(min-width: 768px)" />
-                            <img src={sneakerSmall} alt="sneaker" draggable="false"/>
-                        </picture>
+                        <img src={sneakerSmall} alt="sneaker" draggable="false" className="vertical-card__logo" />
                     </a>
 
                     <div className="vertical-card__chips vertical-card__chips--new">НОВИНКА</div>
