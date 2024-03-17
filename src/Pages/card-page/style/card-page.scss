@@ -2,6 +2,8 @@
 @import url('../../../styles/mixins.scss');
 @import url('../../../styles/variables.scss');
 @import url('../../../styles/deafults.scss');
+.card-page {
+    
 .card-page__add-cart-count-md {
     display: none;
 }
@@ -699,4 +701,5 @@ h2 {
     .card-page__options-md {
         display: flex;
     }
+}
 }
