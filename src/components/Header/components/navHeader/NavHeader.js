@@ -1,61 +1,82 @@
 import { NavLink } from "react-router-dom";
-import "./NavHeader.scss"
+import "./NavHeader.scss";
 
-const NavHeader = ({className, navheader, navheaderList, navheaderListItem, onClick  }) => {
-
+const NavHeader = ({
+  className,
+  navheader,
+  navheaderList,
+  navheaderListItem,
+  onClick,
+}) => {
   return (
     <>
-    <nav className={`navheader ${className || navheader}`} >
-    <ul className={`navheader-list ${className || navheaderList}`}>
-      {/* <div className="navheader-list"> */}
-      <li className={`navheader-list__item line ${className || navheaderListItem}`} onClick={onClick}>
-        {/* <li className="navheader-list__item"> */}
-          <hr className="orang-line" ></hr>
-          <hr className="black-line" ></hr>
-        </li>
-        <li className="navheader-list__item">
-          {/* <Link to="AllProductPage" className="navheader-list__item"> */}
-          <i>Меню</i>		     
-          {/* </Link> */}
-        </li>        
-        <NavLink
-        to="/catalog"
-        // className="navheader-list__item"
-        className={`navheader-list__item ${className || navheaderListItem}`}
-        >
-          Каталог
-        </NavLink>
+      <nav className={`navheader ${className || navheader}`}>
+        <ul className={`navheader-list ${className || navheaderList}`}>
+          {/* <div className="navheader-list"> */}
+          <li
+            className={`navheader-list__item line ${
+              className || navheaderListItem
+            }`}
+            onClick={onClick}
+          >
+            {/* <li className="navheader-list__item"> */}
+            <hr className="orang-line"></hr>
+            <hr className="black-line"></hr>
+          </li>
+          <li className="navheader-list__item">
+            {/* <Link to="AllProductPage" className="navheader-list__item"> */}
+            <i>Меню</i>
+            {/* </Link> */}
+          </li>
+          <li>
+            <NavLink
+              to="/catalog"
+              className={`navheader-list__item ${className || navheaderListItem}`}>
+              Каталог
+            </NavLink>
+          </li>
 
-        <li className={`navheader-list__item ${className || navheaderListItem}`}>
-        {/* <li className="navheader-list__item"> */}
-          {/* <Link to="/Men" className="menu-list__item"> */}
-		  Чоловічі 
-          {/* </Link> */}
-        </li>
-        {/* <li className="navheader-list__item"> */}
-        <li className={`navheader-list__item ${className || navheaderListItem}`}>
-          {/* <Link to="/Women" className="menu-list__item"> */}
-		  Жіночі 
-          {/* </Link> */}
-        </li>
-        {/* <li className="navheader-list__item"> */}
-        <li className={`navheader-list__item ${className || navheaderListItem}`}>
-          {/* <Link to="/Children" className="menu-list__item"> */}
-		  Дитячі
-          {/* </Link> */}
-        </li>
-        {/* <li className="navheader-list__item"> */}
-        <li className={`navheader-list__item ${className || navheaderListItem}`}>
-          {/* <Link to="/Sale" className="menu-list__item">           */}
-		  Розпродаж             
-          {/* </Link> */}
-        </li>
-      </ul>
-    </nav>
+          <li>
+            <NavLink
+              to="/Men"
+              className={`navheader-list__item ${
+                className || navheaderListItem
+              }`}
+            >
+              Чоловічі
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink to="/Women" className={`navheader-list__item ${
+                className || navheaderListItem
+              }`}
+            >
+              Жіночі
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink to="/Children" className={`navheader-list__item ${
+                className || navheaderListItem
+              }`}
+            >
+              Дитячі
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink to="/Sale" className={`navheader-list__item ${
+                className || navheaderListItem
+              }`}
+            >
+              Розпродаж
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
     </>
   );
 };
 
 export default NavHeader;
-
-

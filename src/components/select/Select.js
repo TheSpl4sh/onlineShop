@@ -1,7 +1,16 @@
-import Select from 'react-select'
+import { useState } from "react";
+import Select from "react-select";
 // import data from '../../data.json';
 
 export const SelectSize = ({ onChange }) => {
+  const [selectedSize, setSelectedSize] = useState(null);
+
+  const handleSizeChange = (selectedOption) => {
+    setSelectedSize(selectedOption);
+    console.log("Обраний розмір:", selectedOption.label);
+    onChange(selectedOption); 
+  };
+
   const options = [
     { value: "size", label: "34(EU)" },
     { value: "size", label: "35(EU)" },
@@ -19,40 +28,65 @@ export const SelectSize = ({ onChange }) => {
   return (
     <Select
       options={options}
-      onChange={onChange}
+      onChange={handleSizeChange}
+      value={selectedSize} 
       placeholder="Розмір:"
     />
   );
 };
 
-export const SelectColor = ({onChange}) => {
+// ================================================
+
+export const SelectColor = ({ onChange }) => {
+  const [selectedColor, setSelectedColor] = useState(null);
+
+  const handleColorChange = (selectedOption) => {
+    setSelectedColor(selectedOption);
+    console.log("Обраний колір:", selectedOption.label);
+    onChange(selectedOption); 
+  };
+
   const options = [
-  { value: "red", label: "червоний" },
-  { value: "white", label: "білий" },
-  { value: "black", label: "чорний" },
-]
-return (
-  <Select
-    options={options}
-    onChange={onChange}
-    placeholder="Колір:"
-  />
-);
+    { value: "color", label: "червоний" },
+    { value: "color", label: "білий" },
+    { value: "color", label: "чорний" },
+    { value: "color", label: "сірий" },
+    { value: "color", label: "синій" },
+  ];
+  return (
+  <Select 
+  options={options}
+   onChange={handleColorChange} 
+   value={selectedColor}
+   placeholder="Колір:" 
+   />
+   );
 };
 
-export const SelectMaterial = ({onChange}) => {
+// ================================
+
+export const SelectMaterial = ({ onChange }) => {
+  const [selectedMaterial, setSelectedMaterial] = useState(null);
+
+  const handleMaterialChange = (selectedOption) => {
+    setSelectedMaterial(selectedOption);
+    console.log("Обраний матеріал:", selectedOption.label);
+    onChange(selectedOption); 
+  };
+
+
   const options = [
-    { value: "material", label: "Дерматин" },
-    { value: "material", label: "Тряпка" },
-    { value: "material", label: "Плюш" },
-]
-return (
-  <Select
-    options={options}
-    onChange={onChange}
-    placeholder="Матеріал:"
-  />
-);
+    { value: "compound", label: "шкіра" },
+    { value: "compound", label: "синтетика" },
+  ];
+  return (
+    <Select 
+    options={options} 
+    onChange={handleMaterialChange}
+    value={selectedMaterial} 
+    placeholder="Матеріал:" 
+    />
+  );
 };
 
 export const SelectSort = ({ onChange }) => {
@@ -63,16 +97,10 @@ export const SelectSort = ({ onChange }) => {
   ];
 
   return (
-    <Select
-      options={options}
-      onChange={onChange}
-      placeholder="Сортування:"
+    <Select 
+    options={options} 
+    onChange={onChange} 
+    placeholder="Сортування:" 
     />
   );
 };
-
-
-
-
-
-
