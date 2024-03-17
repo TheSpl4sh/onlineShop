@@ -43,64 +43,64 @@ const formValidationRules = [
     args: [{ min: 2, max: 25 }],
     message: "Last Name must be between 2 and 25 characters"
   },
-  {
-    field: "email",
-    method: FormValidator.isEmpty,
-    validWhen: false,
-    message: "Email is required."
-  },
-  {
-    field: "email",
-    method: "isEmail",
-    validWhen: true,
-    message: "That is not a valid email."
-  },
-  {
-    field: "login",
-    method: FormValidator.isEmpty,
-    validWhen: false,
-    message: "Login is required."
-  },
-  {
-    field: "login",
-    method: "matches",
-    validWhen: true,
-    args: [/^[a-zA-Z0-9]+$/],
-    message: "Allowed characters for login is a-z, A-Z, 0-9."
-  },
-  {
-    field: "login",
-    method: "isLength",
-    validWhen: true,
-    args: [{ min: 3, max: 10 }],
-    message: "Login must be between 3 and 10 characters"
-  },
-  {
-    field: "loginOrEmail",
-    method: FormValidator.isEmpty,
-    validWhen: false,
-    message: "Login or Email is required."
-  },
-  {
-    field: "password",
-    method: FormValidator.isEmpty,
-    validWhen: false,
-    message: "Password is required."
-  },
-  {
-    field: "password",
-    method: "matches",
-    validWhen: true,
-    args: [/^[a-zA-Z0-9]+$/],
-    message: "Allowed characters for password is a-z, A-Z, 0-9."
-  },
-  {
-    field: "password",
-    method: "isLength",
-    validWhen: true,
-    args: [{ min: 7, max: 30 }],
-    message: "Password must be between 7 and 30 characters"
-  },
+  // {
+  //   field: "email",
+  //   method: FormValidator.isEmpty,
+  //   validWhen: false,
+  //   message: "Email is required."
+  // },
+  // {
+  //   field: "email",
+  //   method: "isEmail",
+  //   validWhen: true,
+  //   message: "That is not a valid email."
+  // },
+  // {
+  //   field: "login",
+  //   method: FormValidator.isEmpty,
+  //   validWhen: false,
+  //   message: "Login is required."
+  // },
+  // {
+  //   field: "login",
+  //   method: "matches",
+  //   validWhen: true,
+  //   args: [/^[a-zA-Z0-9]+$/],
+  //   message: "Allowed characters for login is a-z, A-Z, 0-9."
+  // },
+  // {
+  //   field: "login",
+  //   method: "isLength",
+  //   validWhen: true,
+  //   args: [{ min: 3, max: 10 }],
+  //   message: "Login must be between 3 and 10 characters"
+  // },
+  // {
+  //   field: "loginOrEmail",
+  //   method: FormValidator.isEmpty,
+  //   validWhen: false,
+  //   message: "Login or Email is required."
+  // },
+  // {
+  //   field: "password",
+  //   method: FormValidator.isEmpty,
+  //   validWhen: false,
+  //   message: "Password is required."
+  // },
+  // {
+  //   field: "password",
+  //   method: "matches",
+  //   validWhen: true,
+  //   args: [/^[a-zA-Z0-9]+$/],
+  //   message: "Allowed characters for password is a-z, A-Z, 0-9."
+  // },
+  // {
+  //   field: "password",
+  //   method: "isLength",
+  //   validWhen: true,
+  //   args: [{ min: 7, max: 30 }],
+  //   message: "Password must be between 7 and 30 characters"
+  // },
   {
     field: "newPassword",
     method: FormValidator.isEmpty,
