@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import ButtonBlackArrow from "../../components/Button/ButtonBlackArrow/ButtonBlackArrow";
-import UAH from "../../components/Banner/img/UAH.png";
 import lineSum from "../PlacingOrder/img/Line-sum.png";
 import "../PlacingOrder/PlacingOrder.scss";
+
+import Modal from "../PlacingOrder/components/Modal/Modal";
 
 function PlacingOrder() {
   const validationSchema = Yup.object().shape({
@@ -47,13 +48,33 @@ function PlacingOrder() {
     alert(JSON.stringify(values, null, 2));
   };
 
+  // let summa = 0;
+
+  // orders.forEach(el => (summa += Number.parseFloat(el.price)));
+
   // useSelector з корзини редакс
 
-  const [showPromoCoupon, setShowPromoCoupon] = useState(false);
-
+ 
   const togglePromoCoupon = () => {
     setShowPromoCoupon(!showPromoCoupon);
+   
   };
+//  const [showModal, setShowModal] = useState(false);
+
+ const [showPromoCoupon, setShowPromoCoupon] = useState(false);
+
+ const [summa] = useState(0);
+ const [selectedDeliveryOption, setSelectedDeliveryOption] = useState('');
+ const [selectedPaymentOption, setSelectedPaymentOption] = useState('');
+ const [agreeToPrivacyPolicy, setAgreeToPrivacyPolicy] = useState(false);
+ const [showModal, setShowModal] = useState(false);
+
+//  const handleMakeOrder = () => {
+//    if (agreeToPrivacyPolicy && selectedDeliveryOption && selectedPaymentOption) {
+//      setShowModal(true);
+//      alert('Please fill all required fields');
+//    }
+//  };
 
   return (
     <div className="container">
@@ -81,7 +102,7 @@ function PlacingOrder() {
         <div className="PlacingOrder-formik">
           <Formik
             initialValues={initialValues}
-            handleSubmit={handleSubmit}
+            onSubmit={handleSubmit}
             validationSchema={validationSchema}
           >
             {() => (
@@ -320,21 +341,29 @@ function PlacingOrder() {
           </Formik>
         </div>
 
-        <Formik>
-          <Form>
+
             <div className="wrapper-yourOrder">
               <div className="yourOrder">
                 <h1>Your order</h1>
-                <div className="yourOrder-basket"></div>
-                <ul className="yourOrder-sum">
-                  <li className="yourOrder-sum__sum">Sum</li>
-                  <li>
+                <div className="yourOrder-basket">
+{/* 
+                <ul>
+              {orders.map((order, index) => (
+                <li key={index}>
+                  {order.productName}: {order.price}
+                </li>
+              ))}
+            </ul> */}
+
+                  <p className="yourOrder-sum">
+                    Summa
                     <img className="line-sum" src={lineSum} alt="line-sum" />
-                  </li>
-                  <li className="yourOrder-sum__uah">
-                    <img className="uah" src={UAH} alt="UAH" />
-                  </li>
-                </ul>
+                    {new Intl.NumberFormat("en-US", {
+                      style: "currency",
+                      currency: "UAH",
+                    }).format(summa)}
+                  </p>
+                </div>
               </div>
 
               <div>
@@ -344,13 +373,16 @@ function PlacingOrder() {
 
                 <ul>
                   <li className="delivery-options">
-                    <input
-                      className="delivery-radio"
-                      type="radio"
-                      id="option1"
-                      name="option"
-                      value="option1"
-                    />
+                  <input
+              className="delivery-radio"
+              type="radio"
+              id="option1"
+              name="delivery-option"
+              value="Pickup from the store"
+              checked={selectedDeliveryOption === 'Pickup from the store'}
+              onChange={() => setSelectedDeliveryOption('Pickup from the store')}
+            />
+
                     <label htmlFor="option1">Pickup from the store</label>
                   </li>
                   <li className="delivery-options">
@@ -382,13 +414,16 @@ function PlacingOrder() {
                 </div>
                 <ul>
                   <li className="payment-options">
-                    <input
-                      className="payment-radio"
-                      type="radio"
-                      id="online-payment"
-                      name="options"
-                      value="online-payment"
-                    />
+
+                  <input
+              className="payment-radio"
+              type="radio"
+              id="online-payment"
+              name=""
+              value="Online payment"
+              checked={selectedPaymentOption === 'Online payment'}
+              onChange={() => setSelectedPaymentOption('Online payment')}
+            />
                     <label htmlFor="optionOnline-payment">Online payment</label>
                   </li>
                   <li className="payment-options">
@@ -414,13 +449,14 @@ function PlacingOrder() {
                 </ul>
               </div>
               <div>
-                <Field
-                  className="checkbox-order"
-                  type="checkbox"
-                  id="checkbox-order"
-                  name="checkbox-order"
-                  value="checkbox-order"
-                />
+              <input
+          className="checkbox-order"
+          type="checkbox"
+          id="checkbox-order"
+          name="checkbox-order"
+          checked={agreeToPrivacyPolicy}
+          onChange={() => setAgreeToPrivacyPolicy(!agreeToPrivacyPolicy)}
+        />
                 <label htmlFor="checkbox-order">
                   <span>
                     I agree to the processing of personal data in accordance
@@ -429,12 +465,14 @@ function PlacingOrder() {
                 </label>
               </div>
               <div className="button-order">
-                <ButtonBlackArrow text="MAKE AN ORDER" />
+                <ButtonBlackArrow text="MAKE AN ORDER"   onClick={() => setShowModal(true)}/>
               </div>
+
+              {showModal && <Modal />}
             </div>
-          </Form>
-        </Formik>
+
       </div>
+
     </div>
   );
 }

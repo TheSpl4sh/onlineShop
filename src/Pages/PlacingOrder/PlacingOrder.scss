@@ -107,39 +107,6 @@ a {
   padding-right: 40px;
 }
 
-.auth-form__password-toggles {
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-60%);
-  background-color: #fff;
-  border: none;
-}
-
-.auth-form__password-toggles.pressed svg g {
-  opacity: 1;
-}
-
-#password-user {
-  position: absolute;
-}
-
-#login-message {
-  // display: none;
-  width: 100%;
-
-  background-color: #f8f8f8;
-}
-
-#login-message:active {
-  // display: block;
-  width: 100%;
-}
-
-#password-user {
-  position: relative;
-}
-
 .form-item {
   width: 100%;
   padding-bottom: 20px;
@@ -256,8 +223,7 @@ a {
 }
 
 .yourOrder-sum {
-  display: flex;
-  justify-content: space-between;
+margin: 20px 0 20px 0;
 }
 
 .yourOrder-sum__sum {
@@ -269,7 +235,7 @@ a {
 }
 
 .line-sum {
-  max-width: 75%;
+  max-width: 55%;
 }
 
 .yourOrder-sum__uah {
@@ -347,7 +313,8 @@ a {
 
 @media screen and (min-width: 480px) and (max-width: 768px) {
   .line-sum {
-    max-width: 75%;
+    max-width: 55%;
+    align-items: center;
   }
 
   .wrapper-placingOrder {
@@ -398,7 +365,7 @@ a {
   }
 
   .line-sum {
-    max-width: 75%;
+    max-width: 55%;
   }
 
   .wrapper-yourOrder {
@@ -423,7 +390,7 @@ a {
   }
 
   .line-sum {
-    max-width: 75%;
+    max-width: 55%;
   }
 
   .wrapper-yourOrder {
