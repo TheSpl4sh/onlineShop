@@ -1,0 +1,18 @@
+@import '../../styles/variables.scss';
+@import '../../styles/deafults.scss';
+@import '../../styles/fonts.scss';
+@import '../../styles/mixins.scss';
+
+.personal-account {
+    &__title {
+        font-family: 'Pragmatica';
+        @include font (25px, 500, 124%, $dark-black);
+        margin-top: 12px;
+        text-align: start;
+
+        @media (min-width: 1025px) {
+            @include font (45px, 500, 107%, $dark-black);
+            margin-top: 20px;
+        }
+    }
+}

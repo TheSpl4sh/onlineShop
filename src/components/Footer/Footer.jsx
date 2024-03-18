@@ -189,13 +189,13 @@ const Footer = () => {
             <p>МАГАЗИН</p>
             <ul className="footer-shops-list">
               <li>
-                <Link to="/">Особистий кабінет</Link>
+                <Link to="account">Особистий кабінет</Link>
               </li>
               <li>
                 <Link to="/">Обране</Link>
               </li>
               <li>
-                <Link to="/">Кошик</Link>
+                <Link to="cart">Кошик</Link>
               </li>
             </ul>
           </div>
