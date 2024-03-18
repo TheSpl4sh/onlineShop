@@ -11,7 +11,7 @@ import ColorList from './components/ColorList.js'
 function CardPage() {
     
     return(
-        <div className="container">
+        <div className="container card-page">
             <Links/>
             <div className="content-container">
             <ImgContainer/>

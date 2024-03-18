@@ -1,15 +1,30 @@
+import React, { useState } from 'react';
 import { NavLink } from "react-router-dom";
 import { ReactComponent as Logo } from "./components/icons/logo.svg";
 import NavHeader from "./components/navHeader/NavHeader";
 import TopHeader from "./components/topHeader/TopHeader";
 import Action from "./components/action/Action";
+import ModalMenu from "../Modal/ModalMenu/ModalMenu";
 
 import "./Header.scss";
 
+// const bp = 768; 
+// const lg = 1920; 
+
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const handelModal = () => setIsOpen(!isOpen);
+
+  // const mediaOnClick = () => {
+  //   if (window.matchMedia(`(min-width: ${lg}px)`).matches) {
+  //     return;
+  //   }
+  //   handelModal();
+  // };
+  
+  
   return (
     <header className="header container">
-      {/* <div className="container"> */}
       <TopHeader />
       <div className="header-wrapper">
         <div className="header-logo">
@@ -17,10 +32,10 @@ const Header = () => {
             <Logo />
           </NavLink>
         </div>
-        <NavHeader />
+        <NavHeader onClick={handelModal}/>
         <Action />
       </div>
-      {/* </div> */}
+      {isOpen && <ModalMenu isOpen={isOpen} handleClose={handelModal} />}
     </header>
   );
 };
