@@ -18,6 +18,7 @@ import { Cabinet } from "./Pages/AuthPage/Cabinet";
 import { Contacts } from "./Pages/Contacts/Contacts";
 import { MenClothingPage } from "./Pages/MenClothingPage/MenClothingPage";
 import { WomanClothingPage } from "./Pages/WomanClothingPage/WomanClothingPage";
+import { ChildrenClothingPage } from "./Pages/ChildrenClothingPage/ChildrenClothingPage";
 import { SaleClothingPage } from "./Pages/SaleClothingPage/SaleClothingPage";
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
                     <Route path="contacts" element={<Contacts />}/>
                     <Route path="men" element ={<MenClothingPage />}/>
                     <Route path="woman" element={<WomanClothingPage />}/>
+                    <Route path="children" element={<ChildrenClothingPage />}/>
                     <Route path="sale" element={<SaleClothingPage />}/>
                     <Route path="*" element={<NotFound />} />
                 </Route>
