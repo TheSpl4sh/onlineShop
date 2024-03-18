@@ -105,7 +105,7 @@ exports.loginCustomer = async (req, res, next) => {
         .then((customer) => {
             // Check for customer
             if (!customer) {
-                errors.loginOrEmail = "Клієнт не знайдений";
+                errors.loginOrEmail = "* Клієнт не знайдений";
                 return res.status(404).json(errors);
             }
 
@@ -133,7 +133,7 @@ exports.loginCustomer = async (req, res, next) => {
                         }
                     );
                 } else {
-                    errors.password = "Пароль невірний";
+                    errors.password = "* Пароль невірний";
                     return res.status(400).json(errors);
                 }
             });
