@@ -11,7 +11,7 @@ const ChildrenClothingPage = () => {
             <div className="empty-cart-content">
 
 			<h2 className="empty-cart-heading">
-                    Упс..., дитячі самопляси закінчились
+                    Упс..., дитячі само-пляси закінчились
                 </h2>
                 
                 {/* <h2 className="empty-cart-heading">
