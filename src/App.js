@@ -16,6 +16,9 @@ import { SignUpPage } from "./Pages/SignUpPage/SignUpPage";
 import { CardPage } from "./Pages/card-page/CardPage";
 import { Cabinet } from "./Pages/AuthPage/Cabinet";
 import { Contacts } from "./Pages/Contacts/Contacts";
+import { MenClothingPage } from "./Pages/MenClothingPage/MenClothingPage";
+import { WomanClothingPage } from "./Pages/WomanClothingPage/WomanClothingPage";
+import { SaleClothingPage } from "./Pages/SaleClothingPage/SaleClothingPage";
 
 function App() {
     const dispatch = useDispatch();
@@ -38,6 +41,9 @@ function App() {
                     <Route path="cabinet" element={<Cabinet />} />{/* ТИМЧАСОВИЙ ШЛЯХ */}
                     <Route path="card" element={<CardPage />}/>
                     <Route path="contacts" element={<Contacts />}/>
+                    <Route path="men" element ={<MenClothingPage />}/>
+                    <Route path="woman" element={<WomanClothingPage />}/>
+                    <Route path="sale" element={<SaleClothingPage />}/>
                     <Route path="*" element={<NotFound />} />
                 </Route>
             </Routes>
