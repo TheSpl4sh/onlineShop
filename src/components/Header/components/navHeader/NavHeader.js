@@ -48,7 +48,7 @@ const NavHeader = ({
           </li>
 
           <li>
-            <NavLink to="/women" className={`navheader-list__item ${
+            <NavLink to="/woman" className={`navheader-list__item ${
                 className || navheaderListItem
               }`}
             >

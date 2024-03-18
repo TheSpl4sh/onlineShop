@@ -17,78 +17,77 @@ import {
 import "../AllProductsPage/AllProductsPage.scss";
 
 
-const WomanClothingPage = () => {
-//   const womanClothingProducts = data.products.filter(
-//     (product) => product.parentId === "woman-clothing"
+const SaleClothingPage = () => {
+	//   const womanClothingProducts = data.products.filter(
+//     (product) => product.discount === "true"
 //   );
-	const [isFiltersOpen, setIsFiltersOpen] = useState(false);
-	const [itemsPerPage, setItemsPerPage] = useState(9);
-	const [filters, setFilters] = useState({
-	  size: null,
-	  color: null,
-	  material: null,
-	});
-	const [filteredProducts, setFilteredProducts] = useState(data.products);
-  
-	const toggleFilters = () => {
-	  setIsFiltersOpen(!isFiltersOpen);
-	};
-  
-	const handleItemsPerPageChange = (value) => {
-	  setItemsPerPage(value);
-	};
-  
-	const clearFilters = () => {
-	  setFilters({
-		size: null,
-		color: null,
-		material: null,
-	  });
-	  setFilteredProducts(data.products);
-	};
-  
-	const applyFilters = () => {
-	  let filtered = data.products.filter(
-		(product) => product.parentId === "woman-clothing"
-	  );
-	  if (filters.size) {
-		filtered = filtered.filter((product) =>
-		  product.size.includes(filters.size)
-		);
-	  }
-	  if (filters.color) {
-		filtered = filtered.filter((product) =>
-		  product.color.includes(filters.color)
-		);
-	  }
-	  if (filters.material) {
-		filtered = filtered.filter((product) =>
-		  product.material.includes(filters.material)
-		);
-	  }
-	  setFilteredProducts(filtered);
-	};
-  
-	const handleSizeChange = (selectedOption) => {
-	  setFilters({ ...filters, size: selectedOption.label });
-	};
-  
-	const handleColorChange = (selectedOption) => {
-	  setFilters({ ...filters, color: selectedOption.label });
-	};
-  
-	const handleMaterialChange = (selectedOption) => {
-	  setFilters({ ...filters, material: selectedOption.label });
-	};
-  
-	useEffect(() => {
-	  applyFilters();
-	  // eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [filters]);
+const [isFiltersOpen, setIsFiltersOpen] = useState(false);
+const [itemsPerPage, setItemsPerPage] = useState(9);
+const [filters, setFilters] = useState({
+  size: null,
+  color: null,
+  material: null,
+});
+const [filteredProducts, setFilteredProducts] = useState(data.products);
 
-	return (
+const toggleFilters = () => {
+  setIsFiltersOpen(!isFiltersOpen);
+};
+
+const handleItemsPerPageChange = (value) => {
+  setItemsPerPage(value);
+};
+
+const clearFilters = () => {
+  setFilters({
+	size: null,
+	color: null,
+	material: null,
+  });
+  setFilteredProducts(data.products);
+};
+
+const applyFilters = () => {
+  let filtered = data.products.filter(
+	(product) => product.discount === "true"
+  );
+  if (filters.size) {
+	filtered = filtered.filter((product) =>
+	  product.size.includes(filters.size)
+	);
+  }
+  if (filters.color) {
+	filtered = filtered.filter((product) =>
+	  product.color.includes(filters.color)
+	);
+  }
+  if (filters.material) {
+	filtered = filtered.filter((product) =>
+	  product.material.includes(filters.material)
+	);
+  }
+  setFilteredProducts(filtered);
+};
+
+const handleSizeChange = (selectedOption) => {
+  setFilters({ ...filters, size: selectedOption.label });
+};
+
+const handleColorChange = (selectedOption) => {
+  setFilters({ ...filters, color: selectedOption.label });
+};
+
+const handleMaterialChange = (selectedOption) => {
+  setFilters({ ...filters, material: selectedOption.label });
+};
+
+useEffect(() => {
+  applyFilters();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [filters]);
+	return ( 
 		<>
-		<h1>WomanClothingPage</h1>
+		<h1>SaleClothingPage</h1>
 		<section className="catalog container">
         <h1>Коллекция Air Max</h1>
         <hr />
@@ -145,4 +144,4 @@ const WomanClothingPage = () => {
 	 );
 }
  
-export { WomanClothingPage };
+export { SaleClothingPage };
