@@ -1,4 +1,4 @@
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import "./Breadcrumbs.scss";
 
@@ -32,9 +32,9 @@ const Breadcrumbs = () => {
           {/* </Link> */}
         </li>
         <li className="menu-list__item">
-          {/* <Link to="/Contacts" className="menu-list__item">           */}
+          <Link to="/contacts" className="menu-list__item">          
           Контакти
-          {/* </Link> */}
+          </Link>
         </li>
         <li className="menu-list__item">
           {/* <Link to="/Individual order" className="menu-list__item">           */}
