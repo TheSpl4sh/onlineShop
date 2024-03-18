@@ -6,10 +6,8 @@
 .auth-form {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-between;
     width: 100%;
-    position: relative;
 
     @media (min-width: $bp-md) {
         width: 47%;
@@ -17,6 +15,11 @@
 
     @media (min-width: 1025px) {
         width: 38%;
+    }
+
+    &__input-wrap {
+        position: relative;
+        width: 100%;
     }
 
     &__label {
@@ -47,10 +50,22 @@
         }
     }
 
+    .input-error {
+        border: 2px solid #ff1515;
+        color: #ff1515;
+    }
+
+    .error-message {
+        font-family: 'Pragmatica';
+        @include font (14px, 400, 18px, #ff1515);
+        margin-bottom: 5px;
+        text-align: start;
+    }
+
     &__password-toggle {
         position: absolute;
         right: 12px;
-        top: 46%;
+        top: 62px;
         transform: translateY(-50%);
         background: none;
         border: none;
@@ -101,6 +116,11 @@
 
     &__button {
         margin-top: 15px;
+
+        &:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
     }
 
     &__label-checkbox {
