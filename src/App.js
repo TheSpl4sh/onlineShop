@@ -1,3 +1,6 @@
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { checkAuthenticationStatus } from "./redux/auth/authSlice";
 import "./App.css";
 import "./reset.scss";
 
@@ -11,10 +14,17 @@ import { PlacingOrder } from "./Pages/PlacingOrder/PlacingOrder";
 import { AuthPage } from "./Pages/AuthPage/AuthPage";
 import { SignUpPage } from "./Pages/SignUpPage/SignUpPage";
 import { CardPage } from "./Pages/card-page/CardPage";
+import { Cabinet } from "./Pages/AuthPage/Cabinet";
 import { Contacts } from "./Pages/Contacts/Contacts";
 import { MenClothingPage } from "./Pages/MenClothingPage/MenClothingPage";
 
 function App() {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(checkAuthenticationStatus());
+    }, [dispatch]);
+
     return (
         <div className="App">
             <Routes>
@@ -25,6 +35,8 @@ function App() {
                     <Route path="order" element={<PlacingOrder />} />
                     <Route path="auth" element={<AuthPage />} />
                     <Route path="signup" element={<SignUpPage />} />
+                    <Route path="card" element={<CardPage />} />
+                    <Route path="cabinet" element={<Cabinet />} />{/* ТИМЧАСОВИЙ ШЛЯХ */}
                     <Route path="card" element={<CardPage />}/>
                     <Route path="contacts" element={<Contacts />}/>
                     <Route path="men" element ={<MenClothingPage />} />
