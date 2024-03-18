@@ -20,7 +20,7 @@ const AllProductsPage = () => {
   const [filters, setFilters] = useState({
     size: null,
     color: null,
-    compound: null,
+    material: null,
   });
   const [filteredProducts, setFilteredProducts] = useState(data.products);
   
@@ -36,7 +36,7 @@ const AllProductsPage = () => {
     setFilters({
       size: null,
       color: null,
-      compound: null,
+      material: null,
     });
     setFilteredProducts(data.products);
   };
@@ -49,8 +49,8 @@ const AllProductsPage = () => {
     if (filters.color) {
       filtered = filtered.filter(product => product.color.includes(filters.color));
     }
-    if (filters.compound) {
-      filtered = filtered.filter(product => product.compound.includes(filters.compound));
+    if (filters.material) {
+      filtered = filtered.filter(product => product.material.includes(filters.material));
     }
     setFilteredProducts(filtered);
   };
@@ -64,7 +64,7 @@ const AllProductsPage = () => {
   };
 
   const handleMaterialChange = (selectedOption) => {
-    setFilters({ ...filters, compound: selectedOption.label });
+    setFilters({ ...filters, material: selectedOption.label });
   };
 
   useEffect(() => {

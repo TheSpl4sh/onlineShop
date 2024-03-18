@@ -12,6 +12,7 @@ import { AuthPage } from "./Pages/AuthPage/AuthPage";
 import { SignUpPage } from "./Pages/SignUpPage/SignUpPage";
 import { CardPage } from "./Pages/card-page/CardPage";
 import { Contacts } from "./Pages/Contacts/Contacts";
+import { MenClothingPage } from "./Pages/MenClothingPage/MenClothingPage";
 
 function App() {
     return (
@@ -26,6 +27,7 @@ function App() {
                     <Route path="signup" element={<SignUpPage />} />
                     <Route path="card" element={<CardPage />}/>
                     <Route path="contacts" element={<Contacts />}/>
+                    <Route path="men" element ={<MenClothingPage />} />
                     <Route path="*" element={<NotFound />} />
                 </Route>
             </Routes>

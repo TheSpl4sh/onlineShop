@@ -38,7 +38,7 @@ const NavHeader = ({
 
           <li>
             <NavLink
-              to="/Men"
+              to="/men"
               className={`navheader-list__item ${
                 className || navheaderListItem
               }`}
@@ -48,7 +48,7 @@ const NavHeader = ({
           </li>
 
           <li>
-            <NavLink to="/Women" className={`navheader-list__item ${
+            <NavLink to="/women" className={`navheader-list__item ${
                 className || navheaderListItem
               }`}
             >
@@ -57,7 +57,7 @@ const NavHeader = ({
           </li>
 
           <li>
-            <NavLink to="/Children" className={`navheader-list__item ${
+            <NavLink to="/children" className={`navheader-list__item ${
                 className || navheaderListItem
               }`}
             >
@@ -66,7 +66,7 @@ const NavHeader = ({
           </li>
 
           <li>
-            <NavLink to="/Sale" className={`navheader-list__item ${
+            <NavLink to="/sale" className={`navheader-list__item ${
                 className || navheaderListItem
               }`}
             >

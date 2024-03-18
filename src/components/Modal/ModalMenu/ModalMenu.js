@@ -1,19 +1,18 @@
-import React, { useState } from 'react';
-import Select from 'react-select';
-// import { NavLink } from "react-router-dom";
+import React, { useState } from "react";
+// import Select from 'react-select';
+import { NavLink } from "react-router-dom";
 import { FaSearch, FaTimes, FaRegUser } from "react-icons/fa";
 import { BsHeart, BsBasket3 } from "react-icons/bs";
 import Breadcrumbs from "../../Header/components/breadcrumbs/Breadcrumbs";
 // import CustomSelect from "../CustomSelect";
 //  import { CustomSelect } from "../../select/Select";
-// import { Select } from "../../select/Select";
+import { SelectDemiseason } from "../../select/Select";
 
 import "./ModalMenu.scss";
 
-
 const ModalMenu = ({ handleClose }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(null);
+  // const [selectedOption, setSelectedOption] = useState(null);
   return (
     <div className={`modal-wrapper ${isOpen ? "open" : ""}`}>
       <div className="modal">
@@ -28,11 +27,17 @@ const ModalMenu = ({ handleClose }) => {
         </div>
         <div className="modalForm-container">
           <form className="modalForm-form">
-            <FaRegUser className="topheader-form__icon" color="curent-color" />
-            <p className="topheader-form__text">Логін/Регістрація</p>
+            <NavLink to="/auth" className="topheader-form__item">
+              <FaRegUser
+                className="topheader-form__icon"
+                color="curent-color"
+              />
+              <p className="topheader-form__text">Логін/Регістрація</p>
+            </NavLink>
+            {/* <FaRegUser className="topheader-form__icon" color="curent-color" />
+            <p className="topheader-form__text">Логін/Регістрація</p> */}
           </form>
           <div className="modalForm-icon__wrapper">
-            {/* <Action /> */}
             <div className="modalForm-icon__item">
               {/* <NavLink to="/favorites">
                 <BsHeart />
@@ -48,26 +53,32 @@ const ModalMenu = ({ handleClose }) => {
           </div>
         </div>
         <div className="modalNav-container">
-        <label className="modalNav-label" htmlFor="catalogue" onClick={() => setIsOpen(!isOpen)}>Каталог</label>
+          <label
+            className="modalNav-label"
+            htmlFor="catalogue"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            Каталог
+          </label>
           {isOpen && (
-            <Select
-            defaultValue={selectedOption}
-            onChange={setSelectedOption}
-            options={[
-              { value: "Runners", label: "Бігові" },
-          { value: "Summer", label: "Літо" },
-          { value: "Winter", label: "Зима" },
-          { value: "Models", label: "Моделі" },
-            ]}
-          />
+            <SelectDemiseason
+            // defaultValue={selectedOption}
+            //   onChange={setSelectedOption}
+            //   options={[
+            //     { value: "Runners", label: "Бігові" },
+            // { value: "Summer", label: "Літо" },
+            // { value: "Winter", label: "Зима" },
+            // { value: "Models", label: "Моделі" },
+            //   ]}
+            />
             // <CustomSelect
-              // className="catalogue-select"
-              // title="Демісезон"
-              // options={[
-                // 'Бігові',
-                // 'Літо',
-                // 'Зима',
-                // 'Моделі',
+            // className="catalogue-select"
+            // title="Демісезон"
+            // options={[
+            // 'Бігові',
+            // 'Літо',
+            // 'Зима',
+            // 'Моделі',
             //     { value: "Demi-season", label: "Демісезон" },
             //     { value: "", label: "" },
             //     { value: 'Runners', label: 'Бігові' },
@@ -78,7 +89,7 @@ const ModalMenu = ({ handleClose }) => {
             // />
           )}
 
-        {/* < CustomSelect
+          {/* < CustomSelect
         className=""
          title="Демісезон"
         options={[
@@ -89,7 +100,7 @@ const ModalMenu = ({ handleClose }) => {
           { value: "Models", label: "Моделі" },
         ]}
         /> */}
-        {/* <CustomSelect
+          {/* <CustomSelect
             className=""
             //  title="Демісезон"
             options={[
@@ -117,7 +128,7 @@ const ModalMenu = ({ handleClose }) => {
             className=""
              title="Зима"
             options={[ */}
-              {/* // {  label: "Демісезон" },
+          {/* // {  label: "Демісезон" },
               // { value: "demi-season", label: "Демісезон" },
               // { value: "", label: "" },
               { value: "Summer", label: "Літо" },
@@ -138,7 +149,7 @@ const ModalMenu = ({ handleClose }) => {
             ]}
           /> */}
           {/* <div className="modalNav-container"> */}
-            {/* <CustomSelect
+          {/* <CustomSelect
               options={[
                 { value: "demi-season", label: "Демісезон" },
                 { value: "Summer", label: "Літо" },
@@ -147,11 +158,19 @@ const ModalMenu = ({ handleClose }) => {
               ]}
             /> */}
           {/* </div> */}
-          
-          <label className="modalNav-label" htmlFor="men">Чоловічі</label>
-          <label className="modalNav-label" htmlFor="Women">Жіночі</label>
-          <label className="modalNav-label" htmlFor="children">Дитячі</label>
-          <label className="modalNav-label" htmlFor="Sale">Розпродаж</label>
+
+          <label className="modalNav-label" htmlFor="men">
+            Чоловічі
+          </label>
+          <label className="modalNav-label" htmlFor="Women">
+            Жіночі
+          </label>
+          <label className="modalNav-label" htmlFor="children">
+            Дитячі
+          </label>
+          <label className="modalNav-label" htmlFor="Sale">
+            Розпродаж
+          </label>
         </div>
         <Breadcrumbs
           menu="modalNavMenu"

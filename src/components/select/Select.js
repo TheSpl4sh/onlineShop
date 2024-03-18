@@ -63,7 +63,6 @@ export const SelectColor = ({ onChange }) => {
    );
 };
 
-// ================================
 
 export const SelectMaterial = ({ onChange }) => {
   const [selectedMaterial, setSelectedMaterial] = useState(null);
@@ -76,8 +75,8 @@ export const SelectMaterial = ({ onChange }) => {
 
 
   const options = [
-    { value: "compound", label: "шкіра" },
-    { value: "compound", label: "синтетика" },
+    { value: "material", label: "шкіра" },
+    { value: "material", label: "синтетика" },
   ];
   return (
     <Select 
@@ -101,6 +100,29 @@ export const SelectSort = ({ onChange }) => {
     options={options} 
     onChange={onChange} 
     placeholder="Сортування:" 
+    />
+  );
+};
+
+// ================================
+
+export const SelectDemiseason = ({ onChange }) => {
+  const options = [
+    { value: "season", label: "бігові" },
+    { value: "season", label: "повсякденні" },
+    { value: "season", label: "трекінгові" },
+    { value: "season", label: "шкіряні" },
+  ];
+
+  return (
+    <Select 
+    inputValue={"Демісезон"}
+    isMulti={false}
+    // value={options}
+    // defaultVelua={"Демісезон"}
+    options={options} 
+    onChange={onChange} 
+    // placeholder="Демісезон" 
     />
   );
 };
