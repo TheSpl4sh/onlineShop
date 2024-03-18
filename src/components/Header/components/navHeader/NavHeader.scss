@@ -1,4 +1,5 @@
 @import "../../../../styles/variables.scss";
+@import "../../../../styles/deafults.scss";
 
 .navheader {
   font-size: 15px;
@@ -26,13 +27,16 @@
   }
 }
 
-.gray-line1 {
+.orang-line {
   width: 25px;
   border: solid 2px $dark-orange;
   margin-left: 11px;
 }
-.gray-line2 {
+.black-line {
   width: 36px;
   border: solid 2px $dark-black;
   margin-top: 5px;
 }
+
+
+

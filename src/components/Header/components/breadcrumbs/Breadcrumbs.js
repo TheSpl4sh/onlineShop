@@ -1,45 +1,40 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import "./Breadcrumbs.scss";
 
-function handleClick(event) {
-  event.preventDefault();
-  console.info("You clicked a breadcrumb.");
-}
-
-const Breadcrumbs = () => {
+const Breadcrumbs = ({className, menu, menuList, menuItem}) => {
   return (
-    <nav className="menu">
-      <ul className="menu-list" onClick={handleClick}>
-        <li className="menu-list__item">
-          {/* <Link to="AboutTheStore" className="menu-list__item"> */}
+    <nav className={`menu ${className || menu}`}>       
+      <ul className={`menu-list ${className || menuList}`}>
+        <li className={`menu-list__item ${className || menuItem}`}>          
+          <NavLink to="AboutTheStore">
           Про магазин
-          {/* </Link> */}
+          </NavLink>
         </li>
-        <li className="menu-list__item">
-          {/* <Link to="Blog" className="menu-list__item"> */}
+        <li className={`menu-list__item ${className || menuItem}`}>
+          <NavLink to="Blog">
           Наш блог
-          {/* </Link> */}
+          </NavLink>
         </li>
-        <li className="menu-list__item">
-          {/* <Link to="Delivery" className="menu-list__item"> */}
+        <li className={`menu-list__item ${className || menuItem}`}>
+          <NavLink to="Delivery">
           Доставка
-          {/* </Link> */}
+          </NavLink>
         </li>
-        <li className="menu-list__item">
-          {/* <Link to="Counting" className="menu-list__item"> */}
+        <li className={`menu-list__item ${className || menuItem}`}>
+          <NavLink to="Counting">
           Розрахунок
-          {/* </Link> */}
+          </NavLink>
         </li>
-        <li className="menu-list__item">
-          <Link to="/contacts" className="menu-list__item">          
+        <li className={`menu-list__item ${className || menuItem}`}>
+          <NavLink to="Contacts">          
           Контакти
-          </Link>
+          </NavLink>
         </li>
-        <li className="menu-list__item">
-          {/* <Link to="/Individual order" className="menu-list__item">           */}
+        <li className={`menu-list__item ${className || menuItem}`}>
+          <NavLink to="Individual order">          
           Індивідуальне замовлення
-          {/* </Link> */}
+          </NavLink>
         </li>
       </ul>
     </nav>
