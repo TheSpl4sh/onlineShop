@@ -22,9 +22,15 @@ const catalogSlice = createSlice({
       },
       extraReducers: (builder) => {
         builder
-          .addCase(loadProducts.fulfilled, (state,action) => {
-            state.products = action.payload 
-          })
+        .addCase(loadProducts.pending, () => {
+          console.log("pending")
+        })
+        .addCase(loadProducts.rejected, (state,action) => {
+          state.error = action.error.message;
+        })
+        .addCase(loadProducts.fulfilled, (state,action) => {
+          state.products = action.payload 
+        })
         }
 })
 
