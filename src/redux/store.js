@@ -5,7 +5,7 @@ import catalogReducer from './catalog/catalogSlice';
 const store = configureStore({
     reducer: {
         loginCustomer: authReducer,
-        products: catalogReducer
+        catalog: catalogReducer
     },
   });
 

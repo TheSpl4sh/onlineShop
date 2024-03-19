@@ -1,37 +1,35 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
-export const loadProducts = createAsyncThunk(
-    'products/loadAll',
+// Створюємо асинхронну thunk дію
+export const fetchCatalog = createAsyncThunk(
+  'catalog/fetchCatalog',
+  async () => {
+    const response = await axios.get('api/catalog');
+    return response.data;
+  }
+);
 
-    async () => {
-        const res = await fetch('http://localhost:4000/api/catalog');
-        
-        if(!res.ok) {
-          throw new Error(`Can't fetch`)
-        }
-        
-        const data = await res.json();
-        return data
-      }
-)
-
+// Створюємо слайс
 const catalogSlice = createSlice({
-    name: 'products',
-    initialState: {
-        products: []
-      },
-      extraReducers: (builder) => {
-        builder
-        .addCase(loadProducts.pending, () => {
-          console.log("pending")
-        })
-        .addCase(loadProducts.rejected, (state,action) => {
-          state.error = action.error.message;
-        })
-        .addCase(loadProducts.fulfilled, (state,action) => {
-          state.products = action.payload 
-        })
-        }
-})
+  name: 'catalog',
+  initialState: { items: [], status: 'idle', error: null },
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchCatalog.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(fetchCatalog.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        // Додаємо продукти в стан
+        state.items = state.items.concat(action.payload);
+      })
+      .addCase(fetchCatalog.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
+      });
+  },
+});
 
 export default catalogSlice.reducer;
