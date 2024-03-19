@@ -1,3 +1,10 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/deafults.scss";
+@import "../../../styles/fonts.scss";
+@import "../../../styles/mixins.scss";
+
+
+
 .modal-wrapper {
   position: fixed;
   top: 0;
@@ -10,7 +17,7 @@
 
 .modal {
   position: absolute;
-  top: 20px;
+  top: 0px;
   left: 0;
   max-width: 358px;
   width: 100%;
@@ -93,6 +100,8 @@
   font-weight: 500;
   line-height: 11px;
   cursor: pointer;
+  // background-color: #fff;
+  color: black;
 }
 .modalNav-label:hover {
   width: 100%;
@@ -107,8 +116,7 @@
   background-color: red;
 }
 .customSelect-label {
-  display: flex;
-  
+  display: flex;  
   margin-left: 10px;
   padding: 5px;
   background-color: #fff;
@@ -116,26 +124,8 @@
 }
 
 .customSelect-label::after {
-  // content: "";
-  // display: inline-block;
-  // width: 0;
-  // height: 0;
-  // border-style: solid;
-  // border-width: 0.4em 0.4em 0 0;
-  // border-color: #333 transparent transparent transparent; // Встановіть колір відповідно до вашого дизайну
-  // margin-left: 5px;
-  // content: "▼";
-  // content: "v";
   content: "→";
-  // margin-left: 5px;
-  // background-color: white;
 }
-
-// .customSelect-option {
-//   padding: 10px;
-// }
-
-// =============
 
 .modalNavMenu {
   &-list {
@@ -151,12 +141,71 @@
     padding-bottom: 10px;
     margin: 10px 0 10px 0;
   }
-  // &-list__item a {
-  //   padding: 15px;
-  //   // border: none;
-  //   // text-decoration: none;
-  //   // text-decoration: none !important;
-  //   // border: none !important;
-
-  // }
 }
+
+  
+  @media (min-width: $bp-md) {
+    // padding: 0px 25px;
+    // max-width: 768px;
+
+  }
+
+    
+  @media (min-width: $bp-lg) {
+    // padding: 0px 280px;
+    // max-width: 1920px; 
+
+    .modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.modal {
+  position: absolute;
+  top: 125px;
+  left: 0;
+  max-width: 358px;
+  width: 100%;
+  padding:  15px;
+  //   box-sizing: content-box;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+.modal-close-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  // left: 368px;
+  // color: #fff;
+  color: #000;
+}
+
+// //  загальні =============
+
+.search-container{
+  display: none;
+}
+.modalForm-container{
+  display: none;
+}
+.modalNav-container{
+  display: none;
+}
+.modalNavMenu{
+  display: none;
+}
+
+}
+
+
+// ===========================================
+
+
