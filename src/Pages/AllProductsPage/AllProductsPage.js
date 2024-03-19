@@ -37,6 +37,7 @@ const AllProductsPage = () => {
       size: null,
       color: null,
       material: null,
+      selectValue: [],
     });
     setFilteredProducts(data.products);
   };
