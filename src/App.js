@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { checkAuthenticationStatus } from "./redux/auth/authSlice";
 import "./App.css";
 import "./reset.scss";
@@ -16,13 +16,21 @@ import { SignUpPage } from "./Pages/SignUpPage/SignUpPage";
 import { CardPage } from "./Pages/card-page/CardPage";
 import { Cabinet } from "./Pages/AuthPage/Cabinet";
 import { Contacts } from "./Pages/Contacts/Contacts";
+import ProtectedRoute from "./routes/ProtectedRoute";
 
 function App() {
     const dispatch = useDispatch();
+    const isAuthStatusChecked = useSelector(
+        (state) => state.loginCustomer.isAuthStatusChecked
+    );
 
     useEffect(() => {
         dispatch(checkAuthenticationStatus());
     }, [dispatch]);
+
+    if (!isAuthStatusChecked) {
+        return null;
+    }
 
     return (
         <div className="App">
@@ -35,9 +43,17 @@ function App() {
                     <Route path="auth" element={<AuthPage />} />
                     <Route path="signup" element={<SignUpPage />} />
                     <Route path="card" element={<CardPage />} />
-                    <Route path="cabinet" element={<Cabinet />} />{/* ТИМЧАСОВИЙ ШЛЯХ */}
-                    <Route path="card" element={<CardPage />}/>
-                    <Route path="contacts" element={<Contacts />}/>
+                    <Route
+                        path="cabinet"
+                        element={
+                            <ProtectedRoute>
+                                <Cabinet />
+                            </ProtectedRoute>
+                        }
+                    />
+                    {/* ТИМЧАСОВИЙ ШЛЯХ */}
+                    <Route path="card" element={<CardPage />} />
+                    <Route path="contacts" element={<Contacts />} />
                     <Route path="*" element={<NotFound />} />
                 </Route>
             </Routes>
