@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { FaTimes } from "react-icons/fa";
-import data from "../../data.json";
-import CustomSlider from "../AllProductsPage/components/customSlider/CustomSlider";
-import DisplayParameter from "../AllProductsPage/components/displayParameter/DisplayParameter";
-import MenuToggle from "../AllProductsPage/components/menuToggle/MenuToggle";
-import Pagination from "../AllProductsPage/components/pagination/Pagination";
-import Card from "../../components/Card/Card";
-import {
-  SelectSize,
-  SelectSort,
-  SelectColor,
-  SelectMaterial,
-} from "../../components/select/Select";
+// import React, { useState, useEffect } from "react";
+// import { FaTimes } from "react-icons/fa";
+// import data from "../../data.json";
+// import CustomSlider from "../AllProductsPage/components/customSlider/CustomSlider";
+// import DisplayParameter from "../AllProductsPage/components/displayParameter/DisplayParameter";
+// import MenuToggle from "../AllProductsPage/components/menuToggle/MenuToggle";
+// import Pagination from "../AllProductsPage/components/pagination/Pagination";
+// import Card from "../../components/Card/Card";
+// import {
+//   SelectSize,
+//   SelectSort,
+//   SelectColor,
+//   SelectMaterial,
+// } from "../../components/select/Select";
 
 
 import "../AllProductsPage/AllProductsPage.scss";
@@ -21,74 +21,74 @@ const SaleClothingPage = () => {
 	//   const womanClothingProducts = data.products.filter(
 //     (product) => product.discount === "true"
 //   );
-const [isFiltersOpen, setIsFiltersOpen] = useState(false);
-const [itemsPerPage, setItemsPerPage] = useState(9);
-const [filters, setFilters] = useState({
-  size: null,
-  color: null,
-  material: null,
-});
-const [filteredProducts, setFilteredProducts] = useState(data.products);
+// const [isFiltersOpen, setIsFiltersOpen] = useState(false);
+// const [itemsPerPage, setItemsPerPage] = useState(9);
+// const [filters, setFilters] = useState({
+//   size: null,
+//   color: null,
+//   material: null,
+// });
+// const [filteredProducts, setFilteredProducts] = useState(data.products);
 
-const toggleFilters = () => {
-  setIsFiltersOpen(!isFiltersOpen);
-};
+// const toggleFilters = () => {
+//   setIsFiltersOpen(!isFiltersOpen);
+// };
 
-const handleItemsPerPageChange = (value) => {
-  setItemsPerPage(value);
-};
+// const handleItemsPerPageChange = (value) => {
+//   setItemsPerPage(value);
+// };
 
-const clearFilters = () => {
-  setFilters({
-	size: null,
-	color: null,
-	material: null,
-  });
-  setFilteredProducts(data.products);
-};
+// const clearFilters = () => {
+//   setFilters({
+// 	size: null,
+// 	color: null,
+// 	material: null,
+//   });
+//   setFilteredProducts(data.products);
+// };
 
-const applyFilters = () => {
-  let filtered = data.products.filter(
-	(product) => product.discount === "true"
-  );
-  if (filters.size) {
-	filtered = filtered.filter((product) =>
-	  product.size.includes(filters.size)
-	);
-  }
-  if (filters.color) {
-	filtered = filtered.filter((product) =>
-	  product.color.includes(filters.color)
-	);
-  }
-  if (filters.material) {
-	filtered = filtered.filter((product) =>
-	  product.material.includes(filters.material)
-	);
-  }
-  setFilteredProducts(filtered);
-};
+// const applyFilters = () => {
+//   let filtered = data.products.filter(
+// 	(product) => product.discount === "true"
+//   );
+//   if (filters.size) {
+// 	filtered = filtered.filter((product) =>
+// 	  product.size.includes(filters.size)
+// 	);
+//   }
+//   if (filters.color) {
+// 	filtered = filtered.filter((product) =>
+// 	  product.color.includes(filters.color)
+// 	);
+//   }
+//   if (filters.material) {
+// 	filtered = filtered.filter((product) =>
+// 	  product.material.includes(filters.material)
+// 	);
+//   }
+//   setFilteredProducts(filtered);
+// };
 
-const handleSizeChange = (selectedOption) => {
-  setFilters({ ...filters, size: selectedOption.label });
-};
+// const handleSizeChange = (selectedOption) => {
+//   setFilters({ ...filters, size: selectedOption.label });
+// };
 
-const handleColorChange = (selectedOption) => {
-  setFilters({ ...filters, color: selectedOption.label });
-};
+// const handleColorChange = (selectedOption) => {
+//   setFilters({ ...filters, color: selectedOption.label });
+// };
 
-const handleMaterialChange = (selectedOption) => {
-  setFilters({ ...filters, material: selectedOption.label });
-};
+// const handleMaterialChange = (selectedOption) => {
+//   setFilters({ ...filters, material: selectedOption.label });
+// };
 
-useEffect(() => {
-  applyFilters();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-}, [filters]);
+// useEffect(() => {
+//   applyFilters();
+//   // eslint-disable-next-line react-hooks/exhaustive-deps
+// }, [filters]);
 	return ( 
 		<>
 		<h1>SaleClothingPage</h1>
-		<section className="catalog container">
+		{/* <section className="catalog container">
         <h1>Коллекция Air Max</h1>
         <hr />
         <div className="select-mobile">
@@ -139,7 +139,7 @@ useEffect(() => {
           ))}
         </div>
         <Pagination itemsPerPage={itemsPerPage} />
-      </section>
+      </section> */}
 		</>
 	 );
 }
