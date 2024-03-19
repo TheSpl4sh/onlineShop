@@ -1,32 +1,27 @@
-import React, { useState } from 'react';
+
+import React from "react";
 import "../Modal/Modal.scss";
 
-function Modal() {
-  const [isOpen, setIsOpen] = useState(true); 
-
-  // Функція для закриття модального вікна
-  const closeModal = () => {
-    setIsOpen(false);
-  }
+const Modal = (props) => {
+  const { header, closeButton, text, actions, onClose } = props;
 
   return (
-    <>
-      {isOpen && (
-        <div className="modal-overlay">
-          <div className="wrapper-item">
-            <div className="full-item">
-              <div className="full-content">
-                <span className="modal-close" onClick={closeModal}>×</span>
-                <p>Your order has been successfully placed!</p>
-                <button onClick={closeModal}>Закрити</button>
-              </div>
-            </div>
-          </div>
+    <div className={`modal ${props.show ? "show" : ""}`}>
+      <div className="modal-content">
+        {closeButton && (
+          <span onClick={onClose} className="modal-close">
+            &times;
+          </span>
+        )}
+
+        <div className="modal-header">
+          <h2>{header}</h2>
         </div>
-      )}
-    </>
+        <div className="modal-body">{text}</div>
+        <div className="modal-footer">{actions}</div>
+      </div>
+    </div>
   );
-}
+};
 
 export default Modal;
-
