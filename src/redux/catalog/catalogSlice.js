@@ -28,4 +28,4 @@ const catalogSlice = createSlice({
         }
 })
 
-export default catalogSlice.reducer
+export default catalogSlice.reducer;
