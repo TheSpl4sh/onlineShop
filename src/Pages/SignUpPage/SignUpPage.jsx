@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./SignUpPage.scss";
 import SignUpPageForm from "./components/SignUpPageForm";
 import BelowHeaderBreadcrumbs from "../../components/BelowHeaderBreadcrumbs/BelowHeaderBreadcrumbs";
 import LinkButton from "../../components/LinkButton/LinkButton";
 import { ReactComponent as OrangeSvg } from "../../components/LinkButton/icons/orange_btn_svg.svg";
+import { clearErrors } from "../../redux/registerCustomer/customersSlice";
+import { useDispatch } from "react-redux";
 
 const SignUpPage = () => {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        return () => {
+            dispatch(clearErrors());
+        };
+    }, [dispatch]);
+
     return (
         <section className="container signup-page">
             <BelowHeaderBreadcrumbs
