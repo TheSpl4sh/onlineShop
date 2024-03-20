@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchCatalog } from '../../redux/catalog/catalogSlice';
-import Card from '../Card'
+import Card from '../Card/Card'
+// import data from './data.json'
 
 function ProductsList() {
   const dispatch = useDispatch();
@@ -22,8 +23,8 @@ function ProductsList() {
         <>
           {catalog.map((product) => (
             <Card 
+              item={product}
               key={product.id}
-              
             />
           ))}
         </>
