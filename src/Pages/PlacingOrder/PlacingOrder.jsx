@@ -507,13 +507,13 @@ function PlacingOrder() {
             closeButton={true}
             text="Second modal window"
             onClose={closeModal}
-            // actions={
-            //   <button
-            //     onClick={closeModal}
-            //     backgroundColor="darkorchid"
-            //     text="ADO TO FAVORITE"
-            //   />
-            // }
+            actions={
+              <button
+                onClick={closeModal}
+                backgroundColor="darkorchid"
+                text="ADO TO FAVORITE"
+              />
+            }
           />
         </div>
       )}
