@@ -6,8 +6,8 @@ import registerCustomer from "./registerCustomer/customersSlice";
 const store = configureStore({
     reducer: {
         loginCustomer: authReducer,
-        products: catalogReducer,
         customers: registerCustomer,
+        catalog: catalogReducer
     },
 });
 

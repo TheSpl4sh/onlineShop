@@ -1,5 +1,4 @@
-{
-    "products": [
+[
       {
           "id": 1,
           "parentId": "men-clothing",
@@ -80,5 +79,4 @@
           "realease": "2021 рік",
           "size":["38(EU)", "39(EU)", "40(EU)", "41(EU)", "42(EU)", "43(EU)", "44(EU)", "45(EU)"]
       }
-  ]
-}
+]

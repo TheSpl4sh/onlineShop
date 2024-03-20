@@ -83,7 +83,7 @@ app.listen(port, () => console.log(`Server running on port ${port}`));
 const initializeProductCatalog = async () => {
   const count = await Catalog.countDocuments(); // Проверяем, пуста ли коллекция
   if(count === 0) { // Если пуста, добавляем данные из JSON
-    productCatalog.products.forEach(product => {
+    productCatalog.forEach(product => {
       const newProduct = new Catalog(product);
       newProduct.save();
     });

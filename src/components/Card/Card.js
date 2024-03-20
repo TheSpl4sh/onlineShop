@@ -5,9 +5,13 @@ import sneakerSmall from './images/sneaker-small.png';
 // import sneakerMedium from './images/sneaker-medium.png';
 // import sneakerLarge from './images/sneaker-large-img.png';
 
-function Card() {
+const Card = ({item}) => {
+    // const {name} = item
+    
+
     return (
             <div className="vertical-card">
+                {console.log(item)}
                 <div className="vertical-card__img-container">
                     <a href="#top">
                         <img src={sneakerSmall} alt="sneaker" draggable="false" className="vertical-card__logo" />
