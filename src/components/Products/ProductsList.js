@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchCatalog } from '../../redux/catalog/catalogSlice';
+import Card from '../Card'
 
 function ProductsList() {
   const dispatch = useDispatch();
@@ -18,18 +19,14 @@ function ProductsList() {
     <div>
       {catalogStatus === 'loading' && <div>Loading...</div>}
       {catalogStatus === 'succeeded' && (
-  <ul>
-    {catalog.map((product) => (
-      <li key={product.id}>
-        Name: {product.name} <br />
-        Price: {product.price} <br />
-        Color: {product.color} <br />
-        Gender: {product.gender} <br />
-        Description: {product.description} <br />
-        {/* Додайте інші поля тут */}
-      </li>
-    ))}
-  </ul>
+        <>
+          {catalog.map((product) => (
+            <Card 
+              key={product.id}
+              
+            />
+          ))}
+        </>
       )}
       {catalogStatus === 'failed' && <div>Error: {catalogError}</div>}
     </div>

@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// Створюємо асинхронну thunk дію
 export const fetchCatalog = createAsyncThunk(
   'catalog/fetchCatalog',
   async () => {
@@ -10,7 +9,6 @@ export const fetchCatalog = createAsyncThunk(
   }
 );
 
-// Створюємо слайс
 const catalogSlice = createSlice({
   name: 'catalog',
   initialState: { items: [], status: 'idle', error: null },
@@ -22,7 +20,6 @@ const catalogSlice = createSlice({
       })
       .addCase(fetchCatalog.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        // Додаємо продукти в стан
         state.items = state.items.concat(action.payload);
       })
       .addCase(fetchCatalog.rejected, (state, action) => {
