@@ -27,6 +27,8 @@ export const SelectSize = ({ onChange }) => {
   ];
   return (
     <Select
+    // inputValue="Розмір:"
+    
       options={options}
       onChange={handleSizeChange}
       value={selectedSize} 
@@ -106,23 +108,43 @@ export const SelectSort = ({ onChange }) => {
 
 // ================================
 
-export const SelectDemiseason = ({ onChange }) => {
+// export const SelectDemiseason = ({ onChange }) => {
+//   const options = [
+//     { value: "season", label: "бігові" },
+//     { value: "season", label: "повсякденні" },
+//     { value: "season", label: "трекінгові" },
+//     { value: "season", label: "шкіряні" },
+//   ];
+
+//   return (
+//     <Select 
+//     defaultValue={{ value: "season", label: "Демісезон" }} // Значення за замовчуванням
+//     isMulti={false}
+//     options={options} 
+//     onChange={onChange} 
+//     isSearchable={false} // Вимкнути можливість пошуку
+//     autoFocus={false}
+//     />
+//   );
+// };
+
+export const SelectModels = ({ onChange }) => {
   const options = [
-    { value: "season", label: "бігові" },
-    { value: "season", label: "повсякденні" },
-    { value: "season", label: "трекінгові" },
-    { value: "season", label: "шкіряні" },
+    { value: "name", label: "NIKE AIR FORCE 1" },
+    { value: "name", label: "NIKE AIR FORCE 1 LOW X AMBUSH" },
+    { value: "name", label: "NIKE SHOX TL W" },
+    { value: "name", label: "NIKE DUNK LOW 'POLAR BLUE'" },
+    { value: "name", label: "NIKE LDWAFFLE" },
   ];
 
   return (
     <Select 
-    inputValue={"Демісезон"}
+    defaultValue={{ value: "name", label: "Моделі" }} 
     isMulti={false}
-    // value={options}
-    // defaultVelua={"Демісезон"}
     options={options} 
     onChange={onChange} 
-    // placeholder="Демісезон" 
+    isSearchable={false} 
+    autoFocus={false}
     />
   );
 };
