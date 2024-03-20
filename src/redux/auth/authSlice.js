@@ -11,7 +11,6 @@ export const loginCustomer = createAsyncThunk(
             });
             return response.data;
         } catch (err) {
-            console.log(err.response.data);
             return rejectWithValue(err.response.data);
         }
     }
@@ -32,6 +31,7 @@ const authSlice = createSlice({
     initialState: {
         customer: null,
         isAuthenticated: false,
+        isAuthStatusChecked: false,
         status: "idle",
         error: { email: null, password: null },
     },
@@ -50,6 +50,9 @@ const authSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
+            .addCase(checkAuthenticationStatus.fulfilled, (state) => {
+                state.isAuthStatusChecked = true;
+            })
             .addCase(loginCustomer.pending, (state) => {
                 state.customer = "loading";
             })
