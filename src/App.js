@@ -1,6 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { checkAuthenticationStatus } from "./redux/auth/authSlice";
+import {
+    checkAuthenticationStatus,
+    logoutCustomer,
+} from "./redux/auth/authSlice";
+import CustomIdleTimerComponent from "./components/CustomIdleTimerComponent";
 import "./App.css";
 import "./reset.scss";
 
@@ -21,7 +25,6 @@ import { WomanClothingPage } from "./Pages/WomanClothingPage/WomanClothingPage";
 import { ChildrenClothingPage } from "./Pages/ChildrenClothingPage/ChildrenClothingPage";
 import { SaleClothingPage } from "./Pages/SaleClothingPage/SaleClothingPage";
 import ProtectedRoute from "./routes/ProtectedRoute";
-
 import { ProductsList } from "./components/Products/ProductsList";
 
 function App() {
@@ -38,8 +41,13 @@ function App() {
         return null;
     }
 
+    const handleLogout = () => {
+        dispatch(logoutCustomer());
+    };
+
     return (
         <div className="App">
+            <CustomIdleTimerComponent onLogout={handleLogout} />
             <Routes>
                 <Route path="/" element={<Layout />}>
                     <Route index path="/" element={<MainPage />} />
