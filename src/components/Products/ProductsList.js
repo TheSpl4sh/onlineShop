@@ -17,7 +17,7 @@ function ProductsList() {
   }, [catalogStatus, dispatch]);
 
   return (
-    <div>
+    <>
       {catalogStatus === 'loading' && <div>Loading...</div>}
       {catalogStatus === 'succeeded' && (
         <>
@@ -30,8 +30,8 @@ function ProductsList() {
         </>
       )}
       {catalogStatus === 'failed' && <div>Error: {catalogError}</div>}
-    </div>
+    </>
   );
 }
 
-export { ProductsList } ;
+export default ProductsList  ;

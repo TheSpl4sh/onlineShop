@@ -1,5 +1,4 @@
 import React from 'react'
-import Card from "../../components/Card/Card"
 import ButtonOrangArrow from '../../components/Button/ButtonOrang/ButtonOrang'
 import "./MainPage.scss"
 import ShieldImg from "./img/benfits_section/shield.svg"
@@ -8,7 +7,7 @@ import CartImg from "./img/benfits_section/cart.svg"
 import PlusImg from './img/hit-section/plus.svg'
 import DiscountCard from '../../components/discount-card/DiscountCard'
 import Banner from "../../components/Banner/Banner";
-
+import ProductsList from '../../components/Products/ProductsList'
 const MainPage = () => {
   return (
     <div className='main-page'>
@@ -54,10 +53,7 @@ const MainPage = () => {
             </article >
 
             <article className='arrivals-section__products-container'>
-              <Card />
-              <Card />
-              <Card />
-              <Card />
+              <ProductsList />
             </article>
 
             <article className='arrivals-section__title-container arrivals-section__title-container--margin-top'>
@@ -70,10 +66,7 @@ const MainPage = () => {
             </article >
 
             <article className='arrivals-section__products-container'>
-              <Card />
-              <Card />
-              <Card />
-              <Card />
+              <ProductsList />
             </article>
           </section>
 

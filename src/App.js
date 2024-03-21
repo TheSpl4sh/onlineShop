@@ -25,7 +25,6 @@ import { WomanClothingPage } from "./Pages/WomanClothingPage/WomanClothingPage";
 import { ChildrenClothingPage } from "./Pages/ChildrenClothingPage/ChildrenClothingPage";
 import { SaleClothingPage } from "./Pages/SaleClothingPage/SaleClothingPage";
 import ProtectedRoute from "./routes/ProtectedRoute";
-import { ProductsList } from "./components/Products/ProductsList";
 
 function App() {
     const dispatch = useDispatch();
@@ -71,7 +70,6 @@ function App() {
                     <Route path="woman" element={<WomanClothingPage />}/>
                     <Route path="children" element={<ChildrenClothingPage />}/>
                     <Route path="sale" element={<SaleClothingPage />}/>
-                    <Route path="productsTest" element={<ProductsList />}/>
                     <Route path="*" element={<NotFound />} />
                 </Route>
             </Routes>
