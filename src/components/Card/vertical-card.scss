@@ -20,6 +20,22 @@
     }
 }
 
+.vertical-card__logo {
+    width: 158px;
+    height: 160px;
+
+    @media (min-width: $bp-md) {
+        width: 226px;
+        height: 230px;
+    }
+
+    @media (min-width: $bp-lg) {
+        width: 440px;
+        height: 445px;
+    }
+}
+
+
 .vertical-card__chips {
     padding: 5px 6px;
     display: inline-block;
@@ -101,6 +117,7 @@
 .vertical-card__name {
     margin-top: 8px;
     max-width: 158px;
+    min-height: 3em;
 
     @media (min-width: $bp-md) {
         max-width: 226px;
@@ -113,7 +130,7 @@
 
 .vertical-card__colors-block {
     margin-top: 8px;
-    @include flex(flex-start, flex-start, row);
+    @include flex(flex-start, center, row);
     gap: 10px;
 }
 
@@ -182,7 +199,7 @@
         position: absolute;
         width: 22px;
         height: 24px;
-        bottom: 0px;
+        bottom: 5px;
         right: 10px;
     }
 

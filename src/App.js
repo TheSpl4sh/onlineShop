@@ -26,6 +26,8 @@ import { ChildrenClothingPage } from "./Pages/ChildrenClothingPage/ChildrenCloth
 import { SaleClothingPage } from "./Pages/SaleClothingPage/SaleClothingPage";
 import ProtectedRoute from "./routes/ProtectedRoute";
 
+import { ProductsList } from "./components/Products/ProductsList";
+
 function App() {
     const dispatch = useDispatch();
     const isAuthStatusChecked = useSelector(
@@ -66,10 +68,11 @@ function App() {
                     />
                     {/* ТИМЧАСОВИЙ ШЛЯХ */}
                     <Route path="contacts" element={<Contacts />} />
-                    <Route path="men" element={<MenClothingPage />} />
-                    <Route path="woman" element={<WomanClothingPage />} />
-                    <Route path="children" element={<ChildrenClothingPage />} />
-                    <Route path="sale" element={<SaleClothingPage />} />
+                    <Route path="men" element ={<MenClothingPage />}/>
+                    <Route path="woman" element={<WomanClothingPage />}/>
+                    <Route path="children" element={<ChildrenClothingPage />}/>
+                    <Route path="sale" element={<SaleClothingPage />}/>
+                    <Route path="productsTest" element={<ProductsList />}/>
                     <Route path="*" element={<NotFound />} />
                 </Route>
             </Routes>
