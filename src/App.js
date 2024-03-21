@@ -1,6 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { checkAuthenticationStatus } from "./redux/auth/authSlice";
+import {
+    checkAuthenticationStatus,
+    logoutCustomer,
+} from "./redux/auth/authSlice";
+import CustomIdleTimerComponent from "./components/CustomIdleTimerComponent";
 import "./App.css";
 import "./reset.scss";
 
@@ -22,7 +26,6 @@ import { ChildrenClothingPage } from "./Pages/ChildrenClothingPage/ChildrenCloth
 import { SaleClothingPage } from "./Pages/SaleClothingPage/SaleClothingPage";
 import ProtectedRoute from "./routes/ProtectedRoute";
 
-
 function App() {
     const dispatch = useDispatch();
     const isAuthStatusChecked = useSelector(
@@ -37,8 +40,13 @@ function App() {
         return null;
     }
 
+    const handleLogout = () => {
+        dispatch(logoutCustomer());
+    };
+
     return (
         <div className="App">
+            <CustomIdleTimerComponent onLogout={handleLogout} />
             <Routes>
                 <Route path="/" element={<Layout />}>
                     <Route index path="/" element={<MainPage />} />
@@ -58,10 +66,10 @@ function App() {
                     />
                     {/* ТИМЧАСОВИЙ ШЛЯХ */}
                     <Route path="contacts" element={<Contacts />} />
-                    <Route path="men" element ={<MenClothingPage />}/>
-                    <Route path="woman" element={<WomanClothingPage />}/>
-                    <Route path="children" element={<ChildrenClothingPage />}/>
-                    <Route path="sale" element={<SaleClothingPage />}/>
+                    <Route path="men" element={<MenClothingPage />} />
+                    <Route path="woman" element={<WomanClothingPage />} />
+                    <Route path="children" element={<ChildrenClothingPage />} />
+                    <Route path="sale" element={<SaleClothingPage />} />
                     <Route path="*" element={<NotFound />} />
                 </Route>
             </Routes>
