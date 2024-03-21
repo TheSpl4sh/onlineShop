@@ -2,19 +2,17 @@ import React, { useState } from "react";
 
 
 function Size() {
-    const [activeId, setActiveId] = useState("");
+  const [activeId, setActiveId] = useState("");
 
     const handleButtonClick = (id) => {
-        if (activeId) {
-            const prevActiveButton = document.getElementById(activeId);
-            prevActiveButton.classList.remove("active");
+        if (activeId === id) {
+            setActiveId("");
+        } else {
+            setActiveId(id);
         }
-        
-        const currentButton = document.getElementById(id);
-        currentButton.classList.add("active");
-        
-        setActiveId(id);
     };
+
+    console.log("Active ID:", activeId);
     return(
         <div className="size-chart">
                         <div className="size-chart__container">
@@ -26,37 +24,37 @@ function Size() {
                             </h3>
                         </div>
                         <ul className="size">
-                            <li id="passive" className={`all-size size-li ${activeId === "passive" && "active"}`} onClick={() => handleButtonClick("passive")}>
+                            <li id="36" className={`all-size size-li ${activeId === "36" && "active"}`} onClick={() => handleButtonClick("36")}>
                                 36
                             </li>
-                            <li id="passive1" className={`half-size size-li ${activeId === "passive1" && "active"}`} onClick={() => handleButtonClick("passive1")}>
+                            <li id="36,5" className={`half-size size-li ${activeId === "36,5" && "active"}`} onClick={() => handleButtonClick("36,5")}>
                                 36,5
                             </li>
-                            <li id="passive2" className={`all-size size-li ${activeId === "passive2" && "active"}`} onClick={() => handleButtonClick("passive2")}>
+                            <li id="37"  className={`all-size size-li ${activeId ==="37" && "active"}`} onClick={() => handleButtonClick("37")}>
                                 37
                             </li>
-                            <li id="passive3" className={`half-size size-li ${activeId === "passive3" && "active"}`} onClick={() => handleButtonClick("passive3")}>
+                            <li id="37,5" className={`half-size size-li ${activeId === "37,5" && "active"}`} onClick={() => handleButtonClick("37,5")}>
                                 37,5
                             </li>
-                            <li id="passive4" className={`all-size size-li ${activeId === "passive4" && "active"}`} onClick={() => handleButtonClick("passive4")}>
+                            <li id="38" className={`all-size size-li ${activeId === "38" && "active"}`} onClick={() => handleButtonClick("38")}>
                                 38
                             </li>
-                            <li id="passive5" className={`half-size size-li ${activeId === "passive5" && "active"}`} onClick={() => handleButtonClick("passive5")}>
+                            <li id="38,5" className={`half-size size-li ${activeId === "38,5" && "active"}`} onClick={() => handleButtonClick("38,5")}>
                                 38,5
                             </li>
-                            <li id="passive6" className={`all-size size-li ${activeId === "passive6" && "active"}`} onClick={() => handleButtonClick("passive6")}>
+                            <li id="39" className={`all-size size-li ${activeId === "39" && "active"}`} onClick={() => handleButtonClick("39")}>
                                 39
                             </li>
-                             <li id="passive7" className={`half-size size-li ${activeId === "passive7" && "active"}`} onClick={() => handleButtonClick("passive7")}>
+                             <li id="39,5" className={`half-size size-li ${activeId === "39,5" && "active"}`} onClick={() => handleButtonClick("39,5")}>
                                 39,5
                             </li>
-                            <li id="passive8" className={`all-size size-li ${activeId === "passive8" && "active"}`} onClick={() => handleButtonClick("passive8")}>
+                            <li id="40" className={`all-size size-li ${activeId === "40" && "active"}`} onClick={() => handleButtonClick("40")}>
                                 40
                             </li>
-                            <li id="passive9" className={`half-size size-li ${activeId === "passive9" && "active"}`} onClick={() => handleButtonClick("passive9")}>
+                            <li id="40,5" className={`half-size size-li ${activeId === "40,5" && "active"}`} onClick={() => handleButtonClick("40,5")}>
                                 40,5
                             </li>
-                            <li id="passive10" className={`all-size size-li ${activeId === "passive10" && "active"}`} onClick={() => handleButtonClick("passive10")}>
+                            <li id="41" className={`all-size size-li ${activeId === "41" && "active"}`} onClick={() => handleButtonClick("41")}>
                                 41
                             </li>
                             <li className="half-size size-li available">
@@ -65,16 +63,16 @@ function Size() {
                             <li className="all-size size-li available">
                                 42
                             </li>
-                            <li id="passive11" className={`half-size size-li ${activeId === "passive11" && "active"}`} onClick={() => handleButtonClick("passive11")}>
+                            <li id="42,5" className={`half-size size-li ${activeId === "42,5" && "active"}`} onClick={() => handleButtonClick("42,5")}>
                                 42,5
                             </li>
-                            <li id="passive12" className={`all-size size-li ${activeId === "passive12" && "active"}`} onClick={() => handleButtonClick("passive12")}>
+                            <li id="43" className={`all-size size-li ${activeId === "43" && "active"}`} onClick={() => handleButtonClick("43")}>
                                 43
                             </li>
-                            <li id="passive13" className={`half-size size-li ${activeId === "passive13" && "active"}`} onClick={() => handleButtonClick("passive13")}>
+                            <li id="43,5" className={`half-size size-li ${activeId === "43,5" && "active"}`} onClick={() => handleButtonClick("43,5")}>
                                 43,5
                             </li>
-                            <li id="passive14" className={`half-size size-li ${activeId === "passive14" && "active"}`} onClick={() => handleButtonClick("passive14")}>
+                            <li id="44,5" className={`half-size size-li ${activeId === "44,5" && "active"}`} onClick={() => handleButtonClick("44,5")}>
                                 44,5
                             </li>
                         </ul>
