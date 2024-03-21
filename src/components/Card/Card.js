@@ -2,15 +2,17 @@ import React from "react";
 // import Slider from "../Slider/Slider";
 import './vertical-card.scss';
 // import sneakerSmall from './images/sneaker-small.png';
+import { Link } from "react-router-dom";
+
 
 const Card = ({ item }) => {
     
     return (
             <div className="vertical-card">
                 <div className="vertical-card__img-container">
-                    <a href="#top">
+                    <Link to='card'>
                         <img src={item.logo_img} alt="sneaker" draggable="false" className="vertical-card__logo" />
-                    </a>
+                    </Link>
 
                     <div className="vertical-card__chips vertical-card__chips--new">{item.chips}</div>
                     <button className="favorite-button"></button>
@@ -22,8 +24,8 @@ const Card = ({ item }) => {
                 <div className="vertical-card__description">
                         <span className="vertical-card__gender">
                             {item.parentId === "men-clothing"
-                                ? "МУЖСКИЕ"
-                                : "ЖЕНСКИЕ" }
+                                ? "ЖІНОЧІ"
+                                : "ЧОЛОВІЧІ" }
                         </span>
 
                         <h4  className="vertical-card__name">
