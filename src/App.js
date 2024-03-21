@@ -25,7 +25,6 @@ import { WomanClothingPage } from "./Pages/WomanClothingPage/WomanClothingPage";
 import { ChildrenClothingPage } from "./Pages/ChildrenClothingPage/ChildrenClothingPage";
 import { SaleClothingPage } from "./Pages/SaleClothingPage/SaleClothingPage";
 import ProtectedRoute from "./routes/ProtectedRoute";
-
 import { ProductsList } from "./components/Products/ProductsList";
 
 function App() {
