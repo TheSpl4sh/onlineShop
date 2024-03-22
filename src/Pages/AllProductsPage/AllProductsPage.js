@@ -11,7 +11,7 @@ import {
   SelectColor,
   SelectMaterial,
 } from "../../components/select/Select";
-import Card from "../../components/Card/Card";
+// import Card from "../../components/Card/Card";
 
 import "./AllProductsPage.scss";
 const AllProductsPage = () => {
@@ -130,7 +130,7 @@ const AllProductsPage = () => {
         <span></span>
       </div>
       <div className="all-products-card">
-      <Card /> 
+      {/* <Card />  */}
         {/* {filteredProducts.map((product) => (
           <Card key={product.id} product={product} />
         ))} */}

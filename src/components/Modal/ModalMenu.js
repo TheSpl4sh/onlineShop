@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FaSearch, FaTimes, FaRegUser } from "react-icons/fa";
 import { BsHeart, BsBasket3 } from "react-icons/bs";
-import Breadcrumbs from "../../Header/components/breadcrumbs/Breadcrumbs";
+import Breadcrumbs from "../Header/components/breadcrumbs/Breadcrumbs";
 // import { SelectDemiseason } from "../../select/Select";
 
 import "./ModalMenu.scss";

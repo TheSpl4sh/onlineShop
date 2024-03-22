@@ -4,7 +4,7 @@ import { ReactComponent as Logo } from "./components/icons/logo.svg";
 import NavHeader from "./components/navHeader/NavHeader";
 import TopHeader from "./components/topHeader/TopHeader";
 import Action from "./components/action/Action";
-import ModalMenu from "../Modal/ModalMenu/ModalMenu";
+import  ModalMenu  from "../Modal/ModalMenu";
 
 import "./Header.scss";
 
