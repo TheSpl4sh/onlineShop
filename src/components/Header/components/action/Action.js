@@ -1,14 +1,20 @@
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { checkAuthenticationStatus } from "../../../../redux/auth/authSlice";
 import { BsSearch, BsHeart, BsBasket3 } from "react-icons/bs";
 import { FaRegUser, FaUserCheck } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
-
 import "./Action.scss";
 
 const Action = () => {
+    const dispatch = useDispatch();
     const isAuthenticated = useSelector(
         (state) => state.loginCustomer.isAuthenticated
     );
+
+    useEffect(() => {
+        dispatch(checkAuthenticationStatus());
+    }, [dispatch]);
 
     return (
         <div className="header-icon">

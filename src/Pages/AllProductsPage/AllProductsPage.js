@@ -11,8 +11,7 @@ import {
   SelectColor,
   SelectMaterial,
 } from "../../components/select/Select";
-// import Card from "../../components/Card/Card";
-
+import ProductsList from "../../components/Products/ProductsList";
 import "./AllProductsPage.scss";
 const AllProductsPage = () => {
   // const [isFiltersOpen, setIsFiltersOpen] = useState(false);
@@ -130,7 +129,7 @@ const AllProductsPage = () => {
         <span></span>
       </div>
       <div className="all-products-card">
-      {/* <Card />  */}
+        <ProductsList />
         {/* {filteredProducts.map((product) => (
           <Card key={product.id} product={product} />
         ))} */}

@@ -6,7 +6,7 @@ function ContactsForm() {
 
     const sendEmail = (e) => {
         e.preventDefault();
-
+        alert('Запитання відправлено')
         emailjs.sendForm('service_v3bkrmm', 'template_iuib7z8', e.target, 'pgEkmsiXMl-QMTrXt');
 
     }

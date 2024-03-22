@@ -1,13 +1,20 @@
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { checkAuthenticationStatus } from "../../../../redux/auth/authSlice";
 import { Link } from "react-router-dom";
 import { FaRegUser, FaUserCheck } from "react-icons/fa";
 import Breadcrumbs from "../breadcrumbs/Breadcrumbs";
-import { useSelector } from "react-redux";
 import "./topHeader.scss";
 
 const TopHeader = () => {
+    const dispatch = useDispatch();
     const isAuthenticated = useSelector(
         (state) => state.loginCustomer.isAuthenticated
     );
+
+    useEffect(() => {
+        dispatch(checkAuthenticationStatus());
+    }, [dispatch]);
 
     return (
         <>
@@ -31,7 +38,7 @@ const TopHeader = () => {
                                 color="curent-color"
                             />
                             <p className="topheader-form__text">
-                                Логін/Регістрація
+                                Логін/Реєстрація
                             </p>
                         </Link>
                     )}
