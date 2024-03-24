@@ -39,7 +39,7 @@ const CartWithProducts = () => {
                 </div>
                 <CartTotalBox />
             </div>
-            <CardCarousel heading={<>Можливо вас<br/>зацікавить</>} />
+            {/* <CardCarousel heading={<>Можливо вас<br/>зацікавить</>} /> */}
         </>
     );
 };

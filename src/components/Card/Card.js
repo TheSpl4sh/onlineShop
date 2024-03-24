@@ -1,32 +1,35 @@
 import React from "react";
-import Slider from "../Slider/Slider";
+// import Slider from "../Slider/Slider";
 import './vertical-card.scss';
-import sneakerSmall from './images/sneaker-small.png';
-// import sneakerMedium from './images/sneaker-medium.png';
-// import sneakerLarge from './images/sneaker-large-img.png';
+// import sneakerSmall from './images/sneaker-small.png';
+import { Link } from "react-router-dom";
 
-function Card() {
+
+const Card = ({ item }) => {
+    
     return (
             <div className="vertical-card">
                 <div className="vertical-card__img-container">
-                    <a href="#top">
-                        <img src={sneakerSmall} alt="sneaker" draggable="false" className="vertical-card__logo" />
-                    </a>
+                    <Link to='card'>
+                        <img src={item.logo_img} alt="sneaker" draggable="false" className="vertical-card__logo" />
+                    </Link>
 
-                    <div className="vertical-card__chips vertical-card__chips--new">НОВИНКА</div>
+                    <div className="vertical-card__chips vertical-card__chips--new">{item.chips}</div>
                     <button className="favorite-button"></button>
 
-                    <Slider />
+                    {/* <Slider /> */}
                 </div>
 
 
                 <div className="vertical-card__description">
                         <span className="vertical-card__gender">
-                            ЖІНОЧІ
+                            {item.parentId === "men-clothing"
+                                ? "ЖІНОЧІ"
+                                : "ЧОЛОВІЧІ" }
                         </span>
 
                         <h4  className="vertical-card__name">
-                            Nike Air VaporMax 2023 Flyknit
+                            {item.name}
                         </h4>
 
                         <div className="vertical-card__colors-block">
@@ -39,12 +42,12 @@ function Card() {
                         
                         <div className="vertical-card__price-block">
                             <span className="vertical-card__price-number vertical-card__price-number--actual">
-                                7 899 ₴
+                                {item.price}
                             </span>
 
-                            <span className="vertical-card__price-number vertical-card__price-number--discount">
+                            {/* <span className="vertical-card__price-number vertical-card__price-number--discount">
                                 11 699 ₴
-                            </span>
+                            </span> */}
                             <button className="cart-button"></button>
                         </div>
                 </div>

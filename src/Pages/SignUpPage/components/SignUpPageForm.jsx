@@ -2,11 +2,18 @@ import React, { useState } from "react";
 import "../components/SignUpPageForm.scss";
 import { Formik, Field, Form } from "formik";
 import { PatternFormat } from "react-number-format";
-import LinkButton from "../../../components/LinkButton/LinkButton";
+import SubmitButton from "../../../components/LinkButton/SubmitButton";
 import { ReactComponent as BlackSvg } from "../../../components/LinkButton/icons/black_btn_svg.svg";
-import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { registerCustomer } from "../../../redux/registerCustomer/customersSlice";
+import { Link, useNavigate } from "react-router-dom";
+import { validationSchema } from "./validationSchema";
+import { setAuthenticated } from "../../../redux/auth/authSlice";
 
 const SignUpPageForm = () => {
+    const serverErrors = useSelector((state) => state.customers.error);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [passwordVisibility, setPasswordVisibility] = useState({
         password: false,
         confirmPassword: false,
@@ -23,18 +30,27 @@ const SignUpPageForm = () => {
         <Formik
             initialValues={{
                 email: "",
-                "user-name": "",
-                "user-surname": "",
-                phone: "",
+                firstName: "",
+                lastName: "",
+                telephone: "",
                 password: "",
                 confirmPassword: "",
                 agreeToPrivacyPolicy: false,
             }}
-            onSubmit={(values) => {
-                console.log(values);
+            validationSchema={validationSchema}
+            onSubmit={(values, { resetForm }) => {
+                const { confirmPassword, ...dataToSend } = values;
+                console.log(dataToSend);
+                dispatch(registerCustomer(dataToSend)).then((unwrapResult) => {
+                    if (unwrapResult.meta.requestStatus === "fulfilled") {
+                        dispatch(setAuthenticated(true));
+                        resetForm();
+                        navigate("/cabinet");
+                    }
+                });
             }}
         >
-            {({ isSubmitting }) => (
+            {({ errors, touched, isValid, dirty }) => (
                 <Form className="singup-page__form singup-form">
                     <label htmlFor="email" className="singup-form__label">
                         Email <span>*</span>
@@ -43,46 +59,75 @@ const SignUpPageForm = () => {
                         type="text"
                         id="email"
                         name="email"
-                        className="singup-form__input"
+                        className={`singup-form__input ${
+                            errors.email && touched.email ? "input-error" : ""
+                        }`}
                         placeholder="Введіть свій email"
                     />
+                    {serverErrors.message && (
+                        <div className="error-message">
+                            {serverErrors.message}
+                        </div>
+                    )}
+                    {errors.email && touched.email && (
+                        <div className="error-message">{errors.email}</div>
+                    )}
 
-                    <label htmlFor="user-name" className="singup-form__label">
+                    <label htmlFor="firstName" className="singup-form__label">
                         Ім'я <span>*</span>
                     </label>
                     <Field
                         type="text"
-                        id="user-name"
-                        name="user-name"
-                        className="singup-form__input"
+                        id="firstName"
+                        name="firstName"
+                        className={`singup-form__input ${
+                            errors.firstName && touched.firstName
+                                ? "input-error"
+                                : ""
+                        }`}
                         placeholder="Введіть своє ім'я"
                     />
+                    {errors.firstName && touched.firstName && (
+                        <div className="error-message">{errors.firstName}</div>
+                    )}
 
-                    <label
-                        htmlFor="user-surname"
-                        className="singup-form__label"
-                    >
+                    <label htmlFor="lastName" className="singup-form__label">
                         Прізвище <span>*</span>
                     </label>
                     <Field
                         type="text"
-                        id="user-surname"
-                        name="user-surname"
-                        className="singup-form__input"
+                        id="lastName"
+                        name="lastName"
+                        className={`singup-form__input ${
+                            errors.lastName && touched.lastName
+                                ? "input-error"
+                                : ""
+                        }`}
                         placeholder="Введіть своє прізвище"
                     />
+                    {errors.lastName && touched.lastName && (
+                        <div className="error-message">{errors.lastName}</div>
+                    )}
 
-                    <label htmlFor="phone" className="singup-form__label">
+                    <label htmlFor="telephone" className="singup-form__label">
                         Номер телефону <span>*</span>
                     </label>
-                    <PatternFormat
-                        className="singup-form__input phone-input"
-                        format="+380 (##) ### - ## - ##"
+                    <Field
+                        as={PatternFormat}
+                        className={`singup-form__input phone-input ${
+                            errors.telephone && touched.telephone
+                                ? "input-error"
+                                : ""
+                        }`}
+                        format="+380 (##) ###-##-##"
                         allowEmptyFormatting
                         mask="_"
-                        name="phone"
-                        id="phone"
+                        name="telephone"
+                        id="telephone"
                     />
+                    {errors.telephone && touched.telephone && (
+                        <div className="error-message">{errors.telephone}</div>
+                    )}
 
                     <label htmlFor="password" className="singup-form__label">
                         Пароль <span>*</span>
@@ -96,9 +141,18 @@ const SignUpPageForm = () => {
                             }
                             id="password"
                             name="password"
-                            className="singup-form__input"
+                            className={`singup-form__input ${
+                                errors.password && touched.password
+                                    ? "input-error"
+                                    : ""
+                            }`}
                             placeholder="Введіть пароль"
                         />
+                        {errors.password && touched.password && (
+                            <div className="error-message">
+                                {errors.password}
+                            </div>
+                        )}
 
                         <button
                             type="button"
@@ -149,9 +203,19 @@ const SignUpPageForm = () => {
                             }
                             id="confirmPassword"
                             name="confirmPassword"
-                            className="singup-form__input"
+                            className={`singup-form__input ${
+                                errors.confirmPassword &&
+                                touched.confirmPassword
+                                    ? "input-error"
+                                    : ""
+                            }`}
                             placeholder="Введіть пароль"
                         />
+                        {errors.confirmPassword && touched.confirmPassword && (
+                            <div className="error-message">
+                                {errors.confirmPassword}
+                            </div>
+                        )}
 
                         <button
                             type="button"
@@ -199,7 +263,12 @@ const SignUpPageForm = () => {
                             type="checkbox"
                             id="agreeToPrivacyPolicy"
                             name="agreeToPrivacyPolicy"
-                            className="singup-form__checkbox"
+                            className={`singup-form__checkbox ${
+                                errors.agreeToPrivacyPolicy &&
+                                touched.agreeToPrivacyPolicy
+                                    ? "input-error"
+                                    : ""
+                            }`}
                         />
                         <span className="singup-form__checkbox-text">
                             Я погоджуюсь на обробку персональних даних
@@ -209,14 +278,19 @@ const SignUpPageForm = () => {
                             </Link>
                         </span>
                     </label>
+                    {errors.agreeToPrivacyPolicy &&
+                        touched.agreeToPrivacyPolicy && (
+                            <div className="error-message">
+                                {errors.agreeToPrivacyPolicy}
+                            </div>
+                        )}
 
-                    <LinkButton
-                        path="/"
-                        text="Створити акаунт"
+                    <SubmitButton
+                        text="Увійти в кабінет"
                         SvgIcon={BlackSvg}
-                        className="black singup-form__button"
+                        className="black auth-form__button"
                         type="submit"
-                        disabled={isSubmitting}
+                        disabled={!isValid || !dirty}
                     />
                 </Form>
             )}

@@ -1,5 +1,4 @@
 import React from 'react'
-import Card from "../../components/Card/Card"
 import ButtonOrangArrow from '../../components/Button/ButtonOrang/ButtonOrang'
 import "./MainPage.scss"
 import ShieldImg from "./img/benfits_section/shield.svg"
@@ -8,7 +7,7 @@ import CartImg from "./img/benfits_section/cart.svg"
 import PlusImg from './img/hit-section/plus.svg'
 import DiscountCard from '../../components/discount-card/DiscountCard'
 import Banner from "../../components/Banner/Banner";
-
+import ProductsList from '../../components/Products/ProductsList'
 const MainPage = () => {
   return (
     <div className='main-page'>
@@ -19,8 +18,8 @@ const MainPage = () => {
                 <img src={ShieldImg} alt='shield'className='benefits-section__img-shield'/>
 
                 <div className='benefits-section__original-text'>
-                  <h3 className='benefits-section__original-title'>ТОЛЬКО ОРИГИНАЛЬНЫЕ ТОВАРЫ</h3>
-                  <p className='benefits-section__original-paragraph'>Гарантированная подлинность Nike и высокое качество кроссовок.</p>
+                  <h3 className='benefits-section__original-title'>ТІЛЬКИ ОРИГІНАЛЬНІ ТОВАРИ</h3>
+                  <p className='benefits-section__original-paragraph'>Гарантована автентичність Nike та висока якість кросівок</p>
                 </div>
               </article>
 
@@ -28,8 +27,8 @@ const MainPage = () => {
                 <img src={StarsImg} alt='shield'className='benefits-section__img-stars'/>
 
                 <div className='benefits-section__original-text'>
-                  <h3 className='benefits-section__original-title'>ПРОФЕССИОНАЛЬНЫЙ СЕРВИС</h3>
-                  <p className='benefits-section__original-paragraph'>Команда экспертов, готовых помочь с выбором размера ответить на все вопросы.</p>
+                  <h3 className='benefits-section__original-title'>ПРОФЕСІОНАЛЬНИЙ СЕРВІС</h3>
+                  <p className='benefits-section__original-paragraph'>Команда експертів, готова допомогти з вибором розміру відповісти на всі питання.</p>
                 </div>
               </article>
 
@@ -37,8 +36,8 @@ const MainPage = () => {
                 <img src={CartImg} alt='shield'className='benefits-section__img-cart'/>
 
                 <div className='benefits-section__original-text'>
-                  <h3 className='benefits-section__original-title'>ЭКСКЛЮЗИВНЫЙ ВЫБОР</h3>
-                  <p className='benefits-section__original-paragraph'>Богатый ассортимент оригинальных моделей Nike, включая редкие выпуски.</p>
+                  <h3 className='benefits-section__original-title'>ЕКСКЛЮЗИВНИЙ ВИБІР ТОВАРІВ</h3>
+                  <p className='benefits-section__original-paragraph'>Багатий асортимент оригінальних моделей Nike, включаючи рідкісні випуски.</p>
                 </div>
               </article>
           </section>
@@ -54,10 +53,7 @@ const MainPage = () => {
             </article >
 
             <article className='arrivals-section__products-container'>
-              <Card />
-              <Card />
-              <Card />
-              <Card />
+              <ProductsList />
             </article>
 
             <article className='arrivals-section__title-container arrivals-section__title-container--margin-top'>
@@ -70,10 +66,7 @@ const MainPage = () => {
             </article >
 
             <article className='arrivals-section__products-container'>
-              <Card />
-              <Card />
-              <Card />
-              <Card />
+              <ProductsList />
             </article>
           </section>
 
