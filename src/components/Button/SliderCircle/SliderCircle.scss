@@ -1,30 +1,30 @@
-.SliderCircleLeft {
+.sliderCircleLeft {
   width: 98px;
   height: 98px;
   background-color: #ffffff;
   align-items: center;
   border: 1px solid #e2e2e2;
   border-radius: 100%;
-  padding: 0px 40px;
+  padding: 0px 35px;
   cursor: pointer;
 }
 
-.SliderCircleLeft:hover {
+.sliderCircleLeft:hover {
   background-color: #e2e2e2;
 }
 
-.SliderCircleRight {
+.sliderCircleRight {
   width: 98px;
   height: 98px;
   background-color: #ffffff;
   align-items: center;
   border: 1px solid #e2e2e2;
   border-radius: 100%;
-  padding: 0px 40px;
+  padding: 0px 35px;
   margin-left: 14px;
   cursor: pointer;
 }
 
-.SliderCircleRight:hover {
+.sliderCircleRight:hover {
   background-color: #e2e2e2;
 }

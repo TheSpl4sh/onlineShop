@@ -1,6 +1,4 @@
-a {
-  color: #000;
-}
+
 
 .error-field {
   border: 2px solid red;
@@ -203,6 +201,7 @@ a {
   border: 2px solid #d6d6d6;
   padding: 10px 20px 10px 20px;
   margin-bottom: 10px;
+  resize:vertical;
 }
 
 .placingOrder-fields:hover {

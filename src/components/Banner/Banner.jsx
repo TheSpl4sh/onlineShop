@@ -26,20 +26,19 @@ function Banner() {
                 FLUKNIT RACER
               </li>
               <li className="bannerText">
-                Reinforced toe box and durable plastic frame. Innovative
-                technology opens through perforated insole.
+                Посилений носок і міцний пластиковий каркас. Інноваційний
+                технологія відкривається через перфоровану устілку.
               </li>
               <img className="sneakerBanners" src={Group} alt="Group" />
 
               <li className="BannerPrice">
-                <span className="banner-from">from</span>
-                <span className="banner-price">
-                  3000 <img className="uah" src={UAH} alt="UAH" />
-                </span>
+                <span className="banner-from">ВІД</span>
+                <span className="banner-price">3000</span>
+                <img className="uah" src={UAH} alt="UAH" />
               </li>
             </ul>
             <div className="buttonBanner">
-              <ButtonBlackArrow text="MORE DETAIL" />
+              <ButtonBlackArrow text="ДЕТАЛЬНІШЕ" />
             </div>
           </div>
           <img className="sneakerBanner" src={Group} alt="Group" />
