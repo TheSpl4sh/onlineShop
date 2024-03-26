@@ -12,8 +12,8 @@ function Banner() {
     <div>
       <div className="banner-timer">
         <div className="banner">
-          <div>
-            <ul>
+          <div className="banner-info">
+            <ul className="banner-info--ul">
               <li className="bannerTitle">
                 AIR MAX
                 <span className="bannerRectangle">
@@ -31,15 +31,15 @@ function Banner() {
               </li>
               <img className="sneakerBanners" src={Group} alt="Group" />
 
-              <li className="BannerPrice">
+              <li className="bannerPrice">
                 <span className="banner-from">ВІД</span>
                 <span className="banner-price">3000</span>
                 <img className="uah" src={UAH} alt="UAH" />
               </li>
+              <li className="buttonBanner">
+                <ButtonBlackArrow text="ДЕТАЛЬНІШЕ" />
+              </li>
             </ul>
-            <div className="buttonBanner">
-              <ButtonBlackArrow text="ДЕТАЛЬНІШЕ" />
-            </div>
           </div>
           <img className="sneakerBanner" src={Group} alt="Group" />
         </div>

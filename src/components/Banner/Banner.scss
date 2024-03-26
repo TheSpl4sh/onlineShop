@@ -13,6 +13,14 @@
   grid-template-columns: 1fr 1fr;
 }
 
+.banner-info {
+  height: 100%;
+}
+
+.banner-info--ul {
+  height: 100%;
+}
+
 .bannerTitle {
   position: relative;
   width: 545px;
@@ -46,9 +54,9 @@
   text-align: left;
 }
 
-.BannerPrice {
+.bannerPrice {
   position: relative;
-  top: 256px;
+  top: 33%;
   font-family: Pragmatica;
   color: #000000;
   display: block;
@@ -83,8 +91,8 @@
 }
 
 .sliderCircle {
-  position: relative;
-  bottom: 150px;
+  position: absolute;
+  top: 90%;
   display: flex;
   text-align: left;
 }
@@ -123,9 +131,8 @@
     font-size: 15px;
   }
 
-  .BannerPrice {
+  .bannerPrice {
     position: relative;
-    top: 186px;
     font-family: Pragmatica;
     color: #000000;
     display: block;
@@ -160,7 +167,7 @@
   .banner-sliderTimer {
     display: flex;
     width: 100%;
-    height: 100px;
+    height: 150px;
     align-items: center;
     justify-content: center;
   }
@@ -200,10 +207,6 @@
     font-size: 15px;
   }
 
-  .BannerPrice {
-    top: 116px;
-  }
-
   .banner-from {
     font-size: 16px;
   }
@@ -232,7 +235,7 @@
   .banner-sliderTimer {
     display: flex;
     width: 100%;
-    height: 100px;
+    height: 150px;
     align-items: center;
     justify-content: center;
   }
@@ -277,7 +280,7 @@
     margin-top: 18px;
   }
 
-  .BannerPrice {
+  .bannerPrice {
     position: relative;
     top: 0;
     display: flex;
@@ -386,7 +389,7 @@
     display: none;
   }
 
-  .BannerPrice {
+  .bannerPrice {
     top: 0;
     display: flex;
     justify-content: center;
@@ -443,11 +446,17 @@
     top: 48px;
   }
 
-  .BannerPrice {
+  .bannerPrice {
     top: 0;
     display: flex;
     justify-content: center;
     align-items: baseline;
+  }
+
+  .bannerRectangle {
+    height: 30px;
+    text-align: center;
+    align-items: center;
   }
 
   .sneakerBanners {

@@ -17,8 +17,9 @@ function Forma() {
     city: Yup.string().required("Поле місто є обов'язковим"),
     street: Yup.string().required("Поле вулиця є обов'язковим"),
     postalCode: Yup.string().required("Поле поштовий індекс є обов'язковим"),
-    houseNumber: Yup.string().required("Поле номер будинку є обов'язковим"),
-    apartment: Yup.string().required("Поле номер квартири є обов'язковим"),
+    houseNumber: Yup.string().required(
+      "Поле номер будинку та квартири є обов'язковим"
+    ),
   });
 
   const initialValues = {
@@ -106,7 +107,7 @@ function Forma() {
         onSubmit={handleSubmit}
         validationSchema={validationSchema}
       >
-        {(values) => (
+        {({ values, touched, errors }) => (
           <Form className="registration-form">
             <div className="form-enter_login-message">
               <div className="form-enter">
@@ -132,9 +133,7 @@ function Forma() {
               {showPromoCoupon && (
                 <div className="promo-coupon">
                   <label className="label-coupon">
-                    <span>
-                      Введіть промокод в поле:
-                    </span>
+                    <span>Введіть промокод в поле:</span>
                   </label>
                   <div className="form-item">
                     <Field
@@ -165,7 +164,14 @@ function Forma() {
                 </label>
 
                 <Field
-                  className="placingOrder-field"
+                  className={`placingOrder-field${
+                    showFirstName &&
+                    !values.firstName &&
+                    touched.firstName &&
+                    errors.firstName
+                      ? " error"
+                      : ""
+                  }`}
                   type="text"
                   id="firstName"
                   name="firstName"
@@ -174,7 +180,11 @@ function Forma() {
                   onClick={toggleFirstName}
                 />
                 {showFirstName && !values.firstName && (
-                  <ErrorMessage name="firstName" component="div" />
+                  <ErrorMessage
+                    name="firstName"
+                    component="div"
+                    className="error-messages"
+                  />
                 )}
               </li>
               <li className="form-element--li">
@@ -185,7 +195,14 @@ function Forma() {
                 </label>
 
                 <Field
-                  className="placingOrder-field"
+                  className={`placingOrder-field${
+                    showLastName &&
+                    !values.lastName &&
+                    touched.lastName &&
+                    errors.lastName
+                      ? " error"
+                      : ""
+                  }`}
                   type="text"
                   id="lastName"
                   name="lastName"
@@ -194,7 +211,11 @@ function Forma() {
                   onClick={toggleLastName}
                 />
                 {showLastName && !values.lastName && (
-                  <ErrorMessage name="lastName" component="div" />
+                  <ErrorMessage
+                    name="lastName"
+                    component="div"
+                    className="error-messages"
+                  />
                 )}
               </li>
             </ul>
@@ -210,7 +231,6 @@ function Forma() {
               placeholder="Введить назву вашоє компаніі"
               value={values.company}
             />
-            <ErrorMessage name="company" component="div" />
 
             <ul className="form-element">
               <li className="form-element--li">
@@ -222,7 +242,14 @@ function Forma() {
                 </label>
 
                 <Field
-                  className="placingOrder-field"
+                  className={`placingOrder-field${
+                    showRegion &&
+                    !values.region &&
+                    touched.region &&
+                    errors.region
+                      ? " error"
+                      : ""
+                  }`}
                   type="text"
                   id="region"
                   name="region"
@@ -231,7 +258,11 @@ function Forma() {
                   onClick={toggleRegion}
                 />
                 {showRegion && !values.region && (
-                  <ErrorMessage name="region" component="div" />
+                  <ErrorMessage
+                    name="region"
+                    component="div"
+                    className="error-messages"
+                  />
                 )}
               </li>
 
@@ -243,7 +274,11 @@ function Forma() {
                 </label>
 
                 <Field
-                  className="placingOrder-field"
+                  className={`placingOrder-field${
+                    showCity && !values.city && touched.city && errors.city
+                      ? " error"
+                      : ""
+                  }`}
                   type="text"
                   id="city"
                   name="city"
@@ -252,7 +287,11 @@ function Forma() {
                   onClick={toggleCity}
                 />
                 {showCity && !values.city && (
-                  <ErrorMessage name="city" component="div" />
+                  <ErrorMessage
+                    name="city"
+                    component="div"
+                    className="error-messages"
+                  />
                 )}
               </li>
             </ul>
@@ -263,7 +302,11 @@ function Forma() {
               </p>
             </label>
             <Field
-              className="placingOrder-field"
+              className={`placingOrder-field${
+                showStreet && !values.street && touched.street && errors.street
+                  ? " error"
+                  : ""
+              }`}
               type="text"
               id="street"
               name="street"
@@ -272,7 +315,11 @@ function Forma() {
               onClick={toggleStreet}
             />
             {showStreet && !values.street && (
-              <ErrorMessage name="street" component="div" />
+              <ErrorMessage
+                name="street"
+                component="div"
+                className="error-messages"
+              />
             )}
 
             <ul className="form-element">
@@ -285,7 +332,14 @@ function Forma() {
                 </label>
 
                 <Field
-                  className="placingOrder-field"
+                  className={`placingOrder-field${
+                    showPostalCode &&
+                    !values.postalCode &&
+                    touched.postalCode &&
+                    errors.postalCode
+                      ? " error"
+                      : ""
+                  }`}
                   type="text"
                   id="postalCode"
                   name="postalCode"
@@ -294,7 +348,11 @@ function Forma() {
                   onClick={togglePostalCode}
                 />
                 {showPostalCode && !values.postalCode && (
-                  <ErrorMessage name="postalCode" component="div" />
+                  <ErrorMessage
+                    name="postalCode"
+                    component="div"
+                    className="error-messages"
+                  />
                 )}
               </li>
               <li className="form-element--li">
@@ -305,7 +363,14 @@ function Forma() {
                   </p>
                 </label>
                 <Field
-                  className="placingOrder-field"
+                  className={`placingOrder-field${
+                    showHouseNumber &&
+                    !values.houseNumber &&
+                    touched.houseNumber &&
+                    errors.houseNumber
+                      ? " error"
+                      : ""
+                  }`}
                   type="text"
                   id="houseNumber"
                   name="houseNumber"
@@ -313,10 +378,13 @@ function Forma() {
                   value={values.houseNumber}
                   onClick={toggleHouseNumber}
                 />
-                {showHouseNumber &&
-                  !values.houseNumber &&
-                  ((<ErrorMessage name="houseNumber" component="div" />),
-                  (<ErrorMessage name="apartment" component="div" />))}
+                {showHouseNumber && !values.houseNumber && (
+                  <ErrorMessage
+                    name="houseNumber"
+                    component="div"
+                    className="error-messages"
+                  />
+                )}
               </li>
             </ul>
             <ul className="form-element">
@@ -327,7 +395,11 @@ function Forma() {
                   </p>
                 </label>
                 <Field
-                  className="placingOrder-field"
+                  className={`placingOrder-field${
+                    showEmail && !values.email && touched.email && errors.email
+                      ? " error"
+                      : ""
+                  }`}
                   type="email"
                   id="email"
                   name="email"
@@ -335,8 +407,12 @@ function Forma() {
                   value={values.email}
                   onClick={toggleEmail}
                 />
-                {showEmail && !values.email && (
-                  <ErrorMessage name="email" component="div" />
+                {showEmail && touched.email && errors.email && (
+                  <ErrorMessage
+                    name="email"
+                    component="div"
+                    className="error-messages"
+                  />
                 )}
               </li>
               <li className="form-element--li">
@@ -347,7 +423,14 @@ function Forma() {
                   </p>
                 </label>
                 <Field
-                  className="placingOrder-field"
+                  className={`placingOrder-field${
+                    showPhoneNumber &&
+                    !values.phoneNumber &&
+                    touched.phoneNumber &&
+                    errors.phoneNumber
+                      ? " error"
+                      : ""
+                  }`}
                   type="tel"
                   id="phoneNumber"
                   name="phoneNumber"
@@ -356,7 +439,11 @@ function Forma() {
                   onClick={togglePhoneNumber}
                 />
                 {showPhoneNumber && !values.phoneNumber && (
-                  <ErrorMessage name="phoneNumber" component="div" />
+                  <ErrorMessage
+                    name="phoneNumber"
+                    component="div"
+                    className="error-messages"
+                  />
                 )}
               </li>
             </ul>
