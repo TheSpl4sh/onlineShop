@@ -12,8 +12,8 @@ function Banner() {
     <div>
       <div className="banner-timer">
         <div className="banner">
-          <div>
-            <ul>
+          <div className="banner-info">
+            <ul className="banner-info--ul">
               <li className="bannerTitle">
                 AIR MAX
                 <span className="bannerRectangle">
@@ -26,21 +26,20 @@ function Banner() {
                 FLUKNIT RACER
               </li>
               <li className="bannerText">
-                Reinforced toe box and durable plastic frame. Innovative
-                technology opens through perforated insole.
+                Посилений носок і міцний пластиковий каркас. Інноваційний
+                технологія відкривається через перфоровану устілку.
               </li>
               <img className="sneakerBanners" src={Group} alt="Group" />
 
-              <li className="BannerPrice">
-                <span className="banner-from">from</span>
-                <span className="banner-price">
-                  3000 <img className="uah" src={UAH} alt="UAH" />
-                </span>
+              <li className="bannerPrice">
+                <span className="banner-from">ВІД</span>
+                <span className="banner-price">3000</span>
+                <img className="uah" src={UAH} alt="UAH" />
+              </li>
+              <li className="buttonBanner">
+                <ButtonBlackArrow text="ДЕТАЛЬНІШЕ" />
               </li>
             </ul>
-            <div className="buttonBanner">
-              <ButtonBlackArrow text="MORE DETAIL" />
-            </div>
           </div>
           <img className="sneakerBanner" src={Group} alt="Group" />
         </div>
