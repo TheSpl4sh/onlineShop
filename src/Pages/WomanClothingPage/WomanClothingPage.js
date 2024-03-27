@@ -1,95 +1,84 @@
-// import React, { useState, useEffect } from "react";
-// import { FaTimes } from "react-icons/fa";
-// import data from "../../../server/data.json";
-// import CustomSlider from "../AllProductsPage/components/customSlider/CustomSlider";
-// import DisplayParameter from "../AllProductsPage/components/displayParameter/DisplayParameter";
-// import MenuToggle from "../AllProductsPage/components/menuToggle/MenuToggle";
-// import Pagination from "../AllProductsPage/components/pagination/Pagination";
-// import Card from "../../components/Card/Card";
-// import {
-//   SelectSize,
-//   SelectSort,
-//   SelectColor,
-//   SelectMaterial,
-// } from "../../components/select/Select";
+import React, { useState, useEffect } from 'react';
+import { FaTimes } from 'react-icons/fa';
+// import { useSelector, useDispatch } from 'react-redux';
+import CustomizedSlider from '../AllProductsPage/components/CustomizedSlider/CustomizedSlider';
+import DisplayParameter from '../AllProductsPage/components/displayParameter/DisplayParameter';
+import MenuToggle from '../AllProductsPage/components/menuToggle/MenuToggle';
+import Pagination from '../AllProductsPage/components/pagination/Pagination';
+import {
+  SelectSize,
+  SelectSort,
+  SelectColor,
+  SelectMaterial,
+} from '../../components/Select';
+import axios from 'axios';
 
 
-import "../AllProductsPage/AllProductsPage.scss";
+// import "../AllProductsPage/AllProductsPage.scss";
 
 
 const WomanClothingPage = () => {
-//   const womanClothingProducts = data.products.filter(
-//     (product) => product.parentId === "woman-clothing"
-//   );
-	// const [isFiltersOpen, setIsFiltersOpen] = useState(false);
-	// const [itemsPerPage, setItemsPerPage] = useState(9);
-	// const [filters, setFilters] = useState({
-	//   size: null,
-	//   color: null,
-	//   material: null,
-	// });
-	// const [filteredProducts, setFilteredProducts] = useState(data.products);
+	// const dispatch = useDispatch();
+	const [isFiltersOpen, setIsFiltersOpen] = useState(false);
+	const [itemsPerPage, setItemsPerPage] = useState(9);
+	const [filters, setFilters] = useState({    
+	  parentId: "woman-clothing",
+	  size: null,
+	  color: null,
+	  material: null,
+	});
+	const [products, setProducts] = useState([]);
   
-	// const toggleFilters = () => {
-	//   setIsFiltersOpen(!isFiltersOpen);
-	// };
+	const toggleFilters = () => {
+	  setIsFiltersOpen(!isFiltersOpen);
+	};
   
-	// const handleItemsPerPageChange = (value) => {
-	//   setItemsPerPage(value);
-	// };
+	const handleItemsPerPageChange = (value) => {
+	  setItemsPerPage(value);
+	};
   
-	// const clearFilters = () => {
-	//   setFilters({
-	// 	size: null,
-	// 	color: null,
-	// 	material: null,
-	//   });
-	//   setFilteredProducts(data.products);
-	// };
+	const clearFilters = () => {
+	  setFilters({
+		size: null,
+		color: null,
+		material: null,
+	  });
+	};
   
-	// const applyFilters = () => {
-	//   let filtered = data.products.filter(
-	// 	(product) => product.parentId === "woman-clothing"
-	//   );
-	//   if (filters.size) {
-	// 	filtered = filtered.filter((product) =>
-	// 	  product.size.includes(filters.size)
-	// 	);
-	//   }
-	//   if (filters.color) {
-	// 	filtered = filtered.filter((product) =>
-	// 	  product.color.includes(filters.color)
-	// 	);
-	//   }
-	//   if (filters.material) {
-	// 	filtered = filtered.filter((product) =>
-	// 	  product.material.includes(filters.material)
-	// 	);
-	//   }
-	//   setFilteredProducts(filtered);
-	// };
+	const applyFilters = async () => {
+	  try {
+		const response = await axios.get('/api/catalog-filter', {
+		  params: filters,
+		});
+		console.log(response.data);
+		setProducts(response.data);
+	  } catch (error) {
+		console.error('Error fetching filtered catalog:', error);
+	  }
+	};
   
-	// const handleSizeChange = (selectedOption) => {
-	//   setFilters({ ...filters, size: selectedOption.label });
-	// };
+	const handleSizeChange = (selectedOption) => {
+	  setFilters({ ...filters, size: selectedOption.label });
+	};
   
-	// const handleColorChange = (selectedOption) => {
-	//   setFilters({ ...filters, color: selectedOption.label });
-	// };
+	const handleColorChange = (selectedOption) => {
+	  setFilters({ ...filters, color: selectedOption.label });
+	};
   
-	// const handleMaterialChange = (selectedOption) => {
-	//   setFilters({ ...filters, material: selectedOption.label });
-	// };
+	const handleMaterialChange = (selectedOption) => {
+	  setFilters({ ...filters, material: selectedOption.label });
+	};
   
-	// useEffect(() => {
-	//   applyFilters();
-	//   // eslint-disable-next-line react-hooks/exhaustive-deps
-	// }, [filters]);
-
+	useEffect(() => {
+	  applyFilters();
+	  // eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [filters]);
+	
+	console.log("womanProducts",products);
 	return (
 		<>
 		<h1>WomanClothingPage</h1>
-		{/* <section className="catalog container">
+		<section className="catalog container">
         <h1>Коллекция Air Max</h1>
         <hr />
         <div className="select-mobile">
@@ -107,7 +96,7 @@ const WomanClothingPage = () => {
             <SelectSize onChange={handleSizeChange} />
           </div>
           <div className="select-wrapper__item">
-            <CustomSlider />
+		  <CustomizedSlider />
           </div>
           <div className="select-wrapper__item">
             <SelectColor onChange={handleColorChange} />
@@ -131,16 +120,13 @@ const WomanClothingPage = () => {
             <SelectSort />
           </div>
         </div>
-        <div className="sort-out">
-          <span></span>
-        </div>
         <div className="all-products-card">
-          {filteredProducts.map((product) => (
-            <Card key={product.id} product={product} />
-          ))}
+          <Pagination 
+          data={products} 
+          itemsPerPage={itemsPerPage} 
+          />
         </div>
-        <Pagination itemsPerPage={itemsPerPage} />
-      </section> */}
+      </section>
 		</>
 	 );
 }
