@@ -15,6 +15,8 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const handelModal = () => setIsOpen(!isOpen);
 
+
+  // const isMobile = window.matchMedia("(max-width: 768px)").matches;
   // const mediaOnClick = () => {
   //   if (window.matchMedia(`(min-width: ${lg}px)`).matches) {
   //     return;
