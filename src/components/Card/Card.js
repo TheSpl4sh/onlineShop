@@ -5,8 +5,8 @@ import './vertical-card.scss';
 import { Link } from "react-router-dom";
 
 
-const Card = ({ item, style_color }) => {
-    // const {style_color} = item
+const Card = ({ item, /* style_color */ }) => {
+    const {style_color} = item
     
     return (
             <div className="vertical-card">
