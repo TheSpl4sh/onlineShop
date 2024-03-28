@@ -36,6 +36,9 @@ export const SelectSize = ({ onChange }) => {
     />
   );
 };
+// ===================================
+
+
 
 // ================================================
 
@@ -64,7 +67,7 @@ export const SelectColor = ({ onChange }) => {
    />
    );
 };
-
+// ======================================
 
 export const SelectMaterial = ({ onChange }) => {
   const [selectedMaterial, setSelectedMaterial] = useState(null);
@@ -89,6 +92,7 @@ export const SelectMaterial = ({ onChange }) => {
     />
   );
 };
+// =======================
 
 export const SelectSort = ({ onChange }) => {
   const options = [
@@ -105,6 +109,7 @@ export const SelectSort = ({ onChange }) => {
     />
   );
 };
+// ========================
 
 // ================================
 
@@ -128,23 +133,26 @@ export const SelectSort = ({ onChange }) => {
 //   );
 // };
 
-export const SelectModels = ({ onChange }) => {
-  const options = [
-    { value: "name", label: "NIKE AIR FORCE 1" },
-    { value: "name", label: "NIKE AIR FORCE 1 LOW X AMBUSH" },
-    { value: "name", label: "NIKE SHOX TL W" },
-    { value: "name", label: "NIKE DUNK LOW 'POLAR BLUE'" },
-    { value: "name", label: "NIKE LDWAFFLE" },
-  ];
+// ===========================================
 
-  return (
-    <Select 
-    defaultValue={{ value: "name", label: "Моделі" }} 
-    isMulti={false}
-    options={options} 
-    onChange={onChange} 
-    isSearchable={false} 
-    autoFocus={false}
-    />
-  );
-};
+// export const SelectModels = ({ onChange }) => {
+//   const options = [
+//     { value: "name", label: "NIKE AIR FORCE 1" },
+//     { value: "name", label: "NIKE AIR FORCE 1 LOW X AMBUSH" },
+//     { value: "name", label: "NIKE SHOX TL W" },
+//     { value: "name", label: "NIKE DUNK LOW 'POLAR BLUE'" },
+//     { value: "name", label: "NIKE LDWAFFLE" },
+//   ];
+
+//   return (
+//     <Select 
+//     defaultValue={{ value: "name", label: "Моделі" }} 
+//     isMulti={false}
+//     options={options} 
+//     onChange={onChange} 
+//     isSearchable={false} 
+//     autoFocus={false}
+//     />
+//   );
+// };
+// ======================

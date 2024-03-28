@@ -4,7 +4,7 @@ import { ReactComponent as Logo } from "./components/icons/logo.svg";
 import NavHeader from "./components/navHeader/NavHeader";
 import TopHeader from "./components/topHeader/TopHeader";
 import Action from "./components/action/Action";
-import ModalMenu from "../Modal/ModalMenu/ModalMenu";
+import  ModalMenu  from "../Modal/ModalMenu";
 
 import "./Header.scss";
 
@@ -15,6 +15,8 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const handelModal = () => setIsOpen(!isOpen);
 
+
+  // const isMobile = window.matchMedia("(max-width: 768px)").matches;
   // const mediaOnClick = () => {
   //   if (window.matchMedia(`(min-width: ${lg}px)`).matches) {
   //     return;

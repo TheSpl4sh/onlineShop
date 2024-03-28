@@ -23,7 +23,9 @@ const NavHeader = ({
             <hr className="orang-line"></hr>
             <hr className="black-line"></hr>
           </li>
-          <li className="navheader-list__item">
+          <li className="navheader-list__item" 
+          onClick={onClick}
+          >
             {/* <Link to="AllProductPage" className="navheader-list__item"> */}
             <i>Меню</i>
             {/* </Link> */}
