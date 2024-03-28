@@ -1,0 +1,59 @@
+@import '../../styles/variables.scss';
+@import '../../styles/deafults.scss';
+@import '../../styles/fonts.scss';
+@import '../../styles/mixins.scss';
+
+.account-components {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        width: 323px;
+        height: 75px;
+        border: 1px solid #EAEAEA;
+        cursor: pointer;
+        background-color: #fff;
+        transition: background-color 0.3s;
+    }
+
+    &__list:hover {
+        background-color: #1D1D27;
+    }
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        margin-left: 30px;
+        margin-right: 10px;
+        font-size: 23px;
+        color: #EAEAEA;
+    }
+
+    &__tittle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 2px;
+
+
+        font-family: 'Pragmatica';
+        @include font (13px, 500, 124%, $dark-black);
+        // margin-top: 12px;
+        text-align: start;
+        text-transform: uppercase;
+
+        @media (min-width: 1025px) {
+            @include font (13px, 500, 107%, $dark-black);
+            // margin-top: 20px;
+        } 
+    }
+
+    // &__tittle:hover {
+    //     color: #fff;
+    // }
+}

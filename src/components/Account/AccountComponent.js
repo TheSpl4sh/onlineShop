@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import "./AccountComponent.scss";
+import { MdOutlineAccountCircle } from "react-icons/md";
+import { TbUserEdit } from "react-icons/tb";
+import { TfiViewListAlt } from "react-icons/tfi";
+import { RxExit } from "react-icons/rx";
 
 const AccountComponent = () => {
     const [activeTab, setActiveTab] = useState('orders');
@@ -7,23 +11,35 @@ const AccountComponent = () => {
     return (
         <div>
             <ul className='account-components__container'>
-                <li className={activeTab === 'orders' ? 'active' : ''} onClick={() => setActiveTab('orders')}>Мій Аккаунт</li>
-                <li className={activeTab === 'edit' ? 'active' : ''} onClick={() => setActiveTab('edit')}>Редагувати Профіль</li>
-                <li className={activeTab === 'favorites' ? 'active' : ''} onClick={() => setActiveTab('favorites')}>Обрані Товари</li>
-                <li className={activeTab === 'exit' ? 'active' : ''} onClick={() => setActiveTab('exit')}>Вийти з Аккаунту</li>
+                <li className={`account-components__list ${activeTab === 'orders' ? 'active' : ''}`} onClick={() => setActiveTab('orders')}>
+                    <MdOutlineAccountCircle className='account-components__icon' />
+                    <span className='account-components__tittle'>Мій Аккаунт</span>
+                </li>
+                <li className={`account-components__list ${activeTab === 'edit' ? 'active' : ''}`} onClick={() => setActiveTab('edit')}>
+                    <TbUserEdit className='account-components__icon'/>
+                    <span className='account-components__tittle'>Редагувати Профіль</span>
+                </li>
+                <li className={`account-components__list ${activeTab === 'favorites' ? 'active' : ''}`} onClick={() => setActiveTab('favorites')}>
+                    <TfiViewListAlt className='account-components__icon'/>
+                    <span className='account-components__tittle'>Обрані Товари</span>
+                </li>
+                <li className={`account-components__list ${activeTab === 'exit' ? 'active' : ''}`} onClick={() => setActiveTab('exit')}>
+                    <RxExit className='account-components__icon'/>
+                    <span className='account-components__tittle'>Вийти з Аккаунту</span>
+                </li>
             </ul>
             {activeTab === 'orders' && (
-                <p>Hello1</p>
+                <p>Вітаю!</p>
             )}
             {activeTab === 'edit' && (
-                <p>Hello2</p>
+                <p>Зміна паролю</p>
             )}
             {activeTab === 'favorites' && (
-                <p>Hello3</p>
+                <p>Обрані товари</p>
             )}
-            {activeTab === 'exit' && (
+            {/* {activeTab === 'exit' && (
                 <p>Hello4</p>
-            )}
+            )} */}
         </div>
     )
  };

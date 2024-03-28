@@ -12,7 +12,7 @@ const Account = () => {
                     { label: "Особистий Кабінет", url: "account" },
                 ]}
             />
-            <h1 className="pesonal-account__title">Особистий Кабінет</h1>
+            <h1 className="personal-account__title">Особистий Кабінет</h1>
             <AccountComponent />
         </div>
     )
