@@ -28,23 +28,22 @@ const NavHeader = ({
       </>
     )}
     <li className={`navheader-list__item ${className || navheaderListItem}`}>
-      <NavLink to="/catalog">Каталог</NavLink>
+      <NavLink to="/catalog" onClick={onClick}>Каталог</NavLink>
     </li>
     <li className={`navheader-list__item ${className || navheaderListItem}`}>
-      <NavLink to="/men">Чоловічі</NavLink>
+      <NavLink to="/men" onClick={onClick}>Чоловічі</NavLink>
     </li>
     <li className={`navheader-list__item ${className || navheaderListItem}`}>
-      <NavLink to="/woman">Жіночі</NavLink>
+      <NavLink to="/woman" onClick={onClick}>Жіночі</NavLink>
     </li>
     <li className={`navheader-list__item ${className || navheaderListItem}`}>
-      <NavLink to="/children">Дитячі</NavLink>
+      <NavLink to="/children" onClick={onClick}>Дитячі</NavLink>
     </li>
     <li className={`navheader-list__item ${className || navheaderListItem}`}>
-      <NavLink to="/sale">Розпродаж</NavLink>
+      <NavLink to="/sale" onClick={onClick}>Розпродаж</NavLink>
     </li>
   </ul>
 </nav>
-
     </>
   );
 };

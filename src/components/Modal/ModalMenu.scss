@@ -3,8 +3,6 @@
 @import "../../styles/fonts.scss";
 @import "../../styles/mixins.scss";
 
-
-
 .modal-wrapper {
   position: fixed;
   top: 0;
@@ -15,13 +13,13 @@
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.modal {
+.modal-menu {
   position: absolute;
   top: 0px;
   left: 0;
   max-width: 358px;
   width: 100%;
-  padding:  15px;
+  padding: 15px;
   //   box-sizing: content-box;
   background-color: #fff;
   border-radius: 4px;
@@ -33,7 +31,7 @@
   width: 20px;
   height: 20px;
   left: 368px;
-  color: #fff;
+  color: $background-primary-color;
 }
 
 //  загальні =============
@@ -44,16 +42,16 @@
   align-items: center;
   width: 100%;
   height: 70px;
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 1px solid $header-border-color;
   cursor: pointer;
-  background-color: #f9f9f9;
+  background-color: $distribution-block-background;
 
   &__input {
     height: 70px;
     border: none;
     width: 70%;
-    border-right: 1px solid #eaeaea;
-    background-color: #f9f9f9;
+    border-right: 1px solid $header-border-color;
+    background-color: $distribution-block-background;
   }
   &__input:focus {
     outline: 0;
@@ -75,83 +73,48 @@
 .modalForm-icon__wrapper {
   display: flex;
 }
+.modalForm-icon__wrapper a {
+  color: currentColor;
+}
 .modalForm-icon__item {
   padding: 20px;
   border: none;
 }
-.modalForm-icon__item a {
-  color: currentColor;
-}
+
 // ====================
 
 .modalNav-container {
   width: 100%;
-  padding: 20px 0;
-  // font-size: 14px;
   font-weight: 500;
   line-height: 11px;
-
-  
 }
-.navModal{
-
-  &-List{
+.navModal {
+  &-List {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 15px;
+    padding: 10px 0;
 
-    &__Item{
+    &__Item {
       display: block;
       display: contents;
     }
   }
-  
 }
-// .navModal .navModal-List .navModal-List__Item  {
-//   display: block;
-// }
-// .navModal .navModal-List__Item:nth-last-child(-n+6) {
-//   display: block;
-// }
+.modalNav-container .navModal .navModal-List .navModal-List__Item {
+  display: block;
+  width: 100%;
+  padding: 20px 0;
+  margin: 0;
+}
+.modalNav-container .navModal .navModal-List .navModal-List__Item:hover {
+  padding-left: 15px;
+  background-color: $dark-black;
+  color: $text-color-white;
+}
 
-// .navModal-List__Item:nth-last-child(-n+6){
-//   display: block;
-//   background-color: blue;
-// }
-// .modalNav-label {
-//   width: 100%;
-//   padding: 20px 0;
-//   // font-size: 14px;
-//   font-weight: 500;
-//   line-height: 11px;
-//   cursor: pointer;
-//   // background-color: #fff;
-//   color: black;
-// }
-// .modalNav-label:hover {
-//   width: 100%;
-//   background-color: black;
-//   color: #fff;
-//   padding: 20px 0;
-//   font-weight: 500;
-//   line-height: 11px;
-// }
-
-// .customSelect {
-//   background-color: red;
-// }
-// .customSelect-label {
-//   display: flex;  
-//   margin-left: 10px;
-//   padding: 5px;
-//   background-color: #fff;
-//   color: #000;
-// }
-
-// .customSelect-label::after {
-//   content: "→";
-// }
+// ===========================
 
 .modalNavMenu {
   &-list {
@@ -167,72 +130,59 @@
     padding-bottom: 10px;
     margin: 10px 0 10px 0;
   }
-
 }
 
-  
-  @media (min-width: $bp-md) {
-    // padding: 0px 25px;
-    // max-width: 768px;
+@media (min-width: $bp-md) {
+  // padding: 0px 25px;
+  // max-width: 768px;
+  .search-container {
+    display: none;
+  }
+  .modalForm-container {
+    display: none;
+  }
+}
 
+@media (min-width: $bp-lg) {
+  // padding: 0px 280px;
+  // max-width: 1920px;
+
+  .modal-wrapper {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.1);
   }
 
-    
-  @media (min-width: $bp-lg) {
-    // padding: 0px 280px;
-    // max-width: 1920px; 
+  .modal-menu {
+    display: none;
+  }
 
-    .modal-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 100;
-  background-color: rgba(0, 0, 0, 0.1);
+  .modal-close-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    color: #000;
+  }
+
+  // //  загальні =============
+
+  .search-container {
+    display: none;
+  }
+  .modalForm-container {
+    display: none;
+  }
+  .modalNav-container {
+    display: none;
+  }
+  .modalNavMenu {
+    display: none;
+  }
 }
-
-.modal {
-  position: absolute;
-  top: 125px;
-  left: 0;
-  max-width: 358px;
-  width: 100%;
-  padding:  15px;
-  //   box-sizing: content-box;
-  background-color: #fff;
-  border-radius: 4px;
-}
-
-.modal-close-icon {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 20px;
-  height: 20px;
-  // left: 368px;
-  // color: #fff;
-  color: #000;
-}
-
-// //  загальні =============
-
-.search-container{
-  display: none;
-}
-.modalForm-container{
-  display: none;
-}
-.modalNav-container{
-  display: none;
-}
-.modalNavMenu{
-  display: none;
-}
-
-}
-
-
-// ===========================================
-
-
