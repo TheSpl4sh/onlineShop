@@ -1,98 +1,114 @@
-import React, { useState } from "react";
+// import React, { useState, useEffect } from "react";
 import { FaTimes } from "react-icons/fa";
-
+// import data from "../../../server/data.json";
 import CustomSlider from "./components/customSlider/CustomSlider";
 import DisplayParameter from "./components/displayParameter/DisplayParameter";
 import MenuToggle from "./components/menuToggle/MenuToggle";
 import Pagination from "./components/pagination/Pagination";
-import { Select } from "../../components/select/Select";
-
-
+import {
+  SelectSize,
+  SelectSort,
+  SelectColor,
+  SelectMaterial,
+} from "../../components/select/Select";
+import ProductsList from "../../components/Products/ProductsList";
 import "./AllProductsPage.scss";
-
 const AllProductsPage = () => {
-  const [isFiltersOpen, setIsFiltersOpen] = useState(false);
+  // const [isFiltersOpen, setIsFiltersOpen] = useState(false);
+  // const [itemsPerPage, setItemsPerPage] = useState(9);
+  // const [filters, setFilters] = useState({
+  //   size: null,
+  //   color: null,
+  //   material: null,
+  // });
+  // const [filteredProducts, setFilteredProducts] = useState(data.products);
+  
+  // const toggleFilters = () => {
+  //   setIsFiltersOpen(!isFiltersOpen);
+  // };
 
-  const toggleFilters = () => {
-    setIsFiltersOpen(!isFiltersOpen);
-  };
-  const [itemsPerPage, setItemsPerPage] = useState(9);
+  // const handleItemsPerPageChange = (value) => {
+  //   setItemsPerPage(value);
+  // };
 
-  const handleItemsPerPageChange = (value) => {
-    setItemsPerPage(value);
-  };
+  // const clearFilters = () => {
+  //   setFilters({
+  //     size: null,
+  //     color: null,
+  //     material: null,
+  //     selectValue: [],
+  //   });
+  //   setFilteredProducts(data.products);
+  // };
+
+  // const applyFilters = () => {
+  //   let filtered = data.products;
+  //   if (filters.size) {
+  //     filtered = filtered.filter(product => product.size.includes(filters.size));
+  //   }
+  //   if (filters.color) {
+  //     filtered = filtered.filter(product => product.color.includes(filters.color));
+  //   }
+  //   if (filters.material) {
+  //     filtered = filtered.filter(product => product.material.includes(filters.material));
+  //   }
+  //   setFilteredProducts(filtered);
+  // };
+
+  // const handleSizeChange = (selectedOption) => {
+  //   setFilters({ ...filters, size: selectedOption.label });
+  // };
+
+  // const handleColorChange = (selectedOption) => {
+  //   setFilters({ ...filters, color: selectedOption.label });
+  // };
+
+  // const handleMaterialChange = (selectedOption) => {
+  //   setFilters({ ...filters, material: selectedOption.label });
+  // };
+
+  // useEffect(() => {
+  //   applyFilters();
+  // // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [filters]);
 
   return (
     <section className="catalog container">
-      {/* <h1>{name}</h1> */}
       <h1>Коллекция Air Max</h1>
       <hr />
       <div className="select-mobile">
         <div className="select-mobile__button">
           <MenuToggle
-            toggle={toggleFilters}
-            open={isFiltersOpen}
-            onClick={toggleFilters}
+            // toggle={toggleFilters}
+            // open={isFiltersOpen}
+            // onClick={toggleFilters}
           />
           Показати фільтри
         </div>
       </div>
       <div className="select-wrapper">
         <div className="select-wrapper__item">
-          <Select
-            className=""
-            title="Розмір:"
-            options={[
-              { value: "size", label: "34(EU)" },
-              { value: "size", label: "35(EU)" },
-              { value: "size", label: "36(EU)" },
-              { value: "size", label: "37(EU)" },
-              { value: "size", label: "38(EU)" },
-              { value: "size", label: "39(EU)" },
-              { value: "size", label: "40(EU)" },
-              { value: "size", label: "41(EU)" },
-              { value: "size", label: "42(EU)" },
-              { value: "size", label: "43(EU)" },
-              { value: "size", label: "44(EU)" },
-              { value: "size", label: "45(EU)" },
-            ]}
+          <SelectSize 
+          // onChange={handleSizeChange}
           />
         </div>
         <div className="select-wrapper__item">
-          
-          <CustomSlider
-          //  title="Ціна:"
-            // min={0}
-            // max={1000}
-            // onChange={({ min, max }) =>
-            //   console.log(`min = ${min}, max = ${max}`)
-            // }
+          <CustomSlider />
+        </div>
+        <div className="select-wrapper__item">
+          <SelectColor
+          //  onChange={handleColorChange} 
+           />
+        </div>
+        <div className="select-wrapper__item">
+          <SelectMaterial 
+          // onChange={handleMaterialChange} 
           />
         </div>
         <div className="select-wrapper__item">
-          <Select
-            className=""
-            title="Колір:"
-            options={[
-              { value: "red", label: "червоний" },
-              { value: "white", label: "білий" },
-              { value: "black", label: "чорний" },
-            ]}
-          />
-        </div>
-        <div className="select-wrapper__item">
-          <Select
-            className=""
-            title="Матеріал:"
-            options={[
-              { value: "material", label: "Дерматин" },
-              { value: "material", label: "Тряпка" },
-              { value: "material", label: "Плюш" },
-            ]}
-          />
-        </div>
-        <div className="select-wrapper__item">
-          <button>
+          <button 
+          // onClick={clearFilters}
+          >
             <FaTimes />
             Скинути Фільтр
           </button>
@@ -101,24 +117,26 @@ const AllProductsPage = () => {
       <hr />
       <div className="sorting-wrapper">
         <div className="sorting-wrapper__show">
-          <DisplayParameter onItemsPerPageChange={handleItemsPerPageChange} />
+          <DisplayParameter 
+          // onItemsPerPageChange={handleItemsPerPageChange} 
+          />
         </div>
         <div className="sorting-wrapper__price">
-          <Select
-            className=""
-            title="Сортування:"
-            options={[
-              { value: "increase", label: "ціна від дешевих" },
-              { value: "decrease", label: "ціна від дорогих" },
-              { value: "ordinary", label: "звичайна" },
-            ]}
-          />
+          <SelectSort  />
         </div>
       </div>
       <div className="sort-out">
         <span></span>
       </div>
-      <Pagination itemsPerPage={itemsPerPage} />
+      <div className="all-products-card">
+        <ProductsList />
+        {/* {filteredProducts.map((product) => (
+          <Card key={product.id} product={product} />
+        ))} */}
+      </div>
+      <Pagination 
+      // itemsPerPage={itemsPerPage} 
+      />
     </section>
   );
 };

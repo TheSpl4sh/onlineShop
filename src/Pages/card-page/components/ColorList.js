@@ -1,52 +1,56 @@
 import React, { useState } from 'react';
-import colorBlack from '../iamges/color-black.png'; 
-import colorBlue from '../iamges/color-blue.png';
-import colorRed from '../iamges/color-red.png';
-import colorWhite from '../iamges/color-white.png';
 
 const ColorList = () => {
   const [selectedColor, setSelectedColor] = useState(null);
 
-  const handleColorClick = (color) => {
+  const handleColorChange = (color) => {
     setSelectedColor(color);
   };
 
   return (
-    <ul className="color-list">
-      <li>Кольори:</li>
-      <li>
-        <img
-          className={selectedColor === 'black' ? 'color-img selected' : 'color-img'}
-          src={colorBlack}
-          alt="black"
-          onClick={() => handleColorClick('black')}
+    <div className="color-list">
+      <p>Кольори:</p>
+      <label>
+        <input
+          type="radio"
+          name="color"
+          value="black"
+          checked={selectedColor === 'black'}
+          onChange={() => handleColorChange('black')}
+          style={{padding: '5px', border: 'none', backgroundColor: '#282828', visibility: 'visible', outline: selectedColor === 'black' ? '2px solid #282828' : 'none' }}
         />
-      </li>
-      <li>
-        <img
-          className={selectedColor === 'blue' ? 'color-img selected' : 'color-img'}
-          src={colorBlue}
-          alt="blue"
-          onClick={() => handleColorClick('blue')}
+      </label>
+      <label>
+        <input
+          type="radio"
+          name="color"
+          value="blue"
+          checked={selectedColor === 'blue'}
+          onChange={() => handleColorChange('blue')}
+          style={{padding: '5px', border: 'none', backgroundColor: '#4296C3', visibility: 'visible', outline: selectedColor === 'blue' ? '2px solid #4296C3' : 'none' }}
         />
-      </li>
-      <li>
-        <img
-          className={selectedColor === 'red' ? 'color-img selected' : 'color-img'}
-          src={colorRed}
-          alt="red"
-          onClick={() => handleColorClick('red')}
+      </label>
+      <label>
+        <input
+          type="radio"
+          name="color"
+          value="red"
+          checked={selectedColor === 'red'}
+          onChange={() => handleColorChange('red')}
+          style={{padding: '5px', border: 'none', backgroundColor: '#CF3D48', visibility: 'visible', outline: selectedColor === 'red' ? '2px solid #CF3D48' : 'none' }}
         />
-      </li>
-      <li>
-        <img
-          className={selectedColor === 'white' ? 'color-img selected' : 'color-img'}
-          src={colorWhite}
-          alt="white"
-          onClick={() => handleColorClick('white')}
+      </label>
+      <label>
+        <input
+          type="radio"
+          name="color"
+          value="white"
+          checked={selectedColor === 'white'}
+          onChange={() => handleColorChange('white')}
+          style={{padding: '5px', border: 'none', backgroundColor: '#ECF2F4', visibility: 'visible', outline: selectedColor === 'white' ? '2px solid #ECF2F4' : 'none' }}
         />
-      </li>
-    </ul>
+      </label>
+    </div>
   );
 };
 

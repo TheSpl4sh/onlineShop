@@ -2,6 +2,24 @@
 @import url('../../../styles/mixins.scss');
 @import url('../../../styles/variables.scss');
 @import url('../../../styles/deafults.scss');
+.card-page {
+    .color-list {
+        input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+    }
+    
+    
+    
+    
+    
 .card-page__add-cart-count-md {
     display: none;
 }
@@ -11,11 +29,6 @@
 h2 {
     color: #000;
 }
-.color-img.selected {
-    border: 1px solid #ababab; /* Це приклад, замініть #000 на колір, який вам потрібен */
-    border-radius: 50px;
-    padding: 1px;
-  }
 @media screen and (min-width: 1421px) {
     .links {
         display: flex;
@@ -704,4 +717,5 @@ h2 {
     .card-page__options-md {
         display: flex;
     }
+}
 }

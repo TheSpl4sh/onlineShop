@@ -3,8 +3,12 @@ import React from "react";
 import "./footer.scss";
 import { Link } from "react-router-dom";
 import Subscribe from "../Subscribe/Subscribe";
+import { useSelector } from "react-redux";
 
 const Footer = () => {
+  const isAuthenticated = useSelector(
+    (state) => state.loginCustomer.isAuthenticated
+);
   return (
     <div className="footer">
     <div className="container">
@@ -159,7 +163,7 @@ const Footer = () => {
                 <Link to="/">Оплата</Link>
               </li>
               <li>
-                <Link to="/">Контакти</Link>
+                <Link to="/contacts">Контакти</Link>
               </li>
             </ul>
           </div>
@@ -190,6 +194,11 @@ const Footer = () => {
             <ul className="footer-shops-list">
               <li>
                 <Link to="account">Особистий кабінет</Link>
+                {isAuthenticated ? (
+                  <Link to="/cabinet">Особистий кабінет</Link>
+                ) : (
+                  <Link to="/auth">Особистий кабінет</Link>
+                )}
               </li>
               <li>
                 <Link to="/">Обране</Link>

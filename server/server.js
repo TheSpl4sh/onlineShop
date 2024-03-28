@@ -23,6 +23,8 @@ const comments = require('./routes/comments');
 const shippingMethods = require('./routes/shippingMethods');
 const paymentMethods = require('./routes/paymentMethods');
 const partners = require('./routes/partners');
+const productCatalog = require('./data.json')
+// const Catalog = require('./models/Catalog')
 
 const app = express();
 
@@ -75,3 +77,18 @@ if (process.env.NODE_ENV === 'production') {
 const port = process.env.PORT || 4000;
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
+
+//Initializing catalog
+// Функция для инициализации каталога товаров в MongoDB
+const initializeProductCatalog = async () => {
+  const count = await Catalog.countDocuments(); // Проверяем, пуста ли коллекция
+  if(count === 0) { // Если пуста, добавляем данные из JSON
+    productCatalog.forEach(product => {
+      const newProduct = new Catalog(product);
+      newProduct.save();
+    });
+    console.log('Product catalog has been initialized.');
+  }
+};
+
+initializeProductCatalog().catch(console.error);

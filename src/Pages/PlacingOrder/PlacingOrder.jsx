@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
+
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import ButtonBlackArrow from "../../components/Button/ButtonBlackArrow/ButtonBlackArrow";
-import UAH from "../../components/Banner/img/UAH.png";
-import lineSum from "../PlacingOrder/img/Line-sum.png";
-import "../PlacingOrder/PlacingOrder.scss";
+import lineSum from "./img/Line-sum.png";
+import "./PlacingOrder.scss";
+
+import Modal from "./components/Modal/Modal";
+import "./components/Modal/Modal.scss";
 
 function PlacingOrder() {
   const validationSchema = Yup.object().shape({
@@ -13,6 +16,12 @@ function PlacingOrder() {
     email: Yup.string()
       .email("Invalid email address")
       .required("This field is required"),
+    password: Yup.string()
+      .required("This field is required")
+      .matches(
+        /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/,
+        "Password must contain at least 8 characters, including one uppercase letter, one lowercase letter, and one number"
+      ),
     phoneNumber: Yup.string().required("This field is required"),
     region: Yup.string().required("This field is required"),
     city: Yup.string().required("This field is required"),
@@ -29,9 +38,10 @@ function PlacingOrder() {
     region: "",
     city: "",
     street: "",
-    index: "",
+    postalCode: "",
     houseNumber: "",
     email: "",
+    password: "",
     phoneNumber: "",
   };
 
@@ -39,6 +49,52 @@ function PlacingOrder() {
     await new Promise((resolve) => setTimeout(resolve, 500));
     alert(JSON.stringify(values, null, 2));
   };
+
+  // let summa = 0;
+
+  // orders.forEach(el => (summa += Number.parseFloat(el.price)));
+
+  // useSelector з корзини редакс
+
+  const togglePromoCoupon = () => {
+    setShowPromoCoupon(!showPromoCoupon);
+  };
+
+  const [showPromoCoupon, setShowPromoCoupon] = useState(false);
+
+  const [summa] = useState(0);
+  const [selectedDeliveryOption, setSelectedDeliveryOption] = useState("");
+  const [selectedPaymentOption, setSelectedPaymentOption] = useState("");
+  const [agreeToPrivacyPolicy, setAgreeToPrivacyPolicy] = useState(false);
+
+
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const [selectedModal, setSelectedModal] = useState(null);
+
+  const openModal = (modal) => {
+    setSelectedModal(modal);
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+    setSelectedModal(null);
+  };
+
+  const handleOutsideClick = (e) => {
+    if (modalIsOpen && e.target === e.currentTarget) {
+      closeModal();
+    }
+  };
+  
+
+  //  const handleMakeOrder = () => {
+  //    if (agreeToPrivacyPolicy && selectedDeliveryOption && selectedPaymentOption) {
+  //      setShowModal(true);
+  //      alert('Please fill all required fields');
+  //    }
+  //  };
 
   return (
     <div className="container">
@@ -61,27 +117,62 @@ function PlacingOrder() {
         </li>
         <li className="breadcrumb-item">Placing an order</li>
       </ul>
-      <h1 className="placingOrder-header">Placing an order</h1>
+      <div className="placingOrder-header">Placing an order</div>
       <div className="wrapper-placingOrder">
         <div className="PlacingOrder-formik">
           <Formik
             initialValues={initialValues}
-            handleSubmit={handleSubmit}
+            onSubmit={handleSubmit}
             validationSchema={validationSchema}
           >
-            {() => (
+            {(values) => (
               <Form className="registration-form">
-                <div className="form-enter">
-                  <p className="form-enter__text">Already have an account?</p>
-                  <button className="form-enter__button">
-                    <h3>Enter</h3>
-                  </button>
+                <div className="form-enter_login-message">
+                  <div className="form-enter">
+                    <p className="form-enter__text">Already have an account?</p>
+                    <a className="form-enter__button-a" href="/auth">
+                      <button type="button" className="form-enter__button">
+                        Enter
+                      </button>
+                    </a>
+                  </div>
                 </div>
-                <div>
-                  is there a promo code?
-                  <a className="click-active" href="#">
-                    Click here to activate it
-                  </a>
+                <div className="apply-promoCode">
+                  <div className="promo-code">
+                    Is there a promo code?
+                    <button
+                      type="button"
+                      onClick={togglePromoCoupon}
+                      className="click-active"
+                    >
+                      Click here to activate it
+                    </button>
+                  </div>
+                  {showPromoCoupon && (
+                    <div className="promo-coupon">
+                      <label>
+                        <span className="label-coupon">
+                          Enter the promo code in the field:
+                        </span>
+                      </label>
+                      <div className="form-item">
+                        <Field
+                          name="coupon_code"
+                          id="coupon_code"
+                          type="text"
+                          placeholder="Promo code"
+                          value={values.coupon_code}
+                        />
+
+                        <button
+                          id="cp_apply"
+                          className="bt-outline apply-coup button"
+                        >
+                          Apply promo code
+                        </button>
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 <ul className="form-element">
@@ -98,6 +189,7 @@ function PlacingOrder() {
                       id="firstName"
                       name="firstName"
                       placeholder="What is your name"
+                      value={values.firstName}
                     />
                     <ErrorMessage name="firstName" component="div" />
                   </li>
@@ -114,24 +206,23 @@ function PlacingOrder() {
                       id="lastName"
                       name="lastName"
                       placeholder="Enter your last name"
+                      value={values.lastName}
                     />
                     <ErrorMessage name="lastName" component="div" />
                   </li>
                 </ul>
-
                 <label htmlFor="company">
                   <p className="form-element__text">Company</p>
                 </label>
-
                 <Field
                   className="placingOrder-field"
                   type="text"
                   id="company"
                   name="company"
                   placeholder="Enter the name of your company"
+                  value={values.company}
                 />
                 <ErrorMessage name="company" component="div" />
-
                 <ul className="form-element">
                   <li className="form-element--li">
                     <label htmlFor="region">
@@ -147,6 +238,7 @@ function PlacingOrder() {
                       id="region"
                       name="region"
                       placeholder="Region"
+                      value={values.region}
                     />
                     <ErrorMessage name="region" component="div" />
                   </li>
@@ -164,26 +256,25 @@ function PlacingOrder() {
                       id="city"
                       name="city"
                       placeholder="Enter the name of your city"
+                      value={values.city}
                     />
                     <ErrorMessage name="city" component="div" />
                   </li>
                 </ul>
-
                 <label htmlFor="street">
                   <p className="form-element__text">
                     Street <span className="asterisk-required">*</span>
                   </p>
                 </label>
-
                 <Field
                   className="placingOrder-field"
                   type="text"
                   id="street"
                   name="street"
                   placeholder="Enter the name of the street"
+                  value={values.street}
                 />
                 <ErrorMessage name="street" component="div" />
-
                 <ul className="form-element">
                   <li className="form-element--li">
                     <label htmlFor="postalCode">
@@ -199,6 +290,7 @@ function PlacingOrder() {
                       id="postalCode"
                       name="postalCode"
                       placeholder="Enter the index"
+                      value={values.postalCode}
                     />
                     <ErrorMessage name="postalCode" component="div" />
                   </li>
@@ -215,12 +307,12 @@ function PlacingOrder() {
                       id="houseNumber"
                       name="houseNumber"
                       placeholder="example, 37/2"
+                      value={values.houseNumber}
                     />
                     <ErrorMessage name="houseNumber" component="div" />
                     <ErrorMessage name="apartment" component="div" />
                   </li>
                 </ul>
-
                 <ul className="form-element">
                   <li className="form-element--li">
                     <label htmlFor="email">
@@ -234,6 +326,7 @@ function PlacingOrder() {
                       id="email"
                       name="email"
                       placeholder="Enter your email address"
+                      value={values.email}
                     />
                     <ErrorMessage name="email" component="div" />
                   </li>
@@ -245,16 +338,18 @@ function PlacingOrder() {
                     </label>
                     <Field
                       className="placingOrder-field"
-                      type="text"
+                      type="tel"
                       id="phoneNumber"
                       name="phoneNumber"
                       placeholder="+38(___)___-__-__"
+                      value={values.phoneNumber}
                     />
                     <ErrorMessage name="phoneNumber" component="div" />
                   </li>
                 </ul>
                 <div>
-                  <input className="checkbox-order"
+                  <input
+                    className="checkbox-order"
                     type="checkbox"
                     id="checkbox1"
                     name="checkbox1"
@@ -262,7 +357,6 @@ function PlacingOrder() {
                   />
                   <label htmlFor="checkbox1">Create an account</label>
                 </div>
-
                 <label htmlFor="preorderСomment">
                   <p className="form-element__text">Preorder comment</p>
                 </label>
@@ -278,112 +372,152 @@ function PlacingOrder() {
           </Formik>
         </div>
 
-        <Formik>
-          <Form>
-            <div className="wrapper-yourOrder">
-              <div className="yourOrder">
-                <h1>Your order</h1>
-                <div className="yourOrder-basket"></div>
-                <ul className="yourOrder-sum">
-                  <li className="yourOrder-sum__sum">Sum</li>
-                  <li>
-                    <img className="line-sum" src={lineSum} alt="line-sum" />
-                  </li>
-                  <li className="yourOrder-sum__uah">
-                    <img className="uah" src={UAH} alt="UAH" />
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <div className="delivery-header">
-                  <label htmlFor="delivery">Delivery:</label>
-                </div>
-
+        <div className="wrapper-yourOrder">
+          <div className="yourOrder">
+            <h1>Your order</h1>
+            <div className="yourOrder-basket">
+              {/* 
                 <ul>
-                  <li className="delivery-options">
-                    <input className="delivery-radio"
-                      type="radio"
-                      id="option1"
-                      name="option"
-                      value="option1"
-                    />
-                    <label htmlFor="option1">Pickup from the store</label>
-                  </li>
-                  <li className="delivery-options">
-                    <input className="delivery-radio"
-                      type="radio"
-                      id="option2"
-                      name="option"
-                      value="option2"
-                    />
-                    <label htmlFor="option2">Kyiv</label>
-                  </li>
-                  <li className="delivery-options">
-                    <input className="delivery-radio"
-                      type="radio"
-                      id="option3"
-                      name="option"
-                      value="option3"
-                    />
-                    <label htmlFor="option3">Lviv</label>
-                  </li>
-                </ul>
-              </div>
+              {orders.map((order, index) => (
+                <li key={index}>
+                  {order.productName}: {order.price}
+                </li>
+              ))}
+            </ul> */}
 
-              <div>
-                <div className="payment-header">
-                  <label htmlFor="payment">Payment:</label>
-                </div>
-                <ul>
-                  <li className="payment-options">
-                    <input className="payment-radio"
-                      type="radio"
-                      id="online-payment"
-                      name="options"
-                      value="online-payment"
-                    />
-                    <label htmlFor="optionOnline-payment">Online payment</label>
-                  </li>
-                  <li className="payment-options">
-                    <input className="payment-radio"
-                      type="radio"
-                      id="optionCard upon receipt"
-                      name="options"
-                      value="optionCard upon receipt"
-                    />
-                    <label htmlFor="option">Card upon receipt</label>
-                  </li>
-                  <li className="payment-options">
-                    <input className="payment-radio"
-                      type="radio"
-                      id="optionIn cash"
-                      name="options"
-                      value="optionIn cash"
-                    />
-                    <label htmlFor="optionIn cash">In cash</label>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <input
-                  className="checkbox-order"
-                  type="checkbox"
-                  id="checkbox-order"
-                  name="checkbox-order"
-                  value="checkbox-order"
-                />
-                <label htmlFor="checkbox-order">
-                  I agree to the processing of personal data in accordance with
-                  the privacy policy
-                </label>
-              </div>
-              <div className="button-order">
-                <ButtonBlackArrow text="MAKE AN ORDER" />
-              </div>
+              <p className="yourOrder-sum">
+                Summa
+                <img className="line-sum" src={lineSum} alt="line-sum" />
+                {new Intl.NumberFormat("en-US", {
+                  style: "currency",
+                  currency: "UAH",
+                }).format(summa)}
+              </p>
             </div>
-          </Form>
-        </Formik>
+          </div>
+
+          <div>
+            <div className="delivery-header">
+              <label htmlFor="delivery">Delivery:</label>
+            </div>
+
+            <ul>
+              <li className="delivery-options">
+                <input
+                  className="delivery-radio"
+                  type="radio"
+                  id="option1"
+                  name="delivery-option"
+                  value="Pickup from the store"
+                  checked={selectedDeliveryOption === "Pickup from the store"}
+                  onChange={() =>
+                    setSelectedDeliveryOption("Pickup from the store")
+                  }
+                />
+
+                <label htmlFor="option1">Pickup from the store</label>
+              </li>
+              <li className="delivery-options">
+                <input
+                  className="delivery-radio"
+                  type="radio"
+                  id="option2"
+                  name="option"
+                  value="option2"
+                />
+                <label htmlFor="option2">Kyiv</label>
+              </li>
+              <li className="delivery-options">
+                <input
+                  className="delivery-radio"
+                  type="radio"
+                  id="option3"
+                  name="option"
+                  value="option3"
+                />
+                <label htmlFor="option3">Lviv</label>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <div className="payment-header">
+              <label htmlFor="payment">Payment:</label>
+            </div>
+            <ul>
+              <li className="payment-options">
+                <input
+                  className="payment-radio"
+                  type="radio"
+                  id="online-payment"
+                  name=""
+                  value="Online payment"
+                  checked={selectedPaymentOption === "Online payment"}
+                  onChange={() => setSelectedPaymentOption("Online payment")}
+                />
+                <label htmlFor="optionOnline-payment">Online payment</label>
+              </li>
+              <li className="payment-options">
+                <input
+                  className="payment-radio"
+                  type="radio"
+                  id="optionCard upon receipt"
+                  name="options"
+                  value="optionCard upon receipt"
+                />
+                <label htmlFor="option">Card upon receipt</label>
+              </li>
+              <li className="payment-options">
+                <input
+                  className="payment-radio"
+                  type="radio"
+                  id="optionIn cash"
+                  name="options"
+                  value="optionIn cash"
+                />
+                <label htmlFor="optionIn cash">In cash</label>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <input
+              className="checkbox-order"
+              type="checkbox"
+              id="checkbox-order"
+              name="checkbox-order"
+              checked={agreeToPrivacyPolicy}
+              onChange={() => setAgreeToPrivacyPolicy(!agreeToPrivacyPolicy)}
+            />
+            <label htmlFor="checkbox-order">
+              <span>
+                I agree to the processing of personal data in accordance with
+                the privacy policy
+              </span>
+            </label>
+          </div>
+          <div className="button-order">
+            <ButtonBlackArrow text="MAKE AN ORDER"  onClick={() => openModal("Modal")}/>
+          </div>
+
+          {modalIsOpen && selectedModal === "Modal" && (
+        <div className="wrapper" onClick={handleOutsideClick}>
+          <Modal
+        
+            header="Modal 2"
+            closeButton={true}
+            text="Second modal window"
+            onClose={closeModal}
+            actions={
+              <button
+                onClick={closeModal}
+                backgroundColor="darkorchid"
+                text="ADO TO FAVORITE"
+              />
+            }
+          />
+        </div>
+      )}
+        </div>
       </div>
     </div>
   );

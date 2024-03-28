@@ -6,12 +6,14 @@ import ButtonBlackBasket from '../../components/ButtonBlackBasket/ButtonBlackBas
 import ProductOptions from './components/ProductOptions.js'
 import ImgContainer from "./components/ImgContainer.js";
 import ColorList from './components/ColorList.js'
+import CardCounter from "./components/CardCounter.js";
+import CardCounterMd from "./components/CardCounterMd.js";
 
 
 function CardPage() {
     
     return(
-        <div className="container">
+        <div className="container card-page">
             <Links/>
             <div className="content-container">
             <ImgContainer/>
@@ -36,30 +38,10 @@ function CardPage() {
                             6 329 $
                         </span>
                        </div>
-                        <div className="card-page__add-cart-count-md">
-                            <span>
-                                -
-                            </span>
-                            <p>
-                                1
-                            </p>
-                            <span>
-                                +
-                            </span>
-                        </div>
+                        <CardCounterMd/>
                    </div>
                    <div className="card-page__add-cart">
-                        <div className="card-page__add-cart-count">
-                            <span>
-                                -
-                            </span>
-                            <p>
-                                1
-                            </p>
-                            <span>
-                                +
-                            </span>
-                        </div>
+                        <CardCounter/>
                         <div>
                         <ButtonBlackBasket/>
                         </div>
