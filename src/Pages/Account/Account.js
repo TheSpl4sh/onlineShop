@@ -1,6 +1,8 @@
 import React from "react";
+import AccountComponent from "../../components/Account/AccountComponent";
 import BelowHeaderBreadcrumbs from "../../components/BelowHeaderBreadcrumbs/BelowHeaderBreadcrumbs";
 import "./Account.scss";
+
 const Account = () => {
     return (
         <div className="container personal-account">
@@ -11,6 +13,7 @@ const Account = () => {
                 ]}
             />
             <h1 className="pesonal-account__title">Особистий Кабінет</h1>
+            <AccountComponent />
         </div>
     )
 }
