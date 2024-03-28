@@ -5,7 +5,7 @@ import { FaSearch, FaTimes, FaRegUser } from "react-icons/fa";
 import { BsHeart, BsBasket3 } from "react-icons/bs";
 import Breadcrumbs from "../Header/components/breadcrumbs/Breadcrumbs";
 // import { SelectDemiseason } from "../../select/Select";
-// import NavHeader from "../Header/components/navHeader/NavHeader";
+import NavHeader from "../Header/components/navHeader/NavHeader";
 
 import "./ModalMenu.scss";
 
@@ -52,11 +52,14 @@ const ModalMenu = ({ handleClose }) => {
           </div>
         </div>
         <div className="modalNav-container">
-        {/* <NavHeader
-        className={"modalNav-label"} 
-        onClick={handelModal}
-        /> */}
-          <NavLink to="/catalog" className="modalNav-label" onClick={handleClose}>
+        <NavHeader
+        navheader="navModal"
+        navheaderList="navModal-List"
+        navheaderListItem="navModal-List__Item"
+        onClick={handleClose}
+        hideFirstTwoItems={true}
+        />
+          {/* <NavLink to="/catalog" className="modalNav-label" onClick={handleClose}>
             Каталог
           </NavLink>
 
@@ -74,7 +77,7 @@ const ModalMenu = ({ handleClose }) => {
 
           <NavLink to="/sale" className="modalNav-label" onClick={handleClose} >
             Розпродаж
-          </NavLink>
+          </NavLink> */}
 
           {/* <label className="modalNav-label" htmlFor="Sale">
             Розпродаж
@@ -84,6 +87,7 @@ const ModalMenu = ({ handleClose }) => {
           menu="modalNavMenu"
           menuList="modalNavMenu-list"
           menuItem="modalNavMenu-list__item"
+          onClick={handleClose}
         />
         <h3>modal</h3>
       </div>
