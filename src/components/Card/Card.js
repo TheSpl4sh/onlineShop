@@ -5,7 +5,8 @@ import './vertical-card.scss';
 import { Link } from "react-router-dom";
 
 
-const Card = ({ item }) => {
+const Card = ({ item, style_color }) => {
+    // const {style_color} = item
     
     return (
             <div className="vertical-card">
@@ -40,23 +41,23 @@ const Card = ({ item }) => {
                          <div className="vertical-card__colors-block">
                              <span className="vertical-card__colors-span">Кольори:</span>
                             
-                             <button  className="vertical-card__sneaker-color vertical-card__sneaker-color--grey"></button>
-                             <button  className="vertical-card__sneaker-color vertical-card__sneaker-color--red"></button>
-                             <button  className="vertical-card__sneaker-color vertical-card__sneaker-color--black"></button>
-                         </div>
+                            {style_color.map((color) => {
+                                return <button key={color} style={{backgroundColor: color}}  className="vertical-card__sneaker-color"></button>;
+                            })}
+                        </div>
                         
                          <div className="vertical-card__price-block">
                              <span className="vertical-card__price-number vertical-card__price-number--actual">
                                  {item.price}
                              </span>
 
-                             <span className="vertical-card__price-number vertical-card__price-number--discount">
-                                 11 699 ₴
-                             </span>
-                             <button className="cart-button"></button>
-                         </div>
-                 </div>
-             </div>
+                            <span className="vertical-card__price-number vertical-card__price-number--discount">
+                                {item.previousPrice}
+                            </span>
+                            <button className="cart-button"></button>
+                        </div>
+                </div>
+            </div>
     )
 }
 
