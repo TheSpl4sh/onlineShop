@@ -118,4 +118,4 @@ export default function CustomizedSlider() {
 	);
 }
 
-// price: "9 990 ₴"
+
