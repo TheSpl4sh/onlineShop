@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Links from "./components/Links";
 import './style/card-page.scss'
 import Size from './components/Size'
@@ -8,9 +8,19 @@ import ImgContainer from "./components/ImgContainer.js";
 import ColorList from './components/ColorList.js'
 import CardCounter from "./components/CardCounter.js";
 import CardCounterMd from "./components/CardCounterMd.js";
-
+import CardPagePost from "./components/CardPagePost.js";
 
 function CardPage() {
+    const [selectedSize, setSelectedSize] = useState("");
+    const [selectedColor, setSelectedColor] = useState("");
+
+    const handleSizeChange = (size) => {
+        setSelectedSize(size);
+    };
+
+    const handleColorChange = (color) => {
+        setSelectedColor(color);
+    };
     
     return(
         <div className="container card-page">
@@ -27,8 +37,8 @@ function CardPage() {
                     <a href="/link" className="all-description">
                         Повний опис
                     </a>
-                  <ColorList/>
-                   <Size/>
+                  <ColorList onSelectColor={handleColorChange}/>
+                   <Size onSelectSize={handleSizeChange}/>
                    <div className="card-page__price">
                        <div className="card-page__price-md">
                          <span className="card-page__price-original">
@@ -43,7 +53,7 @@ function CardPage() {
                    <div className="card-page__add-cart">
                         <CardCounter/>
                         <div>
-                        <ButtonBlackBasket/>
+                        <CardPagePost/>
                         </div>
                    </div>
                    <div className="card-page__options">
