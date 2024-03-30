@@ -1,0 +1,81 @@
+
+
+
+
+
+// =================
+// const AirbnbSlider = styled(Slider)(({ theme }) => ({
+// 	color: '#3a8589',
+// 	height: 3,
+// 	padding: '13px 0',
+// 	'& .MuiSlider-thumb': {
+// 	  height: 27,
+// 	  width: 27,
+// 	  backgroundColor: '#fff',
+// 	  border: '1px solid currentColor',
+// 	  '&:hover': {
+// 		boxShadow: '0 0 0 8px rgba(58, 133, 137, 0.16)',
+// 	  },
+// 	  '& .airbnb-bar': {
+// 		height: 9,
+// 		width: 1,
+// 		backgroundColor: 'currentColor',
+// 		marginLeft: 1,
+// 		marginRight: 1,
+// 	  },
+// 	},
+// 	'& .MuiSlider-track': {
+// 	  height: 3,
+// 	},
+// 	'& .MuiSlider-rail': {
+// 	  color: theme.palette.mode === 'dark' ? '#bfbfbf' : '#d8d8d8',
+// 	  opacity: theme.palette.mode === 'dark' ? undefined : 1,
+// 	  height: 3,
+// 	},
+//   }));
+
+// .AirbnbSlider {
+// 	display: flex;
+// 	align-items: center;
+// 	color: #3a8589;
+// 	height: 3px;
+// 	padding: 13px 0;
+
+// 	& .MuiSlider-thumb {
+// 		height: 27px;
+// 		width: 27px;
+// 		background-color: #fff;
+// 		border: 1px solid currentColor;
+
+// 		&:hover {
+// 			box-shadow: 0 0 0 8px rgba(58, 133, 137, 0.16);
+// 		}
+
+// 		& .airbnb-bar {
+// 			height: 9px;
+// 			width: 1px;
+// 			background-color: currentColor;
+// 			margin-left: 1px;
+// 			margin-right: 1px;
+// 		}
+// 	}
+
+	// & .MuiSlider-track {
+	// 	width: 100%;
+	// 	max-width: 175px;
+	// 	height: 3px;
+		
+	// }
+
+// 	& .MuiSlider-rail {
+// 		width: 100%;
+// 		max-width: 175px;
+// 		color: #bfbfbf;
+// 		opacity: 1;
+// 		height: 3px;
+// 	}
+// 	// & .MuiSlider-root{
+// 	// 	width: 100%;
+// 	// 	max-width: 175px;
+// 	// }
+// }
