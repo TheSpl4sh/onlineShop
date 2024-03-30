@@ -2,37 +2,37 @@ import { NavLink } from "react-router-dom";
 
 import "./Breadcrumbs.scss";
 
-const Breadcrumbs = ({className, menu, menuList, menuItem}) => {
+const Breadcrumbs = ({className, menu, menuList, menuItem, onClick}) => {
   return (
     <nav className={`menu ${className || menu}`}>       
       <ul className={`menu-list ${className || menuList}`}>
         <li className={`menu-list__item ${className || menuItem}`}>          
-          <NavLink to="AboutTheStore">
+          <NavLink to="AboutTheStore" onClick={onClick}>
           Про магазин
           </NavLink>
         </li>
         <li className={`menu-list__item ${className || menuItem}`}>
-          <NavLink to="Blog">
+          <NavLink to="Blog" onClick={onClick}>
           Наш блог
           </NavLink>
         </li>
         <li className={`menu-list__item ${className || menuItem}`}>
-          <NavLink to="Delivery">
+          <NavLink to="Delivery" onClick={onClick}>
           Доставка
           </NavLink>
         </li>
         <li className={`menu-list__item ${className || menuItem}`}>
-          <NavLink to="Counting">
+          <NavLink to="Counting" onClick={onClick}>
           Розрахунок
           </NavLink>
         </li>
         <li className={`menu-list__item ${className || menuItem}`}>
-          <NavLink to="Contacts">          
+          <NavLink to="Contacts" onClick={onClick}>          
           Контакти
           </NavLink>
         </li>
         <li className={`menu-list__item ${className || menuItem}`}>
-          <NavLink to="Individual order">          
+          <NavLink to="Individual order" onClick={onClick}>          
           Індивідуальне замовлення
           </NavLink>
         </li>

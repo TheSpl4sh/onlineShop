@@ -1,0 +1,46 @@
+.custom-checkbox {
+    display: inline-block;
+    position: relative;
+    padding-left: 25px;
+    margin-right: 15px;
+    cursor: pointer;
+    border: #d6d6d6;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+  }
+  
+  /* Відмічені чекбокси */
+  .custom-checkbox input:checked ~ .checkmark {
+    background-color: #000;
+  }
+  
+  /* Стилізація позначки */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .custom-checkbox input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Стилізація позначки */
+  .custom-checkbox .checkmark:after {
+    left: 6px;
+    top: 0px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+  }
