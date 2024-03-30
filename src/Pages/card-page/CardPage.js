@@ -9,6 +9,7 @@ import ColorList from './components/ColorList.js'
 import CardCounter from "./components/CardCounter.js";
 import CardCounterMd from "./components/CardCounterMd.js";
 import CardPagePost from "./components/CardPagePost.js";
+import BelowHeaderBreadcrumbs from '../../components/BelowHeaderBreadcrumbs/BelowHeaderBreadcrumbs';
 
 function CardPage() {
     const [selectedSize, setSelectedSize] = useState("");
@@ -24,7 +25,12 @@ function CardPage() {
     
     return(
         <div className="container card-page">
-            <Links/>
+               <BelowHeaderBreadcrumbs
+                paths={[
+                    { label: "Swoosh Store", url: "/" },
+                    { label: "Nike Air VaporMax 2023 Flyknit", url: "/card" },
+                ]}
+            />
             <div className="content-container">
             <ImgContainer/>
                 <div className="text-container">
