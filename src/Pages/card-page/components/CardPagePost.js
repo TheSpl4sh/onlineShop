@@ -8,7 +8,7 @@ function CardPage() {
 
   const sendDataToServer = () => {
     // Відправити дані на сервер
-    fetch("http://localhost:3000/card", {
+    fetch("http://localhost:4000/card", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
