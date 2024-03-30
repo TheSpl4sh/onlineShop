@@ -458,7 +458,7 @@ function Forma() {
             </label>
             <Field
               className="placingOrder-fields"
-              type="text"
+              component="textarea"
               id="preorderComment"
               name="preorderComment"
               placeholder="Текст коментаря"
