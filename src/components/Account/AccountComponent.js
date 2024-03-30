@@ -5,6 +5,7 @@ import { TbUserEdit } from "react-icons/tb";
 import { TfiViewListAlt } from "react-icons/tfi";
 import { RxExit } from "react-icons/rx";
 import { NavLink } from "react-router-dom";
+import { FaPencil } from "react-icons/fa6";
 
 const AccountComponent = () => {
     const [activeTab, setActiveTab] = useState('orders');
@@ -20,12 +21,10 @@ const AccountComponent = () => {
                     <TbUserEdit className='account-components__icon'/>
                     <span className='account-components__tittle'>Редагувати Профіль</span>
                 </li>
-                <li className={`account-components__list ${activeTab === 'favorites' ? 'active' : ''}`} onClick={() => setActiveTab('favorites')}>
-                    <NavLink to="/favorites" activeClassName="active">
-                        <TfiViewListAlt className='account-components__icon'/>
-                        <span className='account-components__tittle'>Обрані Товари</span>
-                    </NavLink>
-                </li>
+                <NavLink to="/favorites" className={`account-components__list ${activeTab === 'favorites' ? 'active' : ''}`} onClick={() => setActiveTab('favorites')}>
+                    <TfiViewListAlt className='account-components__icon'/>
+                    <span className='account-components__tittle'>Обрані Товари</span>
+                </NavLink>
                 <li className={`account-components__list ${activeTab === 'exit' ? 'active' : ''}`} onClick={() => setActiveTab('exit')}>
                     <RxExit className='account-components__icon'/>
                     <span className='account-components__tittle'>Вийти з Аккаунту</span>
@@ -33,7 +32,24 @@ const AccountComponent = () => {
             </ul>
             <div className='account-components__content'>
                 {activeTab === 'orders' && (
-                    <h3>Вітаю!</h3>
+                    <>
+                    <h3>Вітаю, Іван!</h3>
+                    <div className='account-components__address'>
+                        <div className='account-components__address-head'>
+                            <h3 style={{marginTop:'21px'}}>Іван Репецький</h3>
+                            <div className='account-components__address-head-map'>
+                                <FaPencil />    
+                                <p>Редагувати</p>
+                            </div>
+                        </div>
+                        <div className='account-components__address-main'>
+
+                        </div>
+                        <div className='account-components__address-edit'>
+
+                        </div>
+                    </div>
+                    </>
                 )}
                 {activeTab === 'edit' && (
                     <h3>Зміна паролю</h3>
