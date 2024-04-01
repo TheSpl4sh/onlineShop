@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from "prop-types";
 import Slider, { SliderThumb } from "@mui/material/Slider";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-// import axios from 'axios';
+import axios from 'axios';
 
 const AirbnbSlider = styled(Slider)(({ theme }) => ({
 	maxWidth: 175,
@@ -43,79 +43,76 @@ AirbnbThumbComponent.propTypes = {
 	children: PropTypes.node,
 };
 
-export default function CustomizedSlider() {
-	// const [products, setProducts] = useState([]);
-	const [values, setValues] = useState([0, 15000]);
-
+export default function CustomizedSlider({ onValuesChange, maxPrice }) {
+	// Перевірка чи maxPrice не є undefined, інакше використовуйте 100 за замовчуванням
+	const [values, setValues] = useState([0, maxPrice !== undefined ? maxPrice : 100]);
+	
 	const handleChange = (event, newValue) => {
-		setValues(newValue);
+	  setValues(newValue);
+	  if (typeof onValuesChange === 'function') {
+		onValuesChange(newValue);
+	  }
 	};
-
-
-	// useEffect(() => {
-	// 	const applyFilters = async () => {
-	// 		try {
-	// 			const response = await axios.get('/api/catalog-filter', {
-	// 				params: {
-	// 					price: {
-	// 						min: values[0],
-	// 						max: values[1],
-	// 					},
-	// 				},
-	// 			});
 	
-	// 			if (response.data.length > 0) {
-	// 				// Проходження по кожному об'єкту в масиві і виведення поля "price" в консоль
-	// 				response.data.forEach(product => {
-	// 					console.log(product.price);
-	// 				});
-	// 			} else {
-	// 				console.log('No products found');
-	// 			}
-				
-	// 		} catch (error) {
-	// 			console.error('Error fetching filtered catalog:', error);
-	// 		}
-	// 	};
+	useEffect(() => {
+	  const applyFilters = async () => {
+		try {
+		  const response = await axios.get('/api/catalog-filter', {
+			params: {
+			  price: {
+				min: values[0],
+				max: values[1],
+			  },
+			},
+		  });
 	
-	// 	applyFilters();
-	// 	// eslint-disable-next-line react-hooks/exhaustive-deps
-	// }, [values]);
+		  if (response.data.length > 0) {
+			let maxPrice = response.data[0].price;
+			response.data.forEach(product => {
+			  if (product.price > maxPrice) {
+				maxPrice = product.price;
+			  }
+			});
+			console.log('Максимальна ціна:', maxPrice);
+		  } else {
+			console.log('No products found');
+		  }
 	
-
-
-
-
-
+		} catch (error) {
+		  console.error('Error fetching filtered catalog:', error);
+		}
+	  };
+	
+	  applyFilters();
+	}, [values]);
+	
 	return (
-		<Box sx={{ display: "flex", alignItems: "center", gap: 3, maxWidth: 550 }}>
-			<label>Ціна:</label>
-			<AirbnbSlider
-				slots={{ thumb: AirbnbThumbComponent }}
-				value={values}
-				onChange={handleChange}
-			/>
-			
-			<Box sx={{ display: "flex", justifyContent: "space-between" }}>
-				<TextField
-					label=""
-					value={values[0]}
-					inputProps={{ min: values[0], max: values[1] }}
-					onChange={(e) =>
-						setValues([e.target.valueAsNumber, values[1]])
-					}
-				/>
-				<TextField
-					label=""
-					value={values[1]}
-					inputProps={{ min: values[0], max: values[1] }}
-					onChange={(e) =>
-						setValues([values[0], e.target.valueAsNumber])
-					}
-				/>
-			</Box>
+	  <Box sx={{ display: "flex", alignItems: "center", gap: 3, maxWidth: 550 }}>
+		<label>Ціна:</label>
+		<AirbnbSlider
+		  slots={{ thumb: AirbnbThumbComponent }}
+		  value={values}
+		  onChange={handleChange}
+		/>
+	
+		<Box sx={{ display: "flex", justifyContent: "space-between" }}>
+		  <TextField
+			label=""
+			value={values[0]}
+			inputProps={{ min: values[0], max: values[1] }}
+			onChange={(e) => setValues([e.target.valueAsNumber, values[1]])}
+		  />
+		  <TextField
+			label=""
+			value={values[1]}
+			inputProps={{ min: values[0], max: values[1] }}
+			onChange={(e) => setValues([values[0], e.target.valueAsNumber])}
+		  />
 		</Box>
+	  </Box>
 	);
-}
+  }
+  
+  
 
 

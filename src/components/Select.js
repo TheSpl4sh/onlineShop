@@ -1,6 +1,5 @@
 import { useState } from "react";
-import Select from "react-select";
-// import data from '../../data.json';
+import Select from "react-select"
 
 export const SelectSize = ({ onChange }) => {
   const [selectedSize, setSelectedSize] = useState(null);
@@ -27,8 +26,6 @@ export const SelectSize = ({ onChange }) => {
   ];
   return (
     <Select
-    // inputValue="Розмір:"
-    
       options={options}
       onChange={handleSizeChange}
       value={selectedSize} 
@@ -38,9 +35,6 @@ export const SelectSize = ({ onChange }) => {
 };
 // ===================================
 
-
-
-// ================================================
 
 export const SelectColor = ({ onChange }) => {
   const [selectedColor, setSelectedColor] = useState(null);
@@ -52,11 +46,13 @@ export const SelectColor = ({ onChange }) => {
   };
 
   const options = [
-    { value: "color", label: "червоний" },
     { value: "color", label: "білий" },
     { value: "color", label: "чорний" },
-    { value: "color", label: "сірий" },
+    { value: "color", label: "помаранчевий" },
     { value: "color", label: "синій" },
+    { value: "color", label: "біжевий" },
+    { value: "color", label: "сірий" },
+    { value: "color", label: "червоний" },
   ];
   return (
   <Select 
@@ -82,6 +78,9 @@ export const SelectMaterial = ({ onChange }) => {
   const options = [
     { value: "material", label: "шкіра" },
     { value: "material", label: "синтетика" },
+    { value: "material", label: "текстиль" },
+    { value: "material", label: "трикотаж" },
+    
   ];
   return (
     <Select 
@@ -96,7 +95,7 @@ export const SelectMaterial = ({ onChange }) => {
 
 export const SelectSort = ({ onChange }) => {
   const options = [
-    { value: "increase", label: "ціна від дешевих" },
+    { value: "increase", label: "ціна від недорогих" },
     { value: "decrease", label: "ціна від дорогих" },
     { value: "ordinary", label: "звичайна" },
   ];
@@ -105,7 +104,7 @@ export const SelectSort = ({ onChange }) => {
     <Select 
     options={options} 
     onChange={onChange} 
-    placeholder="Сортування:" 
+    placeholder="Сортування:"
     />
   );
 };
