@@ -6,8 +6,6 @@ import("unique-random").then((module) => {
     rand = module.default(10000000, 99999999);
 });
 
-const cloudinary = require('../utils/cloudinary')
-
 // import('unique-random').then(uniqueRandom => {
 //   rand = uniqueRandom(10000000, 99999999);
 // });
