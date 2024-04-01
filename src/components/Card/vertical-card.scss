@@ -144,17 +144,14 @@
 
 .vertical-card__sneaker-color {
     border: none;
-    background-color: $sneakers-light-gray;
-    width: 13px;
-    height: 13px;
+    background-color: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #747474;
     border-radius: 50%;
 
-    &--red {
-        background-color: $sneakers-red;
-    }
-
-    &--black {
-        background-color: $sneakers-dark-gray;
+    &:hover {
+        border:  2px solid $light-orange;
     }
 }
 
