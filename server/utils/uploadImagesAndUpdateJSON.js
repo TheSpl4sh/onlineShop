@@ -9,32 +9,54 @@ cloudinary.config({
   api_secret: 'ivPqJt3JBwJocloseWBsl_S0suQ'
 });
 
-const uploadImageToCloudinary = async (imagePath) => {
-  try {
-    let result = await cloudinary.uploader.upload(imagePath);
-    return result.secure_url; // Возвращает URL загруженного изображения
-  } catch (err) {
-    console.error('Ошибка при загрузке изображения на Cloudinary:', err);
-    return null;
-  }
-};
-
-const updateJSONWithImageURLs = async (jsonFilePath, imagesFolder) => {
-  let jsonData = require(jsonFilePath);
-  for (let item of jsonData) {
-    if (item.logo_img) {
-      const imagePath = path.join(imagesFolder, item.logo_img);
-      const imageUrl = await uploadImageToCloudinary(imagePath);
-      if (imageUrl) {
-        item.logo_img = imageUrl; // Обновляем JSON с URL Cloudinary
+// Функция для загрузки изображения на Cloudinary с сохранением архитектуры папок
+const uploadImageToCloudinary = async (imagePath, baseFolder) => {
+    try {
+      const folderPath = path.relative(baseFolder, path.dirname(imagePath));
+      let result = await cloudinary.uploader.upload(imagePath, {
+        folder: folderPath.replace(/\\/g, '/') // Заменяем обратные слеши на обычные для совместимости с Cloudinary
+      });
+      return result.secure_url; // Возвращает URL загруженного изображения
+    } catch (err) {
+      console.error('Ошибка при загрузке изображения на Cloudinary:', err);
+      return null;
+    }
+  };
+  
+  // Рекурсивная функция для обхода всех файлов в директории и поддиректориях
+  const walkSync = (dir, filelist = []) => {
+    fs.readdirSync(dir).forEach(file => {
+      filelist = fs.statSync(path.join(dir, file)).isDirectory()
+        ? walkSync(path.join(dir, file), filelist)
+        : filelist.concat(path.join(dir, file));
+    });
+    return filelist;
+  };
+  
+  // Функция для обновления JSON файла с URL-адресами Cloudinary
+  const updateJSONWithImageURLs = async (jsonFilePath, baseFolder) => {
+    let jsonData = require(jsonFilePath);
+    const allImages = walkSync(baseFolder); // Получаем все пути к файлам изображений
+  
+    for (let i = 0; i < jsonData.length; i++) {
+      const item = jsonData[i];
+      if (item.logo_img) {
+        const imagePath = path.join(baseFolder, item.logo_img);
+        if (allImages.includes(imagePath)) {
+          const imageUrl = await uploadImageToCloudinary(imagePath, baseFolder);
+          if (imageUrl) {
+            item.logo_img = imageUrl; // Обновляем JSON с URL Cloudinary
+          }
+        }
       }
     }
-  }
-  // Здесь можно сохранить обновленный JSON в базе данных или в файл
-  fs.writeFileSync(jsonFilePath, JSON.stringify(jsonData, null, 2), 'utf-8');
-};
+  
+    // Записываем обновленный JSON обратно в файл
+    fs.writeFileSync(jsonFilePath, JSON.stringify(jsonData, null, 2), 'utf-8');
+    console.log('JSON файл успешно обновлен с новыми URL изображений.');
+  };
 
 // Пример использования
 const jsonFilePath = '../data.json';
-const imagesFolder = '../../public';
-updateJSONWithImageURLs(jsonFilePath, imagesFolder).catch(console.error);
+const baseFolder  = '../../public';
+updateJSONWithImageURLs(jsonFilePath, baseFolder).catch(console.error);
