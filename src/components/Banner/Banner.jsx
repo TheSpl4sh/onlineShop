@@ -9,7 +9,7 @@ import "../Banner/Banner.scss";
 
 function Banner() {
   return (
-    <div>
+    <div className="wrapper-banner">
       <div className="banner-timer">
         <div className="banner">
           <div className="banner-info">
