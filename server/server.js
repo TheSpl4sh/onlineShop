@@ -82,7 +82,8 @@ const port = process.env.PORT || 4000;
 app.listen(port, () => console.log(`Server running on port ${port}`));
 
 //Initializing catalog
-/* const initializeProductCatalog = async () => {
+
+const initializeProductCatalog = async () => {
   const count = await Catalog.countDocuments(); 
   if(count === 0) { 
     productCatalogFile.forEach(product => {
@@ -91,30 +92,6 @@ app.listen(port, () => console.log(`Server running on port ${port}`));
     });
     console.log('Product catalog has been initialized.');
   }
-}; */
-
-
-//Insert new data
-
-const initializeProductCatalog = async () => {
-  try {
-    // Чтение данных из файла productCatalog.json
-    const data = await fs.readFile(productCatalogFile);
-    const productCatalog = JSON.parse(data);
-
-    // Удаление существующих записей из коллекции
-    await Catalog.deleteMany({});
-
-    // Добавление новых данных из файла productCatalog.json
-    await Catalog.insertMany(productCatalog);
-
-    console.log('Product catalog has been initialized.');
-  } catch (error) {
-    console.error('Error occurred while initializing product catalog:', error);
-  }
 };
-
-// initializeProductCatalog();
-
 
 initializeProductCatalog().catch(console.error);
