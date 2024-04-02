@@ -39,7 +39,7 @@
         color: #EAEAEA;
     }
 
-    &__tittle {
+    &__title {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -62,35 +62,68 @@
         margin-top: 50px;
     }
 
-    &__address {
+    &__orders {
+        // display: flex;
+        // margin-top: 25px;
+        // padding-left: 30px;
+        // width: 1000px;
+        // height: 229px;
+        // border: 1px solid #EAEAEA;
+
         display: flex;
-        margin-top: 25px;
-        padding-left: 30px;
-        width: 1000px;
-        height: 229px;
-        border: 1px solid #EAEAEA;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        padding-top: 15px;
+
+        @media (min-width: 768px) {
+             padding-top: 27px;
+         }
+
+        @media (min-width: 1025px) {
+            padding: 40px 0 90px 0;
+        }
 
     } 
-    
-    &__address-head {
-        position: relative;
-        display: flex;
-        height: 64px;
+
+    &__table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid #ECECEC;
+        margin: 0;
     }
 
-    &__address-head-map {
-        width: 192px;
-        height: 63px;
-        background-color: #EAEAEA;
+    &__header {
+        display: none;
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #FB5A00;
+        @media (min-width: 768px) {
+            display: table-header-group;
+        }
     }
     
-    &__address-head-map p {
-        margin-left: 5px; 
+    &__row-item {
+        @include font (14px, 700, 24px, #373737);
+        padding: 15px 20px;
+        text-align: left;
+        text-transform: uppercase;
+
+        &:last-child {
+            padding-right: 6px;
+        }
+    }
+}
+
+.content-title {
+    font-family: 'Pragmatica';
+    @include font (28px, 500, 33px, $dark-black);
+    padding: 12px 0;
+
+    @media (min-width: $bp-md) {
+        padding: 7px 0 7px 66px;
+        text-align: start;
     }
 
+    @media (min-width: 1025px) {
+        @include font (28px, 500, 33px, $dark-black);
+        padding: 7px 0;
+    }
 }
