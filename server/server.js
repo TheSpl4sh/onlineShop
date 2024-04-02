@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const path = require('path');
+const fs = require('fs').promises;
 require('dotenv').config();
 
 const globalConfigs = require('./routes/globalConfigs');
@@ -23,8 +24,8 @@ const comments = require('./routes/comments');
 const shippingMethods = require('./routes/shippingMethods');
 const paymentMethods = require('./routes/paymentMethods');
 const partners = require('./routes/partners');
-const productCatalog = require('./data.json')
-// const Catalog = require('./models/Catalog')
+const productCatalogFile = require('./data.json')
+const Catalog = require('./models/Catalog')
 const catalogFilter = require('./routes/catalogFilter');
 
 const app = express();
@@ -81,16 +82,39 @@ const port = process.env.PORT || 4000;
 app.listen(port, () => console.log(`Server running on port ${port}`));
 
 //Initializing catalog
-// Функция для инициализации каталога товаров в MongoDB
-const initializeProductCatalog = async () => {
-  const count = await Catalog.countDocuments(); // Проверяем, пуста ли коллекция
-  if(count === 0) { // Если пуста, добавляем данные из JSON
-    productCatalog.forEach(product => {
+/* const initializeProductCatalog = async () => {
+  const count = await Catalog.countDocuments(); 
+  if(count === 0) { 
+    productCatalogFile.forEach(product => {
       const newProduct = new Catalog(product);
       newProduct.save();
     });
     console.log('Product catalog has been initialized.');
   }
+}; */
+
+
+//Insert new data
+
+const initializeProductCatalog = async () => {
+  try {
+    // Чтение данных из файла productCatalog.json
+    const data = await fs.readFile(productCatalogFile);
+    const productCatalog = JSON.parse(data);
+
+    // Удаление существующих записей из коллекции
+    await Catalog.deleteMany({});
+
+    // Добавление новых данных из файла productCatalog.json
+    await Catalog.insertMany(productCatalog);
+
+    console.log('Product catalog has been initialized.');
+  } catch (error) {
+    console.error('Error occurred while initializing product catalog:', error);
+  }
 };
+
+// initializeProductCatalog();
+
 
 initializeProductCatalog().catch(console.error);
