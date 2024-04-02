@@ -1,347 +1,631 @@
 [
-    {
-        "id": 1,
-        "parentId": "men-clothing",
-        "name": "NIKE AIR FORCE 1",
-        "price": 5500,
-        "hit": true,
-        "chips": "ХІТ",
-        "logo_img": "./products_img/nike/air_force_1/white/nike-air-force-1-main.webp",
-        "color": ["білий","чорний"],
-        "style_color": ["white", "black"],
-        "description": "Nike Air Force 1 - це класичні кросівки, що завоювали світ своїм стилем та комфортом. З їхнім відомим дизайном і бездоганною конструкцією, вони є втіленням спортивного досвіду та моди. Завдяки використанню високоякісних матеріалів і інноваційним технологіям, кросівки Nike Air Force 1 забезпечують неперевершений комфорт і підтримку під час будь-яких активностей. Ця модель стала еталоном в світі кросівок і залишається невід'ємною частиною гардеробу для тих, хто цінує стиль, якість і зручність.",
-        "made_in": "India",
-        "material": ["шкіра"],
-        "guarantee": "1 рік",
-        "realease": "2023 рік",
-        "size":["40(EU)","41(EU)","42(EU)", "43(EU)", "44(EU)", "45(EU)"]
-    },
-    {
-        "id": 2,
-        "parentId": "men-clothing",
-        "name": "NIKE AIR FORCE 1 HIGH",
-        "price": 6500,
-        "new": true,
-        "chips": "НОВИНКА",
-        "logo_img": "./products_img/nike/air_force_1_high/white/nike-air-force-1-high-utility-main.webp",
-        "color": ["білий","чорний"],
-        "style_color": ["white", "black"],
-        "description": "Nike Air Force 1 high - це втілення спортивної елегантності і вічного стилю. Ці кросівки завоювали світ своїм бездоганним дизайном та неперевершеним комфортом. Завдяки використанню високоякісних матеріалів і інноваційним технологіям, вони стали невід'ємною частиною гардеробу для справжніх шанувальників спортивної моди. Незалежно від того, чи йдете ви на прогулянку по місту чи зустрічаєтеся з друзями, Nike Air Force 1 High завжди будуть вираженням вашого неповторного стилю і вишуканості.",
-        "made_in": "India",
-        "material": ["шкіра"],
-        "guarantee": "1 рік",
-        "realease": "2023 рік",
-        "size":["40(EU)","41(EU)","42(EU)", "43(EU)", "44(EU)", "45(EU)"]
-    },
-    {
-        "id": 3,
-        "parentId": "men-clothing",
-        "name": "NIKE AIR FORCE 1 LOW X AMBUSH",
-        "price": 9900,
-        "hit": true,
-        "chips": "ХІТ",
-        "logo_img": "./products_img/nike/air_force_x_ambush/black/nike-air-force-1-low-x-ambush-main.webp",
-        "color": ["чорний"],
-        "style_color": ["black"],
-        "description": "Nike Air Force 1 Low x Ambush, її історія нараховує десятиліття вражаючих досягнень у світі спортивної моди. Вперше представлена у 1982 році, вона здобула шалений успіх завдяки своєму вишуканому дизайну та інноваційній технології. З того часу ця модель продовжує завоювувати серця шанувальників, встановлюючи нові стандарти якості та стилю у світі кросівок. У співпраці з Ambush, ця ікона перетворюється на виразний символ автентичності та елегантності.",
-        "made_in": "India",
-        "material": ["шкіра"],
-        "guarantee": "1 рік",
-        "realease": "2021 рік",
-        "size":["40(EU)","41(EU)","42(EU)", "43(EU)", "44(EU)", "45(EU)"]
-    },
-    {
-        "id": 4,
-        "parentId": "woman-clothing",
-        "name": "NIKE AIR MAX",
-        "price": 7800,
-        "hit": true,
-        "chips": "ХІТ",
-        "logo_img": "./products_img/nike/air_max/white/nike-air-max-1-x-patta-white-main.webp",
-        "color": ["білий"],
-        "style_color": ["white"],
-        "description": "Nike Air Max - це серія взуття, яка вперше була представлена компанією Nike в 1987 році. Відзначаючись інноваційною подошвою, в якій використовуються повітряні камери, це взуття надає високий рівень амортизації та підтримки під час активного спорту та повсякденних справ. Модель Nike Air Max стала популярною як серед спортсменів, так і серед любителів стрітстайлу завдяки своєму стильному дизайну та винятковій комфортності.",
-        "made_in": "India",
-        "material": ["шкіра"],
-        "guarantee": "1 рік",
-        "realease": "1987 рік",
-        "size":["35(EU)", "36(EU)", "37(EU)", "38(EU)", "39(EU)", "40(EU)"]
-    },
-    {
-        "id": 5,
-        "parentId": "men-clothing",
-        "name": "NIKE AIR ZOOM",
-        "price": 5700,
-        "new": true,
-        "chips": "НОВИНКА",
-        "logo_img": "./products_img/nike/air_zoom/black/nike-air-zoom-vomero-5-anthracite-main.webp",
-        "color": ["чорний", "помаранчевий"],
-        "style_color": ["black", "orange"],
-        "description": "Nike Air Zoom - це серія взуття, яка відзначається інноваційною технологією амортизації. Вперше представлена у 1995 році, модель використовує подушки з повітрям, розташовані у підошві, для забезпечення максимальної підтримки та комфорту під час активних фізичних навантажень. Nike Air Zoom став вибором для спортсменів у різних дисциплінах завдяки своїй надійності та винятковій продуктивності.",
-        "made_in": "India",
-        "material": ["текстиль"],
-        "guarantee": "1 рік",
-        "realease": "1995 рік",
-        "size":["40(EU)","41(EU)","42(EU)", "43(EU)", "44(EU)", "45(EU)"]
-    },
-    {
-        "id": 6,
-        "parentId": "woman-clothing",
-        "name": "NIKE BENASSI X STUSSY 'SAIL'",
-        "price": 2000,
-        "hit": true,
-        "chips": "ХІТ",
-        "logo_img": "./products_img/nike/benassi_stussy/white/nike-benassi-x-stussy-sail-main.webp",
-        "color": ["чорний", "білий"],
-        "style_color": ["white", "black"],
-        "description": "Nike Benassi x Stussy 'Sail' - це колаборація двох відомих брендів, яка вражає своєю елегантністю та стилем. Ці слайди відображають унікальний злиття дизайну Nike з естетикою Stussy. Вони поєднують в собі зручність та стиль, роблячи їх ідеальним вибором для відпочинку та повсякденного носіння. Їхній відтінок 'Sail' додає нотку розкіші до вашого образу, роблячи їх незамінною частиною вашого гардеробу.",
-        "made_in": "India",
-        "material": ["шкіра"],
-        "guarantee": "1 рік",
-        "realease": "2016 рік",
-        "size":["35(EU)", "36(EU)", "37(EU)", "38(EU)", "39(EU)", "40(EU)"]
-    },
-    {
-        "id": 7,
-        "parentId": "men-clothing",
-        "name": "NIKE SB ZOOM BLAZER MID",
-        "price": 4000,
-        "hit": true,
-        "chips": "ХІТ",
-        "logo_img": "./products_img/nike/blazer_low/black/nike-blazer-low-x-acronym-black-olive-aura-main.webp",
-        "color": ["чорний"],
-        "style_color": ["black"],
-        "description": "Nike SB Zoom Blazer Mid - це підсилені кросівки від Nike Skateboarding, які поєднують в собі класичний дизайн і сучасні технології для оптимальної продуктивності на дошці. Завдяки інтегрованій технології Zoom Air у підошві, вони забезпечують відмінну амортизацію та підтримку при виконанні скейтбордистських трюків. Їх стильний дизайн і вишукана конструкція роблять їх відмінним вибором для як буденного носіння, так і для їзди на дошці.",
-        "made_in": "India",
-        "material": ["текстиль"],
-        "guarantee": "1 рік",
-        "realease": "2010 рік",
-        "size":["40(EU)","41(EU)","42(EU)", "43(EU)", "44(EU)", "45(EU)"]
-    },
-    {
-        "id": 8,
-        "parentId": "men-clothing",
-        "name": "NIKE CORTEZ",
-        "price": 5600,
-        "hit": true,
-        "chips": "ХІТ",
-        "logo_img": "./products_img/nike/cortez/red/nike-cortez-basic-leather-forrest-gump-main.webp",
-        "color": ["чорний", "червоний"],
-        "style_color": ["red", "black"],
-        "description": "Nike Cortez - це легендарні кросівки, що відзначаються класичним дизайном і неперевершеним комфортом. Започатковані в 1972 році, ці кросівки стали культовим предметом в світі спортивної моди. Вони відрізняються вишуканим стилем і високою якістю виготовлення, що робить їх улюбленим вибором для активного способу життя. Nike Cortez - це не лише кросівки, а історія, що живе в кожному їхньому дизайні, і продовжує надихати шанувальників моди та спорту по всьому світу.",
-        "made_in": "India",
-        "material": ["шкіра"],
-        "guarantee": "1 рік",
-        "realease": "1972 рік",
-        "size":["40(EU)","41(EU)","42(EU)", "43(EU)", "44(EU)", "45(EU)"]
-    },
-    {
-        "id": 9,
-        "parentId": "woman-clothing",
-        "name": "NIKE DEFY ALL DAY 'WHITE MIDNIGHT NAVY'",
-        "previousPrice": 7500,
-        "price": 5760,
-        "discount": true,
-        "chips": "- 20%",
-        "logo_img": "./products_img/nike/deffy_all_day/white/nike-defy-all-day-white-midnight-navy-main.webp",
-        "color": ["білий"],
-        "style_color": ["white"],
-        "description": "Nike Defy All Day 'White Midnight Navy' - це модель, яка втілює сучасний дизайн і вищу якість взуття від Nike. Захоплюючий поєднання білого та темно-синього кольорів надає цим кросівкам стильного і елегантного вигляду. Виготовлені з високоякісних матеріалів, вони забезпечують неперевершений комфорт та підтримку протягом усього дня. Ця модель стане незамінною частиною вашого гардеробу, додаючи стилю і динаміки вашому образу.",
-        "made_in": "India",
-        "material": ["шкіра"],
-        "guarantee": "1 рік",
-        "realease": "2018 рік",
-        "size":["35(EU)", "36(EU)", "37(EU)", "38(EU)", "39(EU)", "40(EU)"]
-    },
-    {
-        "id": 10,
-        "parentId": "men-clothing",
-        "name": "NIKE DUNK HIGH",
-        "previousPrice": 9000,
-        "price": 7200,
-        "discount": true,
-        "chips": "- 20%",
-        "logo_img": "./products_img/nike/dunk_high/blue/nike-dunk-high-pro-iso-sb-kentucky-main.webp",
-        "color": ["синій","помаранчевий"],
-        "style_color": ["blue", "orange"],
-        "description": "Nike Dunk High - це класичні кросівки, що відзначаються стильним дизайном і винятковою комфортністю. Започатковані у 1985 році, вони стали іконою в світі стрітвіру та спортивної моди. Nike Dunk High відрізняються вишуканими кольорами та матеріалами, що роблять кожен погляд на них незабутнім. Ці кросівки підходять для будь-якого образу та активності, надаючи неперевершений стиль та підтримку.",
-        "made_in": "India",
-        "material": ["шкіра"],
-        "guarantee": "1 рік",
-        "realease": "2006 рік",
-        "size":["40(EU)","41(EU)","42(EU)", "43(EU)", "44(EU)", "45(EU)"]
-    },
-    {
-        "id": 11,
-        "parentId": "woman-clothing",
-        "name": "NIKE DUNK LOW",
-        "previousPrice": 7500,
-        "price": 6290,
-        "discount": true,
-        "chips": "- 20%",
-        "logo_img": "./products_img/nike/dunk_low/blue/nike-dunk-low-polar-blue-main.webp",
-        "color": ["синій", "біжевий"],
-        "style_color": ["blue", "beige"],
-        "description": "Nike Dunk Low 'Polar Blue' - це варіація класичної моделі, що відзначається надзвичайною вишуканістю і стилем. Завдяки використанню якісних матеріалів і зручному дизайну, ці кросівки забезпечують надзвичайний комфорт під час носіння. Вони привертають увагу своєю чистотою ліній і яскравим кольором 'Polar Blue', додаючи унікальності будь-якому образу. Ця модель стане відмінним доповненням для колекції кожного шанувальника стилю та якості взуття.",
-        "made_in": "India",
-        "material": ["шкіра"],
-        "guarantee": "1 рік",
-        "realease": "2021 рік",
-        "size":["35(EU)", "36(EU)", "37(EU)", "38(EU)", "39(EU)", "40(EU)"]
-    },
-    {
-        "id": 12,
-        "parentId": "woman-clothing",
-        "name": "NIKE LDWAFFLE",
-        "price": 7990,
-        "new": true,
-        "chips": "НОВИНКА",
-        "logo_img": "./products_img/nike/ldwaffle/grey/nike-ldwaffle-main.webp",
-        "color": ["сірий", "помаранчевий"],
-        "style_color": ["grey", "orange"],
-        "description": "Nike LDWaffle x Sacai x CLOT 'Kiss of Death 2' - це здійснення співпраці трьох визначних брендів, яке відзначається вишуканим дизайном і передовою технологією. Ці кросівки поєднують в собі елементи класичного стилю з інноваційними рішеннями у дизайні, що створює унікальний вигляд. Вони вражають своєю деталізацією та відмінною якістю, роблячи їх визначною частиною будь-якого гардеробу. Ця модель відображає творчий підхід до взуття та є втіленням передового мистецтва в світі моди.",
-        "made_in": "India",
-        "material": ["трикотаж"],
-        "guarantee": "1 рік",
-        "realease": "2021 рік",
-        "size":["35(EU)", "36(EU)", "37(EU)", "38(EU)", "39(EU)", "40(EU)"]
-    },
-    {
-        "id": 13,
-        "parentId": "men-clothing",
-        "name": "NIKE LUNAR FORCE 1",
-        "previousPrice": 6500,
-        "price": 5200,
-        "discount": true,
-        "chips": "- 20%",
-        "logo_img": "./products_img/nike/lunar_force_1/black/nike-lunar-force-1-duckboot-black-gum-main.webp",
-        "color": ["чорний"],
-        "style_color": ["black"],
-        "description": "Nike Lunar Force 1 - це модель, яка поєднує в собі легендарний дизайн Nike Air Force 1 з інноваційною технологією Lunarlon для максимального комфорту і амортизації. Завдяки легкій підошві Lunarlon ці кросівки забезпечують відмінну підтримку і забезпечують м'яку амортизацію кожного кроку. Їх стильний дизайн і різноманітні кольорові рішення роблять їх відмінним вибором для будь-якого образу, додавши зручності і елегантності до вашого стилю.",
-        "made_in": "India",
-        "material": ["шкіра"],
-        "guarantee": "1 рік",
-        "realease": "2011 рік",
-        "size":["40(EU)","41(EU)","42(EU)", "43(EU)", "44(EU)", "45(EU)"]
-    },
-    {
-        "id": 14,
-        "parentId": "woman-clothing",
-        "name": "NIKE OVERBREAK",
-        "price": 6190,
-        "new": true,
-        "chips": "НОВИНКА",
-        "logo_img": "./products_img/nike/overbreak/beige/nike-overbreak-sp-x-undercover-overcast-main.webp",
-        "color": ["біжевий"],
-        "style_color": ["beige"],
-        "description": "Nike Overbreak SP - це модель, що поєднує в собі вишуканий стиль та передові технології взуття від Nike. Завдяки використанню інноваційних матеріалів і конструкції, ці кросівки забезпечують неперевершений комфорт і підтримку під час активних тренувань або повсякденних прогулянок. Вони відрізняються стильним дизайном і різноманітними кольоровими варіаціями, що робить їх відмінним вибором для будь-якого образу. Незалежно від вашої активності, Nike Overbreak SP забезпечать вам стабільність і комфорт протягом усього дня.",
-        "made_in": "India",
-        "material": ["текстиль"],
-        "guarantee": "1 рік",
-        "realease": "2022 рік",
-        "size":["35(EU)", "36(EU)", "37(EU)", "38(EU)", "39(EU)", "40(EU)"]
-    },
-    {
-        "id": 15,
-        "parentId": "men-clothing",
-        "name": "NIKE P6000",
-        "price": 3500,
-        "hit": true,
-        "chips": "ХІТ",
-        "logo_img": "./products_img/nike/p_6000/white/nike-p-6000-triple-white-main.webp",
-        "color": ["білий"],
-        "style_color": ["white"],
-        "description": "Nike P6000 - це модель, яка вражає своєю елегантністю і стилем, поєднаними з високою функціональністю. Ці кросівки відрізняються вишуканим дизайном та використанням передових технологій у виробництві взуття. Вони забезпечують надійну підтримку та комфорт під час активних тренувань або повсякденних справ. Nike P6000 - це також вираз вашого стилю, завдяки різноманітним кольоровим варіаціям та відмінному дизайну, що робить їх незамінною частиною вашого гардеробу.",
-        "made_in": "India",
-        "material": ["текстиль"],
-        "guarantee": "1 рік",
-        "realease": "2019 рік",
-        "size":["40(EU)","41(EU)","42(EU)", "43(EU)", "44(EU)", "45(EU)"]
-    },
-    {
-        "id": 16,
-        "parentId": "men-clothing",
-        "name": "NIKE REACT LIVE",
-        "price": 4700,
-        "hit": true,
-        "chips": "ХІТ",
-        "logo_img": "./products_img/nike/react_live/white/nike-react-live-white-main.webp",
-        "color": ["білий", "сірий"],
-        "style_color": ["white", "grey"],
-        "description": "Nike React Live - це кросівки, які поєднують в собі стильний зовнішній вигляд і передові технології для надання відмінного комфорту і підтримки під час активних занять. Завдяки технології React у підошві, ці кросівки забезпечують м'яку амортизацію та ефективний повернення енергії кожного кроку. Вони також відрізняються легкістю і дихаючою конструкцією верху, що забезпечує вентиляцію та комфорт протягом тривалого часу носіння. Nike React Live - це відмінний вибір для тих, хто цінує стиль і комфорт під час щоденних справ або спортивних тренувань.",
-        "made_in": "India",
-        "material": ["текстиль"],
-        "guarantee": "1 рік",
-        "realease": "2019 рік",
-        "size":["40(EU)","41(EU)","42(EU)", "43(EU)", "44(EU)", "45(EU)"]
-    },
-    {
-        "id": 17,
-        "parentId": "woman-clothing",
-        "name": "NIKE REACT VISION",
-        "price": 5200,
-        "new": true,
-        "chips": "НОВИНКА",
-        "logo_img": "./products_img/nike/react_vision/grey/nike-react-vision-vast-grey-main.webp",
-        "color": ["помаранчевий", "сірий"],
-        "style_color": ["orange", "grey"],
-        "description": "Nike React Vision - це витончені кросівки, які поєднують в собі сучасний дизайн і передові технології для найвищого комфорту і продуктивності. Завдяки технології React у підошві, ці кросівки забезпечують м'яку амортизацію та ефективне повернення енергії кожного кроку. Вони також відрізняються вишуканим дизайном і деталізацією, що робить їх стильними і функціональними. Nike React Vision - це ідеальний вибір для тих, хто шукає надійне взуття для щоденного носіння або активних тренувань.",
-        "made_in": "India",
-        "material": ["текстиль"],
-        "guarantee": "1 рік",
-        "realease": "2017 рік",
-        "size":["35(EU)", "36(EU)", "37(EU)", "38(EU)", "39(EU)", "40(EU)"]
-    },
-    {
-        "id": 18,
-        "parentId": "men-clothing",
-        "name": "NIKE SHOX TL W",
-        "previousPrice": 10800,
-        "price": 8990,
-        "discount": true,
-        "chips": "- 20%",
-        "logo_img": "./products_img/nike/shox_tl_w/black/nike-shox-tl-w-black-main.webp",
-        "color": ["чорний","білий"],
-        "style_color": ["white", "black"],
-        "description": "Nike Shox TL W - це втілення сучасного дизайну та передової технології в світі кросівок. Їхній вражаючий зовнішній вигляд поєднується з винятковим комфортом та підтримкою на кожному кроці. Ця модель призначена для тих, хто цінує якість, стиль і переваги сучасних технологій в спортивному взутті.",
-        "made_in": "India",
-        "material": ["синтетика"],
-        "guarantee": "1 рік",
-        "realease": "2019 рік",
-        "size":["40(EU)","41(EU)","42(EU)", "43(EU)", "44(EU)", "45(EU)"]
-    },
-    {
-        "id": 19,
-        "parentId": "men-clothing",
-        "name": "ADIDAS CAMPUS",
-        "price": 13000,
-        "hit": true,
-        "chips": "ХІТ",
-        "logo_img": "./products_img/adidas/adidas_campus/grey/adidas-campus-00s-grey-gum-main.webp",
-        "color": ["сірий"],
-        "style_color": ["grey"],
-        "description": "Adidas Campus - це культові кросівки, які вражають своїм класичним дизайном і високою якістю виготовлення. Започатковані в 1980-х роках як взуття для баскетболістів, вони стали невід'ємною частиною стрітстайл культури. Adidas Campus відрізняються зручною конструкцією та деталізацією, яка робить їх стильними і універсальними. Ці кросівки підходять як для щоденного носіння, так і для спортивних заходів, завдяки своїй надійності і комфортності.",
-        "made_in": "India",
-        "material": ["шкіра"],
-        "guarantee": "1 рік",
-        "realease": "1980 рік",
-        "size":["40(EU)","41(EU)","42(EU)", "43(EU)", "44(EU)", "45(EU)"]
-    },
-    {
-        "id": 20,
-        "parentId": "men-clothing",
-        "name": "ADIDAS X C.P. COMPANY",
-        "price": 15000,
-        "hit": true,
-        "chips": "ХІТ",
-        "logo_img": "./products_img/adidas/adidas_x_c_p/grey/adidas-handball-spezial-grey-gum-main.webp",
-        "color": ["сірий", "червоний"],
-        "style_color": ["grey", "red"],
-        "description": "Adidas x C.P. Company - це колаборація двох відомих брендів, яка представляє собою поєднання стилю та функціональності. Ці кросівки відрізняються унікальним дизайном та використанням передових технологій у виготовленні взуття. Вони вражають своєю вишуканістю та високою якістю матеріалів, що робить їх відмінним вибором для будь-якого образу. Кросівки Adidas x C.P. Company стануть незамінною частиною вашого гардеробу, додаючи стилю і комфорту до вашого повсякденного життя.",
-        "made_in": "India",
-        "material": ["шкіра"],
-        "guarantee": "1 рік",
-        "realease": "1980 рік",
-        "size":["40(EU)","41(EU)","42(EU)", "43(EU)", "44(EU)", "45(EU)"]
-    }
+  {
+    "id": 1,
+    "parentId": "men-clothing",
+    "name": "NIKE AIR FORCE 1",
+    "price": 5500,
+    "hit": true,
+    "chips": "ХІТ",
+    "logo_img": "https://res.cloudinary.com/dbwhmfiex/image/upload/v1711999554/products_img/nike/air_force_1/white/roczse8siq3xf4yhvahp.webp",
+    "color": [
+      "білий",
+      "чорний"
+    ],
+    "style_color": [
+      "white",
+      "black"
+    ],
+    "description": "Nike Air Force 1 - це класичні кросівки, що завоювали світ своїм стилем та комфортом. З їхнім відомим дизайном і бездоганною конструкцією, вони є втіленням спортивного досвіду та моди. Завдяки використанню високоякісних матеріалів і інноваційним технологіям, кросівки Nike Air Force 1 забезпечують неперевершений комфорт і підтримку під час будь-яких активностей. Ця модель стала еталоном в світі кросівок і залишається невід'ємною частиною гардеробу для тих, хто цінує стиль, якість і зручність.",
+    "made_in": "India",
+    "material": [
+      "шкіра"
+    ],
+    "guarantee": "1 рік",
+    "realease": "2023 рік",
+    "size": [
+      "40(EU)",
+      "41(EU)",
+      "42(EU)",
+      "43(EU)",
+      "44(EU)",
+      "45(EU)"
+    ]
+  },
+  {
+    "id": 2,
+    "parentId": "men-clothing",
+    "name": "NIKE AIR FORCE 1 HIGH",
+    "price": 6500,
+    "new": true,
+    "chips": "НОВИНКА",
+    "logo_img": "https://res.cloudinary.com/dbwhmfiex/image/upload/v1711999555/products_img/nike/air_force_1_high/white/ec3xy8qiaaouzlumvuct.webp",
+    "color": [
+      "білий",
+      "чорний"
+    ],
+    "style_color": [
+      "white",
+      "black"
+    ],
+    "description": "Nike Air Force 1 high - це втілення спортивної елегантності і вічного стилю. Ці кросівки завоювали світ своїм бездоганним дизайном та неперевершеним комфортом. Завдяки використанню високоякісних матеріалів і інноваційним технологіям, вони стали невід'ємною частиною гардеробу для справжніх шанувальників спортивної моди. Незалежно від того, чи йдете ви на прогулянку по місту чи зустрічаєтеся з друзями, Nike Air Force 1 High завжди будуть вираженням вашого неповторного стилю і вишуканості.",
+    "made_in": "India",
+    "material": [
+      "шкіра"
+    ],
+    "guarantee": "1 рік",
+    "realease": "2023 рік",
+    "size": [
+      "40(EU)",
+      "41(EU)",
+      "42(EU)",
+      "43(EU)",
+      "44(EU)",
+      "45(EU)"
+    ]
+  },
+  {
+    "id": 3,
+    "parentId": "men-clothing",
+    "name": "NIKE AIR FORCE 1 LOW X AMBUSH",
+    "price": 9900,
+    "hit": true,
+    "chips": "ХІТ",
+    "logo_img": "https://res.cloudinary.com/dbwhmfiex/image/upload/v1711999556/products_img/nike/air_force_x_ambush/black/ghpcrp7gc9lb0kbackfk.webp",
+    "color": [
+      "чорний"
+    ],
+    "style_color": [
+      "black"
+    ],
+    "description": "Nike Air Force 1 Low x Ambush, її історія нараховує десятиліття вражаючих досягнень у світі спортивної моди. Вперше представлена у 1982 році, вона здобула шалений успіх завдяки своєму вишуканому дизайну та інноваційній технології. З того часу ця модель продовжує завоювувати серця шанувальників, встановлюючи нові стандарти якості та стилю у світі кросівок. У співпраці з Ambush, ця ікона перетворюється на виразний символ автентичності та елегантності.",
+    "made_in": "India",
+    "material": [
+      "шкіра"
+    ],
+    "guarantee": "1 рік",
+    "realease": "2021 рік",
+    "size": [
+      "40(EU)",
+      "41(EU)",
+      "42(EU)",
+      "43(EU)",
+      "44(EU)",
+      "45(EU)"
+    ]
+  },
+  {
+    "id": 4,
+    "parentId": "woman-clothing",
+    "name": "NIKE AIR MAX",
+    "price": 7800,
+    "hit": true,
+    "chips": "ХІТ",
+    "logo_img": "https://res.cloudinary.com/dbwhmfiex/image/upload/v1711999556/products_img/nike/air_max/white/hmezdvibcppzohvoz69c.webp",
+    "color": [
+      "білий"
+    ],
+    "style_color": [
+      "white"
+    ],
+    "description": "Nike Air Max - це серія взуття, яка вперше була представлена компанією Nike в 1987 році. Відзначаючись інноваційною подошвою, в якій використовуються повітряні камери, це взуття надає високий рівень амортизації та підтримки під час активного спорту та повсякденних справ. Модель Nike Air Max стала популярною як серед спортсменів, так і серед любителів стрітстайлу завдяки своєму стильному дизайну та винятковій комфортності.",
+    "made_in": "India",
+    "material": [
+      "шкіра"
+    ],
+    "guarantee": "1 рік",
+    "realease": "1987 рік",
+    "size": [
+      "35(EU)",
+      "36(EU)",
+      "37(EU)",
+      "38(EU)",
+      "39(EU)",
+      "40(EU)"
+    ]
+  },
+  {
+    "id": 5,
+    "parentId": "men-clothing",
+    "name": "NIKE AIR ZOOM",
+    "price": 5700,
+    "new": true,
+    "chips": "НОВИНКА",
+    "logo_img": "https://res.cloudinary.com/dbwhmfiex/image/upload/v1711999557/products_img/nike/air_zoom/black/wx2v39h2mwzmitty4jd0.webp",
+    "color": [
+      "чорний",
+      "помаранчевий"
+    ],
+    "style_color": [
+      "black",
+      "orange"
+    ],
+    "description": "Nike Air Zoom - це серія взуття, яка відзначається інноваційною технологією амортизації. Вперше представлена у 1995 році, модель використовує подушки з повітрям, розташовані у підошві, для забезпечення максимальної підтримки та комфорту під час активних фізичних навантажень. Nike Air Zoom став вибором для спортсменів у різних дисциплінах завдяки своїй надійності та винятковій продуктивності.",
+    "made_in": "India",
+    "material": [
+      "текстиль"
+    ],
+    "guarantee": "1 рік",
+    "realease": "1995 рік",
+    "size": [
+      "40(EU)",
+      "41(EU)",
+      "42(EU)",
+      "43(EU)",
+      "44(EU)",
+      "45(EU)"
+    ]
+  },
+  {
+    "id": 6,
+    "parentId": "woman-clothing",
+    "name": "NIKE BENASSI X STUSSY 'SAIL'",
+    "price": 2000,
+    "hit": true,
+    "chips": "ХІТ",
+    "logo_img": "https://res.cloudinary.com/dbwhmfiex/image/upload/v1711999558/products_img/nike/benassi_stussy/white/yf2bgvfnskzo5olyhmdg.webp",
+    "color": [
+      "чорний",
+      "білий"
+    ],
+    "style_color": [
+      "white",
+      "black"
+    ],
+    "description": "Nike Benassi x Stussy 'Sail' - це колаборація двох відомих брендів, яка вражає своєю елегантністю та стилем. Ці слайди відображають унікальний злиття дизайну Nike з естетикою Stussy. Вони поєднують в собі зручність та стиль, роблячи їх ідеальним вибором для відпочинку та повсякденного носіння. Їхній відтінок 'Sail' додає нотку розкіші до вашого образу, роблячи їх незамінною частиною вашого гардеробу.",
+    "made_in": "India",
+    "material": [
+      "шкіра"
+    ],
+    "guarantee": "1 рік",
+    "realease": "2016 рік",
+    "size": [
+      "35(EU)",
+      "36(EU)",
+      "37(EU)",
+      "38(EU)",
+      "39(EU)",
+      "40(EU)"
+    ]
+  },
+  {
+    "id": 7,
+    "parentId": "men-clothing",
+    "name": "NIKE SB ZOOM BLAZER MID",
+    "price": 4000,
+    "hit": true,
+    "chips": "ХІТ",
+    "logo_img": "https://res.cloudinary.com/dbwhmfiex/image/upload/v1711999559/products_img/nike/blazer_low/black/zetseb6zgiwxffoyvbl0.webp",
+    "color": [
+      "чорний"
+    ],
+    "style_color": [
+      "black"
+    ],
+    "description": "Nike SB Zoom Blazer Mid - це підсилені кросівки від Nike Skateboarding, які поєднують в собі класичний дизайн і сучасні технології для оптимальної продуктивності на дошці. Завдяки інтегрованій технології Zoom Air у підошві, вони забезпечують відмінну амортизацію та підтримку при виконанні скейтбордистських трюків. Їх стильний дизайн і вишукана конструкція роблять їх відмінним вибором для як буденного носіння, так і для їзди на дошці.",
+    "made_in": "India",
+    "material": [
+      "текстиль"
+    ],
+    "guarantee": "1 рік",
+    "realease": "2010 рік",
+    "size": [
+      "40(EU)",
+      "41(EU)",
+      "42(EU)",
+      "43(EU)",
+      "44(EU)",
+      "45(EU)"
+    ]
+  },
+  {
+    "id": 8,
+    "parentId": "men-clothing",
+    "name": "NIKE CORTEZ",
+    "price": 5600,
+    "hit": true,
+    "chips": "ХІТ",
+    "logo_img": "https://res.cloudinary.com/dbwhmfiex/image/upload/v1711999559/products_img/nike/cortez/red/ef5d8jrhad8zubeswfgy.webp",
+    "color": [
+      "чорний",
+      "червоний"
+    ],
+    "style_color": [
+      "red",
+      "black"
+    ],
+    "description": "Nike Cortez - це легендарні кросівки, що відзначаються класичним дизайном і неперевершеним комфортом. Започатковані в 1972 році, ці кросівки стали культовим предметом в світі спортивної моди. Вони відрізняються вишуканим стилем і високою якістю виготовлення, що робить їх улюбленим вибором для активного способу життя. Nike Cortez - це не лише кросівки, а історія, що живе в кожному їхньому дизайні, і продовжує надихати шанувальників моди та спорту по всьому світу.",
+    "made_in": "India",
+    "material": [
+      "шкіра"
+    ],
+    "guarantee": "1 рік",
+    "realease": "1972 рік",
+    "size": [
+      "40(EU)",
+      "41(EU)",
+      "42(EU)",
+      "43(EU)",
+      "44(EU)",
+      "45(EU)"
+    ]
+  },
+  {
+    "id": 9,
+    "parentId": "woman-clothing",
+    "name": "NIKE DEFY ALL DAY 'WHITE MIDNIGHT NAVY'",
+    "previousPrice": 7500,
+    "price": 5760,
+    "discount": true,
+    "chips": "- 20%",
+    "logo_img": "https://res.cloudinary.com/dbwhmfiex/image/upload/v1711999560/products_img/nike/deffy_all_day/white/r6dlsw6str4o7gecfyz1.webp",
+    "color": [
+      "білий"
+    ],
+    "style_color": [
+      "white"
+    ],
+    "description": "Nike Defy All Day 'White Midnight Navy' - це модель, яка втілює сучасний дизайн і вищу якість взуття від Nike. Захоплюючий поєднання білого та темно-синього кольорів надає цим кросівкам стильного і елегантного вигляду. Виготовлені з високоякісних матеріалів, вони забезпечують неперевершений комфорт та підтримку протягом усього дня. Ця модель стане незамінною частиною вашого гардеробу, додаючи стилю і динаміки вашому образу.",
+    "made_in": "India",
+    "material": [
+      "шкіра"
+    ],
+    "guarantee": "1 рік",
+    "realease": "2018 рік",
+    "size": [
+      "35(EU)",
+      "36(EU)",
+      "37(EU)",
+      "38(EU)",
+      "39(EU)",
+      "40(EU)"
+    ]
+  },
+  {
+    "id": 10,
+    "parentId": "men-clothing",
+    "name": "NIKE DUNK HIGH",
+    "previousPrice": 9000,
+    "price": 7200,
+    "discount": true,
+    "chips": "- 20%",
+    "logo_img": "https://res.cloudinary.com/dbwhmfiex/image/upload/v1711999561/products_img/nike/dunk_high/blue/vslafpjqqrihxuy5o9z6.webp",
+    "color": [
+      "синій",
+      "помаранчевий"
+    ],
+    "style_color": [
+      "blue",
+      "orange"
+    ],
+    "description": "Nike Dunk High - це класичні кросівки, що відзначаються стильним дизайном і винятковою комфортністю. Започатковані у 1985 році, вони стали іконою в світі стрітвіру та спортивної моди. Nike Dunk High відрізняються вишуканими кольорами та матеріалами, що роблять кожен погляд на них незабутнім. Ці кросівки підходять для будь-якого образу та активності, надаючи неперевершений стиль та підтримку.",
+    "made_in": "India",
+    "material": [
+      "шкіра"
+    ],
+    "guarantee": "1 рік",
+    "realease": "2006 рік",
+    "size": [
+      "40(EU)",
+      "41(EU)",
+      "42(EU)",
+      "43(EU)",
+      "44(EU)",
+      "45(EU)"
+    ]
+  },
+  {
+    "id": 11,
+    "parentId": "woman-clothing",
+    "name": "NIKE DUNK LOW",
+    "previousPrice": 7500,
+    "price": 6290,
+    "discount": true,
+    "chips": "- 20%",
+    "logo_img": "https://res.cloudinary.com/dbwhmfiex/image/upload/v1711999563/products_img/nike/dunk_low/blue/s0agwdxtntapij07s74k.webp",
+    "color": [
+      "синій",
+      "біжевий"
+    ],
+    "style_color": [
+      "blue",
+      "beige"
+    ],
+    "description": "Nike Dunk Low 'Polar Blue' - це варіація класичної моделі, що відзначається надзвичайною вишуканістю і стилем. Завдяки використанню якісних матеріалів і зручному дизайну, ці кросівки забезпечують надзвичайний комфорт під час носіння. Вони привертають увагу своєю чистотою ліній і яскравим кольором 'Polar Blue', додаючи унікальності будь-якому образу. Ця модель стане відмінним доповненням для колекції кожного шанувальника стилю та якості взуття.",
+    "made_in": "India",
+    "material": [
+      "шкіра"
+    ],
+    "guarantee": "1 рік",
+    "realease": "2021 рік",
+    "size": [
+      "35(EU)",
+      "36(EU)",
+      "37(EU)",
+      "38(EU)",
+      "39(EU)",
+      "40(EU)"
+    ]
+  },
+  {
+    "id": 12,
+    "parentId": "woman-clothing",
+    "name": "NIKE LDWAFFLE",
+    "price": 7990,
+    "new": true,
+    "chips": "НОВИНКА",
+    "logo_img": "https://res.cloudinary.com/dbwhmfiex/image/upload/v1711999565/products_img/nike/ldwaffle/grey/en3yybqaovkgsvktibeq.webp",
+    "color": [
+      "сірий",
+      "помаранчевий"
+    ],
+    "style_color": [
+      "grey",
+      "orange"
+    ],
+    "description": "Nike LDWaffle x Sacai x CLOT 'Kiss of Death 2' - це здійснення співпраці трьох визначних брендів, яке відзначається вишуканим дизайном і передовою технологією. Ці кросівки поєднують в собі елементи класичного стилю з інноваційними рішеннями у дизайні, що створює унікальний вигляд. Вони вражають своєю деталізацією та відмінною якістю, роблячи їх визначною частиною будь-якого гардеробу. Ця модель відображає творчий підхід до взуття та є втіленням передового мистецтва в світі моди.",
+    "made_in": "India",
+    "material": [
+      "трикотаж"
+    ],
+    "guarantee": "1 рік",
+    "realease": "2021 рік",
+    "size": [
+      "35(EU)",
+      "36(EU)",
+      "37(EU)",
+      "38(EU)",
+      "39(EU)",
+      "40(EU)"
+    ]
+  },
+  {
+    "id": 13,
+    "parentId": "men-clothing",
+    "name": "NIKE LUNAR FORCE 1",
+    "previousPrice": 6500,
+    "price": 5200,
+    "discount": true,
+    "chips": "- 20%",
+    "logo_img": "https://res.cloudinary.com/dbwhmfiex/image/upload/v1711999566/products_img/nike/lunar_force_1/black/jkhm8okdpuamkjovm3kj.webp",
+    "color": [
+      "чорний"
+    ],
+    "style_color": [
+      "black"
+    ],
+    "description": "Nike Lunar Force 1 - це модель, яка поєднує в собі легендарний дизайн Nike Air Force 1 з інноваційною технологією Lunarlon для максимального комфорту і амортизації. Завдяки легкій підошві Lunarlon ці кросівки забезпечують відмінну підтримку і забезпечують м'яку амортизацію кожного кроку. Їх стильний дизайн і різноманітні кольорові рішення роблять їх відмінним вибором для будь-якого образу, додавши зручності і елегантності до вашого стилю.",
+    "made_in": "India",
+    "material": [
+      "шкіра"
+    ],
+    "guarantee": "1 рік",
+    "realease": "2011 рік",
+    "size": [
+      "40(EU)",
+      "41(EU)",
+      "42(EU)",
+      "43(EU)",
+      "44(EU)",
+      "45(EU)"
+    ]
+  },
+  {
+    "id": 14,
+    "parentId": "woman-clothing",
+    "name": "NIKE OVERBREAK",
+    "price": 6190,
+    "new": true,
+    "chips": "НОВИНКА",
+    "logo_img": "https://res.cloudinary.com/dbwhmfiex/image/upload/v1711999568/products_img/nike/overbreak/beige/jfarpieldnuapviwtwh1.webp",
+    "color": [
+      "біжевий"
+    ],
+    "style_color": [
+      "beige"
+    ],
+    "description": "Nike Overbreak SP - це модель, що поєднує в собі вишуканий стиль та передові технології взуття від Nike. Завдяки використанню інноваційних матеріалів і конструкції, ці кросівки забезпечують неперевершений комфорт і підтримку під час активних тренувань або повсякденних прогулянок. Вони відрізняються стильним дизайном і різноманітними кольоровими варіаціями, що робить їх відмінним вибором для будь-якого образу. Незалежно від вашої активності, Nike Overbreak SP забезпечать вам стабільність і комфорт протягом усього дня.",
+    "made_in": "India",
+    "material": [
+      "текстиль"
+    ],
+    "guarantee": "1 рік",
+    "realease": "2022 рік",
+    "size": [
+      "35(EU)",
+      "36(EU)",
+      "37(EU)",
+      "38(EU)",
+      "39(EU)",
+      "40(EU)"
+    ]
+  },
+  {
+    "id": 15,
+    "parentId": "men-clothing",
+    "name": "NIKE P6000",
+    "price": 3500,
+    "hit": true,
+    "chips": "ХІТ",
+    "logo_img": "https://res.cloudinary.com/dbwhmfiex/image/upload/v1711999569/products_img/nike/p_6000/white/kglr1ekjfn29bqaglnmh.webp",
+    "color": [
+      "білий"
+    ],
+    "style_color": [
+      "white"
+    ],
+    "description": "Nike P6000 - це модель, яка вражає своєю елегантністю і стилем, поєднаними з високою функціональністю. Ці кросівки відрізняються вишуканим дизайном та використанням передових технологій у виробництві взуття. Вони забезпечують надійну підтримку та комфорт під час активних тренувань або повсякденних справ. Nike P6000 - це також вираз вашого стилю, завдяки різноманітним кольоровим варіаціям та відмінному дизайну, що робить їх незамінною частиною вашого гардеробу.",
+    "made_in": "India",
+    "material": [
+      "текстиль"
+    ],
+    "guarantee": "1 рік",
+    "realease": "2019 рік",
+    "size": [
+      "40(EU)",
+      "41(EU)",
+      "42(EU)",
+      "43(EU)",
+      "44(EU)",
+      "45(EU)"
+    ]
+  },
+  {
+    "id": 16,
+    "parentId": "men-clothing",
+    "name": "NIKE REACT LIVE",
+    "price": 4700,
+    "hit": true,
+    "chips": "ХІТ",
+    "logo_img": "https://res.cloudinary.com/dbwhmfiex/image/upload/v1711999571/products_img/nike/react_live/white/hshdpjxth4x93pcmiton.webp",
+    "color": [
+      "білий",
+      "сірий"
+    ],
+    "style_color": [
+      "white",
+      "grey"
+    ],
+    "description": "Nike React Live - це кросівки, які поєднують в собі стильний зовнішній вигляд і передові технології для надання відмінного комфорту і підтримки під час активних занять. Завдяки технології React у підошві, ці кросівки забезпечують м'яку амортизацію та ефективний повернення енергії кожного кроку. Вони також відрізняються легкістю і дихаючою конструкцією верху, що забезпечує вентиляцію та комфорт протягом тривалого часу носіння. Nike React Live - це відмінний вибір для тих, хто цінує стиль і комфорт під час щоденних справ або спортивних тренувань.",
+    "made_in": "India",
+    "material": [
+      "текстиль"
+    ],
+    "guarantee": "1 рік",
+    "realease": "2019 рік",
+    "size": [
+      "40(EU)",
+      "41(EU)",
+      "42(EU)",
+      "43(EU)",
+      "44(EU)",
+      "45(EU)"
+    ]
+  },
+  {
+    "id": 17,
+    "parentId": "woman-clothing",
+    "name": "NIKE REACT VISION",
+    "price": 5200,
+    "new": true,
+    "chips": "НОВИНКА",
+    "logo_img": "https://res.cloudinary.com/dbwhmfiex/image/upload/v1711999573/products_img/nike/react_vision/grey/o0jfead7xijtzxxw9dgj.webp",
+    "color": [
+      "помаранчевий",
+      "сірий"
+    ],
+    "style_color": [
+      "orange",
+      "grey"
+    ],
+    "description": "Nike React Vision - це витончені кросівки, які поєднують в собі сучасний дизайн і передові технології для найвищого комфорту і продуктивності. Завдяки технології React у підошві, ці кросівки забезпечують м'яку амортизацію та ефективне повернення енергії кожного кроку. Вони також відрізняються вишуканим дизайном і деталізацією, що робить їх стильними і функціональними. Nike React Vision - це ідеальний вибір для тих, хто шукає надійне взуття для щоденного носіння або активних тренувань.",
+    "made_in": "India",
+    "material": [
+      "текстиль"
+    ],
+    "guarantee": "1 рік",
+    "realease": "2017 рік",
+    "size": [
+      "35(EU)",
+      "36(EU)",
+      "37(EU)",
+      "38(EU)",
+      "39(EU)",
+      "40(EU)"
+    ]
+  },
+  {
+    "id": 18,
+    "parentId": "men-clothing",
+    "name": "NIKE SHOX TL W",
+    "previousPrice": 10800,
+    "price": 8990,
+    "discount": true,
+    "chips": "- 20%",
+    "logo_img": "https://res.cloudinary.com/dbwhmfiex/image/upload/v1711999575/products_img/nike/shox_tl_w/black/bkctiibgldik0h7e64hn.webp",
+    "color": [
+      "чорний",
+      "білий"
+    ],
+    "style_color": [
+      "white",
+      "black"
+    ],
+    "description": "Nike Shox TL W - це втілення сучасного дизайну та передової технології в світі кросівок. Їхній вражаючий зовнішній вигляд поєднується з винятковим комфортом та підтримкою на кожному кроці. Ця модель призначена для тих, хто цінує якість, стиль і переваги сучасних технологій в спортивному взутті.",
+    "made_in": "India",
+    "material": [
+      "синтетика"
+    ],
+    "guarantee": "1 рік",
+    "realease": "2019 рік",
+    "size": [
+      "40(EU)",
+      "41(EU)",
+      "42(EU)",
+      "43(EU)",
+      "44(EU)",
+      "45(EU)"
+    ]
+  },
+  {
+    "id": 19,
+    "parentId": "men-clothing",
+    "name": "ADIDAS CAMPUS",
+    "price": 13000,
+    "hit": true,
+    "chips": "ХІТ",
+    "logo_img": "https://res.cloudinary.com/dbwhmfiex/image/upload/v1711999577/products_img/adidas/adidas_campus/grey/sctvlytpu4zmegzopdqf.webp",
+    "color": [
+      "сірий"
+    ],
+    "style_color": [
+      "grey"
+    ],
+    "description": "Adidas Campus - це культові кросівки, які вражають своїм класичним дизайном і високою якістю виготовлення. Започатковані в 1980-х роках як взуття для баскетболістів, вони стали невід'ємною частиною стрітстайл культури. Adidas Campus відрізняються зручною конструкцією та деталізацією, яка робить їх стильними і універсальними. Ці кросівки підходять як для щоденного носіння, так і для спортивних заходів, завдяки своїй надійності і комфортності.",
+    "made_in": "India",
+    "material": [
+      "шкіра"
+    ],
+    "guarantee": "1 рік",
+    "realease": "1980 рік",
+    "size": [
+      "40(EU)",
+      "41(EU)",
+      "42(EU)",
+      "43(EU)",
+      "44(EU)",
+      "45(EU)"
+    ]
+  },
+  {
+    "id": 20,
+    "parentId": "men-clothing",
+    "name": "ADIDAS X C.P. COMPANY",
+    "price": 15000,
+    "hit": true,
+    "chips": "ХІТ",
+    "logo_img": "https://res.cloudinary.com/dbwhmfiex/image/upload/v1711999579/products_img/adidas/adidas_x_c_p/grey/hqmk6ydqnubyuzd7rg6j.webp",
+    "color": [
+      "сірий",
+      "червоний"
+    ],
+    "style_color": [
+      "grey",
+      "red"
+    ],
+    "description": "Adidas x C.P. Company - це колаборація двох відомих брендів, яка представляє собою поєднання стилю та функціональності. Ці кросівки відрізняються унікальним дизайном та використанням передових технологій у виготовленні взуття. Вони вражають своєю вишуканістю та високою якістю матеріалів, що робить їх відмінним вибором для будь-якого образу. Кросівки Adidas x C.P. Company стануть незамінною частиною вашого гардеробу, додаючи стилю і комфорту до вашого повсякденного життя.",
+    "made_in": "India",
+    "material": [
+      "шкіра"
+    ],
+    "guarantee": "1 рік",
+    "realease": "1980 рік",
+    "size": [
+      "40(EU)",
+      "41(EU)",
+      "42(EU)",
+      "43(EU)",
+      "44(EU)",
+      "45(EU)"
+    ]
+  }
 ]
