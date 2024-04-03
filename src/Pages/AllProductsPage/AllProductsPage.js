@@ -11,6 +11,7 @@ import {
   SelectMaterial,
 } from "../../components/Select";
 import axios from "axios";
+import ModalFilter from "../../components/Modal/ModalFilter";
 
 import "../AllProductsPage/AllProductsPage.scss";
 
@@ -111,6 +112,7 @@ const AllProductsPage = () => {
           Показати фільтри
         </div>
       </div>
+      {isFiltersOpen && <ModalFilter props={{ handleSizeChange, handleColorChange, handleMaterialChange, clearFilters, handleSortChange }} />}
       <div className="select-wrapper">
         <div className="select-wrapper__item">
           <SelectSize onChange={handleSizeChange}/>

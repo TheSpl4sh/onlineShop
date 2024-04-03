@@ -18,7 +18,7 @@ const SaleClothingPage = () => {
   const [isFiltersOpen, setIsFiltersOpen] = useState(false);
   const [itemsPerPage, setItemsPerPage] = useState(9);
   const [filters, setFilters] = useState({
-    chips: "- 20%",
+    // discount: true,
     size: null,
     color: null,
     material: null,
@@ -47,7 +47,9 @@ const SaleClothingPage = () => {
       const response = await axios.get("/api/catalog-filter", {
         params: filters,
       });
-      setProducts(response.data);
+      const filteredProducts = response.data.filter(product => product.discount === true);
+    setProducts(filteredProducts);
+      // setProducts(response.data);
     } catch (error) {
       console.error("Error fetching filtered catalog:", error);
     }
