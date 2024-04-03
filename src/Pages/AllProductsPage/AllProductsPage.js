@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { FaTimes } from "react-icons/fa";
-// import { useSelector, useDispatch } from 'react-redux';
 import CustomizedSlider from "./components/CustomizedSlider/CustomizedSlider";
 import DisplayParameter from "../AllProductsPage/components/displayParameter/DisplayParameter";
 import MenuToggle from "../AllProductsPage/components/menuToggle/MenuToggle";
@@ -16,7 +15,6 @@ import axios from "axios";
 import "../AllProductsPage/AllProductsPage.scss";
 
 const AllProductsPage = () => {
-  // const dispatch = useDispatch();
   const [isFiltersOpen, setIsFiltersOpen] = useState(false);
   const [itemsPerPage, setItemsPerPage] = useState(9);
   const [filters, setFilters] = useState({
@@ -25,7 +23,7 @@ const AllProductsPage = () => {
     material: null,
   });
   const [products, setProducts] = useState([]);
-  // const [sortOption, setSortOption] = useState("ordinary");
+  const [sortOption, setSortOption] = useState("ordinary");
 
   const toggleFilters = () => {
     setIsFiltersOpen(!isFiltersOpen);
@@ -48,7 +46,6 @@ const AllProductsPage = () => {
       const response = await axios.get("/api/catalog-filter", {
         params: filters,
       });
-      // console.log(response.data);
       setProducts(response.data);
     } catch (error) {
       console.error("Error fetching filtered catalog:", error);
@@ -67,38 +64,36 @@ const AllProductsPage = () => {
     setFilters({ ...filters, material: selectedOption.label });
   };
 
-  // const handleSortChange = (selectedOption) => {
-  //   setSortOption(selectedOption.value);
-  // };
+  const handleSortChange = (selectedOption) => {
+    setSortOption(selectedOption.value);
+  };
 
   useEffect(() => {
     applyFilters();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filters]);
 
-  // useEffect(() => {
-  //   // Сортуємо продукти, коли змінюється варіант сортування
-  //   const sortedProducts = [...products];
+  useEffect(() => {
+    const sortedProducts = [...products];
   
-  //   switch (sortOption) {
-  //     case 'increase':
-  //       sortedProducts.sort((a, b) => a.price - b.price);
-  //       break;
-  //     case 'decrease':
-  //       sortedProducts.sort((a, b) => b.price - a.price);
-  //       break;
-  //     default:
-  //       // Залишити незмінним, якщо варіант сортування "звичайний"
-  //       break;
-  //   }
+    switch (sortOption) {
+      case 'increase':
+        sortedProducts.sort((a, b) => a.price - b.price);
+        break;
+      case 'decrease':
+        sortedProducts.sort((a, b) => b.price - a.price);
+        break;
+        case 'ordinary':
+    sortedProducts.sort((a, b) => a.id - b.id);
+    break;
+  default:
+    break;
+    }
   
-  //   // Перевіряємо, чи змінилися продукти або варіант сортування перед викликом setProducts
-  //   if (JSON.stringify(products) !== JSON.stringify(sortedProducts)) {
-  //     setProducts(sortedProducts);
-  //   }
-  
-  // }, [sortOption, products]);
-  
+    if (JSON.stringify(products) !== JSON.stringify(sortedProducts)) {
+      setProducts(sortedProducts);
+    }
+  }, [sortOption, products]);
 
   console.log("AllProducts", products);
 
@@ -118,7 +113,7 @@ const AllProductsPage = () => {
       </div>
       <div className="select-wrapper">
         <div className="select-wrapper__item">
-          <SelectSize onChange={handleSizeChange} clearValue={setFilters} />
+          <SelectSize onChange={handleSizeChange}/>
         </div>
         <div className="select-wrapper__item">
           <CustomizedSlider />
@@ -139,10 +134,13 @@ const AllProductsPage = () => {
       <hr />
       <div className="sorting-wrapper">
         <div className="sorting-wrapper__show">
-          <DisplayParameter onItemsPerPageChange={handleItemsPerPageChange} />
+          <DisplayParameter 
+          onItemsPerPageChange={handleItemsPerPageChange} 
+          />
         </div>
         <div className="sorting-wrapper__price">
-          <SelectSort />
+          <SelectSort 
+          onChange={handleSortChange}/>
         </div>
       </div>
       <div className="all-products-card">
