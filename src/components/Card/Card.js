@@ -11,14 +11,14 @@ const Card = ({ item, /* style_color */ }) => {
     return (
             <div className="vertical-card">
                 <div className="vertical-card__img-container">
-                    <Link to='card'>
+                    {/* <Link to='card'> */}
                         <img src={item.logo_img} alt="sneaker" draggable="false" className="vertical-card__logo" />
-                    </Link>
+                    {/* </Link> */}
 
                      <div className="vertical-card__chips vertical-card__chips--new">{item.chips}</div>
                      <button className="favorite-button"></button>
 
-                     <Slider />
+                     {/* <Slider /> */}
                  </div>
 
 
