@@ -24,6 +24,7 @@ import { MenClothingPage } from "./Pages/MenClothingPage/MenClothingPage";
 import { WomanClothingPage } from "./Pages/WomanClothingPage/WomanClothingPage";
 import { ChildrenClothingPage } from "./Pages/ChildrenClothingPage/ChildrenClothingPage";
 import { SaleClothingPage } from "./Pages/SaleClothingPage/SaleClothingPage";
+import { AboutUs } from "./Pages/AboutUs/AboutUs"
 import ProtectedRoute from "./routes/ProtectedRoute";
 
 function App() {
@@ -66,6 +67,7 @@ function App() {
                     />
                     {/* ТИМЧАСОВИЙ ШЛЯХ */}
                     <Route path="contacts" element={<Contacts />} />
+                    <Route path="about-us" element={<AboutUs />} />
                     <Route path="men" element ={<MenClothingPage />}/>
                     <Route path="woman" element={<WomanClothingPage />}/>
                     <Route path="children" element={<ChildrenClothingPage />}/>
