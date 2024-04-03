@@ -52,11 +52,17 @@
       justify-content: space-around;
       align-items: center;
     }
-    &__price select {
-      padding: 18px 30px 18px 20px;
-      border: solid 1px $main-filter-border-color;
-      font-size: 15px;
-    }
+    // &__price select {
+    //   display: flex;
+    //   padding: 18px 30px 18px 20px;
+    //   border: solid 1px $main-filter-border-color;
+    //   font-size: 15px;
+    // }
+  }
+  .select-sort{
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .all-products-card{
     display: flex;
