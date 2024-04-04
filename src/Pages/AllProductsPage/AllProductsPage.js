@@ -15,7 +15,7 @@ import ModalFilter from "../../components/Modal/ModalFilter";
 
 import "../AllProductsPage/AllProductsPage.scss";
 
-const AllProductsPage = ({ handleClose }) => {
+const AllProductsPage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const handelModal = () => setIsOpen(!isOpen);
 
@@ -129,6 +129,7 @@ const AllProductsPage = ({ handleClose }) => {
             handleMaterialChange,
             clearFilters,
             handleSortChange,
+            handelModal
           }}
         />
       )}
