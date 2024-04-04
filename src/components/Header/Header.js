@@ -6,21 +6,21 @@ import TopHeader from "./components/topHeader/TopHeader";
 import Action from "./components/action/Action";
 import ModalMenu from "../Modal/ModalMenu";
 
-import { useMatchMedia } from "../useMatchMedia";
+// import { useMatchMedia } from "../useMatchMedia";
 
 import "./Header.scss";
 
-const myMediaQueries = {
-  mobile: "(max-width: 480px)",
-  tablet: "(min-width: 481px) and (max-width: 767px)",
-  desktop: "(min-width: 768px) and (max-width: 1920px)"
-};
+// const myMediaQueries = {
+//   mobile: "(max-width: 480px)",
+//   tablet: "(min-width: 481px) and (max-width: 767px)",
+//   desktop: "(min-width: 768px) and (max-width: 1920px)"
+// };
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const handelModal = () => setIsOpen(!isOpen);
 
-  const { mobile, desktop, tablet } = useMatchMedia(myMediaQueries);
+  // const { mobile, desktop, tablet } = useMatchMedia(myMediaQueries);
 
    
 
