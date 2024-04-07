@@ -56,7 +56,7 @@ function App() {
                     <Route path="order" element={<PlacingOrder />} />
                     <Route path="auth" element={<AuthPage />} />
                     <Route path="signup" element={<SignUpPage />} />
-                    <Route path="card" element={<CardPage />} />
+                    <Route path="card/:productId" element={<CardPage />} />
                     <Route
                         path="cabinet"
                         element={
