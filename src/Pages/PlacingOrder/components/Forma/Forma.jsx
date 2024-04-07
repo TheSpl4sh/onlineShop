@@ -3,6 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import "../../../PlacingOrder/PlacingOrder.scss";
 import "../../../PlacingOrder/components/Forma/Forma.scss";
+import ButtonModal from "../../../../components/Button/ButtonModal/ButtonModal";
 // import CustomCheckbox from "../CustomCheckbox/CustomCheckebox";
 
 function Forma() {
@@ -96,9 +97,7 @@ function Forma() {
                 <div className="form-enter">
                   <p className="form-enter__text">Вже є аккаунт?</p>
                   <a className="form-enter__button-a" href="/auth">
-                    <button type="button" className="form-enter__button">
-                      Введите
-                    </button>
+                    <ButtonModal type="button" text="Введите" />
                   </a>
                 </div>
               </div>
@@ -364,7 +363,7 @@ function Forma() {
               {/* <CustomCheckbox
                 className="customCheckbox-form"
                 text="Створити аккаунт"
-              />
+              /> */}
 
               <label htmlFor="preorderСomment">
                 <p className="form-element__text">Коментар до замовлення</p>
@@ -375,7 +374,7 @@ function Forma() {
                 id="preorderComment"
                 name="preorderComment"
                 placeholder="Текст коментаря"
-              /> */}
+              />
             </Form>
           )}
         </Formik>

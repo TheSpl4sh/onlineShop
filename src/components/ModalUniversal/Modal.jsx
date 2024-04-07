@@ -30,7 +30,7 @@
 // export default Modal;
 
 import React from "react";
-import "./Modal.scss"; // Update import path
+import "./Modal.scss";
 
 const Modal = (props) => {
   const { header, closeButton, text, actions, onClose, show } = props;

@@ -9,8 +9,8 @@ import Modal from "../../../../components/ModalUniversal/Modal";
 import "../../../../components/ModalUniversal/Modal.scss";
 
 import "../YourOrder/YourOrder.scss";
-import CustomCheckbox from "../CustomCheckbox/CustomCheckebox";
-import CustomRadio from "../CustomRadio/CustomRadio"; // Імпорт кастомного радіо компонента
+import CustomCheckbox from "../CustomCheckbox/CustomCheckbox";
+import CustomRadio from "../CustomRadio/CustomRadio";
 import ButtonModal from "../../../../components/Button/ButtonModal/ButtonModal";
 
 function YourOrder() {
@@ -19,11 +19,8 @@ function YourOrder() {
   const [selectedPaymentOption, setSelectedPaymentOption] = useState("");
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  // const [selectedModal, setSelectedModal] = useState(null);
 
   const openModal = () => {
-    // setSelectedModal(modal);
-
     console.log("Модальне вікно відкрите");
     setModalIsOpen(true);
   };
@@ -31,7 +28,6 @@ function YourOrder() {
   const closeModal = () => {
     console.log("Модальне вікно закрите");
     setModalIsOpen(false);
-    // setSelectedModal(null);
   };
 
   const handleOutsideClick = (e) => {

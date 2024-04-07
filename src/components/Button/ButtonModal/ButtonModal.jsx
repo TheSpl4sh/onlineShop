@@ -26,7 +26,6 @@ function ButtonModal(props) {
     border: border,
     ":hover": {
       backgroundColor: hover,
-      // cursor: 'pointer' // Додати стилізацію курсору, щоб показати, що кнопка є інтерактивною
     },
   };
 

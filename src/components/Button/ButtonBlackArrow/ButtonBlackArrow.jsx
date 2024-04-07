@@ -20,5 +20,3 @@ function ButtonBlackArrow(props) {
 }
 
 export default ButtonBlackArrow;
-
-// Сьогодні перший раз сходив в Енерджим. Не погано, зона
