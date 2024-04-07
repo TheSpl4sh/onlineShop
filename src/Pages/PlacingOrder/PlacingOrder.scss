@@ -78,20 +78,6 @@
   cursor: pointer;
 }
 
-.form-enter__button {
-  padding: 10px 20px 10px 20px;
-  color: #000;
-  background-color: #ffff;
-  border: 2px solid #d6d6d6;
-  cursor: pointer;
-}
-
-.form-enter__button:hover {
-  background-color: #000000;
-  border: 2px solid #000000;
-  color: #fff;
-}
-
 .form-enter__button-a {
   color: #000;
   background-color: #ffff;
@@ -203,6 +189,7 @@
   padding: 10px 20px 10px 20px;
   margin-bottom: 10px;
   resize: vertical;
+  overflow-y: auto;
 }
 
 .placingOrder-fields:hover {
@@ -257,8 +244,6 @@
   line-height: 28px;
   letter-spacing: 0em;
   text-align: left;
-
-  margin-bottom: 20px;
 }
 
 .delivery-options {
@@ -285,8 +270,7 @@
   line-height: 28px;
   letter-spacing: 0em;
   text-align: left;
-
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .payment-options {
