@@ -94,4 +94,5 @@ const initializeProductCatalog = async () => {
   }
 };
 
+insertProductCatalog()
 initializeProductCatalog().catch(console.error);
