@@ -3,12 +3,15 @@ import ButtonBlackArrow from "../../../../../src/components/Button/ButtonBlackAr
 import lineSum from "../../img/Line-sum.png";
 import "../../../PlacingOrder/PlacingOrder.scss";
 
-import Modal from "../../components/Modal/Modal";
-import "../../components/Modal/Modal.scss";
+// import { customerEmail } from "../Forma/Forma";
+
+import Modal from "../../../../components/ModalUniversal/Modal";
+import "../../../../components/ModalUniversal/Modal.scss";
 
 import "../YourOrder/YourOrder.scss";
 import CustomCheckbox from "../CustomCheckbox/CustomCheckebox";
 import CustomRadio from "../CustomRadio/CustomRadio"; // Імпорт кастомного радіо компонента
+import ButtonModal from "../../../../components/Button/ButtonModal/ButtonModal";
 
 function YourOrder() {
   const [summa] = useState(0);
@@ -16,16 +19,19 @@ function YourOrder() {
   const [selectedPaymentOption, setSelectedPaymentOption] = useState("");
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [selectedModal, setSelectedModal] = useState(null);
+  // const [selectedModal, setSelectedModal] = useState(null);
 
-  const openModal = (modal) => {
-    setSelectedModal(modal);
+  const openModal = () => {
+    // setSelectedModal(modal);
+
+    console.log("Модальне вікно відкрите");
     setModalIsOpen(true);
   };
 
   const closeModal = () => {
+    console.log("Модальне вікно закрите");
     setModalIsOpen(false);
-    setSelectedModal(null);
+    // setSelectedModal(null);
   };
 
   const handleOutsideClick = (e) => {
@@ -60,31 +66,56 @@ function YourOrder() {
   //     });
   // };
 
+  //   const customerEmail = document.getElementById("customerEmail").value;
+  // sendOrderEmail(customerEmail);
+
+  // const sendOrderEmail = (email) => {
+  //   // Формуємо текст повідомлення з даними замовлення
+  //   const message = `Дякуємо за замовлення!\n\nДоставка: ${selectedDeliveryOption}\nОплата: ${selectedPaymentOption}\nСума: ${summa}`;
+
+  //   // Відправляємо лист на електронну адресу замовника
+  //   fetch("/send-email", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({ email, message }),
+  //   })
+  //     .then((response) => {
+  //       if (response.ok) {
+  //         console.log("Email sent successfully!");
+  //       } else {
+  //         console.error("Failed to send email.");
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error sending email:", error);
+  //     });
+  // };
+
   const sendOrderEmail = (email) => {
     // Формуємо текст повідомлення з даними замовлення
     const message = `Дякуємо за замовлення!\n\nДоставка: ${selectedDeliveryOption}\nОплата: ${selectedPaymentOption}\nСума: ${summa}`;
-    
+
     // Відправляємо лист на електронну адресу замовника
-    fetch('/send-email', {
-      method: 'POST',
+    fetch("/send-email", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({ email, message }),
     })
-    .then(response => {
-      if (response.ok) {
-        console.log('Email sent successfully!');
-      } else {
-        console.error('Failed to send email.');
-      }
-    })
-    .catch(error => {
-      console.error('Error sending email:', error);
-    });
+      .then((response) => {
+        if (response.ok) {
+          console.log("Email sent successfully!");
+        } else {
+          console.error("Failed to send email.");
+        }
+      })
+      .catch((error) => {
+        console.error("Error sending email:", error);
+      });
   };
-  
-  
 
   return (
     <div className="wrapper-yourOrder">
@@ -171,28 +202,30 @@ function YourOrder() {
       </div>
       <div className="button-order">
 
-  <ButtonBlackArrow
-    text="Оформити замовлення"
-    onClick={() => {
-      const customerEmail = document.getElementById("customerEmail").value; // Отримуємо електронну адресу з форми
-      sendOrderEmail(customerEmail);
-      openModal("Modal");
-    }}
+        <ButtonBlackArrow
+          text="Оформити замовлення"
+          onClick={() => {
+            const customerEmail =
+              document.getElementById("customerEmail").value; // Отримуємо електронну адресу з форми
+            sendOrderEmail(customerEmail);
+            openModal();
+            console.log("Модальне вікно відкрите");
+          }}
         />
       </div>
 
-      {modalIsOpen && selectedModal === "Modal" && (
-        <div className="wrapper" onClick={handleOutsideClick}>
+      {modalIsOpen && (
+        <div className="wrapper-item" onClick={handleOutsideClick}>
           <Modal
-            header="Modal 2"
+            header="Підтвердження замовлення"
             closeButton={true}
-            text="Second modal window"
+            text="Ваше замовлення успішно оформлено!"
             onClose={closeModal}
+            show={modalIsOpen}
             actions={
-              <button
+              <ButtonModal
                 onClick={closeModal}
-                backgroundColor="darkorchid"
-                text="ADO TO FAVORITE"
+                text="Закрити"
               />
             }
           />
