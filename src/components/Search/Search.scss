@@ -1,0 +1,22 @@
+.search-section {
+  display: flex;
+align-items: center;
+cursor: pointer;
+}
+.search-form{
+	position: relative;
+	display: block;
+	// display: flex;
+	// align-items: center;
+	height: 20px;
+	
+}
+.search-input {
+	display: inline-block;
+  position: relative;
+  cursor: pointer;
+  height: 50px;
+  background-color: aqua;
+  margin-right: 27px;
+  margin-bottom: 27px;
+}

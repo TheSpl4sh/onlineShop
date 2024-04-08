@@ -27,6 +27,7 @@ const partners = require('./routes/partners');
 const productCatalogFile = require('./data.json')
 const Catalog = require('./models/Catalog')
 const catalogFilter = require('./routes/catalogFilter');
+const searchRouter = require('./routes/search');
 
 const app = express();
 
@@ -66,6 +67,7 @@ app.use('/api/shipping-methods', shippingMethods);
 app.use('/api/payment-methods', paymentMethods);
 app.use('/api/partners', partners);
 app.use('/api/catalog-filter', catalogFilter);
+app.use('/api/search', searchRouter);
 
 // Server static assets if in production
 if (process.env.NODE_ENV === 'production') {
