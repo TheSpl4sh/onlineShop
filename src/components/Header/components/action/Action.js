@@ -4,6 +4,7 @@ import { checkAuthenticationStatus } from "../../../../redux/auth/authSlice";
 import { BsHeart, BsBasket3 } from "react-icons/bs";
 import { FaRegUser, FaUserCheck } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+// import Search from "../../../Search/Search";
 import Search from "../../../Search/Search";
 import "./Action.scss";
 
