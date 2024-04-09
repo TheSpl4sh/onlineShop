@@ -1,22 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, useHistory } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const ColorList = () => {
   const location = useLocation();
-  const history = useHistory();
+  const params = new URLSearchParams(location.search);
+  const navigate = useNavigate();
 
-  // Отримання значення кольору з URL
-  const initialColor = new URLSearchParams(location.search).get('color');
+  const initialColor = params.get('color');
   const [selectedColor, setSelectedColor] = useState(initialColor);
 
-  // Функція для оновлення URL з новим значенням кольору
   const updateURL = (color) => {
-    const searchParams = new URLSearchParams(location.search);
-    searchParams.set('color', color);
-    history.push({ search: searchParams.toString() });
+    params.set('color', color);
+    navigate({ search: params.toString() });
   };
 
-  // Відслідковування зміни кольору
   useEffect(() => {
     if (selectedColor) {
       updateURL(selectedColor);
