@@ -24,7 +24,9 @@ import { MenClothingPage } from "./Pages/MenClothingPage/MenClothingPage";
 import { WomanClothingPage } from "./Pages/WomanClothingPage/WomanClothingPage";
 import { ChildrenClothingPage } from "./Pages/ChildrenClothingPage/ChildrenClothingPage";
 import { SaleClothingPage } from "./Pages/SaleClothingPage/SaleClothingPage";
+import { AboutUs } from "./Pages/AboutUs/AboutUs"
 import ProtectedRoute from "./routes/ProtectedRoute";
+import ColorList from './Pages/card-page/components/ColorList.js';
 
 function App() {
     const dispatch = useDispatch();
@@ -56,6 +58,7 @@ function App() {
                     <Route path="auth" element={<AuthPage />} />
                     <Route path="signup" element={<SignUpPage />} />
                     <Route path="card" element={<CardPage />} />
+                    
                     <Route
                         path="cabinet"
                         element={
@@ -66,6 +69,7 @@ function App() {
                     />
                     {/* ТИМЧАСОВИЙ ШЛЯХ */}
                     <Route path="contacts" element={<Contacts />} />
+                    <Route path="about-us" element={<AboutUs />} />
                     <Route path="men" element ={<MenClothingPage />}/>
                     <Route path="woman" element={<WomanClothingPage />}/>
                     <Route path="children" element={<ChildrenClothingPage />}/>

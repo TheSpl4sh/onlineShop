@@ -9,22 +9,23 @@ const Catalog = require("../models/Catalog");
 // @access  Public
 router.get("/", async (req, res) => {
   try {
-    const { parentId, gender, size, price, color, material, sort, } = req.query;
+    const { parentId, size, price, color, material, sort, } = req.query;
     let catalog = await Catalog.find(); // отримуємо весь каталог
 
     // Фільтрація за параметрами
 	if (parentId) {
 		catalog = catalog.filter(product => product.parentId === parentId);
 	  }
-    if (gender) {
-      catalog = catalog.filter(product => product.gender === gender);
-    }
     if (size) {
       catalog = catalog.filter(product => product.size.includes(size));
     }
-	if (price) {
-		catalog = catalog.filter(product => product.price.includes(price));
-	  }
+    if (price) {
+      const { min, max } = price;
+      catalog = catalog.filter(product => product.price >= min && product.price <= max);
+    }
+	// if (price) {
+	// 	catalog = catalog.filter(product => product.price.includes(price));
+	//   }
     if (color) {
       catalog = catalog.filter(product => product.color.includes(color));
     }

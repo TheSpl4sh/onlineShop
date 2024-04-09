@@ -1,7 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation, useHistory } from 'react-router-dom';
 
 const ColorList = () => {
-  const [selectedColor, setSelectedColor] = useState(null);
+  const location = useLocation();
+  const history = useHistory();
+
+  // Отримання значення кольору з URL
+  const initialColor = new URLSearchParams(location.search).get('color');
+  const [selectedColor, setSelectedColor] = useState(initialColor);
+
+  // Функція для оновлення URL з новим значенням кольору
+  const updateURL = (color) => {
+    const searchParams = new URLSearchParams(location.search);
+    searchParams.set('color', color);
+    history.push({ search: searchParams.toString() });
+  };
+
+  // Відслідковування зміни кольору
+  useEffect(() => {
+    if (selectedColor) {
+      updateURL(selectedColor);
+    }
+  }, [selectedColor]);
 
   const handleColorChange = (color) => {
     setSelectedColor(color);
@@ -17,7 +37,7 @@ const ColorList = () => {
           value="black"
           checked={selectedColor === 'black'}
           onChange={() => handleColorChange('black')}
-          style={{padding: '5px', border: 'none', backgroundColor: '#282828', visibility: 'visible', outline: selectedColor === 'black' ? '2px solid #282828' : 'none' }}
+          style={{ padding: '5px', border: 'none', backgroundColor: '#282828', visibility: 'visible', outline: selectedColor === 'black' ? '2px solid #282828' : 'none' }}
         />
       </label>
       <label>
@@ -27,7 +47,7 @@ const ColorList = () => {
           value="blue"
           checked={selectedColor === 'blue'}
           onChange={() => handleColorChange('blue')}
-          style={{padding: '5px', border: 'none', backgroundColor: '#4296C3', visibility: 'visible', outline: selectedColor === 'blue' ? '2px solid #4296C3' : 'none' }}
+          style={{ padding: '5px', border: 'none', backgroundColor: '#4296C3', visibility: 'visible', outline: selectedColor === 'blue' ? '2px solid #4296C3' : 'none' }}
         />
       </label>
       <label>
@@ -37,7 +57,7 @@ const ColorList = () => {
           value="red"
           checked={selectedColor === 'red'}
           onChange={() => handleColorChange('red')}
-          style={{padding: '5px', border: 'none', backgroundColor: '#CF3D48', visibility: 'visible', outline: selectedColor === 'red' ? '2px solid #CF3D48' : 'none' }}
+          style={{ padding: '5px', border: 'none', backgroundColor: '#CF3D48', visibility: 'visible', outline: selectedColor === 'red' ? '2px solid #CF3D48' : 'none' }}
         />
       </label>
       <label>
@@ -47,7 +67,7 @@ const ColorList = () => {
           value="white"
           checked={selectedColor === 'white'}
           onChange={() => handleColorChange('white')}
-          style={{padding: '5px', border: 'none', backgroundColor: '#ECF2F4', visibility: 'visible', outline: selectedColor === 'white' ? '2px solid #ECF2F4' : 'none' }}
+          style={{ padding: '5px', border: 'none', backgroundColor: '#ECF2F4', visibility: 'visible', outline: selectedColor === 'white' ? '2px solid #ECF2F4' : 'none' }}
         />
       </label>
     </div>
