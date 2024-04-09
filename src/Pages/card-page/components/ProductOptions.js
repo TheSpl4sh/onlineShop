@@ -44,7 +44,6 @@ const ProductOptions = () => {
             <p>
                 Поки що відгуків нема
             </p> 
-            <ButtonResponseWhite/>
         </div>
       )}
     </div>
