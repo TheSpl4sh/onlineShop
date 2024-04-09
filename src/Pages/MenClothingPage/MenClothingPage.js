@@ -11,6 +11,7 @@ import {
   SelectMaterial,
 } from "../../components/Select";
 import axios from "axios";
+import ModalFilter from "../../components/Modal/ModalFilter";
 
 import "../AllProductsPage/AllProductsPage.scss";
 
@@ -105,15 +106,32 @@ const MenClothingPage = () => {
       <h1>Коллекция Air Max</h1>
       <hr />
       <div className="select-mobile">
-        <div className="select-mobile__button">
+      <div className="select-mobile__button">
           <MenuToggle
             toggle={toggleFilters}
             open={isFiltersOpen}
             onClick={toggleFilters}
           />
-          Показати фільтри
+          {!isFiltersOpen ? (
+            <button onClick={toggleFilters}>Показати фільтри</button>
+          ) : (
+            <button onClick={toggleFilters}>Сховати фільтри</button>
+          )}
         </div>
       </div>
+      {isFiltersOpen && (
+        <ModalFilter
+          isOpen={isFiltersOpen}
+          handleClose={toggleFilters}
+          props={{
+            handleSizeChange,
+            handleColorChange,
+            handleMaterialChange,
+            clearFilters,
+            handleSortChange,
+          }}
+        />
+      )}
       <div className="select-wrapper">
         <div className="select-wrapper__item">
           <SelectSize onChange={handleSizeChange}/>

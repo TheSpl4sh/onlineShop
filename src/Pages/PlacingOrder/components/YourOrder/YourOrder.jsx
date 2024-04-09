@@ -3,30 +3,31 @@ import ButtonBlackArrow from "../../../../../src/components/Button/ButtonBlackAr
 import lineSum from "../../img/Line-sum.png";
 import "../../../PlacingOrder/PlacingOrder.scss";
 
-import Modal from "../../components/Modal/Modal";
-import "../../components/Modal/Modal.scss";
+// import { customerEmail } from "../Forma/Forma";
+
+import Modal from "../../../../components/ModalUniversal/Modal";
+import "../../../../components/ModalUniversal/Modal.scss";
 
 import "../YourOrder/YourOrder.scss";
-import CustomCheckbox from "../CustomCheckbox/CustomCheckebox";
+import CustomCheckbox from "../CustomCheckbox/CustomCheckbox";
+import CustomRadio from "../CustomRadio/CustomRadio";
+import ButtonModal from "../../../../components/Button/ButtonModal/ButtonModal";
 
 function YourOrder() {
   const [summa] = useState(0);
-  // const [selectedDeliveryOption, setSelectedDeliveryOption] = useState("");
-  // const [selectedPaymentOption, setSelectedPaymentOption] = useState("");
-  // const [agreeToPrivacyPolicy, setAgreeToPrivacyPolicy] = useState(false);
+  const [selectedDeliveryOption, setSelectedDeliveryOption] = useState("");
+  const [selectedPaymentOption, setSelectedPaymentOption] = useState("");
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
-  const [selectedModal, setSelectedModal] = useState(null);
-
-  const openModal = (modal) => {
-    setSelectedModal(modal);
+  const openModal = () => {
+    console.log("Модальне вікно відкрите");
     setModalIsOpen(true);
   };
 
   const closeModal = () => {
+    console.log("Модальне вікно закрите");
     setModalIsOpen(false);
-    setSelectedModal(null);
   };
 
   const handleOutsideClick = (e) => {
@@ -34,21 +35,89 @@ function YourOrder() {
       closeModal();
     }
   };
-  
+
+  // const customerEmail = "example@example.com";
+
+  // const sendOrderEmail = () => {
+  //   // Формуємо текст повідомлення з даними замовлення
+  //   const message = `Дякуємо за замовлення!\n\nДоставка: ${selectedDeliveryOption}\nОплата: ${selectedPaymentOption}\nСума: ${summa}`;
+
+  //   // Відправляємо лист на електронну адресу замовника
+  //   fetch("/send-email", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({ email: customerEmail, message }),
+  //   })
+  //     .then((response) => {
+  //       if (response.ok) {
+  //         console.log("Email sent successfully!");
+  //       } else {
+  //         console.error("Failed to send email.");
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error sending email:", error);
+  //     });
+  // };
+
+  //   const customerEmail = document.getElementById("customerEmail").value;
+  // sendOrderEmail(customerEmail);
+
+  // const sendOrderEmail = (email) => {
+  //   // Формуємо текст повідомлення з даними замовлення
+  //   const message = `Дякуємо за замовлення!\n\nДоставка: ${selectedDeliveryOption}\nОплата: ${selectedPaymentOption}\nСума: ${summa}`;
+
+  //   // Відправляємо лист на електронну адресу замовника
+  //   fetch("/send-email", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({ email, message }),
+  //   })
+  //     .then((response) => {
+  //       if (response.ok) {
+  //         console.log("Email sent successfully!");
+  //       } else {
+  //         console.error("Failed to send email.");
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error sending email:", error);
+  //     });
+  // };
+
+  const sendOrderEmail = (email) => {
+    // Формуємо текст повідомлення з даними замовлення
+    const message = `Дякуємо за замовлення!\n\nДоставка: ${selectedDeliveryOption}\nОплата: ${selectedPaymentOption}\nСума: ${summa}`;
+
+    // Відправляємо лист на електронну адресу замовника
+    fetch("/send-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, message }),
+    })
+      .then((response) => {
+        if (response.ok) {
+          console.log("Email sent successfully!");
+        } else {
+          console.error("Failed to send email.");
+        }
+      })
+      .catch((error) => {
+        console.error("Error sending email:", error);
+      });
+  };
+
   return (
     <div className="wrapper-yourOrder">
       <div className="yourOrder">
         <h1>Ваше замовлення</h1>
         <div className="yourOrder-basket">
-          {/* 
-                <ul>
-              {orders.map((order, index) => (
-                <li key={index}>
-                  {order.productName}: {order.price}
-                </li>
-              ))}
-            </ul> */}
-
           <p className="yourOrder-sum">
             Сума
             <img className="line-sum" src={lineSum} alt="line-sum" />
@@ -64,43 +133,32 @@ function YourOrder() {
         <div className="delivery-header">
           <label htmlFor="delivery">Доставка:</label>
         </div>
-
         <ul>
-          <li className="delivery-options">
-            <input
-              className="delivery-radio"
-              type="radio"
-              id="option1"
-              name="delivery-option"
-              value="delivery-radio"
-              // checked={selectedDeliveryOption === "Pickup from the store"}
-              // onChange={() =>
-              //   setSelectedDeliveryOption("Pickup from the store")
-              // }
-            />
+          <CustomRadio
+            id="option1"
+            name="delivery-option"
+            value="Pickup from the store"
+            checked={selectedDeliveryOption === "Pickup from the store"}
+            onChange={() => setSelectedDeliveryOption("Pickup from the store")}
+            label="Самовивіз з магазину"
+          />
 
-            <label htmlFor="option1">Самовивіз з магазину</label>
-          </li>
-          <li className="delivery-options">
-            <input
-              className="delivery-radio"
-              type="radio"
-              id="option2"
-              name="option"
-              value="option2"
-            />
-            <label htmlFor="option2">Київ</label>
-          </li>
-          <li className="delivery-options">
-            <input
-              className="delivery-radio"
-              type="radio"
-              id="option3"
-              name="option"
-              value="option3"
-            />
-            <label htmlFor="option3">Львів</label>
-          </li>
+          <CustomRadio
+            id="option2"
+            name="option"
+            value="Київ"
+            checked={selectedDeliveryOption === "Київ"}
+            onChange={() => setSelectedDeliveryOption("Київ")}
+            label="Київ"
+          />
+          <CustomRadio
+            id="option3"
+            name="option"
+            value="Львів"
+            checked={selectedDeliveryOption === "Львів"}
+            onChange={() => setSelectedDeliveryOption("Львів")}
+            label="Львів"
+          />
         </ul>
       </div>
 
@@ -109,62 +167,61 @@ function YourOrder() {
           <label htmlFor="payment">Оплата:</label>
         </div>
         <ul>
-          <li className="payment-options">
-            <input
-              className="payment-radio"
-              type="radio"
-              id="online-payment"
-              name=""
-              value="Online payment"
-              // checked={selectedPaymentOption === "Online payment"}
-              // onChange={() => setSelectedPaymentOption("Online payment")}
-            />
-            <label htmlFor="optionOnline-payment">Онлайн оплата</label>
-          </li>
-          <li className="payment-options">
-            <input
-              className="payment-radio"
-              type="radio"
-              id="optionCard upon receipt"
-              name="options"
-              value="optionCard upon receipt"
-            />
-            <label htmlFor="option">Картою при отриманні</label>
-          </li>
-          <li className="payment-options">
-            <input
-              className="payment-radio"
-              type="radio"
-              id="optionIn cash"
-              name="options"
-              value="optionIn cash"
-            />
-            <label htmlFor="optionIn cash">Готівкою</label>
-          </li>
+          <CustomRadio
+            id="online-payment"
+            name="payment-option"
+            value="Online payment"
+            checked={selectedPaymentOption === "Online payment"}
+            onChange={() => setSelectedPaymentOption("Online payment")}
+            label="Онлайн оплата"
+          />
+          <CustomRadio
+            id="optionCard-upon-receipt"
+            name="payment-option"
+            value="Card upon receipt"
+            checked={selectedPaymentOption === "Card upon receipt"}
+            onChange={() => setSelectedPaymentOption("Card upon receipt")}
+            label="Картою при отриманні"
+          />
+          <CustomRadio
+            id="option-in-cash"
+            name="payment-option"
+            value="In cash"
+            checked={selectedPaymentOption === "In cash"}
+            onChange={() => setSelectedPaymentOption("In cash")}
+            label="Готівкою"
+          />
         </ul>
       </div>
       <div>
         <CustomCheckbox text="Я погоджуюсь на обробку персональних даних відповідно до політики конфіденційності" />
       </div>
       <div className="button-order">
+
         <ButtonBlackArrow
           text="Оформити замовлення"
-          onClick={() => openModal("Modal")}
+          onClick={() => {
+            const customerEmail =
+              document.getElementById("customerEmail").value; // Отримуємо електронну адресу з форми
+            sendOrderEmail(customerEmail);
+            openModal();
+            console.log("Модальне вікно відкрите");
+          }}
         />
       </div>
 
-      {modalIsOpen && selectedModal === "Modal" && (
-        <div className="wrapper" onClick={handleOutsideClick}>
+      {modalIsOpen && (
+        <div className="wrapper-item" onClick={handleOutsideClick}>
           <Modal
-            header="Modal 2"
+            header="Підтвердження замовлення"
             closeButton={true}
-            text="Second modal window"
+            text="Ваше замовлення успішно оформлено!"
             onClose={closeModal}
+            show={modalIsOpen}
             actions={
-              <button
+              <ButtonModal
                 onClick={closeModal}
-                backgroundColor="darkorchid"
-                text="ADO TO FAVORITE"
+                text="Закрити"
               />
             }
           />
