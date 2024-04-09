@@ -5,6 +5,7 @@ import { TbUserEdit } from "react-icons/tb";
 import { TfiViewListAlt } from "react-icons/tfi";
 import { RxExit } from "react-icons/rx";
 import { NavLink } from "react-router-dom";
+import  NameForm  from "./NameEditForm/NameEditForm";
 
 
 const AccountComponent = () => {
@@ -67,7 +68,7 @@ const AccountComponent = () => {
                         <p className='content-title'>Редагувати профіль</p>
                         <div className='account-components__edit'>
                             <div className='account-components__edit-container'>
-                               
+                                <NameForm />
                             </div>
                         </div>
                     </>
