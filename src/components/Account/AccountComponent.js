@@ -66,8 +66,8 @@ const AccountComponent = () => {
                     <>
                         <p className='content-title'>Редагувати профіль</p>
                         <div className='account-components__edit'>
-                            <div className='account-components__edit'>
-
+                            <div className='account-components__edit-container'>
+                               
                             </div>
                         </div>
                     </>
