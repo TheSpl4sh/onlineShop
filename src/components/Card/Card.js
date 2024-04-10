@@ -1,19 +1,17 @@
 import React from "react";
- import Slider from "../Slider/Slider";
+//  import Slider from "../Slider/Slider";
 import './vertical-card.scss';
-// import sneakerSmall from './images/sneaker-small.png';
 import { Link } from "react-router-dom";
 
-
-const Card = ({ item, /* style_color */ }) => {
+const Card = ({ item }) => {
     const {style_color} = item
     
     return (
             <div className="vertical-card">
                 <div className="vertical-card__img-container">
-                    {/* <Link to='card'> */}
+                    <Link to={`/card/${item.id}`}>
                         <img src={item.logo_img} alt="sneaker" draggable="false" className="vertical-card__logo" />
-                    {/* </Link> */}
+                    </Link>
 
                      <div className="vertical-card__chips vertical-card__chips--new">{item.chips}</div>
                      <button className="favorite-button"></button>

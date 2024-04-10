@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchCatalog } from '../../redux/catalog/catalogSlice';
-import Card from '../Card/Card'
-import { Link } from 'react-router-dom';
+import Card from '../Card/Card';
 // import data from './data.json'
 
 function ProductsList() {
@@ -23,12 +22,10 @@ function ProductsList() {
       {catalogStatus === 'succeeded' && (
         <>
           {catalog.map((product) => (
-            <Link to={`/card/${product.id}`} key={product.id}>
               <Card 
                 item={product}
                 key={product.id}
               />
-            </Link>
           ))}
         </>
       )}

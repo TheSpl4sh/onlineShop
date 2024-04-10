@@ -8,10 +8,28 @@ import ImgContainer from "./components/ImgContainer.js";
 import ColorList from './components/ColorList.js'
 import CardCounter from "./components/CardCounter.js";
 import CardCounterMd from "./components/CardCounterMd.js";
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 
 function CardPage() {
+    const { id } = useParams(); // Получение параметра id из URL
     
+    const [product, setProduct] = useState(null);
+
+  /* useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        const response = await axios.get(`api/catalog/${id}`); // Пример URL-адреса запроса
+        setProduct(response.data);
+      } catch (error) {
+        console.error("Error fetching product data:", error);
+      }
+    };
+
+    fetchProduct();
+  }, [id]); */
     return(
         <div className="container card-page">
             <Links/>
@@ -19,7 +37,7 @@ function CardPage() {
             <ImgContainer/>
                 <div className="text-container">
                     <h1 className="text-container__title">
-                        Кросівки Nike Air VaporMax 2023 Flyknit
+                        {/* {product.name} */}
                     </h1>
                     <p className="text-container__description">
                          Кросівки Nike Air VaporMax 2023 Flyknit з підтримуючою амортизацією, створеною для плавного бігу, є абсолютно новим поглядом на знайому колекцію.
