@@ -62,29 +62,32 @@
     &__content {
         margin-top: 50px;
     }
+}
 
-    &__orders {
-        // display: flex;
-        // margin-top: 25px;
-        // padding-left: 30px;
-        // width: 1000px;
-        // height: 229px;
-        // border: 1px solid #EAEAEA;
+.account-orders {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding-top: 15px;
 
-        display: flex;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        // padding-top: 15px;
+    @media (min-width: 768px) {
+        padding-top: 27px;
+    }
 
-        // @media (min-width: 768px) {
-        //      padding-top: 27px;
-        //  }
+    @media (min-width: 1025px) {
+        padding: 40px 0 90px 0;
+    }
 
-        // @media (min-width: 1025px) {
-        //     padding: 40px 0 90px 0;
-        // }
+    &__content {
+        font-family: 'Pragmatica';
+        flex-basis: 100%;
+        padding-right: 0;
 
-    } 
+        @media (min-width: 1025px) {
+            flex-basis: 75%;
+            padding-right: 20px;
+        }
+    }
 
     &__table {
         width: 100%;
@@ -100,8 +103,8 @@
             display: table-header-group;
         }
     }
-    
-    &__row-item {
+
+    &__item {
         @include font (14px, 700, 24px, #373737);
         padding: 15px 20px;
         text-align: left;
@@ -110,6 +113,18 @@
         &:last-child {
             padding-right: 6px;
         }
+    }
+
+    &__card td {
+        height: 100px;
+        border-top: 1px solid #ECECEC;
+        padding: 15px 20px;
+    }
+
+    &__order td {
+        height: 100px;
+        border-top: 1px solid #ECECEC;
+        padding: 15px 20px;
     }
 }
 

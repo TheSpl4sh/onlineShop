@@ -81,12 +81,6 @@ const NameForm = () => {
                 <div>{errors.confirmNewName}</div>
               ) : null}
             </div>
-            {/* <button
-                type="submit"
-                className='edit-button'
-              >
-                Змінити ім'я
-              </button> */}
             <SubmitButton 
               path="/account"
               text="Змінити ім'я"

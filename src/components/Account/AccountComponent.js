@@ -35,32 +35,35 @@ const AccountComponent = () => {
                 {activeTab === 'orders' && (
                     <>
                         <p className='content-title'>Вітаю, Іван!</p>
-                        <div className='account-components__orders'>
-                            <table className='account-components__table'>
-                                <thead className='account-components__head'>
-                                    <tr className='account-components__row'>
-                                        <th className='account-components__row-list'>Номер</th>
-                                        <th className='account-components__row-list'>Дата</th>
-                                        <th className='account-components__row-list'>Статус</th>
-                                        <th className='account-components__row-list'>Разом</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>#23234-11</td>
-                                        <td>31 Березня 2024</td>
-                                        <td>Виконаний</td>
-                                        <td>12 932</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div className='account-orders'>
+                            <div className='account-orders__content'>
+                                <table className='account-orders__table'>
+                                    <thead className='account-orders__header'>
+                                        <tr className='account-orders__row'>
+                                            <th className='account-orders__item'>Номер</th>
+                                            <th className='account-orders__item'>Дата</th>
+                                            <th className='account-orders__item'>Статус</th>
+                                            <th className='account-orders__item'>Разом</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr className="account-orders__order">
+                                            <td>#23234-11</td>
+                                            <td>31 Березня 2024</td>
+                                            <td>Виконаний</td>
+                                            <td>12 932</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
+
                     </>
                 )}
                 {activeTab === 'edit' && (
