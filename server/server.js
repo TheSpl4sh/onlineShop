@@ -94,4 +94,46 @@ const initializeProductCatalog = async () => {
   }
 };
 
-initializeProductCatalog().catch(console.error);
+// initializeProductCatalog().catch(console.error);
+
+
+// // Підключення до бази даних MongoDB
+// mongoose.connect('mongodb://localhost:27017/mydatabase', { useNewUrlParser: true, useUnifiedTopology: true });
+// const db = mongoose.connection;
+// db.on('error', console.error.bind(console, 'connection error:'));
+// db.once('open', function() {
+//   console.log("Connected to MongoDB");
+// });
+
+// // Створення схеми та моделі даних
+// const dataSchema = new mongoose.Schema({
+//   value: String,
+//   id: String
+// });
+
+// const Data = mongoose.model('Data', dataSchema);
+
+// // Встановлення парсера для обробки даних в форматі JSON
+// app.use(bodyParser.json());
+
+// // Маршрут для збереження даних на сервері
+// app.post('/saveData', (req, res) => {
+//   const newData = new Data({
+//     value: req.body.value,
+//     id: req.body.id
+//   });
+
+//   newData.save((err, savedData) => {
+//     if (err) {
+//       console.error(err);
+//       res.status(500).send('Failed to save data');
+//     } else {
+//       res.status(200).send('Data saved successfully');
+//     }
+//   });
+// });
+
+// // Запуск сервера
+// app.listen(port, () => {
+//   console.log(`Server is listening at http://localhost:${port}`);
+// });
