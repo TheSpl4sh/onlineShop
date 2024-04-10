@@ -1,8 +1,7 @@
-import React, { useState } from "react";
 import Links from "./components/Links";
 import './style/card-page.scss'
 import Size from './components/Size'
-import ButtonBlackBasket from '../../components/ButtonBlackBasket/ButtonBlackBasket'
+// import ButtonBlackBasket from '../../components/ButtonBlackBasket/ButtonBlackBasket'
 import ProductOptions from './components/ProductOptions.js'
 import ImgContainer from "./components/ImgContainer.js";
 import ColorList from './components/ColorList.js'
@@ -11,13 +10,15 @@ import CardCounterMd from "./components/CardCounterMd.js";
 import CardPagePost from "./components/CardPagePost.js";
 import BelowHeaderBreadcrumbs from '../../components/BelowHeaderBreadcrumbs/BelowHeaderBreadcrumbs';
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useState } from "react";
+import { useSelector } from 'react-redux';
 
 
 function CardPage() {
+    const { id } = useParams(); 
     const [selectedSize, setSelectedSize] = useState("");
     const [selectedColor, setSelectedColor] = useState("");
+    const product = useSelector((state) => state.catalog.items.find((item) => item.id === id))
 
     const handleSizeChange = (size) => {
         setSelectedSize(size);
@@ -27,10 +28,9 @@ function CardPage() {
         setSelectedColor(color);
     };
     
-    const { _id } = useParams(); 
-    const [product, setProduct] = useState(null);
+    
 
-  useEffect(() => {
+  /* useEffect(() => {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(`api/products/${_id}`); // Пример URL-адреса запроса
@@ -41,7 +41,7 @@ function CardPage() {
     };
     fetchProduct();
     
-  }, [_id]);
+  }, [_id]); */
     
 
   
@@ -50,22 +50,21 @@ function CardPage() {
                <BelowHeaderBreadcrumbs
                 paths={[
                     { label: "Swoosh Store", url: "/" },
-                    { label: "Nike Air VaporMax 2023 Flyknit", url: "/card" },
+                    { label: "Nike Air VaporMax 2023 Flyknit", url: "/products" },
                 ]}
             />
-          {console.log(_id)}
             <Links/>
             <div className="content-container">
             <ImgContainer/>
                 <div className="text-container">
                     <h1 className="text-container__title">
-                    NIKE AIR FORCE 1 LOW X AMBUSH
+                    {product.name}
                     </h1>
                     <p className="text-container__description">
-                         Кросівки Nike Air VaporMax 2023 Flyknit з підтримуючою амортизацією, створеною для плавного бігу, є абсолютно новим поглядом на знайому колекцію.
+                         {product.description}
                     </p>
                     <a href="/link" className="all-description">
-                        Повний опис
+                        {}
                     </a>
                   <ColorList onSelectColor={handleColorChange}/>
                    <Size onSelectSize={handleSizeChange}/>

@@ -9,7 +9,7 @@ const Card = ({ item }) => {
     return (
             <div className="vertical-card">
                 <div className="vertical-card__img-container">
-                    <Link to={`/products/${item._id}`}>
+                    <Link to={`/products/${item.id}`}>
                         <img src={item.logo_img} alt="sneaker" draggable="false" className="vertical-card__logo" />
                     </Link>
 
