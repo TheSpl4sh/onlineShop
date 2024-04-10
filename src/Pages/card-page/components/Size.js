@@ -1,18 +1,23 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 function Size() {
-  const [activeId, setActiveId] = useState("");
+  const location = useLocation();
+  const params = new URLSearchParams(location.search);
+  const navigate = useNavigate();
 
-    const handleButtonClick = (id) => {
-        if (activeId === id) {
-            setActiveId("");
-        } else {
-            setActiveId(id);
-        }
-    };
+  const [activeId, setActiveId] = useState(params.get('size') || "");
 
-    console.log("Active ID:", activeId);
+  const handleButtonClick = (id) => {
+    setActiveId(id === activeId ? "" : id);
+  };
+
+  useEffect(() => {
+    params.set('size', activeId);
+    navigate({ search: params.toString() });
+  }, [activeId]);
+
+  console.log("Active ID:", activeId);
     return(
         <div className="size-chart">
                         <div className="size-chart__container">

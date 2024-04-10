@@ -26,6 +26,7 @@ import { ChildrenClothingPage } from "./Pages/ChildrenClothingPage/ChildrenCloth
 import { SaleClothingPage } from "./Pages/SaleClothingPage/SaleClothingPage";
 import { AboutUs } from "./Pages/AboutUs/AboutUs"
 import ProtectedRoute from "./routes/ProtectedRoute";
+import ColorList from './Pages/card-page/components/ColorList.js';
 
 function App() {
     const dispatch = useDispatch();

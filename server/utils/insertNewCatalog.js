@@ -1,5 +1,5 @@
 const Catalog = require('../models/Catalog')
-const productCatalogFile = require('./data.json')
+const productCatalogFile = require('../data.json')
 
 const initializeProductCatalog = async () => {
   try {
