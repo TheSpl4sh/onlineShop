@@ -5,7 +5,7 @@ import { TbUserEdit } from "react-icons/tb";
 import { TfiViewListAlt } from "react-icons/tfi";
 import { RxExit } from "react-icons/rx";
 import { NavLink } from "react-router-dom";
-import  NameForm  from "./NameEditForm/NameEditForm";
+import NameForm from "./NameEditForm/NameEditForm";
 
 
 const AccountComponent = () => {
@@ -19,48 +19,48 @@ const AccountComponent = () => {
                     <span className='account-components__title'>Мій профіль</span>
                 </li>
                 <li className={`account-components__list ${activeTab === 'edit' ? 'active' : ''}`} onClick={() => setActiveTab('edit')}>
-                    <TbUserEdit className='account-components__icon'/>
+                    <TbUserEdit className='account-components__icon' />
                     <span className='account-components__title'>Редагувати Профіль</span>
                 </li>
                 <NavLink to="/favorites" className={`account-components__list ${activeTab === 'favorites' ? 'active' : ''}`} onClick={() => setActiveTab('favorites')}>
-                    <TfiViewListAlt className='account-components__icon'/>
+                    <TfiViewListAlt className='account-components__icon' />
                     <span className='account-components__title'>Обрані Товари</span>
                 </NavLink>
                 <li className={`account-components__list ${activeTab === 'exit' ? 'active' : ''}`} onClick={() => setActiveTab('exit')}>
-                    <RxExit className='account-components__icon'/>
+                    <RxExit className='account-components__icon' />
                     <span className='account-components__title'>Вийти з Аккаунту</span>
                 </li>
             </ul>
             <div className='account-components__content'>
                 {activeTab === 'orders' && (
                     <>
-                    <p className='content-title'>Вітаю, Іван!</p>
-                    <div className='account-components__orders'>
-                        <table className='account-components__table'>
-                            <thead className='account-components__head'>
-                                <tr className='account-components__row'>
-                                    <th className='account-components__row-list'>Номер</th>
-                                    <th className='account-components__row-list'>Дата</th>
-                                    <th className='account-components__row-list'>Статус</th>
-                                    <th className='account-components__row-list'>Разом</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>#23234-11</td>
-                                    <td>31 Березня 2024</td>
-                                    <td>Виконаний</td>
-                                    <td>12 932</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>                                   
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                        <p className='content-title'>Вітаю, Іван!</p>
+                        <div className='account-components__orders'>
+                            <table className='account-components__table'>
+                                <thead className='account-components__head'>
+                                    <tr className='account-components__row'>
+                                        <th className='account-components__row-list'>Номер</th>
+                                        <th className='account-components__row-list'>Дата</th>
+                                        <th className='account-components__row-list'>Статус</th>
+                                        <th className='account-components__row-list'>Разом</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>#23234-11</td>
+                                        <td>31 Березня 2024</td>
+                                        <td>Виконаний</td>
+                                        <td>12 932</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </>
                 )}
                 {activeTab === 'edit' && (
@@ -85,6 +85,6 @@ const AccountComponent = () => {
             )} */}
         </div>
     )
- };
+};
 
- export default AccountComponent;
+export default AccountComponent;

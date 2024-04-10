@@ -6,6 +6,7 @@
 .account-components {
     &__container {
         display: flex;
+        margin-bottom: 120px;
     }
 
     &__menu {
@@ -73,15 +74,15 @@
         display: flex;
         flex-wrap: wrap;
         align-items: flex-start;
-        padding-top: 15px;
+        // padding-top: 15px;
 
-        @media (min-width: 768px) {
-             padding-top: 27px;
-         }
+        // @media (min-width: 768px) {
+        //      padding-top: 27px;
+        //  }
 
-        @media (min-width: 1025px) {
-            padding: 40px 0 90px 0;
-        }
+        // @media (min-width: 1025px) {
+        //     padding: 40px 0 90px 0;
+        // }
 
     } 
 
@@ -113,6 +114,8 @@
 }
 
 .content-title {
+    margin-bottom: 30px;
+
     font-family: 'Pragmatica';
     @include font (28px, 500, 33px, $dark-black);
     padding: 12px 0;

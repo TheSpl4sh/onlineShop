@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
+import "./NameEditForm.scss";
+import { ReactComponent as BlackSvg } from "../../LinkButton/icons/black_btn_svg.svg";
+import SubmitButton from '../../LinkButton/SubmitButton';
 
 const validationSchema = Yup.object({
   currentName: Yup.string()
@@ -35,41 +38,62 @@ const NameForm = () => {
         onSubmit={handleSubmit}
       >
         {({ errors, touched }) => (
-          <Form>
-            <div>
-              <label htmlFor="currentName">Поточне ім'я</label>
-              <Field 
-                name="currentName" 
-                type="text" 
+          <Form className='editname-form'>
+            <div className=''>
+              <label htmlFor="currentName" className="editname-form__label">
+                Поточне ім'я <span className="orange-star">*</span>
+              </label>
+              <Field
+                name="currentName"
+                type="text"
                 placeholder="Введіть поточне ім'я користувача"
+                className="editname-form__input"
               />
               {errors.currentName && touched.currentName ? (
                 <div>{errors.currentName}</div>
               ) : null}
             </div>
             <div>
-              <label htmlFor="newName">Нове ім'я</label>
-              <Field 
-                name="newName" 
-                type="text" 
+              <label htmlFor="newName" className="editname-form__label">
+                Нове ім'я <span className="orange-star">*</span>
+              </label>
+              <Field
+                name="newName"
+                type="text"
                 placeholder="Введіть нове ім'я користувача"
+                className="editname-form__input"
               />
               {errors.newName && touched.newName ? (
                 <div>{errors.newName}</div>
               ) : null}
             </div>
             <div>
-              <label htmlFor="confirmNewName">Підтвердіть нове ім'я</label>
-              <Field 
-                name="confirmNewName" 
-                type="text" 
+              <label htmlFor="confirmNewName" className="editname-form__label">
+                Підтвердіть нове ім'я <span className="orange-star">*</span>
+              </label>
+              <Field
+                name="confirmNewName"
+                type="text"
                 placeholder="Введіть нове ім'я ще раз"
+                className="editname-form__input"
               />
               {errors.confirmNewName && touched.confirmNewName ? (
                 <div>{errors.confirmNewName}</div>
               ) : null}
             </div>
-            <button type="submit">Змінити ім'я</button>
+            {/* <button
+                type="submit"
+                className='edit-button'
+              >
+                Змінити ім'я
+              </button> */}
+            <SubmitButton 
+              path="/account"
+              text="Змінити ім'я"
+              SvgIcon={BlackSvg}
+              className="black"
+              type="submit"
+            />
           </Form>
         )}
       </Formik>
