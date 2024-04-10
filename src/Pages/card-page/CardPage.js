@@ -14,30 +14,33 @@ import axios from "axios";
 
 
 function CardPage() {
-    const { id } = useParams(); // Получение параметра id из URL
-    
+    const { _id } = useParams(); 
     const [product, setProduct] = useState(null);
 
-  /* useEffect(() => {
+  useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(`api/catalog/${id}`); // Пример URL-адреса запроса
+        const response = await axios.get(`api/products/${_id}`); // Пример URL-адреса запроса
         setProduct(response.data);
       } catch (error) {
         console.error("Error fetching product data:", error);
       }
     };
-
     fetchProduct();
-  }, [id]); */
+    
+  }, [_id]);
+    
+
+  
     return(
         <div className="container card-page">
+          {console.log(_id)}
             <Links/>
             <div className="content-container">
             <ImgContainer/>
                 <div className="text-container">
                     <h1 className="text-container__title">
-                        {/* {product.name} */}
+                    NIKE AIR FORCE 1 LOW X AMBUSH
                     </h1>
                     <p className="text-container__description">
                          Кросівки Nike Air VaporMax 2023 Flyknit з підтримуючою амортизацією, створеною для плавного бігу, є абсолютно новим поглядом на знайому колекцію.

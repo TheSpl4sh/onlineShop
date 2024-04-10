@@ -25,7 +25,6 @@ const catalogSlice = createSlice({
       })
       .addCase(fetchCatalog.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        // Очищення масиву items перед додаванням нових даних
         state.items = action.payload;
       })
       .addCase(fetchCatalog.rejected, (state, action) => {
