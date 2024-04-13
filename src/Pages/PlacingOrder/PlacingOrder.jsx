@@ -2,7 +2,8 @@ import React from "react";
 import Forma from "../../Pages/PlacingOrder/components/Forma/Forma";
 import YourOrder from "../../Pages/PlacingOrder/components/YourOrder/YourOrder";
 
-function PlacingOrder() {
+function PlacingOrder(props) {
+
   return (
     <div className="container">
       <ul className="breadcrumb">
@@ -25,8 +26,8 @@ function PlacingOrder() {
       </ul>
       <div className="placingOrder-header">Оформлення замовлення</div>
       <div className="wrapper-placingOrder">
-        <Forma />
-        <YourOrder />
+        <Forma  onSubmit={props.sendOrderEmail}/>
+        <YourOrder  customerEmail={props.customerEmail} />
       </div>
     </div>
   );
