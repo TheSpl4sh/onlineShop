@@ -21,11 +21,6 @@ const Card = ({ item }) => {
 
 
                 <div className="vertical-card__description">
-                        {/* <span className="vertical-card__gender">
-                            {item.parentId === "men-clothing"
-                                ? "ЖІНОЧІ"
-                                : "ЧОЛОВІЧІ" }
-                        </span> */}
                         <span className="vertical-card__gender">
                         {item.parentId === "men-clothing"
                                ? "ЧОЛОВІЧІ"

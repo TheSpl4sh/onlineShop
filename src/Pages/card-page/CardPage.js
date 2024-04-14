@@ -27,8 +27,6 @@ function CardPage() {
     const handleColorChange = (color) => {
         setSelectedColor(color);
     };
-    
-    
 
   /* useEffect(() => {
     const fetchProduct = async () => {
@@ -44,6 +42,7 @@ function CardPage() {
   }, [_id]); */
     
 
+  let nameProd = product.name
   
     return(
         <div className="container card-page">
@@ -55,26 +54,28 @@ function CardPage() {
             />
             <Links/>
             <div className="content-container">
-            <ImgContainer/>
+            <ImgContainer
+            logo_img={product.logo_img}
+            />
                 <div className="text-container">
                     <h1 className="text-container__title">
-                    {product.name}
+                      {nameProd}
                     </h1>
                     <p className="text-container__description">
                          {product.description}
                     </p>
-                    <a href="/link" className="all-description">
-                        {}
-                    </a>
+                    {/* <a href="/link" className="all-description">
+                        {product.description}
+                    </a> */}
                   <ColorList onSelectColor={handleColorChange}/>
                    <Size onSelectSize={handleSizeChange}/>
                    <div className="card-page__price">
                        <div className="card-page__price-md">
                          <span className="card-page__price-original">
-                            7 999 $
+                            {product.previousPrice}
                         </span>
                         <span className="card-page__price-discount">
-                            6 329 $
+                            {product.price}
                         </span>
                        </div>
                         <CardCounterMd/>
@@ -86,12 +87,20 @@ function CardPage() {
                         </div>
                    </div>
                    <div className="card-page__options">
-                        <ProductOptions/>
+                        <ProductOptions 
+                        description = {product.description}
+                        color={product.color}
+                        material={product.material}
+                        />
                    </div>
                 </div>
             </div>
             <div className="card-page__options-md">
-                        <ProductOptions/>
+                        <ProductOptions
+                        description = {product.description}
+                        color={product.color}
+                        material={product.material}
+                        />
                    </div>
         </div>
     )
