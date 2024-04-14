@@ -1,22 +1,67 @@
-.search-section {
-  display: flex;
-align-items: center;
-cursor: pointer;
-}
-.search-form{
-	position: relative;
-	display: block;
-	// display: flex;
-	// align-items: center;
-	height: 20px;
+// .search-section {
+//   display: flex;
+// // align-items: center;
+// // cursor: pointer;
+// }
+// // .search-form{
+// // 	position: relative;
+// // 	display: block;
+// // 	// display: flex;
+// // 	// align-items: center;
+// // 	height: 20px;
 	
-}
-.search-input {
-	display: inline-block;
-  position: relative;
-  cursor: pointer;
-  height: 50px;
-  background-color: aqua;
-  margin-right: 27px;
-  margin-bottom: 27px;
+// // }
+// .search-form {
+//   position: relative;
+//   display: block;
+//   width: 200px; /* Задайте ширину відповідно до ваших потреб */
+//   height: auto; /* Задайте висоту, яка підходить для вас */
+// }
+// // .search-input {
+// // 	display: inline-block;
+// //   position: relative;
+// //   cursor: pointer;
+// //   height: 50px;
+// //   background-color: aqua;
+// //   margin-right: 27px;
+// //   margin-bottom: 27px;
+// // }
+// .search-input {
+//   display: inline-block;
+//   position: relative;
+//   cursor: pointer;
+//   height: 40px; /* Задайте більшу висоту, якщо потрібно */
+//   background-color: aqua;
+//   margin-right: 27px;
+//   margin-bottom: 27px;
+// }
+// .search-icon {
+//   display: flex;
+// }
+// .search-input {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+// }
+
+// =========================
+// .search-section{}
+// .search-icon{}
+ .search-form{
+  display: flex;
+  align-items: center;
+ }
+ .search-input{
+  position: absolute;
+  height: 72px;
+  width: 1000px;
+  z-index: 50;
+  left: 150px;
+
+
+font-size: 22px;
+font-weight: 500;
+line-height: 10px;
+text-align: left;
+
 }

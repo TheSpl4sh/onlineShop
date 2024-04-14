@@ -32,7 +32,7 @@ const Action = () => {
         )}
       </div>
 
-      <div className="header-icon__item">
+      <div className="header-icon__item header-icon__itemSearh">
         <Search/>
         
       </div>

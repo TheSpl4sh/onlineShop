@@ -15,7 +15,7 @@ import ModalFilter from "../../components/Modal/ModalFilter";
 
 import "../AllProductsPage/AllProductsPage.scss";
 
-const AllProductsPage = () => {
+const AllProductsPage = ({items}) => {
   const [isOpen, setIsOpen] = useState(false);
   const handelModal = () => setIsOpen(!isOpen);
 
@@ -103,7 +103,8 @@ const AllProductsPage = () => {
 
   return (
     <section className="catalog container">
-      <h1>Коллекция Air Max</h1>
+      <h1>{items}</h1>
+      {/* <h1>Коллекция Air Max</h1> */}
       <hr />
       <div className="select-mobile">
         <div className="select-mobile__button">

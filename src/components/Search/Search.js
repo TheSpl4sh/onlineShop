@@ -1,50 +1,58 @@
 import React, { useState } from "react";
 import { BsSearch } from "react-icons/bs";
+import axios from "axios";
 
-import "./Search.scss"
+import "./Search.scss";
 
-const Search = ({ onSearch }) => {
-  const [searchItem, setSearchItem] = useState("");
-  const [isFormVisible, setIsFormVisible] = useState(false);
+const Search = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [isHovered, setIsHovered] = useState(false);
+  const [searchResults, setSearchResults] = useState([]);
 
-  const handleInputChange = (e) => {
-    const searchGoods = e.target.value;
-    setSearchItem(searchGoods);
+  const onChange = (e) => {
+    setSearchQuery(e.target.value);
   };
 
-  const handleSearch = () => {
-    onSearch(searchItem);
+  const handleHover = () => {
+    setIsHovered(true);
   };
 
-  const handleIconClick = () => {
-    if (searchItem.trim() !== "") {
-      handleSearch();
+  const fetchSearchResults = async () => {
+    try {
+      const response = await axios.get(`/api/search?name=${searchQuery}`);
+      setSearchResults(response.data); // Зберігаємо результати пошуку
+    } catch (error) {
+      console.error('Помилка при отриманні результатів пошуку:', error);
     }
   };
 
   return (
-    <div className="search-section">
-      <div
-        className="search-icon"
-        onMouseEnter={() => setIsFormVisible(true)}
-        onMouseLeave={() => setIsFormVisible(false)}
-        onClick={handleIconClick}
-      >
-        <BsSearch />
-      </div>
-      {isFormVisible && (
-        <form className="search-form" onSubmit={(e) => { e.preventDefault(); handleSearch(); }}>
+    <>
+      {isHovered && (
+        <form 
+          className="search-form"
+          onMouseEnter={handleHover}
+          onMouseLeave={() => setIsHovered(false)}
+          onSubmit={(e) => { e.preventDefault(); fetchSearchResults(); }}
+        >
           <input
             className="search-input"
-            type="text"
-            value={searchItem}
-            onChange={handleInputChange}
+            type="search"
             placeholder="Пошук по каталогу товарів ..."
-            size={30}
+            value={searchQuery}
+            onChange={onChange}
           />
         </form>
       )}
-    </div>
+      <BsSearch
+        onMouseEnter={handleHover}
+      />
+      <div className="search-results">
+        {searchResults.map((result, index) => (
+          <div key={index}>{result.name}</div> // Виводимо ім'я товару
+        ))}
+      </div>
+    </>
   );
 };
 
@@ -52,11 +60,60 @@ export default Search;
 
 
 
+// =========================
+// import React, { useState } from "react";
+// import { BsSearch } from "react-icons/bs";
 
+// import "./Search.scss"
 
+// const Search = ({ onSearch }) => {
+//   const [searchItem, setSearchItem] = useState("");
+//   const [isFormVisible, setIsFormVisible] = useState(false);
 
+//   const handleInputChange = (e) => {
+//     const searchGoods = e.target.value;
+//     setSearchItem(searchGoods);
+//   };
 
+//   const handleSearch = () => {
+//     onSearch(searchItem);
+//   };
 
+//   const handleIconClick = () => {
+//     if (searchItem.trim() !== "") {
+//       handleSearch();
+//     }
+//   };
+
+//   return (
+//     <>
+//       {/* <div
+//         className="search-icon"
+
+//       > */}
+//         <BsSearch
+//         onMouseEnter={() => setIsFormVisible(true)}
+//         onMouseLeave={() => setIsFormVisible(false)}
+//         onClick={handleIconClick}
+//         />
+//       {/* </div> */}
+//       {isFormVisible && (
+//         <form className="search-form" onSubmit={(e) => { e.preventDefault(); handleSearch(); }}>
+//           <input
+//             className="search-input"
+//             type="text"
+//             value={searchItem}
+//             onChange={handleInputChange}
+//             placeholder="Пошук по каталогу товарів ..."
+//             size={30}
+//           />
+//         </form>
+//       )}
+//     </>
+//   );
+// };
+
+// export default Search;
 
 // ==================================
 // import { useState } from "react";
@@ -87,11 +144,11 @@ export default Search;
 //   };
 
 //   return (
-//     <div className="search-section">      
+//     <div className="search-section">
 //       {isHovered && (
-//         <form 
+//         <form
 //         className="search-form"
-//         onSubmit={(e) => { e.preventDefault(); handleSearch(); }} 
+//         onSubmit={(e) => { e.preventDefault(); handleSearch(); }}
 //         >
 //           <input
 //             className="search-input"
@@ -105,11 +162,10 @@ export default Search;
 //       )}
 //       {/* <div
 //         // className="search-icon"
-       
-        
+
 //       > */}
 //         <BsSearch
-//          onMouseEnter={handleIconMouseEnter} 
+//          onMouseEnter={handleIconMouseEnter}
 //          onMouseLeave={handleIconMouseLeave}
 //         onClick={handleSearch}
 //         />
@@ -119,11 +175,6 @@ export default Search;
 // };
 
 // export default Search;
-
-
-
-
-
 
 // ===============================================
 // import React, { useState } from "react";
@@ -178,12 +229,6 @@ export default Search;
 
 // export default Search;
 
-
-
-
-
-
-
 // ================================2
 
 // import React, { useState } from "react";
@@ -219,7 +264,6 @@ export default Search;
 // };
 
 // export default Search;
-
 
 // ===============================
 // import { useState } from "react";
