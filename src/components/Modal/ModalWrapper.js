@@ -1,15 +1,15 @@
 
-import './Modal.scss'
+// import './Modal.scss'
 
 
-const ModalWrapper = ({children, isOpen, handleOutside}) =>{
-    return(
-        <>
-        {isOpen && (<div className="modal-wrapper" onClick={(event)=>handleOutside(event)}>{children}</div>)}
-        </>
-    )
-}
+// const ModalWrapper = ({children, isOpen, handleOutside}) =>{
+//     return(
+//         <>
+//         {isOpen && (<div className="modal-wrapper" onClick={(event)=>handleOutside(event)}>{children}</div>)}
+//         </>
+//     )
+// }
 
 
 
-export default ModalWrapper;
+// export default ModalWrapper;

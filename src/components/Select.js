@@ -83,9 +83,9 @@ export const SelectMaterial = ({ onChange }) => {
 
   const options = [
     { value: "material", label: "шкіра" },
-    { value: "material", label: "синтетика" },
+    // { value: "material", label: "синтетика" },
     { value: "material", label: "текстиль" },
-    { value: "material", label: "трикотаж" },
+    // { value: "material", label: "трикотаж" },
     
   ];
   return (
