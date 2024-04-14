@@ -1,0 +1,15 @@
+.buttonModal-text {
+    min-width: 128px;
+    padding: 10px 20px 10px 20px;
+    color: #000000;
+    border: 1px solid #d6d6d6;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+  }
+
+  .buttonModal-text:hover {
+    background-color: #000000;
+    color: #fff;
+    border: 1px solid #000000;
+  }

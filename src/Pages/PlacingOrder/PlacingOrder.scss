@@ -78,20 +78,6 @@
   cursor: pointer;
 }
 
-.form-enter__button {
-  padding: 10px 20px 10px 20px;
-  color: #000;
-  background-color: #ffff;
-  border: 2px solid #d6d6d6;
-  cursor: pointer;
-}
-
-.form-enter__button:hover {
-  background-color: #000000;
-  border: 2px solid #000000;
-  color: #fff;
-}
-
 .form-enter__button-a {
   color: #000;
   background-color: #ffff;
@@ -116,6 +102,8 @@
 .form-item {
   width: 100%;
   padding-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .apply-promoCode {
@@ -123,8 +111,8 @@
 }
 
 .promo-code {
-  padding: 20px;
-  margin: 10px 0 10px 0;
+  padding: 20px 0 20px 0;
+  margin: 0px 0 0px 0;
   background-color: #f8f8f8;
 }
 
@@ -145,27 +133,37 @@
   padding: 10px 0 10px 0;
 }
 
+.promo-coupon {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 #coupon_code {
+  width: 50%;
   padding: 10px 20px 10px 20px;
-  border: 2px solid #d6d6d6;
+  margin: 0px 25px 10px 0px;
+  border: 1px solid #d6d6d6;
 }
 
 #coupon_code:hover {
-  border: 2px solid #000;
+  border: 1px solid #000;
 }
 
 #cp_apply {
+  width: 50%;
   padding: 10px 20px 10px 20px;
+  margin: 10px 0px 10px 0px;
   background-color: #fff;
   color: #000;
-  border: 2px solid #d6d6d6;
+  border: 1px solid #d6d6d6;
   cursor: pointer;
 }
 
 #cp_apply:hover {
   background-color: #000;
   color: #fff;
-  border: 2px solid #000;
+  border: 1px solid #000;
 }
 
 .help-password {
@@ -182,31 +180,32 @@
 }
 
 .PlacingOrder-formik {
-  border: 2px solid #eaeaea;
+  border: 1px solid #eaeaea;
 }
 
 .placingOrder-field {
   width: 100%;
-  border: 2px solid #d6d6d6;
+  border: 1px solid #d6d6d6;
   padding: 10px 20px 10px 20px;
   margin-bottom: 10px;
 }
 
 .placingOrder-field:hover {
-  border: 2px solid #000000;
+  border: 1px solid #000000;
 }
 
 .placingOrder-fields {
   width: 100%;
   min-height: 100px;
-  border: 2px solid #d6d6d6;
+  border: 1px solid #d6d6d6;
   padding: 10px 20px 10px 20px;
   margin-bottom: 10px;
   resize: vertical;
+  overflow-y: auto;
 }
 
 .placingOrder-fields:hover {
-  border: 2px solid #000000;
+  border: 1px solid #000000;
 }
 
 .form-element__text {
@@ -219,7 +218,7 @@
 
 .wrapper-yourOrder {
   padding: 25px;
-  border: 2px solid #eaeaea;
+  border: 3px solid #eaeaea;
 }
 
 .yourOrder-basket {
@@ -257,8 +256,6 @@
   line-height: 28px;
   letter-spacing: 0em;
   text-align: left;
-
-  margin-bottom: 20px;
 }
 
 .delivery-options {
@@ -285,8 +282,7 @@
   line-height: 28px;
   letter-spacing: 0em;
   text-align: left;
-
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .payment-options {

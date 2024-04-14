@@ -1,0 +1,37 @@
+.custom-radio {
+    .custom-radio-input {
+      display: none;
+    }
+  
+    .custom-radio-label {
+      cursor: pointer;
+      user-select: none;
+      color: #000;
+  
+     
+      &:hover {
+        text-decoration: underline;
+      }
+  
+      /* Зміна коліру тексту при кліку на радіо кнопку */
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 11px;
+        height: 11px;
+        margin-top: 15px;
+        margin-right: 8px;
+        border-radius: 50%;
+        background-color: #fff;
+        border: 1px solid #000;
+        
+        transition: background-color 0.3s ease;
+      }
+    }
+
+    .custom-radio-input:checked ~ .custom-radio-label::before {
+      background-color: #000;
+      box-shadow: 0 0 0 2px #fff;
+    }
+  }
+  

@@ -3,42 +3,49 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import "../../../PlacingOrder/PlacingOrder.scss";
 import "../../../PlacingOrder/components/Forma/Forma.scss";
-import CustomCheckbox from "../CustomCheckbox/CustomCheckebox";
+import ButtonModal from "../../../../components/Button/ButtonModal/ButtonModal";
+// import CustomCheckbox from "../CustomCheckbox/CustomCheckebox";
+import  sendOrderEmail  from "../YourOrder/YourOrder";
 
 function Forma() {
+
   const validationSchema = Yup.object().shape({
-    firstName: Yup.string().required("Поле і'мя є обов'язковим"),
-    lastName: Yup.string().required("Поле прізвища є обов'язковим"),
+    firstName: Yup.string().required("Поле ім'я є обов'язковим"),
+    lastName: Yup.string().required("Поле прізвищє є обов'язковим"),
     email: Yup.string()
       .email("Невірна адреса електронної пошти")
       .required("Поле адреси електронної пошти є обов'язковим"),
     phoneNumber: Yup.string().required("Поле номер телефону є обов'язковим"),
     region: Yup.string().required("Поле область є обов'язковим"),
     city: Yup.string().required("Поле місто є обов'язковим"),
-    street: Yup.string().required("Поле вулиця є обов'язковим"),
-    postalCode: Yup.string().required("Поле поштовий індекс є обов'язковим"),
-    houseNumber: Yup.string().required(
-      "Поле номер будинку та квартири є обов'язковим"
-    ),
+    newPost: Yup.string().required("Поле є обов'язковим"),
   });
+  
 
   const initialValues = {
     firstName: "",
     lastName: "",
-    company: "",
     region: "",
     city: "",
-    street: "",
-    postalCode: "",
-    houseNumber: "",
+    newPost: "",
     email: "",
     phoneNumber: "",
   };
 
+  // const handleSubmit = async (values) => {
+  //   await new Promise((resolve) => setTimeout(resolve, 500));
+  //   alert(JSON.stringify(values, null, 2));
+  // };
+
+  const [customerEmail, setCustomerEmail] = useState("");
+
   const handleSubmit = async (values) => {
     await new Promise((resolve) => setTimeout(resolve, 500));
+    setCustomerEmail(values.email); // Зберегти електронну пошту в стані
     alert(JSON.stringify(values, null, 2));
+    sendOrderEmail(values.email); // Передача електронної пошти в компонент YourOrder
   };
+  
 
   const togglePromoCoupon = () => {
     setShowPromoCoupon(!showPromoCoupon);
@@ -60,10 +67,6 @@ function Forma() {
     setShowRegion(true);
   };
 
-  const toggleHouseNumber = () => {
-    setShowHouseNumber(true);
-  };
-
   const toggleFirstName = () => {
     setShowFirstName(true);
   };
@@ -72,12 +75,8 @@ function Forma() {
     setShowCity(true);
   };
 
-  const togglePostalCode = () => {
-    setShowPostalCode(true);
-  };
-
   const toggleStreet = () => {
-    setShowStreet(true);
+    setShowNewPost(true);
   };
 
   const [showPromoCoupon, setShowPromoCoupon] = useState(false);
@@ -86,11 +85,7 @@ function Forma() {
 
   const [showFirstName, setShowFirstName] = useState(false);
 
-  const [showStreet, setShowStreet] = useState(false);
-
-  const [showPostalCode, setShowPostalCode] = useState(false);
-
-  const [showHouseNumber, setShowHouseNumber] = useState(false);
+  const [showNewPost, setShowNewPost] = useState(false);
 
   const [showEmail, setShowEmail] = useState(false);
 
@@ -101,372 +96,310 @@ function Forma() {
   const [showCity, setShowCity] = useState(false);
 
   return (
-    <div className="PlacingOrder-formik">
-      <Formik
-        initialValues={initialValues}
-        onSubmit={handleSubmit}
-        validationSchema={validationSchema}
-      >
-        {({ values, touched, errors }) => (
-          <Form className="registration-form">
-            <div className="form-enter_login-message">
-              <div className="form-enter">
-                <p className="form-enter__text">Вже є аккаунт?</p>
-                <a className="form-enter__button-a" href="/auth">
-                  <button type="button" className="form-enter__button">
-                    Введите
-                  </button>
-                </a>
-              </div>
-            </div>
-            <div className="apply-promoCode">
-              <div className="promo-code">
-                Чи є у Вас промокод?
-                <button
-                  type="button"
-                  onClick={togglePromoCoupon}
-                  className="click-active"
-                >
-                  Натисніть тут, щоб активувати його
-                </button>
-              </div>
-              {showPromoCoupon && (
-                <div className="promo-coupon">
-                  <label className="label-coupon">
-                    <span>Введіть промокод в поле:</span>
-                  </label>
-                  <div className="form-item">
-                    <Field
-                      name="coupon_code"
-                      id="coupon_code"
-                      type="text"
-                      placeholder="Промокод"
-                      value={values.coupon_code}
-                    />
-
-                    <button
-                      id="cp_apply"
-                      className="bt-outline apply-coup button"
-                    >
-                      Застосувати промокод
-                    </button>
-                  </div>
+    <>
+      {/* {!isUserLoggedIn && ( */}
+      <div className="PlacingOrder-formik">
+        <Formik
+          initialValues={initialValues}
+          onSubmit={handleSubmit}
+          validationSchema={validationSchema}
+        >
+          {({ values, touched, errors }) => (
+            <Form className="registration-form">
+              <div className="form-enter_login-message">
+                <div className="form-enter">
+                  <p className="form-enter__text">Вже є аккаунт?</p>
+                  <a className="form-enter__button-a" href="/auth">
+                    <ButtonModal type="button" text="Введите" />
+                  </a>
                 </div>
-              )}
-            </div>
+              </div>
+              <div className="apply-promoCode">
+                <div className="promo-code">
+                  Чи є у Вас промокод?
+                  <button
+                    type="button"
+                    onClick={togglePromoCoupon}
+                    className="click-active"
+                  >
+                    Натисніть тут, щоб активувати його
+                  </button>
+                </div>
+                {showPromoCoupon && (
+                  <div className="promo-coupon">
+                    <label className="label-coupon">
+                      <span>Введіть промокод в поле:</span>
+                    </label>
+                    <div className="form-item">
+                      <Field
+                        name="coupon_code"
+                        id="coupon_code"
+                        type="text"
+                        placeholder="Промокод"
+                        value={values.coupon_code}
+                      />
 
-            <ul className="form-element">
-              <li className="form-element--li">
-                <label htmlFor="firstName">
-                  <p className="form-element__text">
-                    Ім'я <span className="asterisk-required">*</span>
-                  </p>
-                </label>
+                      <button
+                        id="cp_apply"
+                        className="bt-outline apply-coup button"
+                      >
+                        Застосувати промокод
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </div>
 
-                <Field
-                  className={`placingOrder-field${
-                    showFirstName &&
-                    !values.firstName &&
-                    touched.firstName &&
-                    errors.firstName
-                      ? " error"
-                      : ""
-                  }`}
-                  type="text"
-                  id="firstName"
-                  name="firstName"
-                  placeholder="Введить ваше ім'я"
-                  value={values.firstName}
-                  onClick={toggleFirstName}
-                />
-                {showFirstName && !values.firstName && (
-                  <ErrorMessage
+              <ul className="form-element">
+                <li className="form-element--li">
+                  <label htmlFor="firstName">
+                    <p className="form-element__text">
+                      Ім'я <span className="asterisk-required">*</span>
+                    </p>
+                  </label>
+
+                  <Field
+                    className={`placingOrder-field${
+                      showFirstName &&
+                      !values.firstName &&
+                      touched.firstName &&
+                      errors.firstName
+                        ? " error"
+                        : ""
+                    }`}
+                    type="text"
+                    id="firstName"
                     name="firstName"
-                    component="div"
-                    className="error-messages"
+                    placeholder="Введить ваше ім'я"
+                    value={values.firstName}
+                    onClick={toggleFirstName}
                   />
-                )}
-              </li>
-              <li className="form-element--li">
-                <label htmlFor="lastName">
-                  <p className="form-element__text">
-                    Прізвище <span className="asterisk-required">*</span>
-                  </p>
-                </label>
+                  {showFirstName && !values.firstName && (
+                    <ErrorMessage
+                      name="firstName"
+                      component="div"
+                      className="error-messages"
+                    />
+                  )}
+                </li>
+                <li className="form-element--li">
+                  <label htmlFor="lastName">
+                    <p className="form-element__text">
+                      Прізвище <span className="asterisk-required">*</span>
+                    </p>
+                  </label>
 
-                <Field
-                  className={`placingOrder-field${
-                    showLastName &&
-                    !values.lastName &&
-                    touched.lastName &&
-                    errors.lastName
-                      ? " error"
-                      : ""
-                  }`}
-                  type="text"
-                  id="lastName"
-                  name="lastName"
-                  placeholder="Введить ваше прізвище"
-                  value={values.lastName}
-                  onClick={toggleLastName}
-                />
-                {showLastName && !values.lastName && (
-                  <ErrorMessage
+                  <Field
+                    className={`placingOrder-field${
+                      showLastName &&
+                      !values.lastName &&
+                      touched.lastName &&
+                      errors.lastName
+                        ? " error"
+                        : ""
+                    }`}
+                    type="text"
+                    id="lastName"
                     name="lastName"
-                    component="div"
-                    className="error-messages"
+                    placeholder="Введить ваше прізвище"
+                    value={values.lastName}
+                    onClick={toggleLastName}
                   />
-                )}
-              </li>
-            </ul>
+                  {showLastName && !values.lastName && (
+                    <ErrorMessage
+                      name="lastName"
+                      component="div"
+                      className="error-messages"
+                    />
+                  )}
+                </li>
+              </ul>
 
-            <label htmlFor="company">
-              <p className="form-element__text">Компанія</p>
-            </label>
-            <Field
-              className="placingOrder-field"
-              type="text"
-              id="company"
-              name="company"
-              placeholder="Введить назву вашоє компаніі"
-              value={values.company}
-            />
+              <ul className="form-element">
+                <li className="form-element--li">
+                  <label htmlFor="region">
+                    <p className="form-element__text">
+                      Область
+                      <span className="asterisk-required">*</span>
+                    </p>
+                  </label>
 
-            <ul className="form-element">
-              <li className="form-element--li">
-                <label htmlFor="region">
-                  <p className="form-element__text">
-                    Область
-                    <span className="asterisk-required">*</span>
-                  </p>
-                </label>
-
-                <Field
-                  className={`placingOrder-field${
-                    showRegion &&
-                    !values.region &&
-                    touched.region &&
-                    errors.region
-                      ? " error"
-                      : ""
-                  }`}
-                  type="text"
-                  id="region"
-                  name="region"
-                  placeholder="Область"
-                  value={values.region}
-                  onClick={toggleRegion}
-                />
-                {showRegion && !values.region && (
-                  <ErrorMessage
+                  <Field
+                    className={`placingOrder-field${
+                      showRegion &&
+                      !values.region &&
+                      touched.region &&
+                      errors.region
+                        ? " error"
+                        : ""
+                    }`}
+                    type="text"
+                    id="region"
                     name="region"
-                    component="div"
-                    className="error-messages"
+                    placeholder="Область"
+                    value={values.region}
+                    onClick={toggleRegion}
                   />
-                )}
-              </li>
+                  {showRegion && !values.region && (
+                    <ErrorMessage
+                      name="region"
+                      component="div"
+                      className="error-messages"
+                    />
+                  )}
+                </li>
 
-              <li className="form-element--li">
-                <label htmlFor="city">
-                  <p className="form-element__text">
-                    Mісто <span className="asterisk-required">*</span>
-                  </p>
-                </label>
+                <li className="form-element--li">
+                  <label htmlFor="city">
+                    <p className="form-element__text">
+                      Mісто <span className="asterisk-required">*</span>
+                    </p>
+                  </label>
 
-                <Field
-                  className={`placingOrder-field${
-                    showCity && !values.city && touched.city && errors.city
-                      ? " error"
-                      : ""
-                  }`}
-                  type="text"
-                  id="city"
-                  name="city"
-                  placeholder="Введить назву вашого міста"
-                  value={values.city}
-                  onClick={toggleCity}
-                />
-                {showCity && !values.city && (
-                  <ErrorMessage
+                  <Field
+                    className={`placingOrder-field${
+                      showCity && !values.city && touched.city && errors.city
+                        ? " error"
+                        : ""
+                    }`}
+                    type="text"
+                    id="city"
                     name="city"
-                    component="div"
-                    className="error-messages"
+                    placeholder="Введить назву вашого міста"
+                    value={values.city}
+                    onClick={toggleCity}
                   />
-                )}
-              </li>
-            </ul>
+                  {showCity && !values.city && (
+                    <ErrorMessage
+                      name="city"
+                      component="div"
+                      className="error-messages"
+                    />
+                  )}
+                </li>
+              </ul>
 
-            <label htmlFor="street">
-              <p className="form-element__text">
-                Вулиця <span className="asterisk-required">*</span>
-              </p>
-            </label>
-            <Field
-              className={`placingOrder-field${
-                showStreet && !values.street && touched.street && errors.street
-                  ? " error"
-                  : ""
-              }`}
-              type="text"
-              id="street"
-              name="street"
-              placeholder="Введить назву вашой вулици"
-              value={values.street}
-              onClick={toggleStreet}
-            />
-            {showStreet && !values.street && (
-              <ErrorMessage
-                name="street"
-                component="div"
-                className="error-messages"
+              <label htmlFor="street">
+                <p className="form-element__text">
+                  Відділення новой пошти{" "}
+                  <span className="asterisk-required">*</span>
+                </p>
+              </label>
+              <Field
+                className={`placingOrder-field${
+                  showNewPost &&
+                  !values.newPost &&
+                  touched.newPost &&
+                  errors.newPost
+                    ? " error"
+                    : ""
+                }`}
+                type="text"
+                id="newPost"
+                name="newPost"
+                placeholder="Введить номер відділення Новой Пошти"
+                value={values.newPost}
+                onClick={toggleStreet}
               />
-            )}
+              {showNewPost && !values.street && (
+                <ErrorMessage
+                  name="newPost"
+                  component="div"
+                  className="error-messages"
+                />
+              )}
 
-            <ul className="form-element">
-              <li className="form-element--li">
-                <label htmlFor="postalCode">
-                  <p className="form-element__text">
-                    Поштовий індекс
-                    <span className="asterisk-required">*</span>
-                  </p>
-                </label>
-
-                <Field
-                  className={`placingOrder-field${
-                    showPostalCode &&
-                    !values.postalCode &&
-                    touched.postalCode &&
-                    errors.postalCode
-                      ? " error"
-                      : ""
-                  }`}
-                  type="text"
-                  id="postalCode"
-                  name="postalCode"
-                  placeholder="Введить поштовий індекс"
-                  value={values.postalCode}
-                  onClick={togglePostalCode}
-                />
-                {showPostalCode && !values.postalCode && (
-                  <ErrorMessage
-                    name="postalCode"
-                    component="div"
-                    className="error-messages"
-                  />
-                )}
-              </li>
-              <li className="form-element--li">
-                <label htmlFor="houseNumber apartment">
-                  <p className="form-element__text">
-                    Будинок/Квартира
-                    <span className="asterisk-required">*</span>
-                  </p>
-                </label>
-                <Field
-                  className={`placingOrder-field${
-                    showHouseNumber &&
-                    !values.houseNumber &&
-                    touched.houseNumber &&
-                    errors.houseNumber
-                      ? " error"
-                      : ""
-                  }`}
-                  type="text"
-                  id="houseNumber"
-                  name="houseNumber"
-                  placeholder="наприклад, 37/2"
-                  value={values.houseNumber}
-                  onClick={toggleHouseNumber}
-                />
-                {showHouseNumber && !values.houseNumber && (
-                  <ErrorMessage
-                    name="houseNumber"
-                    component="div"
-                    className="error-messages"
-                  />
-                )}
-              </li>
-            </ul>
-            <ul className="form-element">
-              <li className="form-element--li">
-                <label htmlFor="email">
-                  <p className="form-element__text">
-                    Email <span className="asterisk-required">*</span>
-                  </p>
-                </label>
-                <Field
-                  className={`placingOrder-field${
-                    showEmail && !values.email && touched.email && errors.email
-                      ? " error"
-                      : ""
-                  }`}
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="Введить адресу вашоє електронної пошти"
-                  value={values.email}
-                  onClick={toggleEmail}
-                />
-                {showEmail && touched.email && errors.email && (
-                  <ErrorMessage
+              <ul className="form-element">
+                <li className="form-element--li">
+                  <label htmlFor="email">
+                    <p className="form-element__text">
+                      Email <span className="asterisk-required">*</span>
+                    </p>
+                  </label>
+                  <Field
+                    className={`placingOrder-field${
+                      showEmail &&
+                      !values.email &&
+                      touched.email &&
+                      errors.email
+                        ? " error"
+                        : ""
+                    }`}
+                    type="email"
+                    id="customerEmail"
                     name="email"
-                    component="div"
-                    className="error-messages"
+                    placeholder="Введить адресу вашоє електронної пошти"
+                    value={values.email}
+                    onClick={toggleEmail}
+                    customerEmail={customerEmail}
                   />
-                )}
-              </li>
-              <li className="form-element--li">
-                <label htmlFor="phoneNumber">
-                  <p className="form-element__text">
-                    Номер телефону
-                    <span className="asterisk-required">*</span>
-                  </p>
-                </label>
-                <Field
-                  className={`placingOrder-field${
-                    showPhoneNumber &&
-                    !values.phoneNumber &&
-                    touched.phoneNumber &&
-                    errors.phoneNumber
-                      ? " error"
-                      : ""
-                  }`}
-                  type="tel"
-                  id="phoneNumber"
-                  name="phoneNumber"
-                  placeholder="+38(___)___-__-__"
-                  value={values.phoneNumber}
-                  onClick={togglePhoneNumber}
-                />
-                {showPhoneNumber && !values.phoneNumber && (
-                  <ErrorMessage
+                  {showEmail && touched.email && errors.email && (
+                    <ErrorMessage
+                      name="email"
+                      component="div"
+                      className="error-messages"
+                    />
+                  )}
+                </li>
+                <li className="form-element--li">
+                  <label htmlFor="phoneNumber">
+                    <p className="form-element__text">
+                      Номер телефону
+                      <span className="asterisk-required">*</span>
+                    </p>
+                  </label>
+                  <Field
+                    className={`placingOrder-field${
+                      showPhoneNumber &&
+                      !values.phoneNumber &&
+                      touched.phoneNumber &&
+                      errors.phoneNumber
+                        ? " error"
+                        : ""
+                    }`}
+                    type="tel"
+                    id="phoneNumber"
                     name="phoneNumber"
-                    component="div"
-                    className="error-messages"
+                    placeholder="+38(___)___-__-__"
+                    value={values.phoneNumber}
+                    onClick={togglePhoneNumber}
                   />
-                )}
-              </li>
-            </ul>
+                  {showPhoneNumber && !values.phoneNumber && (
+                    <ErrorMessage
+                      name="phoneNumber"
+                      component="div"
+                      className="error-messages"
+                    />
+                  )}
+                </li>
+              </ul>
 
-            <CustomCheckbox
-              className="customCheckbox-form"
-              text="Створити аккаунт"
-            />
+              {/* <CustomCheckbox
+                className="customCheckbox-form"
+                text="Створити аккаунт"
+              /> */}
 
-            <label htmlFor="preorderСomment">
-              <p className="form-element__text">Коментар до замовлення</p>
-            </label>
-            <Field
-              className="placingOrder-fields"
-              type="text"
-              id="preorderComment"
-              name="preorderComment"
-              placeholder="Текст коментаря"
-            />
-          </Form>
-        )}
-      </Formik>
-    </div>
+              <label htmlFor="preorderСomment">
+                <p className="form-element__text">Коментар до замовлення</p>
+              </label>
+              <Field
+                className="placingOrder-fields"
+                component="textarea"
+                id="preorderComment"
+                name="preorderComment"
+                placeholder="Текст коментаря"
+              />
+            </Form>
+          )}
+        </Formik>
+
+        {/* Кнопка або інший механізм, який викликає toggleFormVisibility, щоб показати/приховати форму
+          <button onClick={toggleFormVisibility}>
+            {isUserLoggedIn ? "Показати форму" : "Приховати форму"}
+          </button> */}
+      </div>
+      {/* )} */}
+    </>
   );
 }
 
