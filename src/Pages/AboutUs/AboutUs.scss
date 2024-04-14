@@ -43,9 +43,9 @@
         width: 718px;
     }
 
-        @media (min-width: $bp-lg) {
-            width: 785px;
-        }
+    @media (min-width: $bp-lg) {
+        width: 785px;
+    }
 }
 
 .about-us-text span {
@@ -70,10 +70,10 @@
         justify-content: space-between;
     }
 
-        @media (min-width: $bp-lg) {
-            justify-content: center;
-            gap: 300px;
-        }
+    @media (min-width: $bp-lg) {
+        justify-content: center;
+        gap: 300px;
+    }
 }
 
 .about-us-guarantees::before {
@@ -106,10 +106,10 @@
     }
 
 
-        @media (min-width: $bp-lg) {
-            gap: 25px;
-            justify-content: space-around;
-        }
+    @media (min-width: $bp-lg) {
+        gap: 25px;
+        justify-content: space-around;
+    }
 }
 
 .about-us-quarantees-text {
@@ -156,13 +156,13 @@
         background-position: right 0;
     }
 
-        @media (min-width: $bp-lg) {
-            height: 600px;
-            width: 100%;
-            background-image: url('./img/aboutUs-desktop.png');
-            background-repeat: no-repeat;
-            background-position: right 0;
-        }
+    @media (min-width: $bp-lg) {
+        height: 600px;
+        width: 100%;
+        background-image: url('./img/aboutUs-desktop.png');
+        background-repeat: no-repeat;
+        background-position: right 0;
+    }
 
 }
 
@@ -183,14 +183,14 @@
     }
 
 
-        @media (min-width: $bp-lg) {
-            background-image: url('./img/about-us-background-desktop.png');
-            height: 510px;
-            background-repeat: no-repeat;
-            background-size: cover;
-            width: 1500px;
-            margin: 20px 0 30px 220px;
-        }
+    @media (min-width: $bp-lg) {
+        background-image: url('./img/about-us-background-desktop.png');
+        height: 510px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 1500px;
+        margin: 20px 0 30px 220px;
+    }
 }
 
 .about-us-page {
@@ -200,10 +200,10 @@
         width: 768px;
     }
 
-         @media (min-width: $bp-lg) {
-            width: 1920px;
-         }
-    
+    @media (min-width: $bp-lg) {
+        width: 1920px;
+    }
+
 }
 
 .about-us-last-section {
@@ -216,9 +216,9 @@
     }
 
 
-        @media (min-width: $bp-lg) {
-            align-items: center;
-        }
+    @media (min-width: $bp-lg) {
+        align-items: center;
+    }
 }
 
 .about-us-text-1 {
@@ -226,9 +226,9 @@
         width: 335px;
     }
 
-        @media (min-width: $bp-lg) {
-            width: 785px;
-        }
+    @media (min-width: $bp-lg) {
+        width: 785px;
+    }
 }
 
 .about-us-text-2 {
@@ -236,11 +236,18 @@
         display: none;
     }
 
-        @media (min-width: $bp-lg) {
-            display: block;
-        }
+    @media (min-width: $bp-lg) {
+        display: block;
+    }
 }
 
 .about-us-container {
     padding-right: 0;
+}
+
+.about-us-paragraph-box {
+    @media (min-width: $bp-lg) {
+        display: flex;
+        justify-content: space-between;
+    }
 }
