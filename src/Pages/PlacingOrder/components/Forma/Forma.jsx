@@ -5,11 +5,13 @@ import "../../../PlacingOrder/PlacingOrder.scss";
 import "../../../PlacingOrder/components/Forma/Forma.scss";
 import ButtonModal from "../../../../components/Button/ButtonModal/ButtonModal";
 // import CustomCheckbox from "../CustomCheckbox/CustomCheckebox";
+import  sendOrderEmail  from "../YourOrder/YourOrder";
 
 function Forma() {
+
   const validationSchema = Yup.object().shape({
-    firstName: Yup.string().required("Поле і'мя є обов'язковим"),
-    lastName: Yup.string().required("Поле прізвища є обов'язковим"),
+    firstName: Yup.string().required("Поле ім'я є обов'язковим"),
+    lastName: Yup.string().required("Поле прізвищє є обов'язковим"),
     email: Yup.string()
       .email("Невірна адреса електронної пошти")
       .required("Поле адреси електронної пошти є обов'язковим"),
@@ -18,6 +20,7 @@ function Forma() {
     city: Yup.string().required("Поле місто є обов'язковим"),
     newPost: Yup.string().required("Поле є обов'язковим"),
   });
+  
 
   const initialValues = {
     firstName: "",
@@ -29,10 +32,20 @@ function Forma() {
     phoneNumber: "",
   };
 
+  // const handleSubmit = async (values) => {
+  //   await new Promise((resolve) => setTimeout(resolve, 500));
+  //   alert(JSON.stringify(values, null, 2));
+  // };
+
+  const [customerEmail, setCustomerEmail] = useState("");
+
   const handleSubmit = async (values) => {
     await new Promise((resolve) => setTimeout(resolve, 500));
+    setCustomerEmail(values.email); // Зберегти електронну пошту в стані
     alert(JSON.stringify(values, null, 2));
+    sendOrderEmail(values.email); // Передача електронної пошти в компонент YourOrder
   };
+  
 
   const togglePromoCoupon = () => {
     setShowPromoCoupon(!showPromoCoupon);
@@ -318,6 +331,7 @@ function Forma() {
                     placeholder="Введить адресу вашоє електронної пошти"
                     value={values.email}
                     onClick={toggleEmail}
+                    customerEmail={customerEmail}
                   />
                   {showEmail && touched.email && errors.email && (
                     <ErrorMessage
