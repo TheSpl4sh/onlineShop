@@ -52,7 +52,6 @@ function CardPage() {
                     { label: "Nike Air VaporMax 2023 Flyknit", url: "/products" },
                 ]}
             />
-            <Links/>
             <div className="content-container">
             <ImgContainer
             logo_img={product.logo_img}
@@ -83,7 +82,7 @@ function CardPage() {
                    <div className="card-page__add-cart">
                         <CardCounter/>
                         <div>
-                        <CardPagePost/>
+                        {/* <CardPagePost/> */}
                         </div>
                    </div>
                    <div className="card-page__options">
