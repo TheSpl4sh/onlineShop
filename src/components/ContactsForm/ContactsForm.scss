@@ -28,12 +28,6 @@
         padding-top: 10px;
     }
 
-    &:hover::placeholder {
-        color: $light-orange;
-        cursor: pointer;
-        transition: all 200ms ease-in-out;
-    }
-
     &:focus {
         outline: none;
     }

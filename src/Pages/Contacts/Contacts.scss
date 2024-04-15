@@ -4,10 +4,10 @@
 @import '../../styles/mixins.scss';
 
 .contacts-tittle {
-   font-size: 25px; 
-   padding-bottom: 24px;
-   font-weight: 500;  
-   
+    font-size: 25px;
+    padding-bottom: 24px;
+    font-weight: 500;
+
     @media (min-width: $bp-lg) {
         font-size: 45px;
         margin-top: 20px;
@@ -27,7 +27,7 @@
         font-size: 18px;
     }
 
-    
+
 }
 
 .contacts-city-name:hover {
@@ -98,7 +98,7 @@
 
 .contacts-socials {
     display: flex;
-    flex-direction: row; 
+    flex-direction: row;
     gap: 11px;
 }
 
@@ -127,7 +127,7 @@
     align-items: center;
     width: 100%;
     overflow: hidden;
-    
+
 }
 
 .contacts-photo {

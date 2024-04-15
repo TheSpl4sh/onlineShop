@@ -7,7 +7,7 @@
 .mailing-list {
     background-color: $distribution-block-background;
     text-align: center;
-    margin-bottom: 30px;
+    margin: 30px 0;
     padding: 25px;
 
     @media (min-width: $bp-lg) {
@@ -98,7 +98,7 @@
     width: 100%px;
     height: 345px;
     background-color: $distribution-block-background;
-    margin-bottom: 30px;
+    margin: 30px 0;
 
     @media (min-width: $bp-md) {
         height: 288px;
