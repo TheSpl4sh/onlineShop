@@ -1,13 +1,12 @@
-import Links from "./components/Links";
+// import Links from "./components/Links";
 import './style/card-page.scss'
 import Size from './components/Size'
-// import ButtonBlackBasket from '../../components/ButtonBlackBasket/ButtonBlackBasket'
+import ButtonBlackBasket from '../../components/ButtonBlackBasket/ButtonBlackBasket'
 import ProductOptions from './components/ProductOptions.js'
 import ImgContainer from "./components/ImgContainer.js";
 import ColorList from './components/ColorList.js'
 import CardCounter from "./components/CardCounter.js";
 import CardCounterMd from "./components/CardCounterMd.js";
-import CardPagePost from "./components/CardPagePost.js";
 import BelowHeaderBreadcrumbs from '../../components/BelowHeaderBreadcrumbs/BelowHeaderBreadcrumbs';
 import { useParams } from "react-router-dom";
 import { useState } from "react";
@@ -15,10 +14,12 @@ import { useSelector } from 'react-redux';
 
 
 function CardPage() {
+  
     const { id } = useParams(); 
     const [selectedSize, setSelectedSize] = useState("");
     const [selectedColor, setSelectedColor] = useState("");
     const product = useSelector((state) => state.catalog.items.find((item) => item.id === id))
+    const {style_color} = product
 
     const handleSizeChange = (size) => {
         setSelectedSize(size);
@@ -66,15 +67,21 @@ function CardPage() {
                     {/* <a href="/link" className="all-description">
                         {product.description}
                     </a> */}
-                  <ColorList onSelectColor={handleColorChange}/>
+                    <div className="vertical-card__colors-block">
+                             <span className="vertical-card__colors-span">Кольори:</span>
+                            
+                            {style_color.map((color) => {
+                                return <button key={color} style={{backgroundColor: color}}  className="vertical-card__sneaker-color"></button>;
+                            })}
+                        </div>
                    <Size onSelectSize={handleSizeChange}/>
                    <div className="card-page__price">
                        <div className="card-page__price-md">
                          <span className="card-page__price-original">
-                            {product.previousPrice}
+                            {product.previousPrice }
                         </span>
                         <span className="card-page__price-discount">
-                            {product.price}
+                            {product.price + " " + "₴"}
                         </span>
                        </div>
                         <CardCounterMd/>
@@ -82,7 +89,7 @@ function CardPage() {
                    <div className="card-page__add-cart">
                         <CardCounter/>
                         <div>
-                        {/* <CardPagePost/> */}
+                        <ButtonBlackBasket/>
                         </div>
                    </div>
                    <div className="card-page__options">
