@@ -23,9 +23,6 @@ router.get("/", async (req, res) => {
       const { min, max } = price;
       catalog = catalog.filter(product => product.price >= min && product.price <= max);
     }
-	// if (price) {
-	// 	catalog = catalog.filter(product => product.price.includes(price));
-	//   }
     if (color) {
       catalog = catalog.filter(product => product.color.includes(color));
     }

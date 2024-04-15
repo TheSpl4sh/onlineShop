@@ -16,7 +16,7 @@
     overflow: auto;
 }
 
-.full-item > div {
+.modal-content {
   position: relative;
   min-width: 250px;
   margin: auto;
@@ -31,24 +31,6 @@
   justify-content: center;
   align-items: center;
 }
-
-// .wrapper-item {
-//   position: fixed;
-//   width: 100%;
-//   height: 100%;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   bottom: 0;
-//   background: rgba(0, 0, 0, 0.5);
-//   z-index: 999;
-//   display: flex;
-//   justify-content: center;
-//   overflow: auto;
-// }
-
-// .modal-header {
-// }
 
 .modal-body {
   position: relative;
@@ -84,18 +66,18 @@
 //   align-items: center;
 // }
 
-.full-item-content {
-  position: absolute;
-  background-color: white;
-  padding: 20px;
-  padding-top: 10px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  max-width: 100%;
-  display: block;
-  justify-content: center;
-  align-items: center;
-}
+// .modal-body {
+//   position: absolute;
+//   background-color: white;
+//   padding: 20px;
+//   padding-top: 10px;
+//   border-radius: 8px;
+//   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+//   max-width: 100%;
+//   display: block;
+//   justify-content: center;
+//   align-items: center;
+// }
 
 // .full-item img:hover {
 //   transform: scale(1.05);
@@ -105,20 +87,28 @@
   font-size: 20px;
   margin: 10px 10px;
   color: #333;
+  display: flex;
+  justify-content: center;
   align-items: center;
   text-align: center;
 }
 
 .full-item h2 {
-  margin: 10px 10px;
+  font-size: 25px;
+  // margin: 10px 10px;
+  line-height: 1.1;
   color: #333;
+  align-items: center;
+  text-align: center;
   display: flex;
   justify-content: center;
 }
 
-.full-item b {
-  margin: 10px 10px;
+.modal-body {
+  margin: 15px 10px;
   color: #5fa36a;
+  align-items: center;
+  text-align: center;
 }
 
 .button-closeModal {
