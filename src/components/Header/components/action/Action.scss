@@ -6,7 +6,11 @@
   &__item {
     padding: 27px;
     border-left: solid 1px $header-border-color;
-    
+    max-height: 73px;
+    transition: all 0.5s ease-out;
+
+    // display: flex;
+    // align-items: center;
   }
   &__item a {
     color: currentColor;
@@ -15,7 +19,9 @@
     background-color: $dark-black;
     color: $background-primary-color;
   }
-  // &__item:last-child {
-  //   border-right: solid 1px $header-border-color;
+  // &__item input {
+  //   width: 100%;
+  //   z-index: 55;
+  //   position: relative;
   // }
 }

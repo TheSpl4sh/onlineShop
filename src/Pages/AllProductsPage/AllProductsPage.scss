@@ -203,7 +203,7 @@
         &__item {
           // width: 20%;
           padding: 30px 10px;
-          // border-right: solid 2px $main-filter-border-color;
+          border-right: solid 2px $main-filter-border-color;
         }
         &__item label{
           display: flex;
@@ -240,6 +240,16 @@
       .css-1fdsijx-ValueContainer {
         width: 75px;
       }
+      .css-1d3z3hw-MuiOutlinedInput-notchedOutline{
+        border-top-width: 0;
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+        border-left-width: 0;
+      }      
+      .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root{
+        margin-right: 20px;
+      }
+      
      
         
       .sorting-wrapper {

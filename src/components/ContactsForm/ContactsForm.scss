@@ -25,18 +25,13 @@
     &::placeholder {
         color: #2B2B2B;
         font-size: 16px;
-    }
-
-    &:hover::placeholder {
-        color: $light-orange;
-        cursor: pointer;
-        transition: all 200ms ease-in-out;
+        padding-top: 10px;
     }
 
     &:focus {
         outline: none;
     }
-    
+
 }
 
 .contacts-form-name {
@@ -57,14 +52,14 @@
     @media (min-width: $bp-md) {
         display: inline-block;
         width: 100%;
-        }
+    }
 }
 
 .contacts-form-inputs {
 
     @media (min-width: $bp-md) {
-    display: flex;
-    justify-content: space-between;
+        display: flex;
+        justify-content: space-between;
     }
 }
 
@@ -76,16 +71,15 @@
     color: white;
     margin-top: 30px;
     font-size: 16px;
-    
+
     &:hover {
         color: $light-orange;
         cursor: pointer;
     }
 
-        @media (min-width: $bp-md) {
-            width: 360px;
-            display: block;
-            margin: 30px auto 0;
-        }
+    @media (min-width: $bp-md) {
+        width: 360px;
+        display: block;
+        margin: 30px auto 0;
+    }
 }
-
