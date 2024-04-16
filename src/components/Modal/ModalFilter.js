@@ -40,7 +40,7 @@ const ModalFilter = ({ isOpen, handleClose, props }) => {
 			<FaTimes />
 			Скинути Фільтр	
 			</button>
-            <h3>ModalFilter</h3>
+            {/* <h3>ModalFilter</h3> */}
           </div>
         </div>
       )}

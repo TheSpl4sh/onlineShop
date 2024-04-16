@@ -13,7 +13,7 @@ import CustomCheckbox from "../CustomCheckbox/CustomCheckbox";
 import CustomRadio from "../CustomRadio/CustomRadio";
 import ButtonModal from "../../../../components/Button/ButtonModal/ButtonModal";
 
-function YourOrder() {
+function YourOrder({ customerEmail }) {
   const [summa] = useState(0);
   const [selectedDeliveryOption, setSelectedDeliveryOption] = useState("");
   const [selectedPaymentOption, setSelectedPaymentOption] = useState("");
@@ -36,64 +36,9 @@ function YourOrder() {
     }
   };
 
-  // const customerEmail = "example@example.com";
-
-  // const sendOrderEmail = () => {
-  //   // Формуємо текст повідомлення з даними замовлення
-  //   const message = `Дякуємо за замовлення!\n\nДоставка: ${selectedDeliveryOption}\nОплата: ${selectedPaymentOption}\nСума: ${summa}`;
-
-  //   // Відправляємо лист на електронну адресу замовника
-  //   fetch("/send-email", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({ email: customerEmail, message }),
-  //   })
-  //     .then((response) => {
-  //       if (response.ok) {
-  //         console.log("Email sent successfully!");
-  //       } else {
-  //         console.error("Failed to send email.");
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error sending email:", error);
-  //     });
-  // };
-
-  //   const customerEmail = document.getElementById("customerEmail").value;
-  // sendOrderEmail(customerEmail);
-
-  // const sendOrderEmail = (email) => {
-  //   // Формуємо текст повідомлення з даними замовлення
-  //   const message = `Дякуємо за замовлення!\n\nДоставка: ${selectedDeliveryOption}\nОплата: ${selectedPaymentOption}\nСума: ${summa}`;
-
-  //   // Відправляємо лист на електронну адресу замовника
-  //   fetch("/send-email", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({ email, message }),
-  //   })
-  //     .then((response) => {
-  //       if (response.ok) {
-  //         console.log("Email sent successfully!");
-  //       } else {
-  //         console.error("Failed to send email.");
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error sending email:", error);
-  //     });
-  // };
-
-  const sendOrderEmail = (email) => {
-    // Формуємо текст повідомлення з даними замовлення
+    const sendOrderEmail = (email) => {
     const message = `Дякуємо за замовлення!\n\nДоставка: ${selectedDeliveryOption}\nОплата: ${selectedPaymentOption}\nСума: ${summa}`;
 
-    // Відправляємо лист на електронну адресу замовника
     fetch("/send-email", {
       method: "POST",
       headers: {
@@ -112,6 +57,28 @@ function YourOrder() {
         console.error("Error sending email:", error);
       });
   };
+
+  // const sendOrderEmail = (email) => {
+  //   const message = `Дякуємо за замовлення!\n\nДоставка: ${selectedDeliveryOption}\nОплата: ${selectedPaymentOption}\nСума: ${summa}`;
+
+  //   fetch("/send-email", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({ email, message }),
+  //   })
+  //     .then((response) => {
+  //       if (response.ok) {
+  //         console.log("Email sent successfully!");
+  //       } else {
+  //         console.error("Failed to send email.");
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error sending email:", error);
+  //     });
+  // };
 
   return (
     <div className="wrapper-yourOrder">
@@ -201,9 +168,10 @@ function YourOrder() {
         <ButtonBlackArrow
           text="Оформити замовлення"
           onClick={() => {
-            const customerEmail =
-              document.getElementById("customerEmail").value; // Отримуємо електронну адресу з форми
-            sendOrderEmail(customerEmail);
+            // const customerEmail =
+            //   document.getElementById("customerEmail").value; // Отримуємо електронну адресу з форми
+            // sendOrderEmail(customerEmail);
+            sendOrderEmail(customerEmail); 
             openModal();
             console.log("Модальне вікно відкрите");
           }}
@@ -211,8 +179,8 @@ function YourOrder() {
       </div>
 
       {modalIsOpen && (
-        <div className="wrapper-item" onClick={handleOutsideClick}>
-          <Modal
+     
+          <Modal handleOutsideClick={handleOutsideClick}
             header="Підтвердження замовлення"
             closeButton={true}
             text="Ваше замовлення успішно оформлено!"
@@ -225,7 +193,6 @@ function YourOrder() {
               />
             }
           />
-        </div>
       )}
     </div>
   );
