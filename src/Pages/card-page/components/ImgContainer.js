@@ -18,10 +18,7 @@ import {BsHeart} from "react-icons/bs";
 function ImgContainer({logo_img}) {
     return(
         <div className="img-container">
-        <picture>
-            <source className="img-cros-md" srcSet={ logo_img} media="(max-width: 1420px)" draggable="false"  />
-            <img src={logo_img} alt="img" draggable="false" />
-        </picture>
+        <img src={logo_img} alt="img" draggable="false" />
         <div className="card-page-chips">
                 <div className="chips-card-page">20%</div>
         </div>
