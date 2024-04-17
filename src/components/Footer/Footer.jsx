@@ -154,15 +154,6 @@ const Footer = () => {
                   <Link to="/about-us">Про магазин</Link>
                 </li>
                 <li>
-                  <Link to="/">Наш блог</Link>
-                </li>
-                <li>
-                  <Link to="/">Доставка</Link>
-                </li>
-                <li>
-                  <Link to="/">Оплата</Link>
-                </li>
-                <li>
                   <Link to="/contacts">Контакти</Link>
                 </li>
               </ul>

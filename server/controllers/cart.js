@@ -86,87 +86,68 @@ exports.addProductToCart = async (req, res, next) => {
   try {
     productToAdd = await Product.findOne({ _id: req.params.productId });
   } catch (err) {
-    res.status(400).json({
+    return res.status(400).json({
       message: `Error happened on server: "${err}" `,
     });
   }
 
   if (!productToAdd) {
-    res.status(400).json({
+    return res.status(400).json({
       message: `Product with _id (ObjectId) "${req.params.productId}" does not exist`,
     });
-  } else {
-    Cart.findOne({ customerId: req.user.id })
-      .then((cart) => {
-        if (!cart) {
-          const cartData = {};
-          cartData.customerId = req.user.id;
-          cartData.products = [].concat({
-            product: req.params.productId,
-            cartQuantity: 1,
-          });
+  }
 
-          const newCart = new Cart(queryCreator(cartData));
+  try {
+    const cart = await Cart.findOne({ customerId: req.user.id });
 
-          newCart
-            .populate('products.product')
-            .populate('customerId')
-            .execPopulate();
+    if (!cart) {
+      const cartData = {
+        customerId: req.user.id,
+        products: [{
+          product: req.params.productId,
+          cartQuantity: 1,
+        }]
+      };
 
-          newCart
-            .save()
-            .then((cart) => res.json(cart))
-            .catch((err) =>
-              res.status(400).json({
-                message: `Error happened on server: "${err}" `,
-              })
-            );
-        } else {
-          const cartData = {};
+      const newCart = new Cart(cartData);
+      await newCart.save();
 
-          const isProductExistInCart = cart.products.some(
-            (item) => item.product.toString() === req.params.productId
-          );
+      // После сохранения корзины вызываем метод populate() на объекте запроса
+      const populatedCart = await Cart.findById(newCart._id).populate('products.product').populate('customerId');
+      
+      return res.json(populatedCart);
+    } else {
+      const isProductExistInCart = cart.products.some(item => item.product.toString() === req.params.productId);
 
-          if (isProductExistInCart) {
-            cartData.products = cart.products.map((item) => {
-              if (item.product.toString() === req.params.productId) {
-                item.cartQuantity += 1;
-              }
-
-              return item;
-            });
-          } else {
-            cartData.products = cart.products.concat({
-              product: req.params.productId,
-              cartQuantity: 1,
-            });
+      if (isProductExistInCart) {
+        cart.products = cart.products.map(item => {
+          if (item.product.toString() === req.params.productId) {
+            item.cartQuantity += 1;
           }
+          return item;
+        });
+      } else {
+        cart.products.push({
+          product: req.params.productId,
+          cartQuantity: 1,
+        });
+      }
 
-          const updatedCart = queryCreator(cartData);
+      await cart.save();
 
-          Cart.findOneAndUpdate(
-            { customerId: req.user.id },
-            { $set: updatedCart },
-            { new: true }
-          )
-            .populate('products.product')
-            .populate('customerId')
-            .then((cart) => res.json(cart))
-            .catch((err) =>
-              res.status(400).json({
-                message: `Error happened on server: "${err}" `,
-              })
-            );
-        }
-      })
-      .catch((err) =>
-        res.status(400).json({
-          message: `Error happened on server: "${err}" `,
-        })
-      );
+      // После сохранения корзины вызываем метод populate() на объекте запроса
+      const populatedCart = await Cart.findById(cart._id).populate('products.product').populate('customerId');
+      
+      return res.json(populatedCart);
+    }
+  } catch (err) {
+    return res.status(400).json({
+      message: `Error happened on server: "${err}" `,
+    });
   }
 };
+
+
 
 exports.decreaseCartProductQuantity = async (req, res, next) => {
   Cart.findOne({ customerId: req.user.id })

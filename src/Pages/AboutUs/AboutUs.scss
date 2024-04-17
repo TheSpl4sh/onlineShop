@@ -43,9 +43,9 @@
         width: 718px;
     }
 
-        @media (min-width: $bp-lg) {
-            width: 785px;
-        }
+    @media (min-width: $bp-lg) {
+        width: 785px;
+    }
 }
 
 .about-us-text span {
@@ -70,10 +70,10 @@
         justify-content: space-between;
     }
 
-        @media (min-width: $bp-lg) {
-            justify-content: center;
-            gap: 300px;
-        }
+    @media (min-width: $bp-lg) {
+        justify-content: center;
+        gap: 300px;
+    }
 }
 
 .about-us-guarantees::before {
@@ -106,10 +106,10 @@
     }
 
 
-        @media (min-width: $bp-lg) {
-            gap: 25px;
-            justify-content: space-around;
-        }
+    @media (min-width: $bp-lg) {
+        gap: 25px;
+        justify-content: space-around;
+    }
 }
 
 .about-us-quarantees-text {
@@ -146,23 +146,57 @@
     height: 242px;
     background-image: url('./img/aboutUs-mobile.png');
     background-repeat: no-repeat;
-    background-position: right 0;
+    background-position: right;
 
     @media (min-width: $bp-md) {
         height: 275px;
         width: 100%;
         background-image: url('./img/aboutUs-tablet.png');
         background-repeat: no-repeat;
-        background-position: right 0;
+        background-position: right;
     }
 
-        @media (min-width: $bp-lg) {
-            height: 600px;
-            width: 100%;
-            background-image: url('./img/aboutUs-desktop.png');
-            background-repeat: no-repeat;
-            background-position: right 0;
-        }
+    @media (min-width: 1024px) {
+        background-position: right;
+    }
+
+    @media (min-width: $bp-lg) {
+        height: 600px;
+        width: 100%;
+        background-image: url('./img/aboutUs-desktop.png');
+        background-repeat: no-repeat;
+        background-position: right;
+    }
+
+}
+
+
+.about-us-text-1 {
+    @media (min-width: $bp-md) {
+        width: 320px;
+    }
+
+    @media (min-width: 1024px) {
+        width: 500px;
+    }
+
+    @media (min-width: 1440px) {
+        width: 700px;
+    }
+
+    @media (min-width: $bp-lg) {
+        width: 785px;
+    }
+}
+
+.about-us-text-2 {
+    @media (min-width: $bp-md) {
+        display: none;
+    }
+
+    @media (min-width: 1440px) {
+        display: block;
+    }
 
 }
 
@@ -172,38 +206,21 @@
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    margin-bottom: 15px;
 
     @media (min-width: $bp-md) {
         background-image: url('./img/about-us-background-tablet.png');
         height: 260px;
         background-repeat: no-repeat;
         background-size: cover;
-        width: 100%;
     }
 
 
-        @media (min-width: $bp-lg) {
-            background-image: url('./img/about-us-background-desktop.png');
-            height: 510px;
-            background-repeat: no-repeat;
-            background-size: cover;
-            width: 1500px;
-            margin: 20px 0 30px 220px;
-        }
-}
-
-.about-us-page {
-    width: 375px;
-
-    @media (min-width: $bp-md) {
-        width: 768px;
+    @media (min-width: $bp-lg) {
+        background-image: url('./img/about-us-background-desktop.png');
+        height: 510px;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
-
-         @media (min-width: $bp-lg) {
-            width: 1920px;
-         }
-    
 }
 
 .about-us-last-section {
@@ -216,31 +233,31 @@
     }
 
 
-        @media (min-width: $bp-lg) {
-            align-items: center;
-        }
+    @media (min-width: $bp-lg) {
+        align-items: center;
+    }
 }
 
-.about-us-text-1 {
-    @media (min-width: $bp-md) {
-        width: 335px;
+
+
+.about-us-paragraph-box {
+
+    @media (min-width: 1440px) {
+        display: flex;
+        justify-content: space-between;
     }
-
-        @media (min-width: $bp-lg) {
-            width: 785px;
-        }
-}
-
-.about-us-text-2 {
-    @media (min-width: $bp-md) {
-        display: none;
-    }
-
-        @media (min-width: $bp-lg) {
-            display: block;
-        }
 }
 
 .about-us-container {
-    padding-right: 0;
+    margin: 0 auto;
+    padding: 0 0 0 15px;
+    max-width: 1920px;
+
+    @media (min-width: $bp-md) {
+        padding: 0 0 0 25px;
+    }
+
+    @media (min-width: $bp-lg) {
+        padding: 0 0 0 280px;
+    }
 }

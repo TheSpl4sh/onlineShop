@@ -1,8 +1,8 @@
 import { React, useState } from "react";
-import "./subscribe.scss";
+import "./MailingList.scss";
 import * as Sentry from "@sentry/react";
 
-const Subscribe = () => {
+const MailingList = () => {
   const [email, setEmail] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
@@ -53,33 +53,37 @@ const Subscribe = () => {
 
   return (
     <div>
-      {successMessage && <div className="subscribe-success-box"><p className="subscribe-success-message">{successMessage}</p></div>}
+      {successMessage && <div className="mailing-success-box"><p className="mailing-success-message">{successMessage}</p></div>}
       {errorMessage && (
-          <div className="subscribe-success-box">
-            <p className="subscribe-success-message">{errorMessage}</p>
-            <p className="subscribe-success-message">
+          <div className="mailing-success-box">
+            <p className="mailing-success-message">{errorMessage}</p>
+            <p className="mailing-success-message">
               Будь ласка,{" "}
               <button onClick={() => setErrorMessage("")}>спробуйте знову.</button>
             </p>
           </div>
       )}
       {!successMessage && !errorMessage && (
-          <form onSubmit={handleSubmit} className="subscribe-form">
-            <input className="subscribe-input"
-              aria-label="Your email address"
-              name="email_address"
-              placeholder="Email"
-              required
-              type="email"
-              onChange={handleEmailChange}
-              value={email}
-            />
-            <button className="subscribe-button">Підписатися</button>
-          </form>
+        <div className="mailing-list">
+          <p className="mailing-subscribe-text">Підпишіться на розсилку</p>
+          <p className="mailing-text">Регулярні знижки та спецпропозиції, а також новини компанії.</p>
+        <form onSubmit={handleSubmit}>
+          <input className="mailing-list-input"
+            aria-label="Your email address"
+            name="email_address"
+            placeholder="Ваш Email"
+            required
+            type="email"
+            onChange={handleEmailChange}
+            value={email}
+          />
+          <button className="mailing-list-button">Підписатися</button>
+        </form>
+        <p className="mailing-policy">Погоджуюсь із <a href="#">політикою кофіденційності</a></p>
+        </div>
       )}
     </div>
   );
 };
 
-export default Subscribe;
-
+export default MailingList;
