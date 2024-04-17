@@ -20,6 +20,9 @@ function CardPage() {
     const [selectedColor, setSelectedColor] = useState("");
     const product = useSelector((state) => state.catalog.items.find((item) => item.id === id))
     const {style_color} = product
+    const handleColorClick = (color) => {
+    setSelectedColor(color);
+  };
 
     const handleSizeChange = (size) => {
         setSelectedSize(size);
@@ -70,9 +73,18 @@ function CardPage() {
                     <div className="vertical-card__colors-block">
                              <span className="vertical-card__colors-span">Кольори:</span>
                             
-                            {style_color.map((color) => {
-                                return <button key={color} style={{backgroundColor: color}}  className="vertical-card__sneaker-color"></button>;
-                            })}
+                             {style_color.map((color) => (
+                                      <div 
+                                        key={color} 
+                                        style={{
+                                            backgroundColor: color,
+                                            border: `2px solid ${selectedColor === color ? 'orange' : 'gray'}` 
+                                        }}  
+                                        className={`vertical-card__sneaker-color color_list ${selectedColor === color && "selected"}`}
+                                        onClick={() => handleColorClick(color)}>
+                                  </div>
+                              ))}
+
                         </div>
                    <Size onSelectSize={handleSizeChange}/>
                    <div className="card-page__price">
