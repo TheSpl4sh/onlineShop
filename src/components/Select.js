@@ -25,12 +25,15 @@ export const SelectSize = ({ onChange }) => {
     { value: "size", label: "45(EU)" },
   ];
   return (
+    <label >
+      Розмір:
     <Select
       options={options}
       onChange={handleSizeChange}
       value={selectedSize} 
       placeholder="Розмір:"
     />
+    </label>
   );
 };
 // ===================================
@@ -55,12 +58,15 @@ export const SelectColor = ({ onChange }) => {
     { value: "color", label: "червоний" },
   ];
   return (
+    <label >
+      Колір:
   <Select 
   options={options}
    onChange={handleColorChange} 
    value={selectedColor}
    placeholder="Колір:" 
    />
+   </label>
    );
 };
 // ======================================
@@ -77,60 +83,63 @@ export const SelectMaterial = ({ onChange }) => {
 
   const options = [
     { value: "material", label: "шкіра" },
-    { value: "material", label: "синтетика" },
+    // { value: "material", label: "синтетика" },
     { value: "material", label: "текстиль" },
-    { value: "material", label: "трикотаж" },
+    // { value: "material", label: "трикотаж" },
     
   ];
   return (
+    <label >
+      Матеріал:
     <Select 
     options={options} 
     onChange={handleMaterialChange}
     value={selectedMaterial} 
-    placeholder="Матеріал:" 
+    placeholder="шкіра" 
     />
+    </label>
   );
 };
 // =======================
 
 export const SelectSort = ({ onChange }) => {
   const options = [
+    { value: "ordinary", label: "звичайна" },
     { value: "increase", label: "ціна від недорогих" },
     { value: "decrease", label: "ціна від дорогих" },
-    { value: "ordinary", label: "звичайна" },
+    
   ];
 
   return (
+    <label className="select-sort">
+      Сортування:
     <Select 
     options={options} 
     onChange={onChange} 
-    placeholder="Сортування:"
+    placeholder="звичайна"
+    // defaultValue="звичайна"
     />
+    </label>
   );
 };
-// ========================
 
-// ================================
-
-// export const SelectDemiseason = ({ onChange }) => {
-//   const options = [
-//     { value: "season", label: "бігові" },
-//     { value: "season", label: "повсякденні" },
-//     { value: "season", label: "трекінгові" },
-//     { value: "season", label: "шкіряні" },
-//   ];
+// export const SelectSort = ({ onChange }) => {
 
 //   return (
-//     <Select 
-//     defaultValue={{ value: "season", label: "Демісезон" }} // Значення за замовчуванням
-//     isMulti={false}
-//     options={options} 
-//     onChange={onChange} 
-//     isSearchable={false} // Вимкнути можливість пошуку
-//     autoFocus={false}
-//     />
+//     <label>
+//       Сортування:
+//       <select 
+//       name="selectedSorted" 
+//       // defaultValue="звичайна"
+//       >
+//         <option value="ordinary">звичайна</option>
+//         <option value="increase">ціна від недорогих</option>
+//         <option value="decrease">ціна від дорогих</option>
+//       </select>
+//     </label>
 //   );
-// };
+// }
+
 
 // ===========================================
 

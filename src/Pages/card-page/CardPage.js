@@ -1,5 +1,4 @@
-import React from "react";
-import Links from "./components/Links";
+// import Links from "./components/Links";
 import './style/card-page.scss'
 import Size from './components/Size'
 import ButtonBlackBasket from '../../components/ButtonBlackBasket/ButtonBlackBasket'
@@ -8,34 +7,93 @@ import ImgContainer from "./components/ImgContainer.js";
 import ColorList from './components/ColorList.js'
 import CardCounter from "./components/CardCounter.js";
 import CardCounterMd from "./components/CardCounterMd.js";
+import BelowHeaderBreadcrumbs from '../../components/BelowHeaderBreadcrumbs/BelowHeaderBreadcrumbs';
+import { useParams } from "react-router-dom";
+import { useState } from "react";
+import { useSelector } from 'react-redux';
 
 
 function CardPage() {
+  
+    const { id } = useParams(); 
+    const [selectedSize, setSelectedSize] = useState("");
+    const [selectedColor, setSelectedColor] = useState("");
+    const product = useSelector((state) => state.catalog.items.find((item) => item.id === id))
+    const {style_color} = product
+    const handleColorClick = (color) => {
+    setSelectedColor(color);
+  };
+
+    const handleSizeChange = (size) => {
+        setSelectedSize(size);
+    };
+
+    const handleColorChange = (color) => {
+        setSelectedColor(color);
+    };
+
+  /* useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        const response = await axios.get(`api/products/${_id}`); // Пример URL-адреса запроса
+        setProduct(response.data);
+      } catch (error) {
+        console.error("Error fetching product data:", error);
+      }
+    };
+    fetchProduct();
     
+  }, [_id]); */
+    
+
+  let nameProd = product.name
+  
     return(
         <div className="container card-page">
-            <Links/>
+               <BelowHeaderBreadcrumbs
+                paths={[
+                    { label: "Swoosh Store", url: "/" },
+                    { label: "Nike Air VaporMax 2023 Flyknit", url: "/products" },
+                ]}
+            />
             <div className="content-container">
-            <ImgContainer/>
+            <ImgContainer
+            logo_img={product.logo_img}
+            />
                 <div className="text-container">
                     <h1 className="text-container__title">
-                        Кросівки Nike Air VaporMax 2023 Flyknit
+                      {nameProd}
                     </h1>
                     <p className="text-container__description">
-                         Кросівки Nike Air VaporMax 2023 Flyknit з підтримуючою амортизацією, створеною для плавного бігу, є абсолютно новим поглядом на знайому колекцію.
+                         {product.description}
                     </p>
-                    <a href="/link" className="all-description">
-                        Повний опис
-                    </a>
-                  <ColorList/>
-                   <Size/>
+                    {/* <a href="/link" className="all-description">
+                        {product.description}
+                    </a> */}
+                    <div className="vertical-card__colors-block">
+                             <span className="vertical-card__colors-span">Кольори:</span>
+                            
+                             {style_color.map((color) => (
+                                      <div 
+                                        key={color} 
+                                        style={{
+                                            backgroundColor: color,
+                                            border: `2px solid ${selectedColor === color ? 'orange' : 'gray'}` 
+                                        }}  
+                                        className={`vertical-card__sneaker-color color_list ${selectedColor === color && "selected"}`}
+                                        onClick={() => handleColorClick(color)}>
+                                  </div>
+                              ))}
+
+                        </div>
+                   <Size onSelectSize={handleSizeChange}/>
                    <div className="card-page__price">
                        <div className="card-page__price-md">
                          <span className="card-page__price-original">
-                            7 999 $
+                            {product.previousPrice }
                         </span>
                         <span className="card-page__price-discount">
-                            6 329 $
+                            {product.price + " " + "₴"}
                         </span>
                        </div>
                         <CardCounterMd/>
@@ -47,12 +105,20 @@ function CardPage() {
                         </div>
                    </div>
                    <div className="card-page__options">
-                        <ProductOptions/>
+                        <ProductOptions 
+                        description = {product.description}
+                        color={product.color}
+                        material={product.material}
+                        />
                    </div>
                 </div>
             </div>
             <div className="card-page__options-md">
-                        <ProductOptions/>
+                        <ProductOptions
+                        description = {product.description}
+                        color={product.color}
+                        material={product.material}
+                        />
                    </div>
         </div>
     )

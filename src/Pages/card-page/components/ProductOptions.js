@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import '../style/product-options.scss'
-import ButtonResponseWhite from './ButtonResponse/White/ButtonResponseWhite'
+// import ButtonResponseWhite from './ButtonResponse/White/ButtonResponseWhite'
 
-const ProductOptions = () => {
+const ProductOptions = ({ description, color, material }) => {
   const [activeTab, setActiveTab] = useState('description');
 
   return (
@@ -15,27 +15,15 @@ const ProductOptions = () => {
       {activeTab === 'description' && (
         <div style={{marginTop: '35px'}}>
             <p style={{fontSize: '17px', lineHeight: '28px', color: '#4B4B4B'}}>
-                Кросівки Nike Air VaporMax 2023 Flyknit з підтримуючою амортизацією, створеною для плавного бігу, є абсолютно новим поглядом на знайому колекцію.
-                <br/>
-                Модель VaporMax названа на честь команди "Portland Trail Blazers". Вперше модель з'явилася на майданчиках 1972 року. Зараз це вже класика lifestyle від Nike. 
-                <br/>
-                — натуральна шкіра для верху кросівок
-                <br/>
-                — зміцнювальні вставки з натуральної замші
-                <br/>
-                — контрастний swoosh
-                <br/>
-                — пряма шнурівка
-                <br/>
-                — нейлоновий язичок з необробленим краєм
+                {description}
             </p>
         </div>
       )}
       {activeTab === 'characteristics' && (
         <div style={{marginTop: '35px'}}>
           <p style={{fontSize: '17px', lineHeight: '28px', color: '#4B4B4B'}}>
-                Кольори ............................................................... Червоний, Сірий, Чорний <br/>
-                Матеріал .................................................................................. Дерматин, Замш
+                Кольори ............................................................... {color + " "} <br/>
+                Матеріал .................................................................................. {material}
           </p>
         </div>
       )}
@@ -44,7 +32,6 @@ const ProductOptions = () => {
             <p>
                 Поки що відгуків нема
             </p> 
-            <ButtonResponseWhite/>
         </div>
       )}
     </div>

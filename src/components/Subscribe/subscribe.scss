@@ -12,14 +12,14 @@
     border: 1px solid $footer-border-color;
 
     &::after {
-            content: "";
-            display: block;
-            width: 1px;
-            height: 28px;
-            background-color: $footer-border-color;
-            right: 100px;
-            position: absolute;
-        }
+        content: "";
+        display: block;
+        width: 1px;
+        height: 28px;
+        background-color: $footer-border-color;
+        right: 100px;
+        position: absolute;
+    }
 }
 
 .subscribe-input {
@@ -35,6 +35,9 @@
         @include font(15px, 400, 1, $background-primary-color);
     }
 
+    &:focus {
+        outline: none;
+    }
 }
 
 .subscribe-button {
@@ -52,3 +55,14 @@
     cursor: pointer;
 }
 
+.subscribe-success-message {
+    color: $light-orange;
+}
+
+.subscribe-success-box {
+    position: relative;
+    width: 307px;
+    height: 47px;
+    @include flex (center, center, row);
+    border: 1px solid $footer-border-color;
+}

@@ -11,10 +11,14 @@ import {
   SelectMaterial,
 } from "../../components/Select";
 import axios from "axios";
+import ModalFilter from "../../components/Modal/ModalFilter";
 
 import "../AllProductsPage/AllProductsPage.scss";
 
-const AllProductsPage = () => {
+const AllProductsPage = ({items}) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const handelModal = () => setIsOpen(!isOpen);
+
   const [isFiltersOpen, setIsFiltersOpen] = useState(false);
   const [itemsPerPage, setItemsPerPage] = useState(9);
   const [filters, setFilters] = useState({
@@ -75,21 +79,21 @@ const AllProductsPage = () => {
 
   useEffect(() => {
     const sortedProducts = [...products];
-  
+
     switch (sortOption) {
-      case 'increase':
+      case "increase":
         sortedProducts.sort((a, b) => a.price - b.price);
         break;
-      case 'decrease':
+      case "decrease":
         sortedProducts.sort((a, b) => b.price - a.price);
         break;
-        case 'ordinary':
-    sortedProducts.sort((a, b) => a.id - b.id);
-    break;
-  default:
-    break;
+      case "ordinary":
+        sortedProducts.sort((a, b) => a.id - b.id);
+        break;
+      default:
+        break;
     }
-  
+
     if (JSON.stringify(products) !== JSON.stringify(sortedProducts)) {
       setProducts(sortedProducts);
     }
@@ -99,7 +103,8 @@ const AllProductsPage = () => {
 
   return (
     <section className="catalog container">
-      <h1>Коллекция Air Max</h1>
+      <h1>{items}</h1>
+      {/* <h1>Коллекция Air Max</h1> */}
       <hr />
       <div className="select-mobile">
         <div className="select-mobile__button">
@@ -108,12 +113,30 @@ const AllProductsPage = () => {
             open={isFiltersOpen}
             onClick={toggleFilters}
           />
-          Показати фільтри
+          {!isFiltersOpen ? (
+            <button onClick={toggleFilters}>Показати фільтри</button>
+          ) : (
+            <button onClick={toggleFilters}>Сховати фільтри</button>
+          )}
         </div>
       </div>
+      {isFiltersOpen && (
+        <ModalFilter
+          isOpen={isFiltersOpen}
+          handleClose={toggleFilters}
+          props={{
+            handleSizeChange,
+            handleColorChange,
+            handleMaterialChange,
+            clearFilters,
+            handleSortChange,
+            handelModal
+          }}
+        />
+      )}
       <div className="select-wrapper">
         <div className="select-wrapper__item">
-          <SelectSize onChange={handleSizeChange}/>
+          <SelectSize onChange={handleSizeChange} />
         </div>
         <div className="select-wrapper__item">
           <CustomizedSlider />
@@ -134,13 +157,10 @@ const AllProductsPage = () => {
       <hr />
       <div className="sorting-wrapper">
         <div className="sorting-wrapper__show">
-          <DisplayParameter 
-          onItemsPerPageChange={handleItemsPerPageChange} 
-          />
+          <DisplayParameter onItemsPerPageChange={handleItemsPerPageChange} />
         </div>
         <div className="sorting-wrapper__price">
-          <SelectSort 
-          onChange={handleSortChange}/>
+          <SelectSort onChange={handleSortChange} />
         </div>
       </div>
       <div className="all-products-card">
