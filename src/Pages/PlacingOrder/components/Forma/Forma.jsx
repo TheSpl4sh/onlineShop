@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import "../../../PlacingOrder/PlacingOrder.scss";
 import "../../../PlacingOrder/components/Forma/Forma.scss";
 import ButtonModal from "../../../../components/Button/ButtonModal/ButtonModal";
-// import CustomCheckbox from "../CustomCheckbox/CustomCheckebox";
+import CustomCheckbox from "../CustomCheckbox/CustomCheckbox";
 import  sendOrderEmail  from "../YourOrder/YourOrder";
 
 function Forma() {
@@ -43,7 +43,8 @@ function Forma() {
     await new Promise((resolve) => setTimeout(resolve, 500));
     setCustomerEmail(values.email); // Зберегти електронну пошту в стані
     alert(JSON.stringify(values, null, 2));
-    sendOrderEmail(values.email); // Передача електронної пошти в компонент YourOrder
+    sendOrderEmail(values.email); 
+    console.log(setCustomerEmail(values.email))// Передача електронної пошти в компонент YourOrder
   };
   
 
@@ -142,6 +143,7 @@ function Forma() {
                       <button
                         id="cp_apply"
                         className="bt-outline apply-coup button"
+                
                       >
                         Застосувати промокод
                       </button>
@@ -330,9 +332,10 @@ function Forma() {
                     name="email"
                     placeholder="Введить адресу вашоє електронної пошти"
                     value={values.email}
-                    onClick={toggleEmail}
-                    customerEmail={customerEmail}
+                    onClick={() => {toggleEmail(customerEmail)
+                      console.log("Мило прийнято");}}
                   />
+                  
                   {showEmail && touched.email && errors.email && (
                     <ErrorMessage
                       name="email"
@@ -374,10 +377,10 @@ function Forma() {
                 </li>
               </ul>
 
-              {/* <CustomCheckbox
+              <CustomCheckbox
                 className="customCheckbox-form"
                 text="Створити аккаунт"
-              /> */}
+              />
 
               <label htmlFor="preorderСomment">
                 <p className="form-element__text">Коментар до замовлення</p>

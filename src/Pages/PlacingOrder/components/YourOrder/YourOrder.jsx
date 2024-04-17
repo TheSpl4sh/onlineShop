@@ -30,16 +30,10 @@ function YourOrder({ customerEmail }) {
     setModalIsOpen(false);
   };
 
-  const handleOutsideClick = (e) => {
-    if (modalIsOpen && e.target === e.currentTarget) {
-      closeModal();
-    }
-  };
-
-    const sendOrderEmail = (email) => {
+  const sendOrderEmail = (email) => {
     const message = `Дякуємо за замовлення!\n\nДоставка: ${selectedDeliveryOption}\nОплата: ${selectedPaymentOption}\nСума: ${summa}`;
-
-    fetch("/send-email", {
+  
+    fetch("http://localhost:3000/customer@gmail.com", { // Replace this URL with your backend endpoint
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -57,11 +51,18 @@ function YourOrder({ customerEmail }) {
         console.error("Error sending email:", error);
       });
   };
+  
 
-  // const sendOrderEmail = (email) => {
+  const handleOutsideClick = (e) => {
+    if (modalIsOpen && e.target === e.currentTarget) {
+      closeModal();
+    }
+  };
+
+  //   const sendOrderEmail = (email) => {
   //   const message = `Дякуємо за замовлення!\n\nДоставка: ${selectedDeliveryOption}\nОплата: ${selectedPaymentOption}\nСума: ${summa}`;
 
-  //   fetch("/send-email", {
+  //   fetch("/customer@gmail.com", {
   //     method: "POST",
   //     headers: {
   //       "Content-Type": "application/json",
@@ -168,9 +169,6 @@ function YourOrder({ customerEmail }) {
         <ButtonBlackArrow
           text="Оформити замовлення"
           onClick={() => {
-            // const customerEmail =
-            //   document.getElementById("customerEmail").value; // Отримуємо електронну адресу з форми
-            // sendOrderEmail(customerEmail);
             sendOrderEmail(customerEmail); 
             openModal();
             console.log("Модальне вікно відкрите");
