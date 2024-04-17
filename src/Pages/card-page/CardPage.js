@@ -59,6 +59,7 @@ function CardPage() {
             <div className="content-container">
             <ImgContainer
             logo_img={product.logo_img}
+            chips={product.chips}
             />
                 <div className="text-container">
                     <h1 className="text-container__title">
