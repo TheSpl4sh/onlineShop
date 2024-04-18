@@ -13,7 +13,7 @@ import CustomCheckbox from "../CustomCheckbox/CustomCheckbox";
 import CustomRadio from "../CustomRadio/CustomRadio";
 import ButtonModal from "../../../../components/Button/ButtonModal/ButtonModal";
 
-function YourOrder({ customerEmail }) {
+function YourOrder({ customerEmail, formCompleted, sendOrderEmail }) {
   const [summa] = useState(0);
   const [selectedDeliveryOption, setSelectedDeliveryOption] = useState("");
   const [selectedPaymentOption, setSelectedPaymentOption] = useState("");
@@ -21,35 +21,11 @@ function YourOrder({ customerEmail }) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const openModal = () => {
-    console.log("Модальне вікно відкрите");
     setModalIsOpen(true);
   };
 
   const closeModal = () => {
-    console.log("Модальне вікно закрите");
     setModalIsOpen(false);
-  };
-
-  const sendOrderEmail = (email) => {
-    const message = `Дякуємо за замовлення!\n\nДоставка: ${selectedDeliveryOption}\nОплата: ${selectedPaymentOption}\nСума: ${summa}`;
-  
-    fetch("http://localhost:3000/customer@gmail.com", { // Replace this URL with your backend endpoint
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, message }),
-    })
-      .then((response) => {
-        if (response.ok) {
-          console.log("Email sent successfully!");
-        } else {
-          console.error("Failed to send email.");
-        }
-      })
-      .catch((error) => {
-        console.error("Error sending email:", error);
-      });
   };
   
 
@@ -59,27 +35,7 @@ function YourOrder({ customerEmail }) {
     }
   };
 
-  //   const sendOrderEmail = (email) => {
-  //   const message = `Дякуємо за замовлення!\n\nДоставка: ${selectedDeliveryOption}\nОплата: ${selectedPaymentOption}\nСума: ${summa}`;
 
-  //   fetch("/customer@gmail.com", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({ email, message }),
-  //   })
-  //     .then((response) => {
-  //       if (response.ok) {
-  //         console.log("Email sent successfully!");
-  //       } else {
-  //         console.error("Failed to send email.");
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error sending email:", error);
-  //     });
-  // };
 
   return (
     <div className="wrapper-yourOrder">
@@ -171,8 +127,8 @@ function YourOrder({ customerEmail }) {
           onClick={() => {
             sendOrderEmail(customerEmail); 
             openModal();
-            console.log("Модальне вікно відкрите");
           }}
+          disabled={!formCompleted}
         />
       </div>
 

@@ -5,9 +5,13 @@ import "../../../PlacingOrder/PlacingOrder.scss";
 import "../../../PlacingOrder/components/Forma/Forma.scss";
 import ButtonModal from "../../../../components/Button/ButtonModal/ButtonModal";
 import CustomCheckbox from "../CustomCheckbox/CustomCheckbox";
-import  sendOrderEmail  from "../YourOrder/YourOrder";
+// import sendOrderEmail  from "../../../../Pages/PlacingOrder/PlacingOrder"; 
+import sendOrderEmail from "../YourOrder/YourOrder";
 
-function Forma() {
+
+function Forma({ onSubmit, setFormCompleted }) {
+
+
 
   const validationSchema = Yup.object().shape({
     firstName: Yup.string().required("Поле ім'я є обов'язковим"),
@@ -20,7 +24,6 @@ function Forma() {
     city: Yup.string().required("Поле місто є обов'язковим"),
     newPost: Yup.string().required("Поле є обов'язковим"),
   });
-  
 
   const initialValues = {
     firstName: "",
@@ -32,20 +35,28 @@ function Forma() {
     phoneNumber: "",
   };
 
-  // const handleSubmit = async (values) => {
-  //   await new Promise((resolve) => setTimeout(resolve, 500));
-  //   alert(JSON.stringify(values, null, 2));
-  // };
-
   const [customerEmail, setCustomerEmail] = useState("");
 
   const handleSubmit = async (values) => {
     await new Promise((resolve) => setTimeout(resolve, 500));
     setCustomerEmail(values.email); // Зберегти електронну пошту в стані
     alert(JSON.stringify(values, null, 2));
-    sendOrderEmail(values.email); 
-    console.log(setCustomerEmail(values.email))// Передача електронної пошти в компонент YourOrder
+    sendOrderEmail(values.email);
+    console.log(setCustomerEmail(values.email)); // Передача електронної пошти в компонент YourOrder
+
+    if (
+      values.firstName &&
+      values.lastName &&
+      values.region &&
+      values.city &&
+      values.newPost &&
+      values.email &&
+      values.phoneNumber
+    ) {
+      setFormCompleted(true);
+    }
   };
+
   
 
   const togglePromoCoupon = () => {
@@ -143,7 +154,6 @@ function Forma() {
                       <button
                         id="cp_apply"
                         className="bt-outline apply-coup button"
-                
                       >
                         Застосувати промокод
                       </button>
@@ -332,10 +342,12 @@ function Forma() {
                     name="email"
                     placeholder="Введить адресу вашоє електронної пошти"
                     value={values.email}
-                    onClick={() => {toggleEmail(customerEmail)
-                      console.log("Мило прийнято");}}
+                    onClick={() => {
+                      toggleEmail(customerEmail);
+                      console.log("Мило прийнято");
+                    }}
                   />
-                  
+
                   {showEmail && touched.email && errors.email && (
                     <ErrorMessage
                       name="email"
