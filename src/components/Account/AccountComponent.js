@@ -51,13 +51,18 @@ const AccountComponent = () => {
                                             <td>#23234-11</td>
                                             <td>31 Березня 2024</td>
                                             <td>Виконаний</td>
-                                            <td>12 932</td>
+                                            <td>
+                                                12 932 ₴
+                                                <span>
+                                                    
+                                                </span>
+                                            </td>
                                         </tr>
-                                        <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                        <tr className="account-orders__order">
+                                            <td>#23234-12</td>
+                                            <td>12 Квітня 2024</td>
+                                            <td>Виконаний</td>
+                                            <td>6890 ₴</td>
                                         </tr>
                                     </tbody>
                                 </table>

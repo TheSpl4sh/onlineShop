@@ -69,14 +69,16 @@
     flex-wrap: wrap;
     align-items: flex-start;
     padding-top: 15px;
+    width: 1015px;
+    height: 460px;
 
-    @media (min-width: 768px) {
-        padding-top: 27px;
-    }
+    // @media (min-width: 768px) {
+    //     padding-top: 27px;
+    // }
 
-    @media (min-width: 1025px) {
-        padding: 40px 0 90px 0;
-    }
+    // @media (min-width: 1025px) {
+    //     padding: 40px 0 90px 0;
+    // }
 
     &__content {
         font-family: 'Pragmatica';
