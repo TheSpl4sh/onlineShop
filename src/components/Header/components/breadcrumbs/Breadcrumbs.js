@@ -7,9 +7,10 @@ const Breadcrumbs = ({className, menu, menuList, menuItem, onClick}) => {
     <nav className={`menu ${className || menu}`}>       
       <ul className={`menu-list ${className || menuList}`}>
         <li className={`menu-list__item ${className || menuItem}`}>          
-          <NavLink to="AboutTheStore" onClick={onClick}>
+          <NavLink to="/about-us" onClick={onClick}>
           Про магазин
           </NavLink>
+          {/* <Link to="/about-us">Про магазин</Link> */}
         </li>
         <li className={`menu-list__item ${className || menuItem}`}>
           <NavLink to="Blog" onClick={onClick}>
