@@ -45,7 +45,7 @@ const SignUpPageForm = () => {
                     if (unwrapResult.meta.requestStatus === "fulfilled") {
                         dispatch(setAuthenticated(true));
                         resetForm();
-                        navigate("/cabinet");
+                        navigate("/account");
                     }
                 });
             }}
