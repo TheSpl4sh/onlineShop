@@ -1,11 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect} from 'react';
+import { useSelector } from 'react-redux';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 
 function Size() {
+    const { id } = useParams(); 
+    const product = useSelector((state) => state.catalog.items.find((item) => item.id === id))
+   
   const location = useLocation();
   const params = new URLSearchParams(location.search);
   const navigate = useNavigate();
-
+ 
   const [activeId, setActiveId] = useState(params.get('size') || "");
 
   const handleButtonClick = (id) => {
@@ -29,10 +33,16 @@ function Size() {
                             </h3>
                         </div>
                         <ul className="size">
-                            <li id="36" className={`all-size size-li ${activeId === "36" && "active"}`} onClick={() => handleButtonClick("36")}>
-                                36
-                            </li>
-                            <li id="36,5" className={`half-size size-li ${activeId === "36,5" && "active"}`} onClick={() => handleButtonClick("36,5")}>
+                            {product.size.map((size, index) => (
+                                <li
+                                    key={index} 
+                                    className={`all-size size-li ${activeId === index.toString() && "active"}`} 
+                                    onClick={() => handleButtonClick(index.toString())} 
+                                >
+                                    {size}
+                                </li>
+                            ))}
+                            {/* <li id="36,5" className={`half-size size-li ${activeId === "36,5" && "active"}`} onClick={() => handleButtonClick("36,5")}>
                                 36,5
                             </li>
                             <li id="37"  className={`all-size size-li ${activeId ==="37" && "active"}`} onClick={() => handleButtonClick("37")}>
@@ -79,7 +89,7 @@ function Size() {
                             </li>
                             <li id="44,5" className={`half-size size-li ${activeId === "44,5" && "active"}`} onClick={() => handleButtonClick("44,5")}>
                                 44,5
-                            </li>
+                            </li> */}
                         </ul>
                    </div>
     )
