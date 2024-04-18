@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import ColorList from "./ColorList";
-import Size from "./Size";
+// import ColorList from "./ColorList";
+// import Size from "./Size";
 
 function CardPage() {
   const [selectedSize, setSelectedSize] = useState("");
