@@ -12,6 +12,7 @@ import {
 } from "../../components/Select";
 import axios from "axios";
 import ModalFilter from "../../components/Modal/ModalFilter";
+import BelowHeaderBreadcrumbs from '../../components/BelowHeaderBreadcrumbs/BelowHeaderBreadcrumbs';
 
 import "../AllProductsPage/AllProductsPage.scss";
 
@@ -101,8 +102,15 @@ const SaleClothingPage = () => {
 
   return (
     <section className="catalog container">
-      <h3>Sale Clothing Page</h3>
-      <h1>Коллекция Air Max</h1>
+      <BelowHeaderBreadcrumbs
+                paths={[
+                    { label: "Swoosh Store", url: "/" },
+                    { label: "Каталог", url: "/catalog" },
+                    { label: "Розпродаж", url: "/sale" },
+                ]}
+            />
+      {/* <h3>Sale Clothing Page</h3>
+      <h1>Коллекция Air Max</h1> */}
       <hr />
       <div className="select-mobile">
       <div className="select-mobile__button">

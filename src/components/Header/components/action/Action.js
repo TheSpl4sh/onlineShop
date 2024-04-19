@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { checkAuthenticationStatus } from "../../../../redux/auth/authSlice";
-import { BsHeart, BsBasket3 } from "react-icons/bs";
+import { BsHeart, BsBasket3, BsSearch } from "react-icons/bs";
 import { FaRegUser, FaUserCheck } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-// import Search from "../../../Search/Search";
+
 import Search from "../../../Search/Search";
 import "./Action.scss";
 
@@ -17,6 +17,28 @@ const Action = () => {
   useEffect(() => {
     dispatch(checkAuthenticationStatus());
   }, [dispatch]);
+
+  const [isHovered, setIsHovered] = useState(false);
+  const [isInputFocused, setIsInputFocused] = useState(false);
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+  const handleMouseLeave = () => {
+    if (!isInputFocused) {
+      setIsHovered(false);
+    }
+  };
+  const handleInputFocus = () => {
+    setIsInputFocused(true);
+  };
+
+  const handleInputBlur = () => {
+    setIsInputFocused(false);
+    if (!isHovered) {
+      setIsHovered(false);
+    }
+  };
+  console.log(isHovered);
 
   return (
     <div className="header-icon">
@@ -31,12 +53,21 @@ const Action = () => {
           </NavLink>
         )}
       </div>
-
-      <div className="header-icon__item header-icon__itemSearh">
-        <Search/>
-        
+      <div
+        className="header-icon__item"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <BsSearch />
+        {isHovered && (
+          <Search
+            handleMouseEnter={handleMouseEnter}
+            handleMouseLeave={handleMouseLeave}
+            handleInputFocus={handleInputFocus}
+            handleInputBlur={handleInputBlur}
+          />
+        )}
       </div>
-
       <div className="header-icon__item">
         <NavLink to="/favorites">
           <BsHeart />

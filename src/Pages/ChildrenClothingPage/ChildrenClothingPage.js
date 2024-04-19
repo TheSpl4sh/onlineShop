@@ -1,13 +1,21 @@
 // import EmptyCart from "../../components/EmptyCart/EmptyCart";
 import LinkButton from "../../components/LinkButton/LinkButton";
 import { ReactComponent as OrangeSvg } from "../../components/LinkButton/icons/orange_btn_svg.svg";
+import BelowHeaderBreadcrumbs from '../../components/BelowHeaderBreadcrumbs/BelowHeaderBreadcrumbs';
 
 const ChildrenClothingPage = () => {
 
 	
 	return ( 
-		<>
-		<div className="empty-cart">
+		<div className="container">
+        <BelowHeaderBreadcrumbs
+                paths={[
+                    { label: "Swoosh Store", url: "/" },
+                    { label: "Каталог", url: "/catalog" },
+                    { label: "Дитячі", url: "/children" },
+                ]}
+            />
+		<div className="empty-cart">        
             <div className="empty-cart-content">
 
 			<h2 className="empty-cart-heading">
@@ -37,7 +45,7 @@ const ChildrenClothingPage = () => {
             </div>
         </div>
 		{/* <h1>ChildrenClothingPage</h1> */}
-		</>
+		</div>
 	 );
 }
  

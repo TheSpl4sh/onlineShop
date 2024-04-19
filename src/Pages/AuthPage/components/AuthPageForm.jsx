@@ -35,7 +35,7 @@ const AuthPageForm = () => {
                         if (values.rememberMe) {
                             localStorage.setItem("authToken", result.token);
                         }
-                        navigate("/cabinet");
+                        navigate("/account");
                     })
                     .catch((error) => console.error("Failed to login:", error));
             }}

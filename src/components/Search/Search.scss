@@ -1,58 +1,7 @@
-// .search-section {
-//   display: flex;
-// // align-items: center;
-// // cursor: pointer;
-// }
-// // .search-form{
-// // 	position: relative;
-// // 	display: block;
-// // 	// display: flex;
-// // 	// align-items: center;
-// // 	height: 20px;
-	
-// // }
-// .search-form {
-//   position: relative;
-//   display: block;
-//   width: 200px; /* Задайте ширину відповідно до ваших потреб */
-//   height: auto; /* Задайте висоту, яка підходить для вас */
-// }
-// // .search-input {
-// // 	display: inline-block;
-// //   position: relative;
-// //   cursor: pointer;
-// //   height: 50px;
-// //   background-color: aqua;
-// //   margin-right: 27px;
-// //   margin-bottom: 27px;
-// // }
-// .search-input {
-//   display: inline-block;
-//   position: relative;
-//   cursor: pointer;
-//   height: 40px; /* Задайте більшу висоту, якщо потрібно */
-//   background-color: aqua;
-//   margin-right: 27px;
-//   margin-bottom: 27px;
-// }
-// .search-icon {
-//   display: flex;
-// }
-// .search-input {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-// }
 
-// =========================
-// .search-section{}
-// .search-icon{}
- .search-form{
-  display: flex;
-  align-items: center;
- }
  .search-input{
   position: absolute;
+  top: 0;
   height: 72px;
   width: 1000px;
   z-index: 50;
@@ -61,7 +10,36 @@
 
 font-size: 22px;
 font-weight: 500;
-line-height: 10px;
+// line-height: 10px;
 text-align: left;
 
+}
+
+.search-results{
+  position: absolute;
+  top: 80px;
+  left: 150px;
+  width: 1000px;
+  // color: rgb(255, 105, 21, 0.8);
+  // color: rgb(255, 105, 21);
+  color: #FF6915;
+  background-color: rgba(0, 0, 0, 0.8);
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 10px;
+  text-align: left;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  cursor: pointer;
+  // padding: 10px;
+}
+.search-result__item{
+ padding-left: 10px;
+  transition: color 0.2s;
+}
+.search-result__item:hover {
+  color: #f0f0f0; 
+  // color: #c24700;
 }
