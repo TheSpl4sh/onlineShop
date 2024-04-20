@@ -15,15 +15,12 @@ import {BsHeart} from "react-icons/bs";
 // import imgCros3Lg from '../iamges/img-cros-3-lg.png'
 // import imgCros4Lg from '../iamges/img-cros-4-lg.png'
 
-function ImgContainer({logo_img}) {
+function ImgContainer({ logo_img, chips }) {
     return(
         <div className="img-container">
-        <picture>
-            <source className="img-cros-md" srcSet={ logo_img} media="(max-width: 1420px)" draggable="false"  />
-            <img src={logo_img} alt="img" draggable="false" />
-        </picture>
+        <img src={logo_img} alt="img" draggable="false" />
         <div className="card-page-chips">
-                <div className="chips-card-page">20%</div>
+                <div className="chips-card-page">{chips}</div>
         </div>
         <BsHeart className="card-page-heart-icon"/>
         {/* <div className="img-container-grid">

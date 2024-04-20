@@ -1,0 +1,41 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/deafults.scss';
+@import '../../../styles/fonts.scss';
+@import '../../../styles/mixins.scss';
+
+.editname-form {
+    border: 1px solid #EAEAEA;
+    padding: 40px;
+    width: 555px;
+    height: 481px;
+
+
+    &__label {
+        font-family: 'Pragmatica';
+        @include font (15px, 400, 180%, $dark-black);
+        display: block;
+        width: 100%;
+        text-align: start;
+        margin-bottom: 5px;
+    }
+
+    &__input {
+        font-family: 'Pragmatica';
+        @include font (16px, 400, 169%, $dark-black);
+        border: 1px solid $beige;
+        width: 100%;
+        height: 60px;
+        padding: 10px 35px 10px 20px;
+        margin-bottom: 15px;
+
+        &::placeholder {
+            font-family: 'Pragmatica';
+            @include font (16px, 400, 169%, #C1C1C1);
+        }
+    }
+}
+
+.orange-star {
+    color: #ff1515;
+}
+

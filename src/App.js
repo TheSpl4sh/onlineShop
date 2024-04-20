@@ -18,6 +18,7 @@ import { PlacingOrder } from "./Pages/PlacingOrder/PlacingOrder";
 import { AuthPage } from "./Pages/AuthPage/AuthPage";
 import { SignUpPage } from "./Pages/SignUpPage/SignUpPage";
 import { CardPage } from "./Pages/card-page/CardPage";
+import { Account } from "./Pages/Account/Account";
 import { Cabinet } from "./Pages/AuthPage/Cabinet";
 import { Contacts } from "./Pages/Contacts/Contacts";
 import { MenClothingPage } from "./Pages/MenClothingPage/MenClothingPage";
@@ -74,6 +75,7 @@ function App() {
                     <Route path="children" element={<ChildrenClothingPage />}/>
                     <Route path="sale" element={<SaleClothingPage />}/>
                     <Route path="*" element={<NotFound />} />
+                    <Route path="account" element={<Account />} />
                 </Route>
             </Routes>
         </div>
