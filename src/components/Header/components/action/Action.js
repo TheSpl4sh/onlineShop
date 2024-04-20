@@ -38,7 +38,6 @@ const Action = () => {
       setIsHovered(false);
     }
   };
-  console.log(isHovered);
 
   return (
     <div className="header-icon">

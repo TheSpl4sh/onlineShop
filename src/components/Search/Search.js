@@ -25,6 +25,14 @@ const Search = ({ handleMouseLeave }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchQuery]);
 
+  // const handleKeyDown = (e) => {
+  //   if (e.key === "Enter") {
+  //     fetchSearchResults();
+  //   }
+  // };
+  // searchResults.forEach((result, index) => {
+  //   console.log(`Результат ${index + 1}:`, result);
+  // });
   return (
     <>
       <input
@@ -33,16 +41,18 @@ const Search = ({ handleMouseLeave }) => {
         placeholder="Пошук по каталогу товарів ..."
         value={searchQuery}
         onChange={onChange}
+        //  onKeyDown={handleKeyDown}
       />
       <div className="search-results">
         {searchQuery !== "" &&
           searchResults.map((result, id) => (
-            <Link key={id} to={`/products/${result.id}`}>
+            <Link key={result.id} to={`/products/${result.id}`}>
               <div 
               className="search-result__item"
                onClick={() => handleMouseLeave(false)}
               >{result.name}</div>
             </Link>
+
           ))}
       </div>
     </>
@@ -50,4 +60,5 @@ const Search = ({ handleMouseLeave }) => {
 };
 
 export default Search;
+
 
