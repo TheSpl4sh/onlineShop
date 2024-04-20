@@ -1,8 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import Forma from "../../Pages/PlacingOrder/components/Forma/Forma";
 import YourOrder from "../../Pages/PlacingOrder/components/YourOrder/YourOrder";
+// import { express, cors } from "express";
 
-function PlacingOrder(props) {
+  // const express = require('express');
+// const cors = require('cors');
+
+// const app = express();
+
+// Enable CORS for all origins
+// app.use(cors());
+
+// Your routes and other middleware setup here...
+
+// app.listen(4000, () => {
+//   console.log('Server is running on port 4000');
+// });
+
+function PlacingOrder({selectedDeliveryOption, selectedPaymentOption, summa}) {
+
+  const [formCompleted, setFormCompleted] = useState(false);
+  const [customerEmail, setCustomerEmail] = useState("");
+
+
+
+
+  const sendOrderEmail = (email) => {
+    const message = `Дякуємо за замовлення!\n\nДоставка: ${selectedDeliveryOption}\nОплата: ${selectedPaymentOption}\nСума: ${summa}`;
+  
+    fetch("http://localhost:4000/customer@gmail.com", { // Replace this URL with your backend endpoint
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, message }),
+    })
+      .then((response) => {
+        if (response.ok) {
+          console.log("Email sent successfully!");
+        } else {
+          console.error("Failed to send email.");
+        }
+      })
+      .catch((error) => {
+        console.error("Error sending email:", error);
+      });
+  };
 
   return (
     <div className="container">
@@ -26,8 +69,8 @@ function PlacingOrder(props) {
       </ul>
       <div className="placingOrder-header">Оформлення замовлення</div>
       <div className="wrapper-placingOrder">
-        <Forma  onSubmit={props.sendOrderEmail}/>
-        <YourOrder  customerEmail={props.customerEmail} />
+        <Forma  onSubmit={sendOrderEmail} setCustomerEmail={setCustomerEmail} setFormCompleted={setFormCompleted} />
+        <YourOrder  customerEmail={customerEmail} sendOrderEmail={sendOrderEmail} formCompleted={formCompleted} />
       </div>
     </div>
   );
