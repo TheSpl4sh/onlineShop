@@ -30,6 +30,7 @@ const authSlice = createSlice({
     name: "loginCustomer",
     initialState: {
         customer: null,
+        customerNo: null,
         isAuthenticated: false,
         isAuthStatusChecked: false,
         status: "idle",
@@ -59,6 +60,7 @@ const authSlice = createSlice({
             .addCase(loginCustomer.fulfilled, (state, action) => {
                 state.status = "succeeded";
                 state.customer = action.payload.user;
+                state.customerNo = action.payload.user.customerNo
                 state.isAuthenticated = true;
             })
             .addCase(loginCustomer.rejected, (state, action) => {
