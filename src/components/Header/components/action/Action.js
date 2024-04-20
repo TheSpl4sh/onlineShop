@@ -20,6 +20,7 @@ const Action = () => {
 
   const [isHovered, setIsHovered] = useState(false);
   const [isInputFocused, setIsInputFocused] = useState(false);
+  
   const handleMouseEnter = () => {
     setIsHovered(true);
   };
@@ -30,13 +31,6 @@ const Action = () => {
   };
   const handleInputFocus = () => {
     setIsInputFocused(true);
-  };
-
-  const handleInputBlur = () => {
-    setIsInputFocused(false);
-    if (!isHovered) {
-      setIsHovered(false);
-    }
   };
 
   return (
@@ -63,7 +57,6 @@ const Action = () => {
             handleMouseEnter={handleMouseEnter}
             handleMouseLeave={handleMouseLeave}
             handleInputFocus={handleInputFocus}
-            handleInputBlur={handleInputBlur}
           />
         )}
       </div>
