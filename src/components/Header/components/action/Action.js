@@ -4,7 +4,7 @@ import { checkAuthenticationStatus } from "../../../../redux/auth/authSlice";
 import { BsHeart, BsBasket3, BsSearch } from "react-icons/bs";
 import { FaRegUser, FaUserCheck } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-
+import MouseLeaveContext from "../../../MouseLeaveContext";
 import Search from "../../../Search/Search";
 import "./Action.scss";
 
@@ -52,6 +52,7 @@ const Action = () => {
         onMouseLeave={handleMouseLeave}
       >
         <BsSearch />
+        <MouseLeaveContext.Provider value={handleMouseLeave}>
         {isHovered && (
           <Search
             handleMouseEnter={handleMouseEnter}
@@ -59,6 +60,7 @@ const Action = () => {
             handleInputFocus={handleInputFocus}
           />
         )}
+        </MouseLeaveContext.Provider>
       </div>
       <div className="header-icon__item">
         <NavLink to="/favorites">
