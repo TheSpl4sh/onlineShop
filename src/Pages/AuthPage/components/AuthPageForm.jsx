@@ -33,6 +33,7 @@ const AuthPageForm = () => {
                     .then((result) => {
                         resetForm();
                         if (values.rememberMe) {
+                            localStorage.setItem("customerEmail", values.email)
                             localStorage.setItem("authToken", result.token);
                         }
                         navigate("/account");

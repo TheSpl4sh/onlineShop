@@ -30,7 +30,7 @@ const authSlice = createSlice({
     name: "loginCustomer",
     initialState: {
         customer: null,
-        // customerNo: null,
+        customerEmail: null,
         isAuthenticated: false,
         isAuthStatusChecked: false,
         status: "idle",
@@ -41,6 +41,7 @@ const authSlice = createSlice({
             state.customer = null;
             state.isAuthenticated = false;
             localStorage.removeItem("authToken");
+            localStorage.removeItem("customerEmail");
         },
         clearErrors: (state) => {
             state.error = { email: null, password: null };
@@ -59,8 +60,8 @@ const authSlice = createSlice({
             })
             .addCase(loginCustomer.fulfilled, (state, action) => {
                 state.status = "succeeded";
-                state.customer = action.payload.user;
-                // state.customerNo = action.payload.customerNo
+                state.customer = action.token;
+                state.customerEmail = action.meta.arg.email
                 state.isAuthenticated = true;
             })
             .addCase(loginCustomer.rejected, (state, action) => {

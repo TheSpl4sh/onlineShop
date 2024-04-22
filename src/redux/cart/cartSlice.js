@@ -4,9 +4,15 @@ import axios from 'axios';
 export const fetchCart = createAsyncThunk(
     'cart/fetchCart',
     
-    async (customer = {}) => {
+    async (/* customer = {} */) => {
+        const token = localStorage.getItem("authToken")
         try {
-          const response = await axios.get('api/cart', { params: customer });
+          const response = await axios.get('/api/cart', {
+            headers: {
+                customerId: "6616c2b477dc7e9ac47b72a4",
+                Authorization: token
+            }
+        });
           return response.data;
         } catch (error) {
           throw new Error('Failed to fetch cart data.');
