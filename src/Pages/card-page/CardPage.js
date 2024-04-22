@@ -8,20 +8,27 @@ import ColorList from './components/ColorList.js'
 import CardCounter from "./components/CardCounter.js";
 import CardCounterMd from "./components/CardCounterMd.js";
 import BelowHeaderBreadcrumbs from '../../components/BelowHeaderBreadcrumbs/BelowHeaderBreadcrumbs';
-import { useParams } from "react-router-dom";
+import {useLocation, useParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useSelector } from 'react-redux';
+import AddToCartButton from './components/AddToCartButton.js';
+import CardCarousel from '../../components/CardCarousel/CardCarousel.js'
+import ProductsList from '../../components/Products/ProductsList.js';
 
 
 function CardPage() {
-  
+  const navigate = useNavigate();
+  const location = useLocation();
     const { id } = useParams(); 
     const [selectedSize, setSelectedSize] = useState("");
     const [selectedColor, setSelectedColor] = useState("");
     const product = useSelector((state) => state.catalog.items.find((item) => item.id === id))
     const {style_color} = product
     const handleColorClick = (color) => {
-    setSelectedColor(color);
+      setSelectedColor(color);
+      const params = new URLSearchParams(location.search);
+      params.set('color', color);
+      navigate(`${location.pathname}?${params.toString()}`);
   };
 
     const handleSizeChange = (size) => {
@@ -53,13 +60,12 @@ function CardPage() {
                <BelowHeaderBreadcrumbs
                 paths={[
                     { label: "Swoosh Store", url: "/" },
-                    { label: "Nike Air VaporMax 2023 Flyknit", url: "/products" },
+                    { label: product.name, url: "/products" },
                 ]}
             />
             <div className="content-container">
             <ImgContainer
             logo_img={product.logo_img}
-            chips={product.chips}
             />
                 <div className="text-container">
                     <h1 className="text-container__title">
@@ -102,7 +108,8 @@ function CardPage() {
                    <div className="card-page__add-cart">
                         <CardCounter/>
                         <div>
-                        <ButtonBlackBasket/>
+                        <AddToCartButton data={{ id: 1, text: 'Простий текстовий об\'єкт' }} />
+
                         </div>
                    </div>
                    <div className="card-page__options">
@@ -121,6 +128,13 @@ function CardPage() {
                         material={product.material}
                         />
                    </div>
+                   <section className='arrivals-section'>
+                   <h1 className='arrivals-section__title'>МОЖЛИВО ВАС ЗАЦІКАВИТЬ</h1>
+                   <article className='arrivals-section__products-container'>
+                   <ProductsList productType="ЗНИЖКА" />
+                  </article>
+                  </section>
+                  
         </div>
     )
 }
