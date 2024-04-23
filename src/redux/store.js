@@ -10,7 +10,7 @@ const store = configureStore({
         loginCustomer: authReducer,
         customers: registerCustomer,
         catalog: catalogReducer,
-        favorites: favoritesReducer
+        favorites: favoritesReducer,
         cart: cartReducer
     },
 });
