@@ -108,7 +108,7 @@ function CardPage() {
                    <div className="card-page__add-cart">
                         <CardCounter/>
                         <div>
-                        <AddToCartButton data={{ id: 1, text: 'Простий текстовий об\'єкт' }} />
+                        <ButtonBlackBasket />
 
                         </div>
                    </div>
