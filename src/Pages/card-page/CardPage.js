@@ -110,7 +110,7 @@ function CardPage() {
                 {product.previousPrice}
               </span>
               <span className="card-page__price-discount">
-                {product.price + " " + "₴"}
+                {product.price + " ₴"}
               </span>
             </div>
             <CardCounterMd />

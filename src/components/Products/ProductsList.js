@@ -31,7 +31,7 @@ function ProductsList({ productType }) {
   });
 
   // Оновлюємо індекси при натисканні на стрілки
-  const nextSlide = () => {
+  /* const nextSlide = () => {
     if (currentIndex < filteredProducts.length - 3) {
       setCurrentIndex(currentIndex + 3);
     }
@@ -41,7 +41,7 @@ function ProductsList({ productType }) {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 3);
     }
-  };
+  }; */
 
   return (
     <>
