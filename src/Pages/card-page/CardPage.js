@@ -67,7 +67,7 @@ function CardPage() {
       <BelowHeaderBreadcrumbs
         paths={[
           { label: "Swoosh Store", url: "/" },
-          { label: "Nike Air VaporMax 2023 Flyknit", url: "/products" },
+          { label: product.name, url: "/products" },
         ]}
       />
       <div className="content-container">
