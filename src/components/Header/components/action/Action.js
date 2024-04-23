@@ -4,11 +4,17 @@ import { checkAuthenticationStatus } from "../../../../redux/auth/authSlice";
 import { BsHeart, BsBasket3, BsSearch } from "react-icons/bs";
 import { FaRegUser, FaUserCheck } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-
+import { useFavorite } from "../../../../components/FavoriteContext.js";
+import MouseLeaveContext from "../../../MouseLeaveContext";
 import Search from "../../../Search/Search";
+
 import "./Action.scss";
 
 const Action = () => {
+  const { favorites } = useFavorite();
+  const favoritesLength = favorites.length;
+  console.log("action", favorites);
+
   const dispatch = useDispatch();
   const isAuthenticated = useSelector(
     (state) => state.loginCustomer.isAuthenticated
@@ -20,6 +26,7 @@ const Action = () => {
 
   const [isHovered, setIsHovered] = useState(false);
   const [isInputFocused, setIsInputFocused] = useState(false);
+
   const handleMouseEnter = () => {
     setIsHovered(true);
   };
@@ -31,14 +38,6 @@ const Action = () => {
   const handleInputFocus = () => {
     setIsInputFocused(true);
   };
-
-  const handleInputBlur = () => {
-    setIsInputFocused(false);
-    if (!isHovered) {
-      setIsHovered(false);
-    }
-  };
-  console.log(isHovered);
 
   return (
     <div className="header-icon">
@@ -59,18 +58,22 @@ const Action = () => {
         onMouseLeave={handleMouseLeave}
       >
         <BsSearch />
-        {isHovered && (
-          <Search
-            handleMouseEnter={handleMouseEnter}
-            handleMouseLeave={handleMouseLeave}
-            handleInputFocus={handleInputFocus}
-            handleInputBlur={handleInputBlur}
-          />
-        )}
+        <MouseLeaveContext.Provider value={handleMouseLeave}>
+          {isHovered && (
+            <Search
+              handleMouseEnter={handleMouseEnter}
+              handleMouseLeave={handleMouseLeave}
+              handleInputFocus={handleInputFocus}
+            />
+          )}
+        </MouseLeaveContext.Provider>
       </div>
       <div className="header-icon__item">
         <NavLink to="/favorites">
-          <BsHeart />
+          <BsHeart
+            style={{ color: favoritesLength > 0 ? "#FF6915" : "currentColor" }}
+          />
+          <span>{favoritesLength}</span>
         </NavLink>
       </div>
       <div className="header-icon__item">

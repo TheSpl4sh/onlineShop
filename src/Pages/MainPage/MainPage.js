@@ -5,7 +5,6 @@ import ShieldImg from "./img/benfits_section/shield.svg"
 import StarsImg from "./img/benfits_section/stars.svg"
 import CartImg from "./img/benfits_section/cart.svg"
 import PlusImg from './img/hit-section/plus.svg'
-import DiscountCard from '../../components/discount-card/DiscountCard'
 import Banner from "../../components/Banner/Banner";
 import ProductsList from '../../components/Products/ProductsList'
 const MainPage = () => {
@@ -46,27 +45,19 @@ const MainPage = () => {
             <article className='arrivals-section__title-container'>
               <h1 className='arrivals-section__title'>ОСТАННІ ОНОВЛЕННЯ</h1>
               
-              <div className='arrivals-section__arrow-container'>
-                <button className='arrivals-section__arrow-button arrivals-section__arrow-button--active'></button>
-                <button className='arrivals-section__arrow-button arrivals-section__arrow-button--nonactive'></button>
-              </div>
             </article >
 
             <article className='arrivals-section__products-container'>
-              <ProductsList />
+            <ProductsList productType="НОВИНКА" />
             </article>
 
             <article className='arrivals-section__title-container arrivals-section__title-container--margin-top'>
               <h1 className='arrivals-section__title'>НАЙПОПУЛЯРНІШІ</h1>
               
-              <div className='arrivals-section__arrow-container'>
-                <button className='arrivals-section__arrow-button arrivals-section__arrow-button--active'></button>
-                <button className='arrivals-section__arrow-button arrivals-section__arrow-button--nonactive'></button>
-              </div>
             </article >
 
             <article className='arrivals-section__products-container'>
-              <ProductsList />
+            <ProductsList productType="ХІТ" />
             </article>
           </section>
 
@@ -80,7 +71,6 @@ const MainPage = () => {
                 <span className="span-box__from-text">від</span>
                 <span className="span-box__price">7 899 ₴</span>
               </div>
-              <ButtonOrangArrow text={"Детальніше"}/>
             </article>
 
             <article className='hit-section__bottom-container'>
@@ -93,15 +83,10 @@ const MainPage = () => {
           <section className='arrivals-section'>
             <article className='arrivals-section__title-container'>
               <h1 className='arrivals-section__title'>ТОВАРИ ЗІ ЗНИЖКОЮ</h1>
-              
-              <div className='arrivals-section__arrow-container'>
-                <button className='arrivals-section__arrow-button arrivals-section__arrow-button--active'></button>
-                <button className='arrivals-section__arrow-button arrivals-section__arrow-button--nonactive'></button>
-              </div>
             </article >
 
             <article className='arrivals-section__products-container'>
-              <DiscountCard />
+              <ProductsList productType="ЗНИЖКА" />
             </article>
           </section>
       </div>

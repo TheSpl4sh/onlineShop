@@ -199,27 +199,6 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className="footer-shops-features">
-            <p>МАГАЗИН</p>
-            <ul className="footer-shops-list">
-              <li>
-                <Link to="account">Особистий кабінет</Link>
-                {isAuthenticated ? (
-                  <Link to="/cabinet">Особистий кабінет</Link>
-                ) : (
-                  <Link to="/auth">Особистий кабінет</Link>
-                )}
-              </li>
-              <li>
-                <Link to="/">Обране</Link>
-              </li>
-              <li>
-                <Link to="cart">Кошик</Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-
           <div className="footer-subscribe">
             <div className="footer-subscribe-text">
               <p>ПІДПИСКА НА НОВИНИ</p>
@@ -235,6 +214,9 @@ const Footer = () => {
               </p>
             </div>
           </div>
+        </div>
+
+          
         </div>
 
         <div className="footer-about-shop">

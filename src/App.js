@@ -25,7 +25,8 @@ import { MenClothingPage } from "./Pages/MenClothingPage/MenClothingPage";
 import { WomanClothingPage } from "./Pages/WomanClothingPage/WomanClothingPage";
 import { ChildrenClothingPage } from "./Pages/ChildrenClothingPage/ChildrenClothingPage";
 import { SaleClothingPage } from "./Pages/SaleClothingPage/SaleClothingPage";
-import { AboutUs } from "./Pages/AboutUs/AboutUs"
+import { AboutUs } from "./Pages/AboutUs/AboutUs";
+import { FavoritePage } from "./Pages/FavoritePage/FavoritePage";
 import ProtectedRoute from "./routes/ProtectedRoute";
 // import ColorList from './Pages/card-page/components/ColorList.js';
 
@@ -74,6 +75,7 @@ function App() {
                     <Route path="woman" element={<WomanClothingPage />}/>
                     <Route path="children" element={<ChildrenClothingPage />}/>
                     <Route path="sale" element={<SaleClothingPage />}/>
+                    <Route path="favorites" element={<FavoritePage />}/>
                     <Route path="*" element={<NotFound />} />
                     <Route path="account" element={<Account />} />
                 </Route>

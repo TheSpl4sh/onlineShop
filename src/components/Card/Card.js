@@ -41,11 +41,11 @@ const Card = ({ item }) => {
                         
                          <div className="vertical-card__price-block">
                              <span className="vertical-card__price-number vertical-card__price-number--actual">
-                                 {item.price}
+                                 {item.price + " ₴"}
                              </span>
 
                             <span className="vertical-card__price-number vertical-card__price-number--discount">
-                                {item.previousPrice}
+                                {item.previousPrice ? item.previousPrice + " ₴" : ""}
                             </span>
                             <button className="cart-button"></button>
                         </div>

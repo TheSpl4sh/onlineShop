@@ -54,7 +54,7 @@ const AccountComponent = () => {
                                             <td>
                                                 12 932 ₴
                                                 <span>
-                                                    
+
                                                 </span>
                                             </td>
                                         </tr>
