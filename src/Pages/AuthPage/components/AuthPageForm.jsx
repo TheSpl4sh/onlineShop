@@ -4,7 +4,7 @@ import "../components/AuthPageForm.scss";
 import { Formik, Field, Form } from "formik";
 import SubmitButton from "../../../components/LinkButton/SubmitButton";
 import { ReactComponent as BlackSvg } from "../../../components/LinkButton/icons/black_btn_svg.svg";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { loginCustomer } from "./../../../redux/auth/authSlice";
 import { validationSchema } from "./validationSchema";
@@ -33,6 +33,7 @@ const AuthPageForm = () => {
                     .then((result) => {
                         resetForm();
                         if (values.rememberMe) {
+                            localStorage.setItem("customerEmail", values.email)
                             localStorage.setItem("authToken", result.token);
                         }
                         navigate("/account");
@@ -121,13 +122,11 @@ const AuthPageForm = () => {
                             </svg>
                         </button>
                     </div>
-
-                    <div className="auth-form__link">
+                   {/*  <div className="auth-form__link">
                         <Link to="/" className="auth-form__link-text">
                             Відновити пароль
                         </Link>
-                    </div>
-
+                    </div> */}
                     <SubmitButton
                         text="Увійти в кабінет"
                         SvgIcon={BlackSvg}
