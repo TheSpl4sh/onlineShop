@@ -45,10 +45,10 @@ const MainPage = () => {
             <article className='arrivals-section__title-container'>
               <h1 className='arrivals-section__title'>ОСТАННІ ОНОВЛЕННЯ</h1>
               
-              <div className='arrivals-section__arrow-container'>
+              {/* <div className='arrivals-section__arrow-container'>
                 <button className='arrivals-section__arrow-button arrivals-section__arrow-button--active'></button>
                 <button className='arrivals-section__arrow-button arrivals-section__arrow-button--nonactive'></button>
-              </div>
+              </div> */}
             </article >
 
             <article className='arrivals-section__products-container'>
@@ -58,10 +58,10 @@ const MainPage = () => {
             <article className='arrivals-section__title-container arrivals-section__title-container--margin-top'>
               <h1 className='arrivals-section__title'>НАЙПОПУЛЯРНІШІ</h1>
               
-              <div className='arrivals-section__arrow-container'>
+              {/* <div className='arrivals-section__arrow-container'>
                 <button className='arrivals-section__arrow-button arrivals-section__arrow-button--active'></button>
                 <button className='arrivals-section__arrow-button arrivals-section__arrow-button--nonactive'></button>
-              </div>
+              </div> */}
             </article >
 
             <article className='arrivals-section__products-container'>
@@ -93,10 +93,10 @@ const MainPage = () => {
             <article className='arrivals-section__title-container'>
               <h1 className='arrivals-section__title'>ТОВАРИ ЗІ ЗНИЖКОЮ</h1>
               
-              <div className='arrivals-section__arrow-container'>
+              {/* <div className='arrivals-section__arrow-container'>
                 <button className='arrivals-section__arrow-button arrivals-section__arrow-button--active'></button>
                 <button className='arrivals-section__arrow-button arrivals-section__arrow-button--nonactive'></button>
-              </div>
+              </div> */}
             </article >
 
             <article className='arrivals-section__products-container'>

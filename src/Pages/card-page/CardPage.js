@@ -10,6 +10,7 @@ import ImgContainer from "./components/ImgContainer.js";
 import CardCounter from "./components/CardCounter.js";
 import CardCounterMd from "./components/CardCounterMd.js";
 import BelowHeaderBreadcrumbs from "../../components/BelowHeaderBreadcrumbs/BelowHeaderBreadcrumbs";
+import ProductsList from "../../components/Products/ProductsList.js";
 
 import "./style/card-page.scss";
 
@@ -136,6 +137,17 @@ function CardPage() {
           material={product.material}
         />
       </div>
+      <section className='arrivals-section'>
+            <article className='arrivals-section__title-container'>
+              <h1 className='arrivals-section__title'>МОЖЛИВО ВАС ЗАЦІКАВИТЬ</h1>
+              
+             
+            </article >
+
+            <article className='arrivals-section__products-container'>
+            <ProductsList productType="ЗНИЖКА" />
+            </article>
+          </section>
     </div>
   );
 }

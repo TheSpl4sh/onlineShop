@@ -3,6 +3,10 @@
 @import url('../../../styles/variables.scss');
 @import url('../../../styles/deafults.scss');
 .card-page {
+    .arrivals-section__title {
+        width: 350px;
+        max-width: 350px;
+    }
     .color-list {
         input[type="radio"] {
             appearance: none;
