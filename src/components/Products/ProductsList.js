@@ -45,16 +45,6 @@ function ProductsList({ productType }) {
 
   return (
     <>
-      <button 
-        onClick={prevSlide} 
-        className={`arrivals-section__arrow-button arrivals-section__arrow-button--active ${currentIndex === 0 ? 'disabled' : ''}`}
-      >
-      </button>
-      <button 
-        onClick={nextSlide} 
-        className={`arrivals-section__arrow-button arrivals-section__arrow-button--nonactive ${currentIndex >= filteredProducts.length - 3 ? 'disabled' : ''}`}
-      >
-      </button>
       {catalogStatus === 'loading' && <div>Loading...</div>}
       {catalogStatus === 'succeeded' && (
         <>

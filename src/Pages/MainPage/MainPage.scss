@@ -177,14 +177,14 @@
 
     background-image: url('./img/hit-section/sneaker_mobile.png');
     background-repeat: no-repeat;
-    background-position: top 333px center;
+    background-position: top 259px center;
 
     @include flex (flex-start, flex-start, column);
     gap: 310px;
 
     @media (min-width: $bp-md) {
         background-image: url('./img/hit-section/sneaker_tablet.png');
-        background-position: top 0px right 0px;
+        background-position: top -18px right 0px;
     }
 
     @media (min-width: $bp-lg) {
