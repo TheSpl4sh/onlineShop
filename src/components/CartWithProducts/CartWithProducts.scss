@@ -54,9 +54,16 @@
         }
     }
 
-    // &__body {
+    &__card-cell {
+        &--verticalAlign {
+            vertical-align: middle;
+        }
 
-    // }
+        &--verticalSum {
+            vertical-align: middle;
+        }
+        
+    }
 
     &__card td {
         height: 100px;

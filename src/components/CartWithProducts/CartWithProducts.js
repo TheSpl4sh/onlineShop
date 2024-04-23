@@ -1,11 +1,12 @@
 import React from "react";
 import "./CartWithProducts.scss";
 import CartTotalBox from "../CartTotalBox/CartTotalBox";
-import CardCarousel from "../CardCarousel/CardCarousel";
 
-const CartWithProducts = () => {
+const CartWithProducts = ({ cart }) => {
+    
     return (
         <>
+        {console.log(cart)}
             <div className="cart-products">
                 <div className="cart-products__content">
                     <table className="cart-products__table">
@@ -22,18 +23,16 @@ const CartWithProducts = () => {
                             </tr>
                         </thead>
                         <tbody className="cart-products__body">
-                            <tr className="cart-products__card">
-                                <td>ТУТ БУДЕ КАРТКА</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr className="cart-products__card">
-                                <td>ТУТ БУДЕ КАРТКА</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
+                             {cart.map((product) => (
+                                <tr className="cart-products__card" key={product.product.id}>
+                                    <td><img src={product.product.logo_img} alt="sneaker" draggable="false" className="vertical-card__logo" /></td>
+                                    <td className="cart-products__card-cell cart-products__card-cell--verticalAlign">{product.product.price + " ₴"}</td>
+                                    <td className="cart-products__card-cell cart-products__card-cell--verticalAlign">{product.cartQuantity}</td>
+                                    <td className="cart-products__card-cell cart-products__card-cell--verticalSum">{product.product.price * product.cartQuantity + " ₴"}</td>
+                                    {}
+                                </tr>
+                             ))}
+                            
                         </tbody>
                     </table>
                 </div>

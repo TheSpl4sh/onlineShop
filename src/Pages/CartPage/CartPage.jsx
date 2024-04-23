@@ -11,26 +11,12 @@ const CartPage = () => {
     const cart = useSelector((state) => state.cart.items)
     const dispatch = useDispatch()
 
-    // useEffect(() => {
-    //     const authToken = localStorage.getItem("authToken");
-    //     if (authToken) {
-    //         const tokenParts = authToken.split(" ");
-    //         if (tokenParts.length === 2) {
-    //             const token = tokenParts[1];
-    //             const res = dispatch(fetchCart(token))
-    //             console.log(res)
-    //         }
-    //     }
-    // }, [dispatch])
-
     useEffect(() => {
         dispatch(fetchCart());
-
       }, [dispatch])
 
     return (
         <div className="container">
-            {console.log(cart)}
             <BelowHeaderBreadcrumbs
                 paths={[
                     { label: "Swoosh Store", url: "/" },
@@ -38,8 +24,9 @@ const CartPage = () => {
                 ]}
             />
             <h1 className="cart-page-heading">Кошик</h1>
-            {/*В залежності від наявності товарів в кошику,буде відображатись відповідний компонент*/}
-            <CartWithProducts />
+            <CartWithProducts 
+                cart = {cart.products}
+            />
             <EmptyCart />
         </div>
     );
