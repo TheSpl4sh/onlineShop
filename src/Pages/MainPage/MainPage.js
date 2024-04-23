@@ -5,7 +5,6 @@ import ShieldImg from "./img/benfits_section/shield.svg"
 import StarsImg from "./img/benfits_section/stars.svg"
 import CartImg from "./img/benfits_section/cart.svg"
 import PlusImg from './img/hit-section/plus.svg'
-import DiscountCard from '../../components/discount-card/DiscountCard'
 import Banner from "../../components/Banner/Banner";
 import ProductsList from '../../components/Products/ProductsList'
 const MainPage = () => {
@@ -53,7 +52,7 @@ const MainPage = () => {
             </article >
 
             <article className='arrivals-section__products-container'>
-              <ProductsList />
+            <ProductsList productType="НОВИНКА" />
             </article>
 
             <article className='arrivals-section__title-container arrivals-section__title-container--margin-top'>
@@ -66,7 +65,7 @@ const MainPage = () => {
             </article >
 
             <article className='arrivals-section__products-container'>
-              <ProductsList />
+            <ProductsList productType="ХІТ" />
             </article>
           </section>
 
@@ -101,7 +100,7 @@ const MainPage = () => {
             </article >
 
             <article className='arrivals-section__products-container'>
-              <DiscountCard />
+            <ProductsList productType="ЗНИЖКА" />
             </article>
           </section>
       </div>

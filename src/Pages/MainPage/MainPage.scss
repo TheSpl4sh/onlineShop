@@ -2,7 +2,6 @@
 @import "../../styles/typography.scss";
 @import "../../styles/mixins.scss";
 
-
 .benefits-section {
     @include flex(flex-start, flex-start, column);
     gap: 25px;
