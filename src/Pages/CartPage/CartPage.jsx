@@ -24,10 +24,15 @@ const CartPage = () => {
                 ]}
             />
             <h1 className="cart-page-heading">Кошик</h1>
-            <CartWithProducts 
-                cart = {cart.products}
-            />
-            <EmptyCart />
+
+            {cart.products
+                ? <CartWithProducts 
+                    cart = {cart.products}
+                    />
+                : <EmptyCart />
+            }
+            
+            
         </div>
     );
 };
