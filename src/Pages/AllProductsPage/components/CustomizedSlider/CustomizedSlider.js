@@ -44,7 +44,7 @@ AirbnbThumbComponent.propTypes = {
 };
 
 export default function CustomizedSlider({ onValuesChange, maxPrice }) {
-	// Перевірка чи maxPrice не є undefined, інакше використовуйте 100 за замовчуванням
+
 	const [values, setValues] = useState([0, maxPrice !== undefined ? maxPrice : 100]);
 	
 	const handleChange = (event, newValue) => {
