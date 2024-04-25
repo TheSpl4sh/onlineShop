@@ -1,0 +1,35 @@
+.custom-checkbox input[type="checkbox"] {
+    display: none;
+  }
+  
+  .custom-checkbox label {
+    /* Встановлення стилів для фону "підробленого" чекбокса */
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background-color: #000;
+    cursor: pointer;
+  }
+  
+  .custom-checkbox input[type="checkbox"]:checked + label::after {
+    /* Стилізація галочки, коли чекбокс відмічено */
+    content: "\2714";
+    display: block;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+  }
+
+  #coupon_code {
+    margin-top: 10px;
+  }
+  
+  .custom-checkbox .checkmark {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background-color: #fff;
+    border: 1px solid #d6d6d6;
+    cursor: pointer;
+  }
+  

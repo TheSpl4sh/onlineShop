@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const path = require('path');
+const fs = require('fs').promises;
 require('dotenv').config();
 
 const globalConfigs = require('./routes/globalConfigs');
@@ -23,6 +24,10 @@ const comments = require('./routes/comments');
 const shippingMethods = require('./routes/shippingMethods');
 const paymentMethods = require('./routes/paymentMethods');
 const partners = require('./routes/partners');
+const productCatalogFile = require('./data.json')
+const Catalog = require('./models/Catalog')
+const catalogFilter = require('./routes/catalogFilter');
+const searchRouter = require('./routes/search');
 
 const app = express();
 
@@ -61,6 +66,8 @@ app.use('/api/comments', comments);
 app.use('/api/shipping-methods', shippingMethods);
 app.use('/api/payment-methods', paymentMethods);
 app.use('/api/partners', partners);
+app.use('/api/catalog-filter', catalogFilter);
+app.use('/api/search', searchRouter);
 
 // Server static assets if in production
 if (process.env.NODE_ENV === 'production') {
@@ -75,3 +82,18 @@ if (process.env.NODE_ENV === 'production') {
 const port = process.env.PORT || 4000;
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
+
+//Initializing catalog
+
+const initializeProductCatalog = async () => {
+  const count = await Catalog.countDocuments(); 
+  if(count === 0) { 
+    productCatalogFile.forEach(product => {
+      const newProduct = new Catalog(product);
+      newProduct.save();
+    });
+    console.log('Product catalog has been initialized.');
+  }
+};
+
+// initializeProductCatalog().catch(console.error);

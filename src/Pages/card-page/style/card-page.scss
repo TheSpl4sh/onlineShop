@@ -2,6 +2,33 @@
 @import url('../../../styles/mixins.scss');
 @import url('../../../styles/variables.scss');
 @import url('../../../styles/deafults.scss');
+.card-page {
+    .arrivals-section__title {
+        width: 350px;
+        max-width: 350px;
+    }
+    .color-list {
+        input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+    }
+.color_list:hover {
+    border-color: orange;
+    cursor: pointer;
+}
+.vertical-card__sneaker-color:hover {
+    border-color: orange; /* Оранжевий бордер при наведенні */
+}
+
+    
+    
 .card-page__add-cart-count-md {
     display: none;
 }
@@ -11,11 +38,6 @@
 h2 {
     color: #000;
 }
-.color-img.selected {
-    border: 1px solid #ababab; /* Це приклад, замініть #000 на колір, який вам потрібен */
-    border-radius: 50px;
-    padding: 1px;
-  }
 @media screen and (min-width: 1421px) {
     .links {
         display: flex;
@@ -42,12 +64,20 @@ h2 {
     }
     .img-container {
         position: relative;
+       
+       
+            img {
+                width: 671px;
+                height: 679px;
+            }
+    
         .card-page-heart-icon {
             width: 23px;
             height: 20px;
             position: absolute;
             right: 25px;
             top: 25px;
+            cursor: pointer;
         }
         .card-page-chips {
             position: absolute;
@@ -57,7 +87,7 @@ h2 {
             left: 25px;
         }
         .chips-card-page {
-            background-color: #FF6915;
+            background-color: #000000;
             width: 49px;
             height: 32px;
             color: #fff;
@@ -148,7 +178,7 @@ h2 {
                     cursor: pointer
                 }
                 .all-size { 
-                    padding-inline: 32px;
+                    padding-inline: 18px;
                     padding-block: 15px;
                 }
                 .half-size { 
@@ -245,6 +275,10 @@ h2 {
     }
     .img-container {
         position: relative;
+        img {
+            width: 330px;
+            height: 333px;
+        }
         .card-page-heart-icon {
             width: 23px;
             height: 20px;
@@ -260,7 +294,7 @@ h2 {
             left: 25px;
         }
         .chips-card-page {
-            background-color: #FF6915;
+            background-color: #000000;
             width: 49px;
             height: 32px;
             color: #fff;
@@ -345,13 +379,13 @@ h2 {
                 .size-li {
                     border: 1px solid #EFEFEF;
                     border-radius: 4px;
-                    font-size: 15px;
+                    font-size: 14px;
                     font-weight: 500;
                     width: 53px;
                     cursor: pointer
                 }
                 .all-size { 
-                    padding-inline: 17.5px;
+                    padding-inline: 6px;
                     padding-block: 15px;
                 }
                 .half-size { 
@@ -492,6 +526,10 @@ h2 {
     }
     .img-container {
         position: relative;
+        img {
+            width: 330px;
+            height: 333px;
+        }
         .card-page-heart-icon {
             width: 23px;
             height: 20px;
@@ -507,7 +545,7 @@ h2 {
             left: 25px;
         }
         .chips-card-page {
-            background-color: #FF6915;
+            background-color: #000000;
             width: 49px;
             height: 32px;
             color: #fff;
@@ -597,7 +635,7 @@ h2 {
                     cursor: pointer
                 }
                 .all-size { 
-                    padding-inline: 28.5px;
+                    padding-inline: 16px;
                     padding-block: 15px;
                 }
                 .half-size { 
@@ -704,4 +742,5 @@ h2 {
     .card-page__options-md {
         display: flex;
     }
+}
 }

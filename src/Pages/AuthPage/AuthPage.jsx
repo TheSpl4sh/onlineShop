@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./AuthPage.scss";
 import AuthPageForm from "./components/AuthPageForm";
 import BelowHeaderBreadcrumbs from "../../components/BelowHeaderBreadcrumbs/BelowHeaderBreadcrumbs";
 import LinkButton from "../../components/LinkButton/LinkButton";
 import { ReactComponent as OrangeSvg } from "../../components/LinkButton/icons/orange_btn_svg.svg";
+import { clearErrors } from "../../redux/auth/authSlice";
+import { useDispatch } from "react-redux";
 
 const AuthPage = () => {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        return () => {
+            dispatch(clearErrors());
+        };
+    }, [dispatch]);
+
     return (
         <section className="container auth-page">
             <BelowHeaderBreadcrumbs
@@ -45,7 +55,7 @@ const AuthPage = () => {
                         того, щоб зробити процес купівлі більш швидким і легким.
                     </p>
                     <LinkButton
-                        path="/"
+                        path="/signup"
                         text="Зареєструватись"
                         SvgIcon={OrangeSvg}
                         className="orange auth-page__info-btn"

@@ -42,20 +42,16 @@ exports.createCustomer = (req, res, next) => {
         .then((customer) => {
             if (customer) {
                 if (customer.email === req.body.email) {
-                    return res
-                        .status(400)
-                        .json({
-                            message: `Email ${customer.email} already exists"`,
-                        });
+                    return res.status(400).json({
+                        message: `* Email ${customer.email} вже існує`,
+                    });
                 }
 
-                if (customer.login === req.body.login) {
-                    return res
-                        .status(400)
-                        .json({
-                            message: `Login ${customer.login} already exists`,
-                        });
-                }
+                // if (customer.login === req.body.login) {
+                //     return res.status(400).json({
+                //         message: `Login ${customer.login} already exists`,
+                //     });
+                // }
             }
 
             // Create query object for qustomer for saving him to DB
@@ -109,7 +105,7 @@ exports.loginCustomer = async (req, res, next) => {
         .then((customer) => {
             // Check for customer
             if (!customer) {
-                errors.loginOrEmail = "Customer not found";
+                errors.loginOrEmail = "* Клієнт не знайдений";
                 return res.status(404).json(errors);
             }
 
@@ -137,7 +133,7 @@ exports.loginCustomer = async (req, res, next) => {
                         }
                     );
                 } else {
-                    errors.password = "Password incorrect";
+                    errors.password = "* Пароль невірний";
                     return res.status(400).json(errors);
                 }
             });
@@ -169,7 +165,7 @@ exports.editCustomerInfo = (req, res) => {
     Customer.findOne({ _id: req.user.id })
         .then((customer) => {
             if (!customer) {
-                errors.id = "Customer not found";
+                errors.id = "Клієнт не знайдений";
                 return res.status(404).json(errors);
             }
 
@@ -192,19 +188,19 @@ exports.editCustomerInfo = (req, res) => {
                 }
             }
 
-            if (req.body.login) {
-                newLogin = req.body.login;
+            // if (req.body.login) {
+            //     newLogin = req.body.login;
 
-                if (currentLogin !== newLogin) {
-                    Customer.findOne({ login: newLogin }).then((customer) => {
-                        if (customer) {
-                            errors.login = `Login ${newLogin} is already exists`;
-                            res.status(400).json(errors);
-                            return;
-                        }
-                    });
-                }
-            }
+            //     if (currentLogin !== newLogin) {
+            //         Customer.findOne({ login: newLogin }).then((customer) => {
+            //             if (customer) {
+            //                 errors.login = `Login ${newLogin} is already exists`;
+            //                 res.status(400).json(errors);
+            //                 return;
+            //             }
+            //         });
+            //     }
+            // }
 
             // Create query object for qustomer for saving him to DB
             const updatedCustomer = queryCreator(initialQuery);

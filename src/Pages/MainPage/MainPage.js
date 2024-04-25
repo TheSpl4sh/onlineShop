@@ -1,14 +1,12 @@
 import React from 'react'
-import Card from "../../components/Card/Card"
 import ButtonOrangArrow from '../../components/Button/ButtonOrang/ButtonOrang'
 import "./MainPage.scss"
 import ShieldImg from "./img/benfits_section/shield.svg"
 import StarsImg from "./img/benfits_section/stars.svg"
 import CartImg from "./img/benfits_section/cart.svg"
 import PlusImg from './img/hit-section/plus.svg'
-import DiscountCard from '../../components/discount-card/DiscountCard'
 import Banner from "../../components/Banner/Banner";
-
+import ProductsList from '../../components/Products/ProductsList'
 const MainPage = () => {
   return (
     <div className='main-page'>
@@ -19,8 +17,8 @@ const MainPage = () => {
                 <img src={ShieldImg} alt='shield'className='benefits-section__img-shield'/>
 
                 <div className='benefits-section__original-text'>
-                  <h3 className='benefits-section__original-title'>ТОЛЬКО ОРИГИНАЛЬНЫЕ ТОВАРЫ</h3>
-                  <p className='benefits-section__original-paragraph'>Гарантированная подлинность Nike и высокое качество кроссовок.</p>
+                  <h3 className='benefits-section__original-title'>ТІЛЬКИ ОРИГІНАЛЬНІ ТОВАРИ</h3>
+                  <p className='benefits-section__original-paragraph'>Гарантована автентичність Nike та висока якість кросівок</p>
                 </div>
               </article>
 
@@ -28,8 +26,8 @@ const MainPage = () => {
                 <img src={StarsImg} alt='shield'className='benefits-section__img-stars'/>
 
                 <div className='benefits-section__original-text'>
-                  <h3 className='benefits-section__original-title'>ПРОФЕССИОНАЛЬНЫЙ СЕРВИС</h3>
-                  <p className='benefits-section__original-paragraph'>Команда экспертов, готовых помочь с выбором размера ответить на все вопросы.</p>
+                  <h3 className='benefits-section__original-title'>ПРОФЕСІОНАЛЬНИЙ СЕРВІС</h3>
+                  <p className='benefits-section__original-paragraph'>Команда експертів, готова допомогти з вибором розміру відповісти на всі питання.</p>
                 </div>
               </article>
 
@@ -37,8 +35,8 @@ const MainPage = () => {
                 <img src={CartImg} alt='shield'className='benefits-section__img-cart'/>
 
                 <div className='benefits-section__original-text'>
-                  <h3 className='benefits-section__original-title'>ЭКСКЛЮЗИВНЫЙ ВЫБОР</h3>
-                  <p className='benefits-section__original-paragraph'>Богатый ассортимент оригинальных моделей Nike, включая редкие выпуски.</p>
+                  <h3 className='benefits-section__original-title'>ЕКСКЛЮЗИВНИЙ ВИБІР ТОВАРІВ</h3>
+                  <p className='benefits-section__original-paragraph'>Багатий асортимент оригінальних моделей Nike, включаючи рідкісні випуски.</p>
                 </div>
               </article>
           </section>
@@ -47,33 +45,19 @@ const MainPage = () => {
             <article className='arrivals-section__title-container'>
               <h1 className='arrivals-section__title'>ОСТАННІ ОНОВЛЕННЯ</h1>
               
-              <div className='arrivals-section__arrow-container'>
-                <button className='arrivals-section__arrow-button arrivals-section__arrow-button--active'></button>
-                <button className='arrivals-section__arrow-button arrivals-section__arrow-button--nonactive'></button>
-              </div>
             </article >
 
             <article className='arrivals-section__products-container'>
-              <Card />
-              <Card />
-              <Card />
-              <Card />
+            <ProductsList productType="НОВИНКА" />
             </article>
 
             <article className='arrivals-section__title-container arrivals-section__title-container--margin-top'>
               <h1 className='arrivals-section__title'>НАЙПОПУЛЯРНІШІ</h1>
               
-              <div className='arrivals-section__arrow-container'>
-                <button className='arrivals-section__arrow-button arrivals-section__arrow-button--active'></button>
-                <button className='arrivals-section__arrow-button arrivals-section__arrow-button--nonactive'></button>
-              </div>
             </article >
 
             <article className='arrivals-section__products-container'>
-              <Card />
-              <Card />
-              <Card />
-              <Card />
+            <ProductsList productType="ХІТ" />
             </article>
           </section>
 
@@ -87,7 +71,6 @@ const MainPage = () => {
                 <span className="span-box__from-text">від</span>
                 <span className="span-box__price">7 899 ₴</span>
               </div>
-              <ButtonOrangArrow text={"Детальніше"}/>
             </article>
 
             <article className='hit-section__bottom-container'>
@@ -100,15 +83,10 @@ const MainPage = () => {
           <section className='arrivals-section'>
             <article className='arrivals-section__title-container'>
               <h1 className='arrivals-section__title'>ТОВАРИ ЗІ ЗНИЖКОЮ</h1>
-              
-              <div className='arrivals-section__arrow-container'>
-                <button className='arrivals-section__arrow-button arrivals-section__arrow-button--active'></button>
-                <button className='arrivals-section__arrow-button arrivals-section__arrow-button--nonactive'></button>
-              </div>
             </article >
 
             <article className='arrivals-section__products-container'>
-              <DiscountCard />
+              <ProductsList productType="ЗНИЖКА" />
             </article>
           </section>
       </div>

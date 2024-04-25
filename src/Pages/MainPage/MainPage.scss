@@ -2,7 +2,6 @@
 @import "../../styles/typography.scss";
 @import "../../styles/mixins.scss";
 
-
 .benefits-section {
     @include flex(flex-start, flex-start, column);
     gap: 25px;
@@ -173,20 +172,19 @@
 /* HIT SECTION -----------------------------------*/
 
 .hit-section {
-    // min-height: 714px;
     background-color: $light-black;
     padding: 35px 35px 38px 35px;
 
     background-image: url('./img/hit-section/sneaker_mobile.png');
     background-repeat: no-repeat;
-    background-position: top 333px center;
+    background-position: top 259px center;
 
     @include flex (flex-start, flex-start, column);
     gap: 310px;
 
     @media (min-width: $bp-md) {
         background-image: url('./img/hit-section/sneaker_tablet.png');
-        background-position: top 0px right 0px;
+        background-position: top -18px right 0px;
     }
 
     @media (min-width: $bp-lg) {

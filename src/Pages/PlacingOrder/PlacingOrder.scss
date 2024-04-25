@@ -1,3 +1,21 @@
+.placingOrder-field.error {
+  border-color: red;
+}
+
+.error-messages {
+  color: red;
+  font-size: 14px;
+  margin-top: 4px; // Add some spacing between the field and the error message
+}
+
+* {
+  font-family: "Pragmatica";
+}
+
+.checkbox--remember-me:checked {
+  background-color: #000;
+}
+
 .wrapper-placingOrder {
   width: 100%;
   height: auto;
@@ -5,6 +23,7 @@
   grid-template-columns: 1fr 0.5fr;
   gap: 20px;
   justify-content: space-between;
+  margin-bottom: 84px;
 }
 
 .registration-form {
@@ -12,18 +31,12 @@
 }
 
 .placingOrder-header {
-  font-family: Pragmatica;
   font-size: 45px;
   font-weight: 500;
   line-height: 48px;
   letter-spacing: 0em;
   text-align: left;
   margin: 25px 0 40px 0;
-}
-
-.click-active {
-  color: #fb5a00;
-  text-decoration: underline;
 }
 
 .form-element {
@@ -36,15 +49,20 @@
   width: 100%;
 }
 
-.form-enter {
+.form-enter_login-message {
   width: 100%;
-  display: flex;
   align-items: center;
   margin-bottom: 25px;
+  padding: 10px 0 10px 0;
+  background-color: #f8f8f8;
+}
+
+.form-enter {
+  display: flex;
+  align-items: center;
 }
 
 .form-enter__text {
-  font-family: Pragmatica;
   font-size: 15px;
   font-weight: 400;
   line-height: 27px;
@@ -54,9 +72,111 @@
 }
 
 .form-enter__button {
-  padding: 10px 20px 10px 20px;
-  background-color: #ffff;
+  background: none;
+  border: none;
+
   cursor: pointer;
+}
+
+.form-enter__button-a {
+  color: #000;
+  background-color: #ffff;
+
+  cursor: pointer;
+}
+
+.form-enter__button-a:hover {
+  background-color: #000000;
+
+  color: #fff;
+}
+
+.password-input-container {
+  position: relative;
+}
+
+.placingOrder-field {
+  padding-right: 40px;
+}
+
+.form-item {
+  width: 100%;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.apply-promoCode {
+  background-color: #f8f8f8;
+}
+
+.promo-code {
+  padding: 20px 0 20px 0;
+  margin: 0px 0 0px 0;
+  background-color: #f8f8f8;
+}
+
+.click-active {
+  margin-left: 10px;
+  color: #ff6915;
+  text-decoration: underline;
+  background-color: #f8f8f8;
+  border: none;
+  cursor: pointer;
+}
+
+.click-active:hover {
+  color: #fb5a00;
+}
+
+.label-coupon {
+  padding: 10px 0 10px 0;
+}
+
+.promo-coupon {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#coupon_code {
+  width: 50%;
+  padding: 10px 20px 10px 20px;
+  margin: 0px 25px 10px 0px;
+  border: 1px solid #d6d6d6;
+}
+
+#coupon_code:hover {
+  border: 1px solid #000;
+}
+
+#cp_apply {
+  width: 50%;
+  padding: 10px 20px 10px 20px;
+  margin: 10px 0px 10px 0px;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #d6d6d6;
+  cursor: pointer;
+}
+
+#cp_apply:hover {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #000;
+}
+
+.help-password {
+  display: flex;
+  justify-content: center;
+  color: #000;
+  text-decoration: underline;
+  margin: 10px 0 10px 0;
+}
+
+.remember-me {
+  display: flex;
+  justify-content: center;
 }
 
 .PlacingOrder-formik {
@@ -65,19 +185,27 @@
 
 .placingOrder-field {
   width: 100%;
-
   border: 1px solid #d6d6d6;
   padding: 10px 20px 10px 20px;
   margin-bottom: 10px;
 }
 
+.placingOrder-field:hover {
+  border: 1px solid #000000;
+}
+
 .placingOrder-fields {
   width: 100%;
   min-height: 100px;
-
   border: 1px solid #d6d6d6;
   padding: 10px 20px 10px 20px;
   margin-bottom: 10px;
+  resize: vertical;
+  overflow-y: auto;
+}
+
+.placingOrder-fields:hover {
+  border: 1px solid #000000;
 }
 
 .form-element__text {
@@ -90,7 +218,7 @@
 
 .wrapper-yourOrder {
   padding: 25px;
-  border: 1px solid #eaeaea;
+  border: 3px solid #eaeaea;
 }
 
 .yourOrder-basket {
@@ -99,12 +227,10 @@
 }
 
 .yourOrder-sum {
-  display: flex;
-  justify-content: space-between;
+  margin: 20px 0 20px 0;
 }
 
 .yourOrder-sum__sum {
-  font-family: Pragmatica;
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
@@ -113,11 +239,10 @@
 }
 
 .line-sum {
-  max-width: 75%;
+  max-width: 55%;
 }
 
 .yourOrder-sum__uah {
-  font-family: Pragmatica;
   font-size: 19px;
   font-weight: 400;
   line-height: 26px;
@@ -126,18 +251,14 @@
 }
 
 .delivery-header {
-  font-family: Pragmatica;
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
   letter-spacing: 0em;
   text-align: left;
-
-  margin-bottom: 20px;
 }
 
 .delivery-options {
-  font-family: Pragmatica;
   font-size: 15px;
   font-weight: 400;
   line-height: 18px;
@@ -156,46 +277,35 @@
 }
 
 .payment-header {
-  font-family: Pragmatica;
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
   letter-spacing: 0em;
   text-align: left;
-
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .payment-options {
-  font-family: Pragmatica;
   font-size: 15px;
   font-weight: 400;
   line-height: 18px;
   letter-spacing: 0em;
   text-align: left;
-
   margin-bottom: 15px;
 }
 
 .button-order {
   width: 100%;
+  display: flex;
+  justify-content: center;
   margin: 25px 0 25px 0;
+  padding-bottom: 20px;
 }
-
-.checkbox-order {
-  margin-right: 5px;
-  background-color: #0000;
-}
-
-.checkbox-order:checked {
-  border-color: red;
-  background-color: yellow;
-}
-
 
 @media screen and (min-width: 480px) and (max-width: 768px) {
   .line-sum {
-    max-width: 75%;
+    max-width: 55%;
+    align-items: center;
   }
 
   .wrapper-placingOrder {
@@ -209,7 +319,6 @@
   }
 
   .placingOrder-header {
-    font-family: Pragmatica;
     font-size: 25px;
     font-weight: 500;
     line-height: 31px;
@@ -240,7 +349,6 @@
   }
 
   .placingOrder-header {
-    font-family: Pragmatica;
     font-size: 25px;
     font-weight: 500;
     line-height: 31px;
@@ -248,7 +356,7 @@
   }
 
   .line-sum {
-    max-width: 75%;
+    max-width: 55%;
   }
 
   .wrapper-yourOrder {
@@ -266,7 +374,6 @@
   }
 
   .placingOrder-header {
-    font-family: Pragmatica;
     font-size: 25px;
     font-weight: 500;
     line-height: 31px;
@@ -274,7 +381,7 @@
   }
 
   .line-sum {
-    max-width: 75%;
+    max-width: 55%;
   }
 
   .wrapper-yourOrder {

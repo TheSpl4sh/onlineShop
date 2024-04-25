@@ -3,18 +3,19 @@ import ArrowLeft from "../SliderCircle/img/ArrowLeft.svg";
 import ArrowRight from "../SliderCircle/img/ArrowRight.svg";
 import "../SliderCircle/SliderCircle.scss";
 function SliderCircle() {
+  
   return (
     <div className="SliderCircle">
-      <button className="SliderCircleLeft">
+      <button className="sliderCircleLeft">
         <ul className="buttonComponents">
-          <li className="SliderCircle-icons">
+          <li className="sliderCircle-icons">
             <img src={ArrowLeft} alt="ArrowLeft" />
           </li>
         </ul>
       </button>
-      <button className="SliderCircleRight">
+      <button className="sliderCircleRight">
         <ul className="buttonComponents">
-          <li className="SliderCircle-icons">
+          <li className="sliderCircle-icons">
             <img src={ArrowRight} alt="ArrowRight" />
           </li>
         </ul>
@@ -24,3 +25,4 @@ function SliderCircle() {
 }
 
 export default SliderCircle;
+

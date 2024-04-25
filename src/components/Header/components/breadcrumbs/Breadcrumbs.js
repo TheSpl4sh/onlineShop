@@ -1,45 +1,41 @@
-// import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import "./Breadcrumbs.scss";
 
-function handleClick(event) {
-  event.preventDefault();
-  console.info("You clicked a breadcrumb.");
-}
-
-const Breadcrumbs = () => {
+const Breadcrumbs = ({className, menu, menuList, menuItem, onClick}) => {
   return (
-    <nav className="menu">
-      <ul className="menu-list" onClick={handleClick}>
-        <li className="menu-list__item">
-          {/* <Link to="AboutTheStore" className="menu-list__item"> */}
+    <nav className={`menu ${className || menu}`}>       
+      <ul className={`menu-list ${className || menuList}`}>
+        <li className={`menu-list__item ${className || menuItem}`}>          
+          <NavLink to="/about-us" onClick={onClick}>
           Про магазин
-          {/* </Link> */}
+          </NavLink>
+          {/* <Link to="/about-us">Про магазин</Link> */}
         </li>
-        <li className="menu-list__item">
-          {/* <Link to="Blog" className="menu-list__item"> */}
+        <li className={`menu-list__item ${className || menuItem}`}>
+          <NavLink to="Blog" onClick={onClick}>
           Наш блог
-          {/* </Link> */}
+          </NavLink>
         </li>
-        <li className="menu-list__item">
-          {/* <Link to="Delivery" className="menu-list__item"> */}
+        <li className={`menu-list__item ${className || menuItem}`}>
+          <NavLink to="Delivery" onClick={onClick}>
           Доставка
-          {/* </Link> */}
+          </NavLink>
         </li>
-        <li className="menu-list__item">
-          {/* <Link to="Counting" className="menu-list__item"> */}
+        <li className={`menu-list__item ${className || menuItem}`}>
+          <NavLink to="Counting" onClick={onClick}>
           Розрахунок
-          {/* </Link> */}
+          </NavLink>
         </li>
-        <li className="menu-list__item">
-          {/* <Link to="/Contacts" className="menu-list__item">           */}
+        <li className={`menu-list__item ${className || menuItem}`}>
+          <NavLink to="Contacts" onClick={onClick}>          
           Контакти
-          {/* </Link> */}
+          </NavLink>
         </li>
-        <li className="menu-list__item">
-          {/* <Link to="/Individual order" className="menu-list__item">           */}
+        <li className={`menu-list__item ${className || menuItem}`}>
+          <NavLink to="Individual order" onClick={onClick}>          
           Індивідуальне замовлення
-          {/* </Link> */}
+          </NavLink>
         </li>
       </ul>
     </nav>

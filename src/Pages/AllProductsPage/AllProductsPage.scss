@@ -52,11 +52,23 @@
       justify-content: space-around;
       align-items: center;
     }
-    &__price select {
-      padding: 18px 30px 18px 20px;
-      border: solid 1px $main-filter-border-color;
-      font-size: 15px;
-    }
+    // &__price select {
+    //   display: flex;
+    //   padding: 18px 30px 18px 20px;
+    //   border: solid 1px $main-filter-border-color;
+    //   font-size: 15px;
+    // }
+  }
+  .select-sort{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .all-products-card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 15px;
   }
 
   //  pagination ===============================
@@ -90,6 +102,10 @@
     background-color: $dark-black;
     color: $background-primary-color;
   }
+  .active a{
+    background-color: $dark-black;
+    color: $background-primary-color;
+  }
 
   .page-item {
     list-style: none;
@@ -120,14 +136,16 @@
         align-items: center;
       }
       &__price label {
+        display: flex;
+        align-items: center;
         padding-right: 30px;
       }
 
-      &__price select {
-        padding: 18px 30px 18px 20px;
-        border: solid 1px $main-filter-border-color;
-        font-size: 15px;
-      }
+      // &__price select {
+      //   padding: 18px 30px 18px 20px;
+      //   border: solid 1px $main-filter-border-color;
+      //   font-size: 15px;
+      // }
 
       .product-pagination {
         &-list {
@@ -184,11 +202,22 @@
         
         &__item {
           // width: 20%;
-          padding: 30px;
+          padding: 30px 10px;
           border-right: solid 2px $main-filter-border-color;
         }
+        &__item label{
+          display: flex;
+          align-items: center;
+          // width: 20%;
+          // padding: 30px;
+          // border-right: solid 2px $main-filter-border-color;
+        }
         &__item:nth-child(2) {          
-          padding: 0;          
+          padding: 0 20px; 
+          border-right: none;         
+        }
+        &__item:nth-child(3) {          
+          border-left: solid 2px $main-filter-border-color;          
         }
         &__item:last-child {          
           border-right: none;          
@@ -196,12 +225,31 @@
         &__item button {
           border: none;
           background-color: transparent;
+          min-width: 125px;
         }
       }
-      .custom-select {
+      .css-1fdsijx-ValueContainer{
+        width: 145px;
+      }
+      .css-13cymwt-control{
         border: none;
       }
-        
+      .css-1u9des2-indicatorSeparator{
+        display: none;
+      }
+      .css-1fdsijx-ValueContainer {
+        width: 75px;
+      }
+      .css-1d3z3hw-MuiOutlinedInput-notchedOutline{
+        border-top-width: 0;
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+        border-left-width: 0;
+      }      
+      .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root{
+        margin-right: 20px;
+      }
+          
       .sorting-wrapper {
         display: flex;
         justify-content: flex-end;
@@ -221,15 +269,22 @@
           background-color: transparent;
           cursor: pointer;
         }
-        &__price {
+        &__show button:active {
+          background-color: black;
+          color: aliceblue;
+        }
+        &__price label{
           display: flex;
           justify-content: space-around;
           align-items: center;
+          // border: solid 2px $main-filter-border-color;
+          // width: 150px;
         }
-        &__price select {
-          padding: 18px 30px 18px 20px;
-          border: solid 1px $main-filter-border-color;
-          font-size: 15px;
+        .css-b62m3t-container{
+          border: solid 2px $main-filter-border-color;
+          padding: 5px 0 5px 5px;
+          width: 242px;
+          margin-left: 20px;
         }
 
         .product-pagination {
@@ -238,6 +293,7 @@
             flex-wrap: wrap;
             justify-content: space-evenly;
             list-style: none;
+            gap: 20px;
             margin: 34px 0 60px 0;
           }
           &-list li {
@@ -246,6 +302,16 @@
             margin: 10px;
           }
         }
+        .product-pagination-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            list-style: none;
+            gap: 20px;
+            margin: 34px 0 60px 0;
+            gap: 20px;
+          }
+
 
         .pagination {
           list-style: none;
