@@ -9,7 +9,7 @@ import CustomCheckbox from "../CustomCheckbox/CustomCheckbox";
 import sendOrderEmail from "../YourOrder/YourOrder";
 
 
-function Forma({ onSubmit, setFormCompleted }) {
+function Forma({ onSubmit, setFormCompleted, sendEmail }) {
 
 
 
@@ -37,7 +37,7 @@ function Forma({ onSubmit, setFormCompleted }) {
 
   const [customerEmail, setCustomerEmail] = useState("");
 
-  const handleSubmit = async (values) => {
+  const handleSubmit = async (values, { resetForm }) => {
     await new Promise((resolve) => setTimeout(resolve, 500));
     setCustomerEmail(values.email); // Зберегти електронну пошту в стані
     alert(JSON.stringify(values, null, 2));
@@ -53,6 +53,7 @@ function Forma({ onSubmit, setFormCompleted }) {
       values.email &&
       values.phoneNumber
     ) {
+      resetForm(); 
       setFormCompleted(true);
     }
   };
@@ -109,8 +110,7 @@ function Forma({ onSubmit, setFormCompleted }) {
 
   return (
     <>
-      {/* {!isUserLoggedIn && ( */}
-      <div className="PlacingOrder-formik">
+      <div className="PlacingOrder-formik" onSubmit={sendEmail}>
         <Formik
           initialValues={initialValues}
           onSubmit={handleSubmit}
@@ -408,10 +408,6 @@ function Forma({ onSubmit, setFormCompleted }) {
           )}
         </Formik>
 
-        {/* Кнопка або інший механізм, який викликає toggleFormVisibility, щоб показати/приховати форму
-          <button onClick={toggleFormVisibility}>
-            {isUserLoggedIn ? "Показати форму" : "Приховати форму"}
-          </button> */}
       </div>
       {/* )} */}
     </>

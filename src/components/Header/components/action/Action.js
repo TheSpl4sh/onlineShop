@@ -13,7 +13,7 @@ import "./Action.scss";
 const Action = () => {
   const { favorites } = useFavorite();
   const favoritesLength = favorites.length;
-  console.log("action", favorites);
+  // console.log("action", favorites);
 
   const dispatch = useDispatch();
   const isAuthenticated = useSelector(

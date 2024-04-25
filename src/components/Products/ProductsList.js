@@ -31,7 +31,7 @@ function ProductsList({ productType }) {
   });
 
   // Оновлюємо індекси при натисканні на стрілки
-  /* const nextSlide = () => {
+  const nextSlide = () => {
     if (currentIndex < filteredProducts.length - 3) {
       setCurrentIndex(currentIndex + 3);
     }
@@ -41,10 +41,20 @@ function ProductsList({ productType }) {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 3);
     }
-  }; */
+  };
 
   return (
     <>
+      <button 
+        onClick={prevSlide} 
+        className={`arrivals-section__arrow-button arrivals-section__arrow-button--active ${currentIndex === 0 ? 'disabled' : ''}`}
+      >
+      </button>
+      <button 
+        onClick={nextSlide} 
+        className={`arrivals-section__arrow-button arrivals-section__arrow-button--nonactive ${currentIndex >= filteredProducts.length - 3 ? 'disabled' : ''}`}
+      >
+      </button>
       {catalogStatus === 'loading' && <div>Loading...</div>}
       {catalogStatus === 'succeeded' && (
         <>

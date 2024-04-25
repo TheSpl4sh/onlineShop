@@ -60,7 +60,7 @@ function CardPage() {
       addToFavorites(product);
     }
   };
-  console.log("CardPage", favorites);
+  // console.log("CardPage", favorites);
 
   return (
     <div className="container card-page">
@@ -110,7 +110,7 @@ function CardPage() {
                 {product.previousPrice}
               </span>
               <span className="card-page__price-discount">
-                {product.price + " ₴"}
+                {product.price + " " + "₴"}
               </span>
             </div>
             <CardCounterMd />
