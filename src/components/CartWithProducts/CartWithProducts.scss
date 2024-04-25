@@ -68,8 +68,14 @@
     &__card td {
         height: 100px;
         border-top: 1px solid #ECECEC;
-        padding: 15px 20px;
+        padding: 5px;
+
+        @media (min-width: $bp-md) {
+            padding: 15px 20px;
+        }
+
+        @media (min-width: $bp-lg) {
+            padding: 15px 20px;
+        }
     }
-
-
 }
