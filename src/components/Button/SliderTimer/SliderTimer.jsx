@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "../SliderTimer/SliderTimer.scss";
 
-function SliderTimer() {
+function SliderTimer({ handleSlideChange, onToggle }) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % 4);
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
@@ -22,10 +22,11 @@ function SliderTimer() {
         {[0, 1, 2, 3].map((index) => (
           <li
             key={index}
-            className={`circleTimer ${activeIndex === index ? 'active' : ''}`}
+            className={`circleTimer ${activeIndex === index ? "active" : ""}`}
             onClick={() => handleItemClick(index)}
-          >
-          </li>
+            onChange={handleSlideChange}
+            onToggle={onToggle}
+          ></li>
         ))}
       </ul>
     </div>

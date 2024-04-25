@@ -1,0 +1,55 @@
+@import "../../styles/variables.scss";
+
+// .favorite-cards{}
+.favorite-card{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 15px;
+	border: 1px solid $header-border-color;
+	padding: 15px;
+}
+
+.favorite-img-wrapper{
+	display: grid;
+	width: 300px;
+	height: 300px;
+}
+
+.favorite-img-wrapper > * {
+	grid-column: 1/-1;
+	grid-row: 1/-1;
+}
+
+.favorite-img{
+	width: 250px;
+	height: 250px;
+	transition: transform 0.3s ease;
+}
+
+.favorite-img-logo{
+	color: black;
+}
+
+.favorite-description{
+	width: 300px;	
+}
+
+.favorite-price{
+	font-size: 28px;
+}
+
+.btn-black{
+	background-color: $light-black;
+	color: $background-primary-color;
+	font-size: 18px;
+	padding: 10px;
+}
+
+.btn-orange{
+	background-color: $light-orange;
+	color: $background-primary-color;
+	font-size: 18px;
+	padding: 10px;
+	cursor: pointer;
+}
