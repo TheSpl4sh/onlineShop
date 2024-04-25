@@ -22,7 +22,7 @@ const TopHeader = () => {
                 <Breadcrumbs />
                 <form className="topheader-form">
                     {isAuthenticated ? (
-                        <Link to="/cabinet" className="topheader-form__item">
+                        <Link to="/account" className="topheader-form__item">
                             <FaUserCheck
                                 className="topheader-form__icon"
                                 color="#FB5A00"

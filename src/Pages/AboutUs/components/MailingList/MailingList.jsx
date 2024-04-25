@@ -79,7 +79,7 @@ const MailingList = () => {
           />
           <button className="mailing-list-button">Підписатися</button>
         </form>
-        <p className="mailing-policy">Погоджуюсь із <a href="#">політикою кофіденційності</a></p>
+        <p className="mailing-policy">Погоджуюсь із <a href="/">політикою кофіденційності</a></p>
         </div>
       )}
     </div>
