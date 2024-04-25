@@ -1,6 +1,7 @@
 import React from "react";
 import "./CartWithProducts.scss";
 import CartTotalBox from "../CartTotalBox/CartTotalBox";
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 
 const calculateTotal = (cart) => {
   if (cart.length === 0) {
@@ -51,6 +52,10 @@ const CartWithProducts = ({ cart }) => {
                   <td className="cart-products__card-cell cart-products__card-cell--verticalSum">
                     {product.product.price * product.cartQuantity + " ₴"}
                   </td>
+                  <td className="cart-products__card-cell cart-products__card-cell--verticalAlign">
+                    <button className="cart-products__delete-button"><DeleteOutlineIcon /></button>
+                  </td>
+                  
                 </tr>
               ))}
             </tbody>

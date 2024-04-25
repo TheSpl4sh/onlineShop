@@ -2,10 +2,10 @@ import React from "react";
 import Basket from "./img/Vector.svg";
 import './ButtonBlackBasket.scss'
 
-function ButtonBlackBasket() {
+function ButtonBlackBasket({ dispatchedHandleAdd, productId }) {
   return (
     <div>
-      <button className="ButtonBlackBasket">
+      <button className="ButtonBlackBasket" onClick={() => dispatchedHandleAdd(productId)}>
         <ul className="buttonComponents">
           <li className="buttonBlackBasket-text">ADD TO BASKET</li>
           <li className="buttonBlackBasket-icons">
