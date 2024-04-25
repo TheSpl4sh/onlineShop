@@ -24,6 +24,11 @@ const cartSlice = createSlice({
     name: 'cart',
     initialState: { items: [], status: 'idle', error: null },
     reducers: {},
+    reducers: {
+      handleDelete: () => {
+        state.isAuthenticated = action.payload;
+      },
+    },
     extraReducers: (builder) => {
       builder
         .addCase(fetchCart.pending, (state) => {
