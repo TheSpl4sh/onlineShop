@@ -34,7 +34,7 @@ const AccountComponent = () => {
             <div className='account-components__content'>
                 {activeTab === 'orders' && (
                     <>
-                        <p className='content-title'>Вітаю, Іван!</p>
+                        <p className='content-title'>Вітаю!</p>
                         <div className='account-orders'>
                             <div className='account-orders__content'>
                                 <table className='account-orders__table'>

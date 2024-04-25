@@ -19,7 +19,6 @@ import { AuthPage } from "./Pages/AuthPage/AuthPage";
 import { SignUpPage } from "./Pages/SignUpPage/SignUpPage";
 import { CardPage } from "./Pages/card-page/CardPage";
 import { Account } from "./Pages/Account/Account";
-import { Cabinet } from "./Pages/AuthPage/Cabinet";
 import { Contacts } from "./Pages/Contacts/Contacts";
 import { MenClothingPage } from "./Pages/MenClothingPage/MenClothingPage";
 import { WomanClothingPage } from "./Pages/WomanClothingPage/WomanClothingPage";
@@ -61,10 +60,10 @@ function App() {
                     <Route path="signup" element={<SignUpPage />} />
                     <Route path="products/:id" element={<CardPage />} />
                     <Route
-                        path="cabinet"
+                        path="/account"
                         element={
                             <ProtectedRoute>
-                                <Cabinet />
+                                <Account />
                             </ProtectedRoute>
                         }
                     />
