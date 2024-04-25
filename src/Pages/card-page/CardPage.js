@@ -109,7 +109,6 @@ function CardPage() {
           <div className="card-page__add-cart">
             <CardCounter />
             <div>
-              <button onClick={() => dispatchedHandleAdd()}>hui</button>
               <ButtonBlackBasket 
               dispatchedHandleAdd={dispatchedHandleAdd}
               productId = {product._id}
