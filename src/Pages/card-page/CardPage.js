@@ -60,7 +60,7 @@ function CardPage() {
       addToFavorites(product);
     }
   };
-  console.log("CardPage", favorites);
+  // console.log("CardPage", favorites);
 
   return (
     <div className="container card-page">
