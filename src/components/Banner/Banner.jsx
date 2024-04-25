@@ -1,3 +1,4 @@
+
 import React from "react";
 import Rectangle from "../Banner/img/Rectangle.svg";
 import ButtonBlackArrow from "../Button/ButtonBlackArrow/ButtonBlackArrow";
