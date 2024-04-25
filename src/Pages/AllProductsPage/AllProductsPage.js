@@ -110,8 +110,6 @@ const AllProductsPage = ({items}) => {
                     { label: "Каталог", url: "/catalog" },                    
                 ]}
             />
-      {/* <h1>{items}</h1> */}
-      {/* <h1>Коллекция Air Max</h1> */}
       <hr />
       <div className="select-mobile">
         <div className="select-mobile__button">
