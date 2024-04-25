@@ -1,13 +1,12 @@
-// CardPage.js
-import React from 'react';
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useFavorite } from "../../components/FavoriteContext.js";
 import Size from "./components/Size";
-import AddToCartButton from "./components/CartButton";
+import ButtonBlackBasket from "../../components/ButtonBlackBasket/ButtonBlackBasket";
 import ProductOptions from "./components/ProductOptions.js";
 import ImgContainer from "./components/ImgContainer.js";
+// import ColorList from "./components/ColorList.js";
 import CardCounter from "./components/CardCounter.js";
 import CardCounterMd from "./components/CardCounterMd.js";
 import BelowHeaderBreadcrumbs from "../../components/BelowHeaderBreadcrumbs/BelowHeaderBreadcrumbs";
@@ -36,6 +35,19 @@ function CardPage() {
     setSelectedColor(color);
   };
 
+  /* useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        const response = await axios.get(`api/products/${_id}`); // Пример URL-адреса запроса
+        setProduct(response.data);
+      } catch (error) {
+        console.error("Error fetching product data:", error);
+      }
+    };
+    fetchProduct();
+    
+  }, [_id]); */
+
   let nameProd = product.name;
 
   const { addToFavorites, removeFromFavorites, favorites } = useFavorite();
@@ -49,9 +61,6 @@ function CardPage() {
     }
   };
   console.log("CardPage", favorites);
-
-  // Assuming you have the token stored in a variable called authToken
-  const authToken = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkOTljZTE5NmQ0MGZiMWI3NDdiYzVmNSIsImZpcnN0TmFtZSI6IkN1c3RvbWVyIiwibGFzdE5hbWUiOiJOZXdvbmUiLCJpYXQiOjE1NzAzNjU0ODIsImV4cCI6MTU3MDM2OTA4Mn0._arHw0HC2uLsH6Ow0LJEeuaj03S4dB9x--yfp5Kj_r0';
 
   return (
     <div className="container card-page">
@@ -72,8 +81,12 @@ function CardPage() {
         <div className="text-container">
           <h1 className="text-container__title">{nameProd}</h1>
           <p className="text-container__description">{product.description}</p>
+          {/* <a href="/link" className="all-description">
+                        {product.description}
+                    </a> */}
           <div className="vertical-card__colors-block">
-            <span className="vertical-card__colors-span">Colors:</span>
+            <span className="vertical-card__colors-span">Кольори:</span>
+
             {style_color.map((color) => (
               <div
                 key={color}
@@ -97,15 +110,16 @@ function CardPage() {
                 {product.previousPrice}
               </span>
               <span className="card-page__price-discount">
-                {product.price + " ₴"}
+                {product.price + " " + "₴"}
               </span>
             </div>
             <CardCounterMd />
           </div>
           <div className="card-page__add-cart">
             <CardCounter />
-            {/* Pass authToken as a prop to CartButton */}
-            <AddToCartButton productId={product.id} token={authToken} />
+            <div>
+              <ButtonBlackBasket />
+            </div>
           </div>
           <div className="card-page__options">
             <ProductOptions
@@ -124,13 +138,16 @@ function CardPage() {
         />
       </div>
       <section className='arrivals-section'>
-        <article className='arrivals-section__title-container'>
-          <h1 className='arrivals-section__title'>MAY INTEREST YOU</h1>
-        </article >
-        <article className='arrivals-section__products-container'>
-          <ProductsList productType="DISCOUNT" />
-        </article>
-      </section>
+            <article className='arrivals-section__title-container'>
+              <h1 className='arrivals-section__title'>МОЖЛИВО ВАС ЗАЦІКАВИТЬ</h1>
+              
+             
+            </article >
+
+            <article className='arrivals-section__products-container'>
+            <ProductsList productType="ЗНИЖКА" />
+            </article>
+          </section>
     </div>
   );
 }
