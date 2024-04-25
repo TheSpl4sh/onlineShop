@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Forma from "../../Pages/PlacingOrder/components/Forma/Forma";
 import YourOrder from "../../Pages/PlacingOrder/components/YourOrder/YourOrder";
 import emailjs from '@emailjs/browser';
-import { values } from "lodash";
+
 
 function PlacingOrder({ selectedDeliveryOption, selectedPaymentOption, summa }) {
   const [formCompleted, setFormCompleted] = useState(false);
