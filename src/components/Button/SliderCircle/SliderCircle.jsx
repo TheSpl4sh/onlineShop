@@ -3,6 +3,7 @@ import ArrowLeft from "../SliderCircle/img/ArrowLeft.svg";
 import ArrowRight from "../SliderCircle/img/ArrowRight.svg";
 import "../SliderCircle/SliderCircle.scss";
 function SliderCircle() {
+  
   return (
     <div className="SliderCircle">
       <button className="sliderCircleLeft">
@@ -24,3 +25,4 @@ function SliderCircle() {
 }
 
 export default SliderCircle;
+
