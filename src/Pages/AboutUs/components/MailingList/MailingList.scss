@@ -104,6 +104,10 @@
         height: 288px;
     }
 
+    @media (min-width: 1025px) {
+        width: 483px;
+    }
+
     @media (min-width: $bp-lg) {
         width: 390px;
         height: 300px;
