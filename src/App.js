@@ -61,10 +61,10 @@ function App() {
                     <Route path="signup" element={<SignUpPage />} />
                     <Route path="products/:id" element={<CardPage />} />
                     <Route
-                        path="cabinet"
+                        path="/account"
                         element={
                             <ProtectedRoute>
-                                <Cabinet />
+                                <Account />
                             </ProtectedRoute>
                         }
                     />
