@@ -22,7 +22,7 @@ const initialValues = {
 };
 
 const NameForm = () => {
-  const [registrationData, setRegistrationData] = useState(null);
+  const setRegistrationData = useState(null);
 
   const handleSubmit = (values, { resetForm }) => {
     console.log(values);
