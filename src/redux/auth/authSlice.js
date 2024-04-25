@@ -26,6 +26,24 @@ export const checkAuthenticationStatus = createAsyncThunk(
     }
 );
 
+export const getCustomerId = createAsyncThunk(
+    "getId",
+    async () => {
+        const token = localStorage.getItem("authToken")
+        try {
+            const response = await axios.post("/api/customers/customer", {
+                headers: {
+                    Authorization: token
+                }
+            });
+            return response.data;
+        } catch (err) {
+            throw new Error('Failed to fetch customers.');
+        }
+    }
+);
+
+
 const authSlice = createSlice({
     name: "loginCustomer",
     initialState: {
