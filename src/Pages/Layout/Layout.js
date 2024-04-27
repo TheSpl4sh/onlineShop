@@ -9,7 +9,9 @@ const Layout = () => {
     <>
       <FavoriteProvider>
         <Header />
+        <main className="g-content">
         <Outlet />
+        </main>
       </FavoriteProvider>
       <Footer />
     </>
