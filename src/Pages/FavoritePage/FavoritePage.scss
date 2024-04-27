@@ -1,55 +1,184 @@
 @import "../../styles/variables.scss";
 
-// .favorite-cards{}
-.favorite-card{
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-top: 15px;
-	border: 1px solid $header-border-color;
-	padding: 15px;
+.favorite-card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  align-items: center;
+  justify-items: center;
+  margin-top: 15px;
+  border: 1px solid $header-border-color;
+  padding: 15px;
 }
 
-.favorite-img-wrapper{
-	display: grid;
-	width: 300px;
-	height: 300px;
+.favorite-img-wrapper {
+  display: grid;
+  width: 300px;
+  height: 300px;
+  grid-area: 1 / 1 / 3 / 3;
 }
 
 .favorite-img-wrapper > * {
-	grid-column: 1/-1;
-	grid-row: 1/-1;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
 }
 
-.favorite-img{
-	width: 250px;
-	height: 250px;
-	transition: transform 0.3s ease;
+.favorite-img {
+  width: 250px;
+  height: 250px;
+  transition: transform 0.3s ease;
 }
 
-.favorite-img-logo{
-	color: black;
+.favorite-img-logo {
+  color: black;
 }
 
-.favorite-description{
-	width: 300px;	
+.favorite-description {
+  grid-area: 3 / 1 / 5 / 3;
 }
 
-.favorite-price{
-	font-size: 28px;
+.favorite-price {
+  font-size: 28px;
+  grid-area: 5 / 1 / 6 / 3;
 }
 
-.btn-black{
-	background-color: $light-black;
-	color: $background-primary-color;
-	font-size: 18px;
-	padding: 10px;
+.btn-black {
+  grid-area: 6 / 1 / 7 / 2;
+  background-color: $light-black;
+  color: $background-primary-color;
+  font-size: 18px;
+  padding: 22px 30px;
 }
 
-.btn-orange{
-	background-color: $light-orange;
-	color: $background-primary-color;
-	font-size: 18px;
-	padding: 10px;
-	cursor: pointer;
+.btn-orange {
+  grid-area: 6 / 2 / 7 / 3;
+  background-color: $light-orange;
+  color: $background-primary-color;
+  font-size: 18px;
+  padding: 20px;
+}
+
+@media (min-width: $bp-md) {
+  // padding: 0px 25px;
+  // max-width: 768px;
+  .favorite-card {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+    margin-top: 15px;
+    border: 1px solid $header-border-color;
+    padding: 15px;
+  }
+
+  .favorite-img-wrapper {
+    display: grid;
+    width: 300px;
+    height: 300px;
+    grid-area: 1 / 1 / 3 / 3;
+  }
+
+  .favorite-img-wrapper > * {
+    grid-column: 1/-1;
+    grid-row: 1/-1;
+  }
+
+  .favorite-img {
+    width: 250px;
+    height: 250px;
+    transition: transform 0.3s ease;
+  }
+
+  .favorite-img-logo {
+    color: black;
+  }
+
+  .favorite-description {
+    grid-area: 1 / 3 / 3 / 7;
+    font-size: 22px;
+  }
+
+  .favorite-price {
+    font-size: 28px;
+    grid-area: 3 / 1 / 4 / 3;
+  }
+
+  .btn-black {
+    grid-area: 3 / 3 / 4 / 5;
+    background-color: $light-black;
+    color: $background-primary-color;
+    font-size: 18px;
+    padding: 22px 30px;
+  }
+
+  .btn-orange {
+    grid-area: 3 / 5 / 4 / 7;
+    background-color: $light-orange;
+    color: $background-primary-color;
+    font-size: 18px;
+    padding: 20px;
+  }
+}
+
+@media (min-width: $bp-lg) {
+  // padding: 0px 280px;
+  // max-width: 1920px;
+
+  .favorite-card {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+    margin-top: 15px;
+    border: 1px solid $header-border-color;
+    padding: 15px;
+  }
+
+  .favorite-img-wrapper {
+    display: grid;
+    width: 300px;
+    height: 300px;
+    grid-area: 1 / 1 / 4 / 3;
+  }
+
+  .favorite-img-wrapper > * {
+    grid-column: 1/-1;
+    grid-row: 1/-1;
+  }
+
+  .favorite-img {
+    width: 250px;
+    height: 250px;
+    transition: transform 0.3s ease;
+  }
+
+  .favorite-img-logo {
+    color: black;
+  }
+
+  .favorite-description {
+    grid-area: 1 / 3 / 4 / 5;
+  }
+
+  .favorite-price {
+    font-size: 28px;
+    grid-area: 1 / 5 / 4 / 6;
+  }
+
+  .btn-black {
+    grid-area: 1 / 6 / 4 / 7;
+    background-color: $light-black;
+    color: $background-primary-color;
+    font-size: 18px;
+	padding: 22px 30px;
+  }
+
+  .btn-orange {
+    grid-area: 1 / 7 / 4 / 8;
+    background-color: $light-orange;
+    color: $background-primary-color;
+    font-size: 18px;
+  }
 }

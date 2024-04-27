@@ -5,13 +5,15 @@
 
 .header {
   font-family: "Pragmatica", serif;
+  margin: 0 auto;
+  padding: 0px 15px;
+  width: 100%;
+
   .header-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
     border: solid 1px $header-border-color;
-    // border-bottom: solid 1px $header-border-color;
-
   }
   .topheader {
     display: none;
@@ -35,11 +37,11 @@
     order: 1;
     padding-left: 25px;
   }
-  
+
   @media (min-width: $bp-md) {
     padding: 0px 25px;
-    max-width: 768px;
-
+    margin: 0 auto;
+    width: 100%;
 
     .header-wrapper {
       display: flex;
@@ -72,19 +74,18 @@
     }
   }
 
-  // @media (min-width: $bp-lg) {
-  //   padding: 0px 280px;
-  //   max-width: 1920px;
   @media (min-width: $bp-lg) {
+    margin: 0 auto;
+    width: 100%;
     padding: 0px 280px;
     max-width: 1920px;
+
     .header-wrapper {
       display: flex;
       align-items: center;
       justify-content: space-between;
       border-top: solid 1px $header-border-color;
       border-bottom: solid 1px $header-border-color;
-
       position: relative;
     }
     .topheader {

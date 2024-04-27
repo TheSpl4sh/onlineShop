@@ -1,0 +1,23 @@
+.button {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+  text-align: center;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none !important;
+  outline: none;
+  -webkit-appearance: none;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 400;
+  font-size: 16px;
+  // text-transform: uppercase;
+  color: #fff;
+  padding: 15px;
+  border-radius: 6px;
+//   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}

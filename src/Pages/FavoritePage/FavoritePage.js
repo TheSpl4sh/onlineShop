@@ -3,6 +3,7 @@ import { ReactComponent as OrangeSvg } from "../../components/LinkButton/icons/o
 import BelowHeaderBreadcrumbs from "../../components/BelowHeaderBreadcrumbs/BelowHeaderBreadcrumbs";
 import { BsHeartFill, BsBasket3 } from "react-icons/bs";
 import LinkButton from "../../components/LinkButton/LinkButton";
+import Button from "../../components/Button/Button/Button";
 
 import "./FavoritePage.scss";
 
@@ -30,6 +31,13 @@ const FavoritePage = () => {
               Але можете перейти до <strong>"Каталогу"</strong> де ви знайдете багато цікавих варіантів.
             </p>
             <LinkButton path="/catalog" text="Перейти до каталогу" SvgIcon={OrangeSvg} className="orange" />
+            {/* <Button
+            className="button btn-orangeLink"
+            to="/catalog"
+            >
+              Перейти до каталогу
+            <BsArrowRight /> 
+            </Button> */}
           </div>
         </div>
       ) : (
@@ -42,21 +50,20 @@ const FavoritePage = () => {
               </div>
               <p className="favorite-description">{favorite.description}</p>
               <p className="favorite-price">{'ціна:' + favorite.price + ' ₴'}</p>
-
-              <div>
-                <LinkButton
-                  // path="/some-path"
-                  text="Купить"
-                  SvgIcon={BsBasket3}
-                  className="btn btn-black"
-                />
-              </div>
-              <div>
-                <button className="btn btn-orange" onClick={() => handleDelete(favorite.id)}>
-                  <BsHeartFill />
-                  Видалить
-                </button>
-              </div>
+                <Button
+                className="button btn-black"
+                to="/#"
+                >
+                  <BsBasket3/>
+                купить 
+                </Button>             
+              <Button
+              className="button btn-orange"
+              onClick={() => handleDelete(favorite.id)}
+              >
+              <BsHeartFill />
+              видалить
+              </Button>
             </div>
           ))}
         </div>
