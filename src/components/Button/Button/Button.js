@@ -17,12 +17,9 @@ const Button = (props) => {
       onClick={onClick} 
       className={cx(
         "button",
-        // classNames, 
-        // {_box:box}, 
-        // {"_boxLink":boxLink}
 	)
-      } 
-      type={(!href && !to) && type} 
+      }  
+      type={(href || to) ? undefined : type}
       to={to}
       href={href}
       {...restProps}>
