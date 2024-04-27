@@ -5,9 +5,18 @@
 
 .editname-form {
     border: 1px solid #EAEAEA;
-    padding: 40px;
-    width: 555px;
+    padding: 20px;
+    width: 344px;
     height: 481px;
+
+    @media (min-width: $bp-md) {
+        width: 700px;
+        padding: 40px;
+    }
+
+    @media (min-width: 1025px) {
+        width: 555px;
+    }
 
 
     &__label {
@@ -38,4 +47,3 @@
 .orange-star {
     color: #ff1515;
 }
-

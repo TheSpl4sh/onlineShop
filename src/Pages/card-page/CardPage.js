@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useFavorite } from "../../components/FavoriteContext.js";
 import Size from "./components/Size";
 import ButtonBlackBasket from "../../components/ButtonBlackBasket/ButtonBlackBasket";
@@ -11,13 +11,18 @@ import CardCounter from "./components/CardCounter.js";
 import CardCounterMd from "./components/CardCounterMd.js";
 import BelowHeaderBreadcrumbs from "../../components/BelowHeaderBreadcrumbs/BelowHeaderBreadcrumbs";
 import ProductsList from "../../components/Products/ProductsList.js";
-
 import "./style/card-page.scss";
+import { handleAdd } from "../../redux/cart/cartSlice.js";
 
 function CardPage() {
   const { id } = useParams();
   const [selectedSize, setSelectedSize] = useState("");
   const [selectedColor, setSelectedColor] = useState("");
+  const dispatch = useDispatch()
+
+  const dispatchedHandleAdd = (item) => {
+    dispatch(handleAdd(item))
+  }
 
   const product = useSelector((state) =>
     state.catalog.items.find((item) => item.id === id)
@@ -35,19 +40,6 @@ function CardPage() {
     setSelectedColor(color);
   };
 
-  /* useEffect(() => {
-    const fetchProduct = async () => {
-      try {
-        const response = await axios.get(`api/products/${_id}`); // Пример URL-адреса запроса
-        setProduct(response.data);
-      } catch (error) {
-        console.error("Error fetching product data:", error);
-      }
-    };
-    fetchProduct();
-    
-  }, [_id]); */
-
   let nameProd = product.name;
 
   const { addToFavorites, removeFromFavorites, favorites } = useFavorite();
@@ -60,7 +52,6 @@ function CardPage() {
       addToFavorites(product);
     }
   };
-  // console.log("CardPage", favorites);
 
   return (
     <div className="container card-page">
@@ -118,7 +109,10 @@ function CardPage() {
           <div className="card-page__add-cart">
             <CardCounter />
             <div>
-              <ButtonBlackBasket />
+              <ButtonBlackBasket 
+              dispatchedHandleAdd={dispatchedHandleAdd}
+              productId = {product._id}
+              />
             </div>
           </div>
           <div className="card-page__options">
