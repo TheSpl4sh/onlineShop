@@ -100,7 +100,7 @@ const AllProductsPage = ({items}) => {
     }
   }, [sortOption, products]);
 
-  console.log("AllProducts", products);
+  // console.log("AllProducts", products);
 
   return (
     <section className="catalog container">
